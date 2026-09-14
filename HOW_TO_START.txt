@@ -1,0 +1,26 @@
+==================================================
+  BRAIN TUMOR AI DETECTION - HOW TO START THE PROJECT
+==================================================
+
+Step 1: Open Terminal and navigate to the project directory:
+   cd /Users/divyanshahuja/Desktop/DIVYANSH_SHREYA/vit2
+
+Step 2: Run the Streamlit application command:
+   PYTHONPATH=src ./env/bin/streamlit run src/streamlit_app.py
+
+Step 3: Open your browser at:
+   http://localhost:8501
+
+--------------------------------------------------
+FAQ & DATASET INFO:
+--------------------------------------------------
+Q: Is the MRI dataset included in this directory?
+A: No, raw image files are kept out to keep the workspace lightweight.
+
+Q: Are model weights included?
+A: Yes! The weights (vit_brain_tumor_5class.pth and hybrid_brain_tumor.pth)
+   are present in the src/ directory and load automatically out-of-the-box.
+
+Q: How do I train on a custom dataset?
+A: Place your training images in dataset/Training/<category> and run:
+   PYTHONPATH=src ./env/bin/python src/train.py

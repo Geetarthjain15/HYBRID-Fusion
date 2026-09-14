@@ -1,0 +1,36 @@
+# Python virtual environment
+env/
+venv/
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Logs
+*.log
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment / secrets
+.env
+.env.*
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Large ML model checkpoints
+*.pth
+*.pt
+*.pth.*
+*.pt.*
+
+# Datasets
+dataset/
+dataset_ood/
+dataset_subsample_v1/
