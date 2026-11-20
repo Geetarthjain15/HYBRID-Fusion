@@ -1,0 +1,10 @@
+claim,status,evidence,required_caveat
+FusionV2 achieved 99.14 ± 0.10% on the conventional split,allowed,Phase 1 original setting,conventional/original image split
+FusionV2 achieved 98.27 ± 0.07% on the duplicate-clean split,allowed,Phase 1 clean setting,"held-out images, not verified held-out patients"
+Removing the ViT branch reduced accuracy by about 2.59 pp,allowed,Phase 3B; Holm-significant at all three seeds,duplicate-clean protocol only
+Auxiliary-loss and CNN-branch contributions are suggestive,allowed with caution,adverse direction across all seeds; corrected evidence insufficient,suggestive but inconclusive
+"Gate, multi-scale taps, EMA and TTA have zero value",prohibited,nonsignificant ablations do not prove equivalence,say no detectable accuracy benefit under this protocol
+FusionV2 outperforms BRAIN-META statistically,prohibited,no aligned predictions or identical protocol,contextual reported-value comparison only
+FusionV2 is clinically ready or universally generalizable,prohibited,no clinical or multi-institutional validation,research benchmark only
+Patient-level independence was established,prohibited,no patient/study identifiers,patient-level independence cannot be verified
+Gate mass provides anatomical or causal explanation,prohibited,gate mass is branch utilization telemetry,descriptive utilization only

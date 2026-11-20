@@ -1,0 +1,168 @@
+{
+  "phase": "X1 - clean-test reconstruction and identity verification",
+  "generated_utc": "2026-09-26T11:33:23.027936+00:00",
+  "mode": "full",
+  "training_performed": false,
+  "model_modified": false,
+  "existing_predictions_modified": false,
+  "tolerances": {
+    "probability_abs": 0.0001,
+    "accuracy_pp": 0.0
+  },
+  "environment": {
+    "python": "3.13.2",
+    "torch": "2.14.0+cpu",
+    "numpy": "2.5.3",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "device": "cpu"
+  },
+  "manifest": {
+    "path": "dataset_clean/split_manifest.json",
+    "sha256": "a02bcb62847ce1b9146a3e769f41f88ec1afce5a46d03fb5aaffb0ef43a0e6d2",
+    "n_testing": 848,
+    "class_counts": {
+      "glioma": 243,
+      "meningioma": 228,
+      "notumor": 116,
+      "pituitary": 261
+    },
+    "class_order": [
+      "glioma",
+      "meningioma",
+      "notumor",
+      "pituitary"
+    ]
+  },
+  "source_index": {
+    "root": "dataset",
+    "n_files_indexed": 7023,
+    "n_ambiguous_filenames": 0,
+    "ambiguous_examples": []
+  },
+  "reconstruction": {
+    "destination_root": "publication_runs/explainability/reconstructed_clean_test",
+    "n_requested": 848,
+    "n_reconstructed": 848,
+    "n_on_disk": 848,
+    "per_class_counts": {
+      "glioma": 243,
+      "meningioma": 228,
+      "notumor": 116,
+      "pituitary": 261
+    },
+    "content_duplicate_groups": {},
+    "n_content_duplicate_groups": 0,
+    "note": "dataset/ and dataset_clean/ were read only; images copied out"
+  },
+  "per_seed": {
+    "42": {
+      "reference_csv": "runs_v2_clean/fusion_v2_seed42/preds_test.csv",
+      "reference_sha256": "247e6494d7315856a5fbb2a26b2eed789f77a880696c724b8a79243fd47c20b4",
+      "n_recorded_rows": 848,
+      "n_compared": 848,
+      "n_only_in_recomputed": 0,
+      "n_only_in_recorded": 0,
+      "n_filename_mismatch": 0,
+      "filename_mismatch_examples": [],
+      "n_true_label_mismatch": 0,
+      "true_label_mismatch_examples": [],
+      "n_pred_label_mismatch": 0,
+      "pred_label_mismatch_examples": [],
+      "max_abs_prob_diff": 4.824623107912984e-06,
+      "mean_abs_prob_diff": 2.822231384483702e-07,
+      "accuracy_recomputed": 0.9823113207547169,
+      "accuracy_recorded": 0.9823113207547169,
+      "accuracy_diff_pp": 0.0,
+      "checkpoint_sha256": "9b328ba83df5d44b542e19faae68fd1493fee61e0c5b80e493c2f8a387ed592e",
+      "checkpoint_path": "publication_runs/recovered_checkpoints/clean/full_fusion_v2/seed_42/checkpoint.pth",
+      "imagefolder_class_order": [
+        "glioma",
+        "meningioma",
+        "notumor",
+        "pituitary"
+      ],
+      "tta": "horizontal flip (fusion_v2.tta_logits)",
+      "transform": "Compose(\n    Resize(size=(224, 224), interpolation=bilinear, max_size=None, antialias=True)\n    ToTensor()\n    Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])\n)",
+      "seconds": 348.7
+    },
+    "43": {
+      "reference_csv": "runs_v2_clean/fusion_v2_seed43/preds_test.csv",
+      "reference_sha256": "bb142d3d33528fdb0d5ad915af3840102f5d93411cdba1ae8540ff03a92c77b5",
+      "n_recorded_rows": 848,
+      "n_compared": 848,
+      "n_only_in_recomputed": 0,
+      "n_only_in_recorded": 0,
+      "n_filename_mismatch": 0,
+      "filename_mismatch_examples": [],
+      "n_true_label_mismatch": 0,
+      "true_label_mismatch_examples": [],
+      "n_pred_label_mismatch": 0,
+      "pred_label_mismatch_examples": [],
+      "max_abs_prob_diff": 3.926410675036962e-06,
+      "mean_abs_prob_diff": 2.743412889185378e-07,
+      "accuracy_recomputed": 0.9823113207547169,
+      "accuracy_recorded": 0.9823113207547169,
+      "accuracy_diff_pp": 0.0,
+      "checkpoint_sha256": "9f97b6aa0c9ec3f1124e593c8c29e11d31f4aef8bc08e20a40e7ed1f29e80f25",
+      "checkpoint_path": "publication_runs/recovered_checkpoints/clean/full_fusion_v2/seed_43/checkpoint.pth",
+      "imagefolder_class_order": [
+        "glioma",
+        "meningioma",
+        "notumor",
+        "pituitary"
+      ],
+      "tta": "horizontal flip (fusion_v2.tta_logits)",
+      "transform": "Compose(\n    Resize(size=(224, 224), interpolation=bilinear, max_size=None, antialias=True)\n    ToTensor()\n    Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])\n)",
+      "seconds": 347.8
+    },
+    "44": {
+      "reference_csv": "runs_v2_clean/fusion_v2_seed44/preds_test.csv",
+      "reference_sha256": "fe00252503bf19b210540d84ba788f3cd92be048c126692869d7646e4c169a40",
+      "n_recorded_rows": 848,
+      "n_compared": 848,
+      "n_only_in_recomputed": 0,
+      "n_only_in_recorded": 0,
+      "n_filename_mismatch": 0,
+      "filename_mismatch_examples": [],
+      "n_true_label_mismatch": 0,
+      "true_label_mismatch_examples": [],
+      "n_pred_label_mismatch": 0,
+      "pred_label_mismatch_examples": [],
+      "max_abs_prob_diff": 3.985546112084126e-06,
+      "mean_abs_prob_diff": 2.867813178176379e-07,
+      "accuracy_recomputed": 0.9834905660377359,
+      "accuracy_recorded": 0.9834905660377359,
+      "accuracy_diff_pp": 0.0,
+      "checkpoint_sha256": "4155a2b71df99a6159e1e4a5dbe635f4e9ea7852a6704d804dd1fb5d43aca434",
+      "checkpoint_path": "publication_runs/recovered_checkpoints/clean/full_fusion_v2/seed_44/checkpoint.pth",
+      "imagefolder_class_order": [
+        "glioma",
+        "meningioma",
+        "notumor",
+        "pituitary"
+      ],
+      "tta": "horizontal flip (fusion_v2.tta_logits)",
+      "transform": "Compose(\n    Resize(size=(224, 224), interpolation=bilinear, max_size=None, antialias=True)\n    ToTensor()\n    Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])\n)",
+      "seconds": 347.4
+    }
+  },
+  "acceptance_checks": {
+    "manifest_848_unique_filenames": true,
+    "no_ambiguous_source_filenames": true,
+    "every_scored_image_present_in_reference": true,
+    "all_seeds_zero_true_label_mismatch": true,
+    "all_seeds_zero_pred_label_mismatch": true,
+    "all_seeds_accuracy_diff_zero_pp": true,
+    "all_seeds_prob_diff_within_tolerance": true,
+    "expected_image_count_compared": true,
+    "class_order_matches_documented": true,
+    "reconstructed_848": true,
+    "no_content_duplicates": true,
+    "per_class_counts_match_manifest": true,
+    "all_seeds_covered": true,
+    "all_seeds_zero_filename_mismatch": true
+  },
+  "acceptance_status": "PASS",
+  "elapsed_seconds": 1066.2,
+  "floating_point_note": "Probability differences arise only from non-deterministic reduction order in CPU kernels between the original run and this one. They are bounded by 1e-04, far below any value that could change a predicted label, and every predicted label matched exactly."
+}

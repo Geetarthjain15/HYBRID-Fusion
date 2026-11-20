@@ -1,5 +1,6 @@
 # Python virtual environment
 env/
+env_win/
 venv/
 .venv/
 
@@ -29,6 +30,22 @@ __pycache__/
 *.pt
 *.pth.*
 *.pt.*
+
+# Generated experiment bundles and remote-run staging
+kaggle/
+publication_runs/
+*.zip
+
+# Streamlit and local credential files
+.streamlit/secrets.toml
+secrets.toml
+
+# Personal and local-only generated files
+publication_results/resume_update/
+checks_log.txt
+eval_output.txt
+grid_log.txt
+metrics_run_log.txt
 
 # Datasets
 dataset/

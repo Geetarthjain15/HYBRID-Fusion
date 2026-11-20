@@ -1,0 +1,218 @@
+{
+  "groups": [
+    {
+      "split": "dataset_clean",
+      "arch": "cnn",
+      "variant": "frozen",
+      "n_seeds": 3,
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "params_trainable": 1071108,
+      "acc_mean": 0.9194182389937108,
+      "acc_std": 0.0047658630711407786,
+      "f1_mean": 0.924671334817749,
+      "f1_std": 0.004269047894924269,
+      "recall_mean": {
+        "glioma": 0.8573388203017833,
+        "meningioma": 0.9283625730994153,
+        "notumor": 0.9597701149425287,
+        "pituitary": 0.9514687100893998
+      },
+      "recall_std": {
+        "glioma": 0.004751854067404306,
+        "meningioma": 0.00669967206864891,
+        "notumor": 0.00995431498602805,
+        "pituitary": 0.011060349984475554
+      },
+      "n_test": 848,
+      "extra_acc": {
+        "dataset_ood": {
+          "mean": 0.5891783567134269,
+          "std": 0.019117018064467868
+        }
+      }
+    },
+    {
+      "split": "dataset_clean",
+      "arch": "cnn",
+      "variant": "unfrozen",
+      "n_seeds": 3,
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "params_trainable": 4666496,
+      "acc_mean": 0.9870283018867925,
+      "acc_std": 0.002042512744774675,
+      "f1_mean": 0.9861880409186662,
+      "f1_std": 0.002268654410851168,
+      "recall_mean": {
+        "glioma": 0.9807956104252401,
+        "meningioma": 0.9853801169590644,
+        "notumor": 0.9798850574712644,
+        "pituitary": 0.9974457215836526
+      },
+      "recall_std": {
+        "glioma": 0.002375927033702153,
+        "meningioma": 0.0025322380227615245,
+        "notumor": 0.013168320962516772,
+        "pituitary": 0.0022120699968951364
+      },
+      "n_test": 848,
+      "extra_acc": {
+        "dataset_ood": {
+          "mean": 0.655310621242485,
+          "std": 0.03754507814668379
+        }
+      }
+    },
+    {
+      "split": "dataset_clean",
+      "arch": "fusion",
+      "variant": "frozen",
+      "n_seeds": 3,
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "params_trainable": 15640068,
+      "acc_mean": 0.9705188679245284,
+      "acc_std": 0.004251829334273591,
+      "f1_mean": 0.9700960802692937,
+      "f1_std": 0.004091856521899769,
+      "recall_mean": {
+        "glioma": 0.9739368998628257,
+        "meningioma": 0.9663742690058479,
+        "notumor": 0.9568965517241379,
+        "pituitary": 0.9770114942528737
+      },
+      "recall_std": {
+        "glioma": 0.002375927033702153,
+        "meningioma": 0.016604995163158748,
+        "notumor": 0.008620689655172431,
+        "pituitary": 1.3597399555105182e-16
+      },
+      "n_test": 848,
+      "extra_acc": {
+        "dataset_ood": {
+          "mean": 0.8002672010688042,
+          "std": 0.039082438146453145
+        }
+      }
+    },
+    {
+      "split": "dataset_clean",
+      "arch": "vit",
+      "variant": "frozen",
+      "n_seeds": 3,
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "params_trainable": 14572548,
+      "acc_mean": 0.9705188679245284,
+      "acc_std": 0.003119989753613919,
+      "f1_mean": 0.9703293897831332,
+      "f1_std": 0.0029146789152477395,
+      "recall_mean": {
+        "glioma": 0.9711934156378601,
+        "meningioma": 0.9678362573099415,
+        "notumor": 0.9540229885057471,
+        "pituitary": 0.979565772669221
+      },
+      "recall_std": {
+        "glioma": 0.010887865477632052,
+        "meningioma": 0.005064476045523049,
+        "notumor": 0.004977157493013994,
+        "pituitary": 0.005852587094451892
+      },
+      "n_test": 848,
+      "extra_acc": {
+        "dataset_ood": {
+          "mean": 0.7982631930527723,
+          "std": 0.01303889198125795
+        }
+      }
+    }
+  ],
+  "mcnemar_vs_fusion": [
+    {
+      "split": "dataset_clean",
+      "arm": "cnn/frozen",
+      "seed": 42,
+      "arm_only_right": 13,
+      "fusion_only_right": 58,
+      "p": 6.26942884485106e-08
+    },
+    {
+      "split": "dataset_clean",
+      "arm": "cnn/unfrozen",
+      "seed": 42,
+      "arm_only_right": 18,
+      "fusion_only_right": 3,
+      "p": 0.0014896392822265625
+    },
+    {
+      "split": "dataset_clean",
+      "arm": "cnn/frozen",
+      "seed": 43,
+      "arm_only_right": 16,
+      "fusion_only_right": 51,
+      "p": 2.1689238760717064e-05
+    },
+    {
+      "split": "dataset_clean",
+      "arm": "cnn/unfrozen",
+      "seed": 43,
+      "arm_only_right": 21,
+      "fusion_only_right": 4,
+      "p": 0.0009105205535888672
+    },
+    {
+      "split": "dataset_clean",
+      "arm": "cnn/frozen",
+      "seed": 44,
+      "arm_only_right": 8,
+      "fusion_only_right": 58,
+      "p": 1.7951476752580547e-10
+    },
+    {
+      "split": "dataset_clean",
+      "arm": "cnn/unfrozen",
+      "seed": 44,
+      "arm_only_right": 16,
+      "fusion_only_right": 6,
+      "p": 0.052478790283203125
+    },
+    {
+      "split": "dataset_clean",
+      "arm": "vit/frozen",
+      "seed": 42,
+      "arm_only_right": 7,
+      "fusion_only_right": 5,
+      "p": 0.7744140625
+    },
+    {
+      "split": "dataset_clean",
+      "arm": "vit/frozen",
+      "seed": 43,
+      "arm_only_right": 11,
+      "fusion_only_right": 9,
+      "p": 0.8238029479980469
+    },
+    {
+      "split": "dataset_clean",
+      "arm": "vit/frozen",
+      "seed": 44,
+      "arm_only_right": 7,
+      "fusion_only_right": 11,
+      "p": 0.480682373046875
+    }
+  ]
+}

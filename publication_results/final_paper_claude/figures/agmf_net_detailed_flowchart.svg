@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1560" viewBox="0 0 1800 1560">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#9aa8bc"/>
+    </marker>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#47b5d5"/>
+    </marker>
+    <marker id="arrowPurple" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#a98be8"/>
+    </marker>
+    <style>
+      .bg { fill:#0d121b; }
+      .frame { fill:#111824; stroke:#2a3546; stroke-width:2; }
+      .neutral { fill:#182130; stroke:#334258; stroke-width:2; }
+      .cnn { fill:#24231f; stroke:#e5a048; stroke-width:2.5; }
+      .vit { fill:#142c2e; stroke:#38c9b2; stroke-width:2.5; }
+      .fusion { fill:#282440; stroke:#9b7ce6; stroke-width:2.5; }
+      .train { fill:#1d2633; stroke:#72839b; stroke-width:2; stroke-dasharray:8 6; }
+      .infer { fill:#1b2830; stroke:#50a7c4; stroke-width:2; }
+      .explain { fill:#2a2021; stroke:#e97564; stroke-width:2; }
+      .title { font:700 34px Arial, sans-serif; fill:#f3f7fc; }
+      .subtitle { font:400 18px Arial, sans-serif; fill:#aebbd0; }
+      .head { font:700 22px Arial, sans-serif; fill:#f4f7fb; }
+      .body { font:400 17px Arial, sans-serif; fill:#c2ccdb; }
+      .small { font:400 15px Arial, sans-serif; fill:#91a2ba; }
+      .tag { font:700 14px Arial, sans-serif; fill:#f4f7fb; letter-spacing:.5px; }
+      .edge { fill:none; stroke:#9aa8bc; stroke-width:3; marker-end:url(#arrow); }
+      .edgeC { fill:none; stroke:#47b5d5; stroke-width:3; marker-end:url(#arrowBlue); }
+      .edgeV { fill:none; stroke:#a98be8; stroke-width:3; marker-end:url(#arrowPurple); }
+      .dash { fill:none; stroke:#72839b; stroke-width:2.5; stroke-dasharray:8 6; marker-end:url(#arrow); }
+      .branchLabel { font:700 17px Arial, sans-serif; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1800" height="1560"/>
+  <rect class="frame" x="26" y="26" width="1748" height="1460" rx="22"/>
+
+  <text class="title" x="70" y="82">AGMF-Net — Adaptive Gated Multi-scale CNN–Transformer Fusion</text>
+  <text class="subtitle" x="70" y="116">Verified FusionV2 forward path • four-class brain MRI image classification</text>
+
+  <!-- Input and preprocessing -->
+  <rect class="neutral" x="660" y="145" width="480" height="90" rx="14"/>
+  <text class="head" x="900" y="180" text-anchor="middle">MRI image input</text>
+  <text class="body" x="900" y="210" text-anchor="middle">JPG/PNG • RGB representation</text>
+
+  <path class="edge" d="M900 235 L900 270"/>
+  <rect class="neutral" x="600" y="270" width="600" height="116" rx="14"/>
+  <text class="head" x="900" y="305" text-anchor="middle">Shared preprocessing</text>
+  <text class="body" x="900" y="335" text-anchor="middle">Resize/crop to 224 × 224 × 3 • normalize mean = std = 0.5</text>
+  <text class="small" x="900" y="364" text-anchor="middle">Training augmentation: random resized crop, horizontal flip, rotation and colour jitter</text>
+
+  <!-- branch split -->
+  <path class="edgeC" d="M900 386 L900 418 L450 418 L450 455"/>
+  <path class="edgeV" d="M900 386 L900 418 L1350 418 L1350 455"/>
+  <text class="branchLabel" x="330" y="442" fill="#e5a048">LOCAL / MULTI-SCALE CNN PATH</text>
+  <text class="branchLabel" x="1220" y="442" fill="#38c9b2">GLOBAL TRANSFORMER PATH</text>
+
+  <!-- CNN path -->
+  <rect class="cnn" x="110" y="455" width="680" height="126" rx="15"/>
+  <text class="head" x="450" y="493" text-anchor="middle">EfficientNet-B0 feature extractor</text>
+  <text class="body" x="450" y="525" text-anchor="middle">Entire CNN backbone fine-tuned with discriminative learning rate</text>
+  <text class="small" x="450" y="554" text-anchor="middle">Spatial stages retained for the Grad-CAM++ CNN-path visualization</text>
+
+  <path class="edgeC" d="M450 581 L450 618"/>
+  <rect class="cnn" x="110" y="618" width="680" height="142" rx="15"/>
+  <text class="head" x="450" y="656" text-anchor="middle">Multi-scale CNN taps + global average pooling</text>
+  <text class="body" x="450" y="691" text-anchor="middle">Stage 3: 40-d  ⊕  Stage 5: 112-d  ⊕  Final stage: 1280-d</text>
+  <text class="body" x="450" y="725" text-anchor="middle">Concatenated CNN representation: 40 + 112 + 1280 = 1432-d</text>
+
+  <path class="edgeC" d="M450 760 L450 797"/>
+  <rect class="cnn" x="160" y="797" width="580" height="112" rx="15"/>
+  <text class="head" x="450" y="834" text-anchor="middle">CNN projection</text>
+  <text class="body" x="450" y="868" text-anchor="middle">Linear(1432 → 512) → LayerNorm → GELU</text>
+
+  <!-- ViT path -->
+  <rect class="vit" x="1010" y="455" width="680" height="126" rx="15"/>
+  <text class="head" x="1350" y="493" text-anchor="middle">Vision Transformer ViT-B/16</text>
+  <text class="body" x="1350" y="525" text-anchor="middle">google/vit-base-patch16-224 • entire ViT fine-tuned</text>
+  <text class="small" x="1350" y="554" text-anchor="middle">16 × 16 patches • 14 × 14 patch grid • 12 transformer encoder layers</text>
+
+  <path class="edgeV" d="M1350 581 L1350 618"/>
+  <rect class="vit" x="1010" y="618" width="680" height="142" rx="15"/>
+  <text class="head" x="1350" y="656" text-anchor="middle">Global transformer representation</text>
+  <text class="body" x="1350" y="691" text-anchor="middle">Final-layer [CLS] token</text>
+  <text class="body" x="1350" y="725" text-anchor="middle">ViT representation: 768-d</text>
+
+  <path class="edgeV" d="M1350 760 L1350 797"/>
+  <rect class="vit" x="1060" y="797" width="580" height="112" rx="15"/>
+  <text class="head" x="1350" y="834" text-anchor="middle">ViT projection</text>
+  <text class="body" x="1350" y="868" text-anchor="middle">Linear(768 → 512) → LayerNorm → GELU</text>
+
+  <!-- auxiliary heads -->
+  <path class="dash" d="M310 909 L310 950"/>
+  <path class="dash" d="M1490 909 L1490 950"/>
+  <rect class="train" x="120" y="950" width="380" height="96" rx="14"/>
+  <text class="head" x="310" y="985" text-anchor="middle">Auxiliary CNN head</text>
+  <text class="body" x="310" y="1017" text-anchor="middle">Linear(512 → 4) • training only</text>
+  <rect class="train" x="1300" y="950" width="380" height="96" rx="14"/>
+  <text class="head" x="1490" y="985" text-anchor="middle">Auxiliary ViT head</text>
+  <text class="body" x="1490" y="1017" text-anchor="middle">Linear(512 → 4) • training only</text>
+  <text class="small" x="900" y="1021" text-anchor="middle">Auxiliary branch losses encourage individually discriminative features</text>
+
+  <!-- gate -->
+  <path class="edgeC" d="M590 909 L590 930 L820 930 L820 1082"/>
+  <path class="edgeV" d="M1210 909 L1210 930 L980 930 L980 1082"/>
+  <rect class="fusion" x="610" y="1082" width="580" height="142" rx="16"/>
+  <text class="head" x="900" y="1120" text-anchor="middle">Learned, input-dependent adaptive gate</text>
+  <text class="body" x="900" y="1154" text-anchor="middle">Concat[c, v] 1024-d → Linear(1024 → 256) → GELU</text>
+  <text class="body" x="900" y="1185" text-anchor="middle">Linear(256 → 2) → softmax = [gCNN, gViT]</text>
+  <text class="small" x="900" y="1211" text-anchor="middle">gCNN + gViT = 1 • learned per image • not a fixed 0.55/0.45 weighting</text>
+
+  <path class="edge" d="M900 1224 L900 1260"/>
+  <rect class="fusion" x="540" y="1260" width="720" height="92" rx="15"/>
+  <text class="head" x="900" y="1295" text-anchor="middle">Gated feature fusion</text>
+  <text class="body" x="900" y="1327" text-anchor="middle">[2gCNN · c  ⊕  2gViT · v] → 1024-d fused vector</text>
+
+  <path class="edge" d="M900 1352 L900 1382"/>
+  <rect class="fusion" x="540" y="1382" width="720" height="86" rx="15"/>
+  <text class="head" x="900" y="1416" text-anchor="middle">Four-class classifier head</text>
+  <text class="body" x="900" y="1447" text-anchor="middle">LayerNorm(1024) → Dropout(0.2) → Linear(1024 → 4)</text>
+
+  <!-- outputs as bottom band -->
+  <rect class="infer" x="70" y="1500" width="1660" height="1" rx="0"/>
+  <text class="small" x="85" y="1532">Inference: EMA checkpoint + horizontal-flip TTA probability averaging • Softmax classes: glioma, meningioma, no-tumor, pituitary</text>
+  <text class="small" x="85" y="1554">Optional Grad-CAM++: final CNN spatial stage only; not a spatial explanation of the ViT pathway and not validated tumor localization.</text>
+
+  <!-- Legend -->
+  <rect x="1260" y="62" width="18" height="18" rx="4" fill="#24231f" stroke="#e5a048"/>
+  <text class="small" x="1288" y="77">CNN</text>
+  <rect x="1350" y="62" width="18" height="18" rx="4" fill="#142c2e" stroke="#38c9b2"/>
+  <text class="small" x="1378" y="77">ViT</text>
+  <rect x="1434" y="62" width="18" height="18" rx="4" fill="#282440" stroke="#9b7ce6"/>
+  <text class="small" x="1462" y="77">Fusion</text>
+  <rect x="1545" y="62" width="18" height="18" rx="4" fill="#1d2633" stroke="#72839b" stroke-dasharray="4 3"/>
+  <text class="small" x="1573" y="77">Training only</text>
+</svg>

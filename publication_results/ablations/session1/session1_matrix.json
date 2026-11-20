@@ -1,0 +1,156 @@
+{
+  "session": "session_1",
+  "split": "clean",
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "generated_utc": "2026-09-23T22:41:25.164587+00:00",
+  "approved_variants": [
+    "no_gate",
+    "no_multiscale",
+    "no_auxiliary_loss"
+  ],
+  "out_of_scope": {
+    "no_ema": "Session 2 - training-time ablation, pre-EMA weights were never saved",
+    "cnn_branch_only": "Session 2 - branch-only control, needs training",
+    "vit_branch_only": "Session 2 - branch-only control, needs training",
+    "no_tta": "evaluation-only, uses the recovered checkpoints; not a training cell",
+    "full_fusion_v2": "reused - predictions and verified checkpoints already exist"
+  },
+  "n_cells": 9,
+  "estimated_minutes_total": 405,
+  "estimated_gpu_hours": 6.75,
+  "preflight_expected": {
+    "n_pooled": 7023,
+    "n_clusters": 5648,
+    "n_redundant_dropped": 1375,
+    "n_train": 4800,
+    "n_test": 848,
+    "hamming_threshold": 8,
+    "split_seed": 42,
+    "class_counts": {
+      "Training": {
+        "glioma": 1377,
+        "meningioma": 1290,
+        "notumor": 655,
+        "pituitary": 1478
+      },
+      "Testing": {
+        "glioma": 243,
+        "meningioma": 228,
+        "notumor": 116,
+        "pituitary": 261
+      }
+    },
+    "split_manifest_sha256": "a02bcb62847ce1b9146a3e769f41f88ec1afce5a46d03fb5aaffb0ef43a0e6d2",
+    "split_report_sha256": "8487d31c0f0b06a4afaf493f6a5597e8f8e45feafe7679b77a745b070e34abc0"
+  },
+  "required_artifacts": [
+    "checkpoint.pth",
+    "metrics.json",
+    "history.json",
+    "preds_test.csv",
+    "preds_dataset_ood.csv",
+    "config.json",
+    "environment.json",
+    "run.log"
+  ],
+  "gate_artifacts_where_applicable": [
+    "gates_test.csv",
+    "gates_dataset_ood.csv"
+  ],
+  "overfitting_surveillance": {
+    "reference": {
+      "source": "runs_v2_clean/fusion_v2_seed42/history.json",
+      "max_train_val_gap_pp": 1.62,
+      "best_epoch": 8,
+      "epochs_run": 12,
+      "early_stopping_fired": true
+    },
+    "flag_threshold_gap_pp": 5.0,
+    "policy": "measured and flagged, never auto-corrected; the recipe is unchanged so the ablation stays controlled"
+  },
+  "upload": {
+    "zip": "fusionv2_code_session1_v1.zip",
+    "sha256": "90ceaa12e28fdfe94e8f38d4352e6a55994422199bade333b46272aa195c708c",
+    "n_files": 13
+  },
+  "training_launched": false,
+  "kaggle_upload_performed": false,
+  "cells": [
+    {
+      "variant": "no_gate",
+      "seed": 42,
+      "split": "clean",
+      "output_dir": "publication_runs/session_1/clean/no_gate/seed_42",
+      "estimated_minutes": 45,
+      "gate_csvs_expected": false
+    },
+    {
+      "variant": "no_gate",
+      "seed": 43,
+      "split": "clean",
+      "output_dir": "publication_runs/session_1/clean/no_gate/seed_43",
+      "estimated_minutes": 45,
+      "gate_csvs_expected": false
+    },
+    {
+      "variant": "no_gate",
+      "seed": 44,
+      "split": "clean",
+      "output_dir": "publication_runs/session_1/clean/no_gate/seed_44",
+      "estimated_minutes": 45,
+      "gate_csvs_expected": false
+    },
+    {
+      "variant": "no_multiscale",
+      "seed": 42,
+      "split": "clean",
+      "output_dir": "publication_runs/session_1/clean/no_multiscale/seed_42",
+      "estimated_minutes": 45,
+      "gate_csvs_expected": true
+    },
+    {
+      "variant": "no_multiscale",
+      "seed": 43,
+      "split": "clean",
+      "output_dir": "publication_runs/session_1/clean/no_multiscale/seed_43",
+      "estimated_minutes": 45,
+      "gate_csvs_expected": true
+    },
+    {
+      "variant": "no_multiscale",
+      "seed": 44,
+      "split": "clean",
+      "output_dir": "publication_runs/session_1/clean/no_multiscale/seed_44",
+      "estimated_minutes": 45,
+      "gate_csvs_expected": true
+    },
+    {
+      "variant": "no_auxiliary_loss",
+      "seed": 42,
+      "split": "clean",
+      "output_dir": "publication_runs/session_1/clean/no_auxiliary_loss/seed_42",
+      "estimated_minutes": 45,
+      "gate_csvs_expected": true
+    },
+    {
+      "variant": "no_auxiliary_loss",
+      "seed": 43,
+      "split": "clean",
+      "output_dir": "publication_runs/session_1/clean/no_auxiliary_loss/seed_43",
+      "estimated_minutes": 45,
+      "gate_csvs_expected": true
+    },
+    {
+      "variant": "no_auxiliary_loss",
+      "seed": 44,
+      "split": "clean",
+      "output_dir": "publication_runs/session_1/clean/no_auxiliary_loss/seed_44",
+      "estimated_minutes": 45,
+      "gate_csvs_expected": true
+    }
+  ]
+}

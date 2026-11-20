@@ -1,0 +1,656 @@
+[
+  {
+    "section": "SCOPE",
+    "req": "9 training cells exactly as specified",
+    "ok": true,
+    "detail": "[('no_ema', 42), ('no_ema', 43), ('no_ema', 44), ('cnn_branch_only', 42), ('cnn_branch_only', 43), ('cnn_branch_only', 44), ('vit_branch_only', 42), ('vit_branch_only', 43), ('vit_branch_only', 44)]"
+  },
+  {
+    "section": "SCOPE",
+    "req": "3 no_tta evaluation cells",
+    "ok": true,
+    "detail": "[('no_tta', 42), ('no_tta', 43), ('no_tta', 44)]"
+  },
+  {
+    "section": "SCOPE",
+    "req": "12 cells total",
+    "ok": true,
+    "detail": "12"
+  },
+  {
+    "section": "EXCLUSIONS",
+    "req": "no_gate refused",
+    "ok": true,
+    "detail": "out of scope for session_2: Session 1 - already trained ther"
+  },
+  {
+    "section": "EXCLUSIONS",
+    "req": "no_multiscale refused",
+    "ok": true,
+    "detail": "out of scope for session_2: Session 1 - already trained ther"
+  },
+  {
+    "section": "EXCLUSIONS",
+    "req": "no_auxiliary_loss refused",
+    "ok": true,
+    "detail": "out of scope for session_2: Session 1 - already trained ther"
+  },
+  {
+    "section": "EXCLUSIONS",
+    "req": "full_fusion_v2 refused",
+    "ok": true,
+    "detail": "out of scope for session_2: reused - predictions and verifie"
+  },
+  {
+    "section": "EXCLUSIONS",
+    "req": "no_tta refused for TRAINING",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "EXCLUSIONS",
+    "req": "no_tta allowed for EVALUATION",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "EXCLUSIONS",
+    "req": "no fixed gate constants anywhere",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "EXCLUSIONS",
+    "req": "original split not offered",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "SCIENTIFIC",
+    "req": "seeds 42/43/44",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "SCIENTIFIC",
+    "req": "lr 1e-4",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "SCIENTIFIC",
+    "req": "backbone_lr_mult 0.1",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "SCIENTIFIC",
+    "req": "batch 16",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "SCIENTIFIC",
+    "req": "max epochs 15",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "SCIENTIFIC",
+    "req": "label smoothing 0.1",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "SCIENTIFIC",
+    "req": "weight decay 0.05",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "SCIENTIFIC",
+    "req": "4080 model-train images",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "SCIENTIFIC",
+    "req": "720 validation images",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "SCIENTIFIC",
+    "req": "848 clean-test images",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "SCIENTIFIC",
+    "req": "no_ema changes only EMA",
+    "ok": true,
+    "detail": "{'ema'}"
+  },
+  {
+    "section": "SCIENTIFIC",
+    "req": "no_tta changes only TTA",
+    "ok": true,
+    "detail": "{'tta'}"
+  },
+  {
+    "section": "SCIENTIFIC",
+    "req": "no_ema uses RAW weights (ema None -> model)",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "SCIENTIFIC",
+    "req": "external eval only after selection (training path)",
+    "ok": true,
+    "detail": "score@14335 selection@13844"
+  },
+  {
+    "section": "SCIENTIFIC",
+    "req": "no_tta does not train",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "CHECKPOINTS",
+    "req": "manifest field 'relative_path'",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "CHECKPOINTS",
+    "req": "manifest field 'seed'",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "CHECKPOINTS",
+    "req": "manifest field 'bytes'",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "CHECKPOINTS",
+    "req": "manifest field 'sha256'",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "CHECKPOINTS",
+    "req": "manifest field 'architecture'",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "CHECKPOINTS",
+    "req": "manifest field 'verification_status'",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "CHECKPOINTS",
+    "req": "manifest field 'expected_clean_test_accuracy'",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "CHECKPOINTS",
+    "req": "3 checkpoints",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "CHECKPOINTS",
+    "req": "digests match the real files",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "CHECKPOINTS",
+    "req": "all sha256 are full 64-char",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "CHECKPOINTS",
+    "req": "separate archive, not in code zip",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "CHECKPOINTS",
+    "req": "notebook verifies hashes before no_tta",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "CHECKPOINTS",
+    "req": "driver verifies hashes",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "CHECKPOINTS",
+    "req": "trainer re-checks at load",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "CHECKPOINTS",
+    "req": "mismatch raises and stops",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "DATASET",
+    "req": "expects n_pooled == 7023",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "DATASET",
+    "req": "expects n_clusters == 5648",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "DATASET",
+    "req": "expects n_train == 4800",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "DATASET",
+    "req": "expects n_test == 848",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "DATASET",
+    "req": "expects n_model_train == 4080",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "DATASET",
+    "req": "expects n_val == 720",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "DATASET",
+    "req": "class counts pinned",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "DATASET",
+    "req": "manifest sha pinned",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "DATASET",
+    "req": "driver verifies carve-out",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "DATASET",
+    "req": "stops on mismatch",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "IMPLEMENTATION",
+    "req": "discovers /kaggle/input paths",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "IMPLEMENTATION",
+    "req": "verifies CUDA and prints GPU",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "IMPLEMENTATION",
+    "req": "verifies code package sha256",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "IMPLEMENTATION",
+    "req": "rebuilds + validates dataset_clean",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "IMPLEMENTATION",
+    "req": "runs 17 Phase 3 tests",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "IMPLEMENTATION",
+    "req": "isolated smoke test",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "IMPLEMENTATION",
+    "req": "smoke not inside publication tree",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "IMPLEMENTATION",
+    "req": "trains exactly 9",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "IMPLEMENTATION",
+    "req": "evaluates exactly 3",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "IMPLEMENTATION",
+    "req": "prints per-epoch progress",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "IMPLEMENTATION",
+    "req": "prints per-cell progress",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "IMPLEMENTATION",
+    "req": "halts on failure",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "IMPLEMENTATION",
+    "req": "safe resume",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "IMPLEMENTATION",
+    "req": "skip only after validation",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "IMPLEMENTATION",
+    "req": "records environment",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "IMPLEMENTATION",
+    "req": "writes only under session_2",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "IMPLEMENTATION",
+    "req": "refuses writes outside publication_",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "ARTIFACTS",
+    "req": "training requires checkpoint.pth",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "ARTIFACTS",
+    "req": "training requires metrics.json",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "ARTIFACTS",
+    "req": "training requires history.json",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "ARTIFACTS",
+    "req": "training requires preds_test.csv",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "ARTIFACTS",
+    "req": "training requires preds_dataset_ood.csv",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "ARTIFACTS",
+    "req": "training requires config.json",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "ARTIFACTS",
+    "req": "training requires environment.json",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "ARTIFACTS",
+    "req": "training requires run.log",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "ARTIFACTS",
+    "req": "eval requires metrics.json",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "ARTIFACTS",
+    "req": "eval requires preds_test.csv",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "ARTIFACTS",
+    "req": "eval requires preds_dataset_ood.csv",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "ARTIFACTS",
+    "req": "eval requires config.json",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "ARTIFACTS",
+    "req": "eval requires environment.json",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "ARTIFACTS",
+    "req": "eval requires run.log",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "ARTIFACTS",
+    "req": "eval requires source_checkpoint_sha256.txt",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "ARTIFACTS",
+    "req": "eval FORBIDS checkpoint.pth",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "ARTIFACTS",
+    "req": "validator enforces the ban",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "ARTIFACTS",
+    "req": "gate CSVs only where a gate runs",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "PACKAGING",
+    "req": "SESSION2_PLAN.md",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "PACKAGING",
+    "req": "session2_matrix.json",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "PACKAGING",
+    "req": "UPLOAD_CONTENTS.md",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "PACKAGING",
+    "req": "CHECKPOINT_UPLOAD_CONTENTS.md",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "PACKAGING",
+    "req": "SESSION2_KAGGLE_STEPS.md",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "PACKAGING",
+    "req": "TEST_REPORT.md",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "PACKAGING",
+    "req": "notebook",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "PACKAGING",
+    "req": "code zip",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "PACKAGING",
+    "req": "code zip sha file",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "PACKAGING",
+    "req": "ckpt zip sha file",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "PACKAGING",
+    "req": "per-checkpoint manifest",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "ZIP EXCLUSIONS",
+    "req": "no checkpoints/data/logs in code zip",
+    "ok": true,
+    "detail": "[]"
+  },
+  {
+    "section": "ZIP EXCLUSIONS",
+    "req": "no virtualenv",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "ZIP EXCLUSIONS",
+    "req": "no run outputs",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "ZIP EXCLUSIONS",
+    "req": "no app assets",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "ZIP EXCLUSIONS",
+    "req": "no session 1 archives",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "FINAL ARCHIVE",
+    "req": "named fusionv2_session2_results.zip",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "FINAL ARCHIVE",
+    "req": "run manifest with per-file sha256",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "STATE",
+    "req": "no training launched",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "STATE",
+    "req": "matrix records training_launched False",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "STATE",
+    "req": "matrix records no upload",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "STATE",
+    "req": "src/fusion_v2.py untouched",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "section": "STATE",
+    "req": "src/train_ablation.py untouched",
+    "ok": true,
+    "detail": ""
+  }
+]

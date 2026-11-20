@@ -1,0 +1,51 @@
+{
+  "run": "fusion_seed43",
+  "arch": "fusion",
+  "seed": 43,
+  "warm_start": null,
+  "device": "cuda",
+  "unfreeze_all_cnn": false,
+  "vit_source": "google/vit-base-patch16-224",
+  "train_dir": "/kaggle/input/datasets/geetarthjain/brain-tumor-mri-data/dataset/Training",
+  "test_dir": "/kaggle/input/datasets/geetarthjain/brain-tumor-mri-data/dataset/Testing",
+  "n_train": 5076,
+  "n_val": 895,
+  "n_test": 1052,
+  "params_total": 90861444,
+  "params_trainable": 15640068,
+  "epochs": 15,
+  "batch_size": 16,
+  "lr": 0.0001,
+  "weight_decay": 0.05,
+  "label_smoothing": 0.1,
+  "seeding": {
+    "seed": 43,
+    "deterministic": false,
+    "cudnn_deterministic": false,
+    "cudnn_benchmark": true
+  },
+  "env": {
+    "python": "3.12.13",
+    "platform": "Linux-6.12.90+-x86_64-with-glibc2.35",
+    "torch": "2.10.0+cu128",
+    "cuda_available": true,
+    "cuda_device": "Tesla T4",
+    "cudnn": 91002,
+    "transformers": "4.57.6",
+    "torchvision": "0.25.0+cu128"
+  },
+  "best_val_acc": 0.9910614525139665,
+  "test_acc": 0.9914448669201521,
+  "per_class_test_acc": {
+    "glioma": 0.9958847736625515,
+    "meningioma": 0.9878048780487805,
+    "notumor": 0.9966666666666667,
+    "pituitary": 0.9847908745247148
+  },
+  "final_train_acc": 0.996059889676911,
+  "epochs_run": 15,
+  "total_minutes": 25.1,
+  "extra_eval_acc": {
+    "dataset_ood": 0.8016032064128257
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "publication_results/explainability/x5_faithfulness/x5_faithfulness_smoke.json": "5049b7447503c809ea9d2b9df42bcc787aa8ff2f456068d1fd7bba2da240a76e",
+  "publication_results/explainability/x5_faithfulness/X5_FAITHFULNESS_REPORT_smoke.md": "231b73fc8c3d5ef960c62dbdde220656f7c3a8c369a9b27bfc5438b7826c4c17",
+  "publication_results/explainability/x5_faithfulness/per_image_curves_smoke.csv": "0d5dc31eedcb3c0c7c8fff54720db49a5d43c7bdc50c7c3e6a664753014e3eef",
+  "publication_results/explainability/x5_faithfulness/bootstrap_effects_smoke.csv": "c729be740812a7bf49b1870b51b46fc1ab74af970ba77e27d0dd537f410bfd42",
+  "publication_results/explainability/x5_faithfulness/stability_smoke.csv": "3d88df3f892fecb41f4d18532418737c7532fb894755c85d0623ac9cca8ddf91"
+}

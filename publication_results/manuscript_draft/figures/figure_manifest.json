@@ -1,0 +1,103 @@
+{
+  "purpose": "AGMF-Net manuscript assets",
+  "source_model": "FusionV2",
+  "files": [
+    {
+      "file": "figure_1_agmf_net_architecture.pdf",
+      "bytes": 39554,
+      "sha256": "947a71e12599e2f891988ff6a57a7a64e5cdc9511cee00d5d07ee0ee5da9b48a"
+    },
+    {
+      "file": "figure_1_agmf_net_architecture.png",
+      "bytes": 263083,
+      "sha256": "92d1b0700d21d4de2b07922e3f785610a13e5e80f2e4b811f19eb6eb3ed0b0b7"
+    },
+    {
+      "file": "figure_2_ablation_accuracy.pdf",
+      "bytes": 23157,
+      "sha256": "94e732e7ac72ae1101482a2c197eb712abaf4d524ca9b07158362f918b707b7f"
+    },
+    {
+      "file": "figure_2_ablation_accuracy.png",
+      "bytes": 117228,
+      "sha256": "e1bcbe8dc9752c92779460088e57cbf8e85c71ea129f63e35b9f78edb0599cff"
+    },
+    {
+      "file": "figure_3_clean_confusion.pdf",
+      "bytes": 17234,
+      "sha256": "5f5ecd280bdbb84b8fd840d966eadbcc94171e4a4d022b04b1b7163918c83170"
+    },
+    {
+      "file": "figure_3_clean_confusion.png",
+      "bytes": 83315,
+      "sha256": "915c96c1452409f8e1f1bda1bee757001ea16a5bdbc5f013a04564ed0df82cae"
+    },
+    {
+      "file": "figure_4_clean_reliability.pdf",
+      "bytes": 19160,
+      "sha256": "9096df5ca68ef271b157170a5a012ec123e85c115c7779cbf3963d5e75da9956"
+    },
+    {
+      "file": "figure_4_clean_reliability.png",
+      "bytes": 83901,
+      "sha256": "e465d1b852e50f0939bffc9e229d58b5c26a9b96a02c0e4515207623dc3abfee"
+    },
+    {
+      "file": "figure_5_gate_mass.pdf",
+      "bytes": 17676,
+      "sha256": "e8666e88e03d6d315111db013ea527a4c5014cc18bf141909ef6d72a874b0606"
+    },
+    {
+      "file": "figure_5_gate_mass.png",
+      "bytes": 97495,
+      "sha256": "4738ef534425980dddaefb04f435defa6617c2e08786cf5a5e28c0d85d37db36"
+    },
+    {
+      "file": "figure_6_gradcam_examples.pdf",
+      "bytes": 388755,
+      "sha256": "302f6c2dea4741c68f28271c51d845e1f3e0853b530413593aed481a2e5f100a"
+    },
+    {
+      "file": "figure_6_gradcam_examples.png",
+      "bytes": 714815,
+      "sha256": "ec6b08309c93eff7cb8c2e477d5eaae5093a0759cb9b85cb0a8918b1f91dd8f3"
+    },
+    {
+      "file": "figure_7_cross_source_confusion.pdf",
+      "bytes": 17643,
+      "sha256": "2c6c7fdf19eef861b34cf11fdb9c61fec4d801676c733ba1e66e53b4a814531b"
+    },
+    {
+      "file": "figure_7_cross_source_confusion.png",
+      "bytes": 89808,
+      "sha256": "f38b115ea11f5385b456ab9b64d47068dc9fb73325c28eb046c91109e3315eaf"
+    }
+  ],
+  "gradcam_examples": [
+    {
+      "class": "glioma",
+      "filename": "glioma_00000.jpg",
+      "predicted": "glioma",
+      "checkpoint_sha256": "9b328ba83df5d44b542e19faae68fd1493fee61e0c5b80e493c2f8a387ed592e"
+    },
+    {
+      "class": "meningioma",
+      "filename": "meningioma_00314.jpg",
+      "predicted": "meningioma",
+      "checkpoint_sha256": "9b328ba83df5d44b542e19faae68fd1493fee61e0c5b80e493c2f8a387ed592e"
+    },
+    {
+      "class": "notumor",
+      "filename": "notumor_00761.jpg",
+      "predicted": "notumor",
+      "checkpoint_sha256": "9b328ba83df5d44b542e19faae68fd1493fee61e0c5b80e493c2f8a387ed592e"
+    },
+    {
+      "class": "pituitary",
+      "filename": "pituitary_01016.jpg",
+      "predicted": "pituitary",
+      "checkpoint_sha256": "9b328ba83df5d44b542e19faae68fd1493fee61e0c5b80e493c2f8a387ed592e"
+    }
+  ],
+  "warning": "Grad-CAM++ examples are qualitative CNN-path visualizations without localization ground truth."
+}

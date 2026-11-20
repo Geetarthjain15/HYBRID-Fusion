@@ -1,0 +1,17 @@
+split          arch    variant   seeds  trainable              acc         macro-F1             recall (gl/me/no/pi)
+--------------------------------------------------------------------------------------------------------------------
+dataset        cnn     frozen        3  1,071,108   92.36 +- 1.04    92.13 +- 1.07               91.6/81.2/98.7/96.3
+dataset        cnn     unfrozen      3  4,666,496   99.46 +- 0.05    99.46 +- 0.06               99.6/98.9/99.7/99.6
+dataset        fusion  frozen        3 15,640,068   98.89 +- 0.44    98.86 +- 0.45               99.3/98.2/99.7/98.2
+dataset        vit     frozen        3 14,572,548   98.70 +- 0.20    98.66 +- 0.21               98.5/98.5/99.7/98.0
+
+Paired McNemar vs fusion (same split, same seed):
+  dataset        cnn/frozen     seed 42   arm-only-right   2  fusion-only-right  61  p=4.37e-16
+  dataset        cnn/unfrozen   seed 42   arm-only-right   4  fusion-only-right   1  p=3.75e-01
+  dataset        cnn/frozen     seed 43   arm-only-right   5  fusion-only-right  80  p=1.81e-18
+  dataset        cnn/unfrozen   seed 43   arm-only-right   4  fusion-only-right   0  p=1.25e-01
+  dataset        cnn/frozen     seed 44   arm-only-right   9  fusion-only-right  81  p=1.28e-15
+  dataset        cnn/unfrozen   seed 44   arm-only-right  13  fusion-only-right   2  p=7.39e-03
+  dataset        vit/frozen     seed 42   arm-only-right   3  fusion-only-right   7  p=3.44e-01
+  dataset        vit/frozen     seed 43   arm-only-right   1  fusion-only-right   4  p=3.75e-01
+  dataset        vit/frozen     seed 44   arm-only-right   8  fusion-only-right   7  p=1.00e+00

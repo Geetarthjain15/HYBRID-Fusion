@@ -1,0 +1,46 @@
+{
+  "runs": "runs_v2_clean",
+  "subset": "results/cross_source_disjoint_manifest.txt",
+  "evalsets": {
+    "dataset_ood": {
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "arms": {
+        "fusion_v2": {
+          "acc_mean": 0.6952636282394996,
+          "n_seeds": 3,
+          "acc_std": 0.019761701865501337,
+          "acc_per_seed": [
+            0.710455764075067,
+            0.6729222520107239,
+            0.7024128686327078
+          ]
+        }
+      },
+      "test1_oracle": {},
+      "test3_equivalence": {}
+    }
+  },
+  "test2_gate_mass": {
+    "files": {
+      "gates_dataset_ood.csv": {
+        "n": 499,
+        "gate_cnn_mean": 0.16185480961923848,
+        "gate_cnn_std": 0.06576604363859495,
+        "gate_vit_mean": 0.8381451903807615,
+        "frac_images_cnn_dominant": 0.0,
+        "per_class_gate_cnn": {
+          "glioma": 0.15382555862068964,
+          "meningioma": 0.11395939024390243,
+          "notumor": 0.14897738260869567,
+          "pituitary": 0.23544344827586206
+        }
+      }
+    },
+    "gate_cnn_overall": 0.16185480961923848,
+    "verdict": "BOTH BRANCHES USED - gate mass is shared, the fusion is genuinely mixing"
+  }
+}

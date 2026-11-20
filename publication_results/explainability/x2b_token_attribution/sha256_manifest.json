@@ -1,0 +1,9 @@
+{
+  "publication_results/explainability/x2b_token_attribution/x2b_neutrality.json": "d1449ba2b0206ac31ccaa8bfe56cb0f4a2e0629d11ec7d63bdf5dec507d2fc4f",
+  "publication_results/explainability/x2b_token_attribution/X2B_NEUTRALITY_REPORT.md": "6fe06bd699dddbe67a4593455221a15ff86895e8b5694085fc76d79c3c4f1af4",
+  "publication_results/explainability/x2b_token_attribution/per_seed_neutrality.csv": "06090f6d2e875a94b05c3756646038f61d8a2b88114286746ff89ea77ca807fb",
+  "publication_results/explainability/x2b_token_attribution/per_image_neutrality.csv": "3c5e5012f3235a1a354bc034f42f18ff5d69b0df0313f9c5c6d2772cb975c9d1",
+  "publication_results/explainability/x2b_token_attribution/token_maps_seed42.npz": "79bfebca9fc9fa7280481bf2a26a75ceb7cf64d06911aaac19beb9d39dc16aa9",
+  "publication_results/explainability/x2b_token_attribution/token_maps_seed43.npz": "80848e0093fee2c5b1378802e783c35d5e26f1f7601a86a780721e6b9db522b8",
+  "publication_results/explainability/x2b_token_attribution/token_maps_seed44.npz": "4665b7ba4bde8e1500cc457985dc6fa9de400d3059179f8413b7db8db1b27656"
+}

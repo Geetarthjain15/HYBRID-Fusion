@@ -1,0 +1,17 @@
+filename,true_label,pred_class,alt_class,cnn_shape,vit_shape,cnn_finite,vit_finite,cnn_nonconstant,vit_nonconstant,cnn_target_sensitivity_maxabs,vit_target_sensitivity_maxabs,gradcam_equivalence_max_abs_diff
+glioma_00040.jpg,glioma,glioma,pituitary,7x7,14x14,True,True,True,True,0.004802613519132137,0.08601848036050797,0.0
+glioma_00206.jpg,glioma,glioma,notumor,7x7,14x14,True,True,True,True,0.0003718488151207566,0.10174691677093506,0.0
+glioma_02123.jpg,glioma,glioma,pituitary,7x7,14x14,True,True,True,True,0.00374089227989316,0.11968483775854111,0.0
+glioma_02252.jpg,glioma,glioma,notumor,7x7,14x14,True,True,True,True,0.0014925918076187372,0.043379805982112885,0.0
+meningioma_02653.jpg,meningioma,meningioma,pituitary,7x7,14x14,True,True,True,True,0.03162846714258194,0.07850199192762375,0.0
+meningioma_02842.jpg,meningioma,meningioma,pituitary,7x7,14x14,True,True,True,True,0.00777098536491394,0.30662813782691956,0.0
+meningioma_02916.jpg,meningioma,meningioma,notumor,7x7,14x14,True,True,True,True,0.008575327694416046,0.09459620714187622,0.0
+meningioma_02968.jpg,meningioma,meningioma,glioma,7x7,14x14,True,True,True,True,0.03933679684996605,0.21617761254310608,0.0
+notumor_03996.jpg,notumor,notumor,pituitary,7x7,14x14,True,True,True,True,0.002088641980662942,0.06086352467536926,0.0
+notumor_04768.jpg,notumor,notumor,pituitary,7x7,14x14,True,True,True,True,0.0001635568041820079,0.12279246747493744,0.0
+notumor_04883.jpg,notumor,notumor,meningioma,7x7,14x14,True,True,True,True,0.0005261502228677273,0.08939400315284729,0.0
+notumor_05520.jpg,notumor,notumor,meningioma,7x7,14x14,True,True,True,True,0.0018501487793400884,0.069257453083992,0.0
+pituitary_01084.jpg,pituitary,pituitary,notumor,7x7,14x14,True,True,True,True,0.00036062742583453655,0.059728674590587616,0.0
+pituitary_01086.jpg,pituitary,pituitary,notumor,7x7,14x14,True,True,True,True,0.0004210523911751807,0.1564140021800995,0.0
+pituitary_01252.jpg,pituitary,pituitary,glioma,7x7,14x14,True,True,True,True,0.008324106223881245,0.05427783727645874,0.0
+pituitary_06707.jpg,pituitary,pituitary,notumor,7x7,14x14,True,True,True,True,0.0023843389935791492,0.07523825019598007,0.0

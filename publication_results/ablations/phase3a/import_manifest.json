@@ -1,0 +1,1099 @@
+{
+  "generated_utc": "2026-09-24T14:18:06.975287+00:00",
+  "archives": {
+    "session_1": {
+      "sidecar": "fusionv2_session1_results.zip.sha256.txt",
+      "recorded_sha256": "a23a74908e41c7c6a7fab8f5f9ab887824f6ffe1a3e82e8be9db6dfcbd18bff9",
+      "named_file": "fusionv2_session1_results.zip",
+      "raw": "a23a74908e41c7c6a7fab8f5f9ab887824f6ffe1a3e82e8be9db6dfcbd18bff9  fusionv2_session1_results.zip",
+      "archive": "fusionv2_session1_results.zip",
+      "bytes": 3049019829,
+      "computed_sha256": "a23a74908e41c7c6a7fab8f5f9ab887824f6ffe1a3e82e8be9db6dfcbd18bff9",
+      "match": true
+    },
+    "session_2": {
+      "sidecar": "fusionv2_session2_results.zip.sha256.txt",
+      "recorded_sha256": "d3ce1a5788bb6861591bab07e8738fb29b9ef12e69e24e8688b51b00c0a49d10",
+      "named_file": "fusionv2_session2_results.zip",
+      "raw": "d3ce1a5788bb6861591bab07e8738fb29b9ef12e69e24e8688b51b00c0a49d10  fusionv2_session2_results.zip",
+      "archive": "fusionv2_session2_results.zip",
+      "bytes": 2030691507,
+      "computed_sha256": "d3ce1a5788bb6861591bab07e8738fb29b9ef12e69e24e8688b51b00c0a49d10",
+      "match": true
+    }
+  },
+  "imports": [
+    {
+      "action": "imported",
+      "destination": "D:\\Research Model\\Brain_Tumor_Detection_ViT2\\publication_runs/ablations/clean\\no_auxiliary_loss\\seed_42",
+      "files": {
+        "checkpoint.pth": {
+          "bytes": 365236755,
+          "sha256": "0141e73b26c2a4242a1e8d9d017dcc298c5f4cfd382d2fcd0c493681309ffe2a"
+        },
+        "config.json": {
+          "bytes": 2369,
+          "sha256": "aa8fb54ed21b0e0e1be623865d845e128d2210ba3e939e63565e107f155aa6a6"
+        },
+        "environment.json": {
+          "bytes": 240,
+          "sha256": "ae71e7d4d8c9914f1ed93673c26e8e4dcdf8ded6090a69facda50092035ca344"
+        },
+        "gates_dataset_ood.csv": {
+          "bytes": 40955,
+          "sha256": "9ef40710efd5a1b89d5345ae1983d13f1784cdbc72fcc36f7846933f41337db6"
+        },
+        "gates_test.csv": {
+          "bytes": 40125,
+          "sha256": "af199632109107edead708be3945c115eed1a67210ca09e7b2b50bb658385ace"
+        },
+        "history.json": {
+          "bytes": 2504,
+          "sha256": "c37b5478ab25e4f9c4136ebe3b676cb71475f1b98f8c8927e8bc98ffc4998f8a"
+        },
+        "metrics.json": {
+          "bytes": 3178,
+          "sha256": "aa4b17e983b76b86f5c740100e7ac09b6b546724bb1e3759e2204e11116ba0c4"
+        },
+        "preds_dataset_ood.csv": {
+          "bytes": 54213,
+          "sha256": "aa89bd686c4e9a797c7247537613fb00ac77f996b211a111147117ff9de0c3d2"
+        },
+        "preds_test.csv": {
+          "bytes": 63175,
+          "sha256": "ebf796f0a22b54f6a375ed1b9d029e57977f122bdf6be6d0a1f258845ef38d04"
+        },
+        "run.log": {
+          "bytes": 4162,
+          "sha256": "a66a4c1f99f5042902cc4eb288bcf7ea41b8d44ac6b7037f37783f32eb865e79"
+        }
+      },
+      "n_files": 10,
+      "variant": "no_auxiliary_loss",
+      "seed": 42,
+      "mode": "train",
+      "session": "session_1",
+      "source_archive": "fusionv2_session1_results.zip",
+      "source_member_prefix": "clean/no_auxiliary_loss/seed_42/",
+      "source_archive_sha256": "a23a74908e41c7c6a7fab8f5f9ab887824f6ffe1a3e82e8be9db6dfcbd18bff9",
+      "validation_status": "accepted"
+    },
+    {
+      "action": "imported",
+      "destination": "D:\\Research Model\\Brain_Tumor_Detection_ViT2\\publication_runs/ablations/clean\\no_auxiliary_loss\\seed_43",
+      "files": {
+        "checkpoint.pth": {
+          "bytes": 365236755,
+          "sha256": "8e31a8b26bd050355d3c26c0f37d211731333b49ed1edce942b9907a0d80c82a"
+        },
+        "config.json": {
+          "bytes": 2369,
+          "sha256": "5efb58338d1384ffe45d54b801e1b803b31a879b3abcf7d4ead9441979c0f504"
+        },
+        "environment.json": {
+          "bytes": 240,
+          "sha256": "ae71e7d4d8c9914f1ed93673c26e8e4dcdf8ded6090a69facda50092035ca344"
+        },
+        "gates_dataset_ood.csv": {
+          "bytes": 40955,
+          "sha256": "d59795913eccdcd76447a606664d99a270d3b268de954aa9cc4d3fe98cf47e99"
+        },
+        "gates_test.csv": {
+          "bytes": 40125,
+          "sha256": "8156d02bdbcf95428172472edef243c98becf843c3d0d5d5d3081da57a9716bc"
+        },
+        "history.json": {
+          "bytes": 1823,
+          "sha256": "526e3dc0fa221b1fca12295358b7ba77b1b882164464297bc88449e32b9bb691"
+        },
+        "metrics.json": {
+          "bytes": 3179,
+          "sha256": "1e8cf335924497023242a1901ac7afbba4746281b67de65686bb08af3e6f7cb5"
+        },
+        "preds_dataset_ood.csv": {
+          "bytes": 54176,
+          "sha256": "0bf3c5596a82dd8a1ed28de4c9d0a25422ae080dc1f037010bb36913e0da905b"
+        },
+        "preds_test.csv": {
+          "bytes": 63182,
+          "sha256": "b25696d2f11912bf59dc7ebbdc74548444ebf0390fd44ae27eb9ffc33f399d6a"
+        },
+        "run.log": {
+          "bytes": 3155,
+          "sha256": "51fbfecf26ae77fd240047ccd5ed1ebc957e0f0a8af28639958b73a283d40234"
+        }
+      },
+      "n_files": 10,
+      "variant": "no_auxiliary_loss",
+      "seed": 43,
+      "mode": "train",
+      "session": "session_1",
+      "source_archive": "fusionv2_session1_results.zip",
+      "source_member_prefix": "clean/no_auxiliary_loss/seed_43/",
+      "source_archive_sha256": "a23a74908e41c7c6a7fab8f5f9ab887824f6ffe1a3e82e8be9db6dfcbd18bff9",
+      "validation_status": "accepted"
+    },
+    {
+      "action": "imported",
+      "destination": "D:\\Research Model\\Brain_Tumor_Detection_ViT2\\publication_runs/ablations/clean\\no_auxiliary_loss\\seed_44",
+      "files": {
+        "checkpoint.pth": {
+          "bytes": 365236755,
+          "sha256": "d9c116b9921e54540968c3de161d7f5162992abfe001637bb49d532e40c38a93"
+        },
+        "config.json": {
+          "bytes": 2369,
+          "sha256": "6ce7391d56da28411bd6859218ecb8be3e006ecc9868edfaf01581d81326c88e"
+        },
+        "environment.json": {
+          "bytes": 240,
+          "sha256": "ae71e7d4d8c9914f1ed93673c26e8e4dcdf8ded6090a69facda50092035ca344"
+        },
+        "gates_dataset_ood.csv": {
+          "bytes": 40955,
+          "sha256": "a4f2c4f41177d81e95093f1b303f9591b27a71d8d86f1f58742bcf50c4f5bb69"
+        },
+        "gates_test.csv": {
+          "bytes": 40125,
+          "sha256": "ffaefc5ee412ba768326115ea1bb87e467c1047b49dd52a5510a0649ba87ec32"
+        },
+        "history.json": {
+          "bytes": 2729,
+          "sha256": "f654f97368b1c2de6a7927572b3a42b71d5bb9880f8f773ceb0e9444e27c8f2d"
+        },
+        "metrics.json": {
+          "bytes": 3179,
+          "sha256": "4a2f472487d31a1d1d31dc9365bf8313e477f5dc8ed00886b480a846b6792d2c"
+        },
+        "preds_dataset_ood.csv": {
+          "bytes": 54220,
+          "sha256": "24a4e1b8f96f428d70fedaacffe747f78b960c3e866a032dcf5ad7faae483d61"
+        },
+        "preds_test.csv": {
+          "bytes": 63174,
+          "sha256": "1637bd9a44dd1b137eae11c22de259b3a060d26012b512fd658a830a4d67e3c1"
+        },
+        "run.log": {
+          "bytes": 4399,
+          "sha256": "a0286196ae149a71d2b52d5c129e8f1d419af1512f9d75493ab27b0fe14596a4"
+        }
+      },
+      "n_files": 10,
+      "variant": "no_auxiliary_loss",
+      "seed": 44,
+      "mode": "train",
+      "session": "session_1",
+      "source_archive": "fusionv2_session1_results.zip",
+      "source_member_prefix": "clean/no_auxiliary_loss/seed_44/",
+      "source_archive_sha256": "a23a74908e41c7c6a7fab8f5f9ab887824f6ffe1a3e82e8be9db6dfcbd18bff9",
+      "validation_status": "accepted"
+    },
+    {
+      "action": "imported",
+      "destination": "D:\\Research Model\\Brain_Tumor_Detection_ViT2\\publication_runs/ablations/clean\\no_gate\\seed_42",
+      "files": {
+        "checkpoint.pth": {
+          "bytes": 365236755,
+          "sha256": "f96857419de0e4eed46975a79a3b92d51e676350c3555e4ae7f96e53888ebbec"
+        },
+        "config.json": {
+          "bytes": 2358,
+          "sha256": "b23b1b7483ac4a6b235afabfdf75ef2ad8155c3d06065fe21bcacef7c9655738"
+        },
+        "environment.json": {
+          "bytes": 240,
+          "sha256": "ae71e7d4d8c9914f1ed93673c26e8e4dcdf8ded6090a69facda50092035ca344"
+        },
+        "history.json": {
+          "bytes": 3389,
+          "sha256": "4dcc24b1bf98a67ba5de775d50273829101736d1ca3c5966b3b3f01e29b8783c"
+        },
+        "metrics.json": {
+          "bytes": 3170,
+          "sha256": "d28a57230f95431d04061bb74c16da88d5a0df4dfbe75817a7fa4d442a4eaddd"
+        },
+        "preds_dataset_ood.csv": {
+          "bytes": 54216,
+          "sha256": "4bfc031e49c6ad351b7382df852bf789fada948ce430ae0d897870d7849abcbf"
+        },
+        "preds_test.csv": {
+          "bytes": 63174,
+          "sha256": "8bf17d12dd9dcdfd61d80960618fcf6345a211eec3ada33103337aacfa5a8878"
+        },
+        "run.log": {
+          "bytes": 5333,
+          "sha256": "4c4551eec41d31e9e5d60f829cfefc3e4bf0e184231c6b01a83bbb470c65f879"
+        }
+      },
+      "n_files": 8,
+      "variant": "no_gate",
+      "seed": 42,
+      "mode": "train",
+      "session": "session_1",
+      "source_archive": "fusionv2_session1_results.zip",
+      "source_member_prefix": "clean/no_gate/seed_42/",
+      "source_archive_sha256": "a23a74908e41c7c6a7fab8f5f9ab887824f6ffe1a3e82e8be9db6dfcbd18bff9",
+      "validation_status": "accepted"
+    },
+    {
+      "action": "imported",
+      "destination": "D:\\Research Model\\Brain_Tumor_Detection_ViT2\\publication_runs/ablations/clean\\no_gate\\seed_43",
+      "files": {
+        "checkpoint.pth": {
+          "bytes": 365236755,
+          "sha256": "b799c82093a9ad029c62208ae5bd0d72cb5194bd203e28d723a347bbadae189d"
+        },
+        "config.json": {
+          "bytes": 2358,
+          "sha256": "5bcea494ccd322ed5e96981ffdac386b4251c9a3daaae2aa9df7fe864770e7ae"
+        },
+        "environment.json": {
+          "bytes": 240,
+          "sha256": "ae71e7d4d8c9914f1ed93673c26e8e4dcdf8ded6090a69facda50092035ca344"
+        },
+        "history.json": {
+          "bytes": 3196,
+          "sha256": "6f4a8f4e58022cde9df5b7436dd00640dafb53205d0567ea8349a9008f2238d9"
+        },
+        "metrics.json": {
+          "bytes": 3168,
+          "sha256": "4215543abad2b0f2f79626ff8f8700f22a48d8e1a3ed95b1997ad683be3afa5b"
+        },
+        "preds_dataset_ood.csv": {
+          "bytes": 54161,
+          "sha256": "3add72310577a3a368885c11481c5467b21c95e3d05ca21ed3962bc31924cf20"
+        },
+        "preds_test.csv": {
+          "bytes": 63176,
+          "sha256": "f9cbc7c77f6baa6fc8c3b9a2e1d34ef0e3fe8753ee28ca07dd29c582c99be239"
+        },
+        "run.log": {
+          "bytes": 5106,
+          "sha256": "88a8f52a902c3cfd8108b41d75dd24aa401fea1d28fdb88b390c31b65828484c"
+        }
+      },
+      "n_files": 8,
+      "variant": "no_gate",
+      "seed": 43,
+      "mode": "train",
+      "session": "session_1",
+      "source_archive": "fusionv2_session1_results.zip",
+      "source_member_prefix": "clean/no_gate/seed_43/",
+      "source_archive_sha256": "a23a74908e41c7c6a7fab8f5f9ab887824f6ffe1a3e82e8be9db6dfcbd18bff9",
+      "validation_status": "accepted"
+    },
+    {
+      "action": "imported",
+      "destination": "D:\\Research Model\\Brain_Tumor_Detection_ViT2\\publication_runs/ablations/clean\\no_gate\\seed_44",
+      "files": {
+        "checkpoint.pth": {
+          "bytes": 365236755,
+          "sha256": "bfb5a40ce78b5b5696e6de1bd49cdfc81e32976665fc0ba9330f5cc9bff242cb"
+        },
+        "config.json": {
+          "bytes": 2358,
+          "sha256": "fe8e889f1c6c428a05807d8160e09b470a081483881682d1bdca40bcd69b1a35"
+        },
+        "environment.json": {
+          "bytes": 240,
+          "sha256": "ae71e7d4d8c9914f1ed93673c26e8e4dcdf8ded6090a69facda50092035ca344"
+        },
+        "history.json": {
+          "bytes": 2957,
+          "sha256": "6d2bd359c5e40061b0c1d2929a5f4ef985745f34c7df657d5b80b5bf27c06ba1"
+        },
+        "metrics.json": {
+          "bytes": 3169,
+          "sha256": "65ed0a9c3499bebeb586bd054b9d4e0dd9b1cb325b7efcf0ad5a0a6b600521a2"
+        },
+        "preds_dataset_ood.csv": {
+          "bytes": 54214,
+          "sha256": "7064360979f8c2fb2943d535fa10e1040d0c91e79094e6da33ff6615550f2527"
+        },
+        "preds_test.csv": {
+          "bytes": 63168,
+          "sha256": "91e8e45e1f42653ff357bcbecb75cb5c2dc83624a1deed24b685a049c315c296"
+        },
+        "run.log": {
+          "bytes": 4748,
+          "sha256": "3d1fe345badefac79bd002f8e379e651e84df72b2f68e53334e122f22f625ae1"
+        }
+      },
+      "n_files": 8,
+      "variant": "no_gate",
+      "seed": 44,
+      "mode": "train",
+      "session": "session_1",
+      "source_archive": "fusionv2_session1_results.zip",
+      "source_member_prefix": "clean/no_gate/seed_44/",
+      "source_archive_sha256": "a23a74908e41c7c6a7fab8f5f9ab887824f6ffe1a3e82e8be9db6dfcbd18bff9",
+      "validation_status": "accepted"
+    },
+    {
+      "action": "imported",
+      "destination": "D:\\Research Model\\Brain_Tumor_Detection_ViT2\\publication_runs/ablations/clean\\no_multiscale\\seed_42",
+      "files": {
+        "checkpoint.pth": {
+          "bytes": 364925459,
+          "sha256": "f6e85fed169fa1fabad3a06ebf1aa83e7f41b474311f433ae31179103d3e4d10"
+        },
+        "config.json": {
+          "bytes": 2434,
+          "sha256": "fc2059cdb694bb56950b0028c817db80256d786580fac214c7b4a8b7dbe655d0"
+        },
+        "environment.json": {
+          "bytes": 240,
+          "sha256": "ae71e7d4d8c9914f1ed93673c26e8e4dcdf8ded6090a69facda50092035ca344"
+        },
+        "gates_dataset_ood.csv": {
+          "bytes": 40955,
+          "sha256": "65524ec2b60b5c161eb3a274e9ada67f2cf1f57b0a39d2d455c1136cce3b42c6"
+        },
+        "gates_test.csv": {
+          "bytes": 40125,
+          "sha256": "b4393c7b07f01d0d6e7752cdeae4102b27e9d50401c89eb468f692a7d4db8144"
+        },
+        "history.json": {
+          "bytes": 2506,
+          "sha256": "2590830a4a34f4ee1ea1d79e66a42b3837950b96b2071e43ad5635c2cdbcae06"
+        },
+        "metrics.json": {
+          "bytes": 3244,
+          "sha256": "f227c40e73534092eb1556e537bd8b9ebf86d0e761c000f83d834dc1c687f948"
+        },
+        "preds_dataset_ood.csv": {
+          "bytes": 54233,
+          "sha256": "cad1a513c47c2a83e1028905517d3ec1586c37e715d207fa237bf80f59c3069f"
+        },
+        "preds_test.csv": {
+          "bytes": 63174,
+          "sha256": "0a833fb32a1f783aeda86cb9b93046a668178f379bf72d2a44b7800352474409"
+        },
+        "run.log": {
+          "bytes": 4255,
+          "sha256": "3d2a876d2b513bee01fa82cdfac37dcd84f2ba8887e6c21862d57f03ad01e13b"
+        }
+      },
+      "n_files": 10,
+      "variant": "no_multiscale",
+      "seed": 42,
+      "mode": "train",
+      "session": "session_1",
+      "source_archive": "fusionv2_session1_results.zip",
+      "source_member_prefix": "clean/no_multiscale/seed_42/",
+      "source_archive_sha256": "a23a74908e41c7c6a7fab8f5f9ab887824f6ffe1a3e82e8be9db6dfcbd18bff9",
+      "validation_status": "accepted"
+    },
+    {
+      "action": "imported",
+      "destination": "D:\\Research Model\\Brain_Tumor_Detection_ViT2\\publication_runs/ablations/clean\\no_multiscale\\seed_43",
+      "files": {
+        "checkpoint.pth": {
+          "bytes": 364925459,
+          "sha256": "bbf9a97f763125a78f8b2c8689fb5b3f82f770bef3e06a732a53eafda6f0f7f5"
+        },
+        "config.json": {
+          "bytes": 2434,
+          "sha256": "bf9fb1f17f90b46a2bb8766759b21f8a36fb96c6be39d6f7783f6ecbe550a882"
+        },
+        "environment.json": {
+          "bytes": 240,
+          "sha256": "ae71e7d4d8c9914f1ed93673c26e8e4dcdf8ded6090a69facda50092035ca344"
+        },
+        "gates_dataset_ood.csv": {
+          "bytes": 40955,
+          "sha256": "145709dbb70994a3b36c41fe26bb91ee6f0ca9b01d3f94e4761d0f98eb7bb462"
+        },
+        "gates_test.csv": {
+          "bytes": 40125,
+          "sha256": "ee121bd75086823d2aab12b904374e381820968cf9425021bd92cfe8e5628687"
+        },
+        "history.json": {
+          "bytes": 2266,
+          "sha256": "256879411db1252996d3596fa881cde3c27440fd1138b8eb3bb50b83a2c69836"
+        },
+        "metrics.json": {
+          "bytes": 3243,
+          "sha256": "b06eb6fa4355f9623a2e975c1946fd2a13005ca401eb934255532ed2610a3f7c"
+        },
+        "preds_dataset_ood.csv": {
+          "bytes": 54146,
+          "sha256": "71387d55ba89a2c28879cc59033ec3903764cc3d955fe8dbe4eae6117c2c292c"
+        },
+        "preds_test.csv": {
+          "bytes": 63177,
+          "sha256": "cc17055ba9e94f448a50bc1cc76f8feeb81f584979fa7bbf585ce48b8c5ac115"
+        },
+        "run.log": {
+          "bytes": 3838,
+          "sha256": "d656091c422f6025c49bb78cd08b94b6a6869e93fc9b526629954bf4c09de2ed"
+        }
+      },
+      "n_files": 10,
+      "variant": "no_multiscale",
+      "seed": 43,
+      "mode": "train",
+      "session": "session_1",
+      "source_archive": "fusionv2_session1_results.zip",
+      "source_member_prefix": "clean/no_multiscale/seed_43/",
+      "source_archive_sha256": "a23a74908e41c7c6a7fab8f5f9ab887824f6ffe1a3e82e8be9db6dfcbd18bff9",
+      "validation_status": "accepted"
+    },
+    {
+      "action": "imported",
+      "destination": "D:\\Research Model\\Brain_Tumor_Detection_ViT2\\publication_runs/ablations/clean\\no_multiscale\\seed_44",
+      "files": {
+        "checkpoint.pth": {
+          "bytes": 364925459,
+          "sha256": "87503cc3b9abbfc5a2ac5178af652927bbec38244d1a5be6bd74a7bfdb1830c3"
+        },
+        "config.json": {
+          "bytes": 2434,
+          "sha256": "1e94847f79f6a507bd01e972de21b41c24b822d6086e8790110d57a9439db086"
+        },
+        "environment.json": {
+          "bytes": 240,
+          "sha256": "ae71e7d4d8c9914f1ed93673c26e8e4dcdf8ded6090a69facda50092035ca344"
+        },
+        "gates_dataset_ood.csv": {
+          "bytes": 40955,
+          "sha256": "fce875446360fef23c19aa8a0686f6ce97aed14f5c8b68f453aeb78eac685dd6"
+        },
+        "gates_test.csv": {
+          "bytes": 40125,
+          "sha256": "47d722ceddf5ee236dd11afb9be0dc82c70ecdb07a46711e32e89f043d0b8ac5"
+        },
+        "history.json": {
+          "bytes": 2278,
+          "sha256": "8aa8aa2ad66730460bb5aa8cd7f7317dbadb8f2d36c7ed8e61554cc1c24a0393"
+        },
+        "metrics.json": {
+          "bytes": 3244,
+          "sha256": "e562f471f295902a48e6386fcda52a5906c0519ccff0c54f707125b257e4740e"
+        },
+        "preds_dataset_ood.csv": {
+          "bytes": 54205,
+          "sha256": "8d1f07534fb06e20dfe1a0a856c8811ee4feae4963428fb486e3eaa3fa8d3935"
+        },
+        "preds_test.csv": {
+          "bytes": 63186,
+          "sha256": "2f82e2cc5aac42e4740fe56e320271e38b0dca2dfaed8df77bcba9d461b359ae"
+        },
+        "run.log": {
+          "bytes": 3898,
+          "sha256": "38f3425cde77efc6f081657f11f7eb2e3ad7595f68668d60eabdbe15c0372d3f"
+        }
+      },
+      "n_files": 10,
+      "variant": "no_multiscale",
+      "seed": 44,
+      "mode": "train",
+      "session": "session_1",
+      "source_archive": "fusionv2_session1_results.zip",
+      "source_member_prefix": "clean/no_multiscale/seed_44/",
+      "source_archive_sha256": "a23a74908e41c7c6a7fab8f5f9ab887824f6ffe1a3e82e8be9db6dfcbd18bff9",
+      "validation_status": "accepted"
+    },
+    {
+      "action": "imported",
+      "destination": "D:\\Research Model\\Brain_Tumor_Detection_ViT2\\publication_runs/ablations/clean\\cnn_branch_only\\seed_42",
+      "files": {
+        "checkpoint.pth": {
+          "bytes": 19293057,
+          "sha256": "3a700d6979029fb87efeb4770761097745dac3ece0ba00dbc53f82a2d8bebfda"
+        },
+        "config.json": {
+          "bytes": 2439,
+          "sha256": "37ff135543a185761ed7d5eb756fe9fb16fcd1c6db3902f016c1c3e16610bb30"
+        },
+        "environment.json": {
+          "bytes": 240,
+          "sha256": "ae71e7d4d8c9914f1ed93673c26e8e4dcdf8ded6090a69facda50092035ca344"
+        },
+        "history.json": {
+          "bytes": 2504,
+          "sha256": "d8292a22ed601ecf540a1e8e04a9b6c4d53e1963a4de10407096cb437c5249d2"
+        },
+        "metrics.json": {
+          "bytes": 3249,
+          "sha256": "0089f64f76fdcbe79b271607d4acd5bf678f5228fc085ffd41036f97eb78877a"
+        },
+        "preds_dataset_ood.csv": {
+          "bytes": 53917,
+          "sha256": "d03167197de81838e3532e06e337186abec6e5c0fe3989a13bd7f146281fbeaa"
+        },
+        "preds_test.csv": {
+          "bytes": 63246,
+          "sha256": "8c2d25fb5fc9706b8cc4f812d2f248d811e7d1332882e9b8afeed25a6694ad84"
+        },
+        "run.log": {
+          "bytes": 4237,
+          "sha256": "591b8ac41569c6783ecb780b304a7ddbeb9733a79c57569dc0ae42d632c96c2d"
+        }
+      },
+      "n_files": 8,
+      "variant": "cnn_branch_only",
+      "seed": 42,
+      "mode": "train",
+      "session": "session_2",
+      "source_archive": "fusionv2_session2_results.zip",
+      "source_member_prefix": "clean/cnn_branch_only/seed_42/",
+      "source_archive_sha256": "d3ce1a5788bb6861591bab07e8738fb29b9ef12e69e24e8688b51b00c0a49d10",
+      "validation_status": "accepted"
+    },
+    {
+      "action": "imported",
+      "destination": "D:\\Research Model\\Brain_Tumor_Detection_ViT2\\publication_runs/ablations/clean\\cnn_branch_only\\seed_43",
+      "files": {
+        "checkpoint.pth": {
+          "bytes": 19293057,
+          "sha256": "25fa2a508c6d4c50d845b228bf0ccb94b720e0e1041e41e38e8bf5890c11ac5d"
+        },
+        "config.json": {
+          "bytes": 2439,
+          "sha256": "8a7df0c986d3e012be11a8cf186227d96f7314d1d96929e6081cbf47cb68f03b"
+        },
+        "environment.json": {
+          "bytes": 240,
+          "sha256": "ae71e7d4d8c9914f1ed93673c26e8e4dcdf8ded6090a69facda50092035ca344"
+        },
+        "history.json": {
+          "bytes": 3403,
+          "sha256": "0db58dc1ad59919b61c49c482ad799da4a44c074d5d18adfa4aa0c6b019ace6f"
+        },
+        "metrics.json": {
+          "bytes": 3255,
+          "sha256": "e9e77afacfd0b0ef408d122f607dca1ca96d3bf183c09b9cabd727e1f422721a"
+        },
+        "preds_dataset_ood.csv": {
+          "bytes": 53948,
+          "sha256": "e7cdf4b12fac7fdef7bfae1e4ec2628ed68272424c078fb20a9be29d9908beab"
+        },
+        "preds_test.csv": {
+          "bytes": 63240,
+          "sha256": "690e97f352c277e80f2527ef06e3eb713f2bce5d2a41593188000c8ac0602c7f"
+        },
+        "run.log": {
+          "bytes": 5592,
+          "sha256": "ea3ff77d6b7cc70df8af92528ead54db77c8e8c8de041da865909050317e0b27"
+        }
+      },
+      "n_files": 8,
+      "variant": "cnn_branch_only",
+      "seed": 43,
+      "mode": "train",
+      "session": "session_2",
+      "source_archive": "fusionv2_session2_results.zip",
+      "source_member_prefix": "clean/cnn_branch_only/seed_43/",
+      "source_archive_sha256": "d3ce1a5788bb6861591bab07e8738fb29b9ef12e69e24e8688b51b00c0a49d10",
+      "validation_status": "accepted"
+    },
+    {
+      "action": "imported",
+      "destination": "D:\\Research Model\\Brain_Tumor_Detection_ViT2\\publication_runs/ablations/clean\\cnn_branch_only\\seed_44",
+      "files": {
+        "checkpoint.pth": {
+          "bytes": 19293057,
+          "sha256": "f5b2ddc48ac4e38d3ad44e0337c8c27fed120162879f7021292cc70cc34ea903"
+        },
+        "config.json": {
+          "bytes": 2439,
+          "sha256": "c3c1b64a1ee587c44a8d7decc6450764fe542e2004153e39c1ba1afe6f63c19c"
+        },
+        "environment.json": {
+          "bytes": 240,
+          "sha256": "ae71e7d4d8c9914f1ed93673c26e8e4dcdf8ded6090a69facda50092035ca344"
+        },
+        "history.json": {
+          "bytes": 3375,
+          "sha256": "4de451a32266e394bc5ce720338130f7238646b69a83b564fdd44be5e0052340"
+        },
+        "metrics.json": {
+          "bytes": 3238,
+          "sha256": "9301d389b391bea73af4f60dfeaeaa63b28d89a938e4d6cdcfe8000cba8a85e3"
+        },
+        "preds_dataset_ood.csv": {
+          "bytes": 54018,
+          "sha256": "a8dd4e5a43c83fe25e24354107a7ed78c42e8bb8338b3f63704f33fc32ada5b8"
+        },
+        "preds_test.csv": {
+          "bytes": 63253,
+          "sha256": "02b4ac8e613c1a9139c0dc134c199b65830ceff13bad123882ce350ede367109"
+        },
+        "run.log": {
+          "bytes": 5472,
+          "sha256": "db58029b19e71b17aea331a45af48da7d273b495c62b407ecaedee9ae3a9f66e"
+        }
+      },
+      "n_files": 8,
+      "variant": "cnn_branch_only",
+      "seed": 44,
+      "mode": "train",
+      "session": "session_2",
+      "source_archive": "fusionv2_session2_results.zip",
+      "source_member_prefix": "clean/cnn_branch_only/seed_44/",
+      "source_archive_sha256": "d3ce1a5788bb6861591bab07e8738fb29b9ef12e69e24e8688b51b00c0a49d10",
+      "validation_status": "accepted"
+    },
+    {
+      "action": "imported",
+      "destination": "D:\\Research Model\\Brain_Tumor_Detection_ViT2\\publication_runs/ablations/clean\\no_ema\\seed_42",
+      "files": {
+        "checkpoint.pth": {
+          "bytes": 365236755,
+          "sha256": "c5a879f2dfa5d90ab86f8c245d16809c30142ca6db11ec00fc9100125b407c8e"
+        },
+        "config.json": {
+          "bytes": 2400,
+          "sha256": "edfcbebf67762e59980ce5462c540cb84d6a2b052e9128415e506189cd8dbb57"
+        },
+        "environment.json": {
+          "bytes": 240,
+          "sha256": "ae71e7d4d8c9914f1ed93673c26e8e4dcdf8ded6090a69facda50092035ca344"
+        },
+        "gates_dataset_ood.csv": {
+          "bytes": 40955,
+          "sha256": "f0223be7ad68ab00bbb31d068eec74aa737d3563ca5d5b64aa80a9f45c463c5d"
+        },
+        "gates_test.csv": {
+          "bytes": 40125,
+          "sha256": "3efd0201b38936371adfa4aad9e6ecd1fadc9fa238d7749c59044cc12314d43d"
+        },
+        "history.json": {
+          "bytes": 3181,
+          "sha256": "3bbeeac7b049d0628ef60117ac70ed9783726570c71e90beb29ab85bd2def421"
+        },
+        "metrics.json": {
+          "bytes": 3211,
+          "sha256": "d70e199bfe71307c74e46b31269a1cc78344b7659a7db863b8f33505348c6c73"
+        },
+        "preds_dataset_ood.csv": {
+          "bytes": 54215,
+          "sha256": "bc3267a76f7e3a3f4bed87af8f5b5590c39c59f1ff675abc99af140461fb60e9"
+        },
+        "preds_test.csv": {
+          "bytes": 63172,
+          "sha256": "faa004c73966119383aa15fd071e4ea1b37b6e1e686e08a400c9d945aa2fd865"
+        },
+        "run.log": {
+          "bytes": 5071,
+          "sha256": "6602eed18083c4933aa863011fcee3e257582bebb25ab7ab1f94d0099595bd8d"
+        }
+      },
+      "n_files": 10,
+      "variant": "no_ema",
+      "seed": 42,
+      "mode": "train",
+      "session": "session_2",
+      "source_archive": "fusionv2_session2_results.zip",
+      "source_member_prefix": "clean/no_ema/seed_42/",
+      "source_archive_sha256": "d3ce1a5788bb6861591bab07e8738fb29b9ef12e69e24e8688b51b00c0a49d10",
+      "validation_status": "accepted"
+    },
+    {
+      "action": "imported",
+      "destination": "D:\\Research Model\\Brain_Tumor_Detection_ViT2\\publication_runs/ablations/clean\\no_ema\\seed_43",
+      "files": {
+        "checkpoint.pth": {
+          "bytes": 365236755,
+          "sha256": "f386f67781d99e4a7256bd6127f9bab400f999e6d0e1d762cae655cce1fe4303"
+        },
+        "config.json": {
+          "bytes": 2400,
+          "sha256": "45121495f9be2d55815d1b498b3c7d0f5d4407ea50b041ff08fd0fe6a2330f69"
+        },
+        "environment.json": {
+          "bytes": 240,
+          "sha256": "ae71e7d4d8c9914f1ed93673c26e8e4dcdf8ded6090a69facda50092035ca344"
+        },
+        "gates_dataset_ood.csv": {
+          "bytes": 40955,
+          "sha256": "e6022fc765594a35e814d2805809f837b7bbc850995d49f89e35816d518c74ca"
+        },
+        "gates_test.csv": {
+          "bytes": 40125,
+          "sha256": "508c74bad84b7b62e865767dc2d0ea210038fde792493457f8de06d3780d8732"
+        },
+        "history.json": {
+          "bytes": 1815,
+          "sha256": "05ccd50cb739d445d3fc4a893dae66a293ffaec310759d5b28944653ca14197d"
+        },
+        "metrics.json": {
+          "bytes": 3209,
+          "sha256": "a0cc5d1fd7307b8997e4d4dd9edbc11dc7d27f49e820368b7f91a5dfdeecea3b"
+        },
+        "preds_dataset_ood.csv": {
+          "bytes": 54153,
+          "sha256": "a6dd341b9840b7a3115d54556fbfc933caf5c34cfb0d5fad18196453fe53c78d"
+        },
+        "preds_test.csv": {
+          "bytes": 63167,
+          "sha256": "00fc76e9a6f1ccf30a1f6ff7f5cc330a06598e616a59bb0882577d601cc1bc98"
+        },
+        "run.log": {
+          "bytes": 3172,
+          "sha256": "ea7628472aa83de45fdff1cf52160eaa51b5d6bd1838f8b12558d56f6d04943e"
+        }
+      },
+      "n_files": 10,
+      "variant": "no_ema",
+      "seed": 43,
+      "mode": "train",
+      "session": "session_2",
+      "source_archive": "fusionv2_session2_results.zip",
+      "source_member_prefix": "clean/no_ema/seed_43/",
+      "source_archive_sha256": "d3ce1a5788bb6861591bab07e8738fb29b9ef12e69e24e8688b51b00c0a49d10",
+      "validation_status": "accepted"
+    },
+    {
+      "action": "imported",
+      "destination": "D:\\Research Model\\Brain_Tumor_Detection_ViT2\\publication_runs/ablations/clean\\no_ema\\seed_44",
+      "files": {
+        "checkpoint.pth": {
+          "bytes": 365236755,
+          "sha256": "b2dc7604e5e36da68a3fd187d0a23ae10a2f1c749648aa4dba0c35adab3034d8"
+        },
+        "config.json": {
+          "bytes": 2400,
+          "sha256": "f0e4743adbe8c8428d1bd333a42a16c130886cf63b010d061d922ff902978809"
+        },
+        "environment.json": {
+          "bytes": 240,
+          "sha256": "ae71e7d4d8c9914f1ed93673c26e8e4dcdf8ded6090a69facda50092035ca344"
+        },
+        "gates_dataset_ood.csv": {
+          "bytes": 40955,
+          "sha256": "c64f9684f565feb6d9f7162197ca07f6bf6d5901858c06d68c6ec0feaf5a0e72"
+        },
+        "gates_test.csv": {
+          "bytes": 40125,
+          "sha256": "325c941363d67b1f68384feb48040a9d181f57129130d2e19c8c27dca1cb536d"
+        },
+        "history.json": {
+          "bytes": 2701,
+          "sha256": "05b49734d1026d5fed2600468b6e5d036339c85639b3b1781ab55db7a35d8b39"
+        },
+        "metrics.json": {
+          "bytes": 3199,
+          "sha256": "6d528acce03e28d4f5e1364c2d07e2441b8a99671f79ed8e48f9d43fc4f7926c"
+        },
+        "preds_dataset_ood.csv": {
+          "bytes": 54185,
+          "sha256": "463f9fda1b7eb02323bf04e93bf7f236d3c2edb88fb872f0ffc88ed6424b8a4e"
+        },
+        "preds_test.csv": {
+          "bytes": 63168,
+          "sha256": "78434a9c6bc950f31e5fda56abf510236a71b74bf83ad491e92fccf56a9a7939"
+        },
+        "run.log": {
+          "bytes": 4416,
+          "sha256": "010494e34fec5a8a2661f5623216abd086fb1dd17964ceaa8d891fb59ad02f20"
+        }
+      },
+      "n_files": 10,
+      "variant": "no_ema",
+      "seed": 44,
+      "mode": "train",
+      "session": "session_2",
+      "source_archive": "fusionv2_session2_results.zip",
+      "source_member_prefix": "clean/no_ema/seed_44/",
+      "source_archive_sha256": "d3ce1a5788bb6861591bab07e8738fb29b9ef12e69e24e8688b51b00c0a49d10",
+      "validation_status": "accepted"
+    },
+    {
+      "action": "imported",
+      "destination": "D:\\Research Model\\Brain_Tumor_Detection_ViT2\\publication_runs/ablations/clean\\no_tta\\seed_42",
+      "files": {
+        "config.json": {
+          "bytes": 3432,
+          "sha256": "90540b3bc7541ef773595824a79f9aa6a43ac8fa3c5e8b8aaaa0c5cb4b1146bb"
+        },
+        "environment.json": {
+          "bytes": 240,
+          "sha256": "ae71e7d4d8c9914f1ed93673c26e8e4dcdf8ded6090a69facda50092035ca344"
+        },
+        "gates_dataset_ood.csv": {
+          "bytes": 40955,
+          "sha256": "37013f61b681b4c0052c899fa6c30a05c7b6b7cb26c982951e0a470020d7b91f"
+        },
+        "gates_test.csv": {
+          "bytes": 40125,
+          "sha256": "d1785858c0578c2053ac9ab4305544c7972abee78cfcc0ba0555f05ce1c2d39f"
+        },
+        "metrics.json": {
+          "bytes": 3432,
+          "sha256": "90540b3bc7541ef773595824a79f9aa6a43ac8fa3c5e8b8aaaa0c5cb4b1146bb"
+        },
+        "preds_dataset_ood.csv": {
+          "bytes": 54239,
+          "sha256": "5253afe01517ce92e53aa84d1bdaad29dc05a6b49ea54cd81d9a4814f6d4254e"
+        },
+        "preds_test.csv": {
+          "bytes": 63167,
+          "sha256": "613b9e46bdc014f8e1954b3798284fe472325fc886e40e979b1bfaaa318175c3"
+        },
+        "run.log": {
+          "bytes": 569,
+          "sha256": "3744d0f4f11e26313e455e1b075295f334c942c27b0666b16c184a0949eb60fd"
+        },
+        "source_checkpoint_sha256.txt": {
+          "bytes": 175,
+          "sha256": "8147fbf75b78caf21308f54ece0127fc86431d5ac455e152925b42423879326d"
+        }
+      },
+      "n_files": 9,
+      "variant": "no_tta",
+      "seed": 42,
+      "mode": "eval_only",
+      "session": "session_2",
+      "source_archive": "fusionv2_session2_results.zip",
+      "source_member_prefix": "clean/no_tta/seed_42/",
+      "source_archive_sha256": "d3ce1a5788bb6861591bab07e8738fb29b9ef12e69e24e8688b51b00c0a49d10",
+      "validation_status": "accepted"
+    },
+    {
+      "action": "imported",
+      "destination": "D:\\Research Model\\Brain_Tumor_Detection_ViT2\\publication_runs/ablations/clean\\no_tta\\seed_43",
+      "files": {
+        "config.json": {
+          "bytes": 3432,
+          "sha256": "e610b150d94635f1ed7c57e63770eb1f9a3e2c39a9daad78bb4d1e7ccea59431"
+        },
+        "environment.json": {
+          "bytes": 240,
+          "sha256": "ae71e7d4d8c9914f1ed93673c26e8e4dcdf8ded6090a69facda50092035ca344"
+        },
+        "gates_dataset_ood.csv": {
+          "bytes": 40955,
+          "sha256": "07d695ee61100d58e6db9d8165da4065bb244d646c9054c309a8364360c0b864"
+        },
+        "gates_test.csv": {
+          "bytes": 40125,
+          "sha256": "be1ed676be297d545ccd05262f20d55d4f958f513875a4b20b6c949be0d2184e"
+        },
+        "metrics.json": {
+          "bytes": 3432,
+          "sha256": "e610b150d94635f1ed7c57e63770eb1f9a3e2c39a9daad78bb4d1e7ccea59431"
+        },
+        "preds_dataset_ood.csv": {
+          "bytes": 54178,
+          "sha256": "26d9854a82e39108e6b73c9f746614a2de46dc049a30a59b6e385d3771ac88d6"
+        },
+        "preds_test.csv": {
+          "bytes": 63190,
+          "sha256": "31743099af26c313ed2b4e439fd9998e2948ea7a0125982cb60b581e45722845"
+        },
+        "run.log": {
+          "bytes": 569,
+          "sha256": "495602d8095629ef3da46850f94d30b3cefed443581a66c3b44d9c6251202d05"
+        },
+        "source_checkpoint_sha256.txt": {
+          "bytes": 175,
+          "sha256": "444fe45e9ad60e8154a2e82b6ca365a74eaf3204f74ee474b21e55d4185aac96"
+        }
+      },
+      "n_files": 9,
+      "variant": "no_tta",
+      "seed": 43,
+      "mode": "eval_only",
+      "session": "session_2",
+      "source_archive": "fusionv2_session2_results.zip",
+      "source_member_prefix": "clean/no_tta/seed_43/",
+      "source_archive_sha256": "d3ce1a5788bb6861591bab07e8738fb29b9ef12e69e24e8688b51b00c0a49d10",
+      "validation_status": "accepted"
+    },
+    {
+      "action": "imported",
+      "destination": "D:\\Research Model\\Brain_Tumor_Detection_ViT2\\publication_runs/ablations/clean\\no_tta\\seed_44",
+      "files": {
+        "config.json": {
+          "bytes": 3432,
+          "sha256": "45ac61aba0bfbb388ff679579f37532b05bdc8eafd984273b8aa828572939d9d"
+        },
+        "environment.json": {
+          "bytes": 240,
+          "sha256": "ae71e7d4d8c9914f1ed93673c26e8e4dcdf8ded6090a69facda50092035ca344"
+        },
+        "gates_dataset_ood.csv": {
+          "bytes": 40955,
+          "sha256": "f7d8533a9cc9a3f7d156184cd086ad4ce8c4da8b0208408dec2459076ac3a00c"
+        },
+        "gates_test.csv": {
+          "bytes": 40125,
+          "sha256": "d4655b03510aafc177d35659a8a4501f643b7304187b1d6b5ac2323252cd00e1"
+        },
+        "metrics.json": {
+          "bytes": 3432,
+          "sha256": "45ac61aba0bfbb388ff679579f37532b05bdc8eafd984273b8aa828572939d9d"
+        },
+        "preds_dataset_ood.csv": {
+          "bytes": 54199,
+          "sha256": "c2c12c64985a71c3d35f4e39f7e81c80aae4db2587f1c850cd95cf4e2aa6c7ab"
+        },
+        "preds_test.csv": {
+          "bytes": 63174,
+          "sha256": "60b62f1d5b61039b81ffd271902b5197a10c7464845996c246e575aa7cbcb6c3"
+        },
+        "run.log": {
+          "bytes": 569,
+          "sha256": "574c4529b1c4d46f0179d4dfb50b3cfc09b4aab63e7a0e69c425add551b13189"
+        },
+        "source_checkpoint_sha256.txt": {
+          "bytes": 175,
+          "sha256": "58eb2a0fa825cdb7997ee91332e6c23577c58e8b116744b21eb78edda8bfa59e"
+        }
+      },
+      "n_files": 9,
+      "variant": "no_tta",
+      "seed": 44,
+      "mode": "eval_only",
+      "session": "session_2",
+      "source_archive": "fusionv2_session2_results.zip",
+      "source_member_prefix": "clean/no_tta/seed_44/",
+      "source_archive_sha256": "d3ce1a5788bb6861591bab07e8738fb29b9ef12e69e24e8688b51b00c0a49d10",
+      "validation_status": "accepted"
+    },
+    {
+      "action": "imported",
+      "destination": "D:\\Research Model\\Brain_Tumor_Detection_ViT2\\publication_runs/ablations/clean\\vit_branch_only\\seed_42",
+      "files": {
+        "checkpoint.pth": {
+          "bytes": 344892515,
+          "sha256": "8838e9ed4e9151a29e12e1c61a4cf2cf404eb06fb59bba81a8dfe4d1e2eb8bf0"
+        },
+        "config.json": {
+          "bytes": 2442,
+          "sha256": "9d1ed301fb84f64c10a8e00d9fe5100e64cb4be065f215019b40b918c7732049"
+        },
+        "environment.json": {
+          "bytes": 240,
+          "sha256": "ae71e7d4d8c9914f1ed93673c26e8e4dcdf8ded6090a69facda50092035ca344"
+        },
+        "history.json": {
+          "bytes": 2229,
+          "sha256": "359b03ab06ef698c51f16303d293c5701604ae9bc82eed5d24547f1661de4972"
+        },
+        "metrics.json": {
+          "bytes": 3253,
+          "sha256": "efdc7df122cda4a2790f37c76a90b6d3df9f81840c59e439258a50f6fb61bf0d"
+        },
+        "preds_dataset_ood.csv": {
+          "bytes": 54174,
+          "sha256": "16145222450e234ef19b5f07ecf8facc02983b32c69d6fe751d2c8540f3e015e"
+        },
+        "preds_test.csv": {
+          "bytes": 63176,
+          "sha256": "fbfa21183ecfaecd4522e3698f5a09c0b146c38b975e6cf6d3b3edfb91262f45"
+        },
+        "run.log": {
+          "bytes": 3834,
+          "sha256": "aadbc515e311e7f9564491043114cded5923b01081d4768cc5bf7b4d54cb22db"
+        }
+      },
+      "n_files": 8,
+      "variant": "vit_branch_only",
+      "seed": 42,
+      "mode": "train",
+      "session": "session_2",
+      "source_archive": "fusionv2_session2_results.zip",
+      "source_member_prefix": "clean/vit_branch_only/seed_42/",
+      "source_archive_sha256": "d3ce1a5788bb6861591bab07e8738fb29b9ef12e69e24e8688b51b00c0a49d10",
+      "validation_status": "accepted"
+    },
+    {
+      "action": "imported",
+      "destination": "D:\\Research Model\\Brain_Tumor_Detection_ViT2\\publication_runs/ablations/clean\\vit_branch_only\\seed_43",
+      "files": {
+        "checkpoint.pth": {
+          "bytes": 344892515,
+          "sha256": "46fd354a433ea611ed092674f5578d9ddf7073b79bceb88af62469f34d01e608"
+        },
+        "config.json": {
+          "bytes": 2442,
+          "sha256": "612c708daa519590dd2ad36c4946bafb52940c920f6625a53b927f46928f5b27"
+        },
+        "environment.json": {
+          "bytes": 240,
+          "sha256": "ae71e7d4d8c9914f1ed93673c26e8e4dcdf8ded6090a69facda50092035ca344"
+        },
+        "history.json": {
+          "bytes": 2040,
+          "sha256": "47e618bd300096dedc6498ec680d088704f56e41b7969aa7b79a5388e6a5b635"
+        },
+        "metrics.json": {
+          "bytes": 3252,
+          "sha256": "11fc4f9f6ffc368c67b3f1bd9694641476fac8713c740170abbf7cb51f190c73"
+        },
+        "preds_dataset_ood.csv": {
+          "bytes": 54215,
+          "sha256": "b076d06b2f5cf4755beb26272e98ae744582ade8c43da2828d1cad37cdc86072"
+        },
+        "preds_test.csv": {
+          "bytes": 63188,
+          "sha256": "7e231a68aa306e6868e23aaeb03002d4efff8766220307e3cb7ddc943985dc57"
+        },
+        "run.log": {
+          "bytes": 3535,
+          "sha256": "05048d6d2964f9d4131757b060e602f167f44143b47eba4a574b7bbb156bfd4a"
+        }
+      },
+      "n_files": 8,
+      "variant": "vit_branch_only",
+      "seed": 43,
+      "mode": "train",
+      "session": "session_2",
+      "source_archive": "fusionv2_session2_results.zip",
+      "source_member_prefix": "clean/vit_branch_only/seed_43/",
+      "source_archive_sha256": "d3ce1a5788bb6861591bab07e8738fb29b9ef12e69e24e8688b51b00c0a49d10",
+      "validation_status": "accepted"
+    },
+    {
+      "action": "imported",
+      "destination": "D:\\Research Model\\Brain_Tumor_Detection_ViT2\\publication_runs/ablations/clean\\vit_branch_only\\seed_44",
+      "files": {
+        "checkpoint.pth": {
+          "bytes": 344892515,
+          "sha256": "7a869da11f0e8f7e9b1925a11f521bab99e8ae7d4e132c7aeba3e92a795f78d5"
+        },
+        "config.json": {
+          "bytes": 2442,
+          "sha256": "127f29cc3ca28743c0cd9f02a991a04386f7843513cd1e2533d8f5131d337646"
+        },
+        "environment.json": {
+          "bytes": 240,
+          "sha256": "ae71e7d4d8c9914f1ed93673c26e8e4dcdf8ded6090a69facda50092035ca344"
+        },
+        "history.json": {
+          "bytes": 3413,
+          "sha256": "5c3bb9f4b30b9bcf0f2015eb723f5ed3dfcb414483f89b8f96287047db24fcf0"
+        },
+        "metrics.json": {
+          "bytes": 3253,
+          "sha256": "09b73d2c3c4e10b08074f0d8333746ffc437c336ddc6043a994ffc55a293ecca"
+        },
+        "preds_dataset_ood.csv": {
+          "bytes": 54223,
+          "sha256": "f851b85049ecae6ae70536a102ab1a99019fe7e7b74395ce2ba71b447acc5471"
+        },
+        "preds_test.csv": {
+          "bytes": 63169,
+          "sha256": "63281de9abc969d8304e558e84fa2f5627c624be3a2cb22b905875f073e4cb09"
+        },
+        "run.log": {
+          "bytes": 5490,
+          "sha256": "3c288f2cb72f347d25fd90dbfef46b02a39735f6645453fda935f3eb88f63909"
+        }
+      },
+      "n_files": 8,
+      "variant": "vit_branch_only",
+      "seed": 44,
+      "mode": "train",
+      "session": "session_2",
+      "source_archive": "fusionv2_session2_results.zip",
+      "source_member_prefix": "clean/vit_branch_only/seed_44/",
+      "source_archive_sha256": "d3ce1a5788bb6861591bab07e8738fb29b9ef12e69e24e8688b51b00c0a49d10",
+      "validation_status": "accepted"
+    }
+  ],
+  "n_imported": 21
+}

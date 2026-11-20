@@ -1,0 +1,9 @@
+variant,accuracy_mean_percent,accuracy_sd_percent,macro_f1_mean_percent,macro_f1_sd_percent,delta_accuracy_pp,holm_significant_seeds,interpretation
+full_fusion_network,69.53,1.98,68.69,2.21,reference,not_applicable,reference
+no_gate,69.26,1.88,68.52,1.54,-0.27,0_of_3,no corrected evidence of a difference
+no_multiscale,67.92,3.20,66.25,3.07,-1.61,0_of_3,no corrected evidence of a difference
+no_auxiliary_loss,70.15,1.57,69.52,2.08,+0.63,0_of_3,test-set observation only; not a model-selection result
+no_ema,67.92,1.48,66.60,1.21,-1.61,0_of_3,no corrected evidence of a difference
+cnn_branch_only,44.50,3.09,45.07,3.24,-25.02,3_of_3,supported cross-source accuracy loss
+vit_branch_only,68.54,1.21,67.23,1.75,-0.98,0_of_3,no corrected evidence of a difference
+no_tta,69.71,1.93,68.93,2.28,+0.18,0_of_3,no corrected evidence of a difference

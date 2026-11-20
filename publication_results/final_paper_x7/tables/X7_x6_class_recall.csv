@@ -1,0 +1,5 @@
+class,images_per_seed,recall_seed_mean,recall_seed_sd,source_file
+glioma,52,0.9807692307692308,0.019230769230769218,publication_results/explainability/x6_cross_source/x6_cross_source.json
+meningioma,122,0.860655737704918,0.029553698979213,publication_results/explainability/x6_cross_source/x6_cross_source.json
+notumor,88,1.0,0.0,publication_results/explainability/x6_cross_source/x6_cross_source.json
+pituitary,111,0.13813813813813813,0.046230643598620585,publication_results/explainability/x6_cross_source/x6_cross_source.json

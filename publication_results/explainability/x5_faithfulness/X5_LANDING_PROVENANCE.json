@@ -1,0 +1,29 @@
+{
+  "phase": "X5",
+  "landed_at": "2026-09-27T16:43:15+05:30",
+  "incoming_root": "D:/Research Model/_incoming/x5_gpu",
+  "destination": "publication_results/explainability/x5_faithfulness",
+  "kaggle_hashed_files_expected": 16,
+  "kaggle_hashed_files_verified": 16,
+  "kaggle_hash_failures": 0,
+  "landed_kaggle_result_files": 12,
+  "copy_hash_failures": 0,
+  "protocol_lock_sha256": "a553c93b3eeb654f7adaed319a499404d7a83efbe9dac576f482a0b10cf2a1a5",
+  "scale_amendment_sha256": "10327ca50c77365e5ed6443d6889a8ce79f76aafa14c9d6d109cac3107840258",
+  "scope": {
+    "images": 848,
+    "seeds": [42, 43, 44],
+    "methods": 6,
+    "image_seed_rows": 2544,
+    "stability_rows": 15264,
+    "bootstrap_rows": 12
+  },
+  "project_host_tests": {
+    "faithfulness_tests_passed": 40,
+    "faithfulness_tests_failed": 0,
+    "preservation_files_checked": 150,
+    "preservation_files_altered": 0
+  },
+  "acceptance_status": "PASS",
+  "note": "The Kaggle result JSON records preservation as skipped because the detached host did not carry the Phase 0 baseline. Preservation was performed after download on the project host and passed 150/150. Existing protocol files were verified byte-identical and were not overwritten."
+}

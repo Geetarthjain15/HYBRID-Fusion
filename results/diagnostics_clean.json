@@ -1,0 +1,482 @@
+{
+  "runs": "runs_clean",
+  "subset": null,
+  "evalsets": {
+    "test": {
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "arms": {
+        "cnn": {
+          "acc_mean": 0.9194182389937108,
+          "n_seeds": 3,
+          "acc_std": 0.0047658630711407786,
+          "acc_per_seed": [
+            0.9186320754716981,
+            0.9245283018867925,
+            0.9150943396226415
+          ]
+        },
+        "cnn/unfrozen": {
+          "acc_mean": 0.9870283018867925,
+          "n_seeds": 3,
+          "acc_std": 0.002042512744774675,
+          "acc_per_seed": [
+            0.9893867924528302,
+            0.9858490566037735,
+            0.9858490566037735
+          ]
+        },
+        "fusion": {
+          "acc_mean": 0.9705188679245284,
+          "n_seeds": 3,
+          "acc_std": 0.004251829334273591,
+          "acc_per_seed": [
+            0.9716981132075472,
+            0.9658018867924528,
+            0.9740566037735849
+          ]
+        },
+        "vit": {
+          "acc_mean": 0.9705188679245284,
+          "n_seeds": 3,
+          "acc_std": 0.003119989753613919,
+          "acc_per_seed": [
+            0.9740566037735849,
+            0.9681603773584906,
+            0.9693396226415094
+          ]
+        }
+      },
+      "test1_oracle": {
+        "branches": [
+          "cnn:unfrozen",
+          "vit:"
+        ],
+        "per_seed": [
+          {
+            "n": 848,
+            "member_acc": [
+              0.9893867924528302,
+              0.9740566037735849
+            ],
+            "best_single": 0.9893867924528302,
+            "oracle": 0.9929245283018868,
+            "headroom": 0.003537735849056589,
+            "all_correct": 823,
+            "none_correct": 6,
+            "exclusive": [
+              16,
+              3
+            ]
+          },
+          {
+            "n": 848,
+            "member_acc": [
+              0.9858490566037735,
+              0.9681603773584906
+            ],
+            "best_single": 0.9858490566037735,
+            "oracle": 0.9941037735849056,
+            "headroom": 0.008254716981132115,
+            "all_correct": 814,
+            "none_correct": 5,
+            "exclusive": [
+              22,
+              7
+            ]
+          },
+          {
+            "n": 848,
+            "member_acc": [
+              0.9858490566037735,
+              0.9693396226415094
+            ],
+            "best_single": 0.9858490566037735,
+            "oracle": 0.9917452830188679,
+            "headroom": 0.005896226415094352,
+            "all_correct": 817,
+            "none_correct": 7,
+            "exclusive": [
+              19,
+              5
+            ]
+          }
+        ],
+        "oracle_mean": 0.9929245283018867,
+        "best_single_mean": 0.9870283018867925,
+        "headroom_mean": 0.005896226415094352,
+        "none_correct_mean": 6.0,
+        "verdict": "HEADROOM EXISTS - branches are complementary; a working fusion can gain up to 0.59 pts"
+      },
+      "test3_equivalence": {
+        "cnn": {
+          "per_seed": [
+            {
+              "seed": 42,
+              "arm_only_right": 13,
+              "fusion_only_right": 58,
+              "p": 6.26942884485106e-08,
+              "delta_fusion_minus_arm": 0.05300943396226415,
+              "ci95": [
+                0.034198113207547176,
+                0.07311320754716977
+              ]
+            },
+            {
+              "seed": 43,
+              "arm_only_right": 16,
+              "fusion_only_right": 51,
+              "p": 2.1689238760717064e-05,
+              "delta_fusion_minus_arm": 0.0414370283018868,
+              "ci95": [
+                0.02240566037735847,
+                0.06014150943396224
+              ]
+            },
+            {
+              "seed": 44,
+              "arm_only_right": 8,
+              "fusion_only_right": 58,
+              "p": 1.7951476752580547e-10,
+              "delta_fusion_minus_arm": 0.05897334905660377,
+              "ci95": [
+                0.04009433962264153,
+                0.07665094339622647
+              ]
+            }
+          ],
+          "mean_delta": 0.05113993710691824,
+          "min_p": 1.7951476752580547e-10,
+          "arm_seed_std": 0.0047658630711407786,
+          "within_seed_noise": false,
+          "verdict": "DIFFERENT - accuracy difference exceeds seed noise"
+        },
+        "cnn/unfrozen": {
+          "per_seed": [
+            {
+              "seed": 42,
+              "arm_only_right": 18,
+              "fusion_only_right": 3,
+              "p": 0.0014896392822265625,
+              "delta_fusion_minus_arm": -0.017664150943396222,
+              "ci95": [
+                -0.028301886792452824,
+                -0.007075471698113178
+              ]
+            },
+            {
+              "seed": 43,
+              "arm_only_right": 21,
+              "fusion_only_right": 4,
+              "p": 0.0009105205535888672,
+              "delta_fusion_minus_arm": -0.01996674528301886,
+              "ci95": [
+                -0.03183962264150941,
+                -0.008254716981132115
+              ]
+            },
+            {
+              "seed": 44,
+              "arm_only_right": 16,
+              "fusion_only_right": 6,
+              "p": 0.052478790283203125,
+              "delta_fusion_minus_arm": -0.011860377358490564,
+              "ci95": [
+                -0.022405660377358583,
+                -0.001179245283018826
+              ]
+            }
+          ],
+          "mean_delta": -0.016497091194968547,
+          "min_p": 0.0009105205535888672,
+          "arm_seed_std": 0.002042512744774675,
+          "within_seed_noise": false,
+          "verdict": "DIFFERENT - accuracy difference exceeds seed noise"
+        },
+        "vit": {
+          "per_seed": [
+            {
+              "seed": 42,
+              "arm_only_right": 7,
+              "fusion_only_right": 5,
+              "p": 0.7744140625,
+              "delta_fusion_minus_arm": -0.0023271226415094337,
+              "ci95": [
+                -0.010613207547169767,
+                0.005896226415094352
+              ]
+            },
+            {
+              "seed": 43,
+              "arm_only_right": 11,
+              "fusion_only_right": 9,
+              "p": 0.8238029479980469,
+              "delta_fusion_minus_arm": -0.0022490566037735834,
+              "ci95": [
+                -0.01297169811320753,
+                0.008254716981132115
+              ]
+            },
+            {
+              "seed": 44,
+              "arm_only_right": 7,
+              "fusion_only_right": 11,
+              "p": 0.480682373046875,
+              "delta_fusion_minus_arm": 0.0046544811320754715,
+              "ci95": [
+                -0.004716981132075526,
+                0.014150943396226467
+              ]
+            }
+          ],
+          "mean_delta": 2.6100628930817982e-05,
+          "min_p": 0.480682373046875,
+          "arm_seed_std": 0.003119989753613919,
+          "within_seed_noise": true,
+          "verdict": "EQUIVALENT - same accuracy, same decisions"
+        }
+      }
+    },
+    "dataset_ood": {
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "arms": {
+        "cnn": {
+          "acc_mean": 0.5891783567134269,
+          "n_seeds": 3,
+          "acc_std": 0.019117018064467868,
+          "acc_per_seed": [
+            0.5991983967935872,
+            0.5671342685370742,
+            0.6012024048096193
+          ]
+        },
+        "cnn/unfrozen": {
+          "acc_mean": 0.655310621242485,
+          "n_seeds": 3,
+          "acc_std": 0.03754507814668379,
+          "acc_per_seed": [
+            0.6432865731462926,
+            0.625250501002004,
+            0.6973947895791583
+          ]
+        },
+        "fusion": {
+          "acc_mean": 0.8002672010688042,
+          "n_seeds": 3,
+          "acc_std": 0.039082438146453145,
+          "acc_per_seed": [
+            0.8276553106212425,
+            0.7555110220440882,
+            0.8176352705410822
+          ]
+        },
+        "vit": {
+          "acc_mean": 0.7982631930527723,
+          "n_seeds": 3,
+          "acc_std": 0.01303889198125795,
+          "acc_per_seed": [
+            0.7855711422845691,
+            0.811623246492986,
+            0.7975951903807615
+          ]
+        }
+      },
+      "test1_oracle": {
+        "branches": [
+          "cnn:unfrozen",
+          "vit:"
+        ],
+        "per_seed": [
+          {
+            "n": 499,
+            "member_acc": [
+              0.6432865731462926,
+              0.7855711422845691
+            ],
+            "best_single": 0.7855711422845691,
+            "oracle": 0.7895791583166333,
+            "headroom": 0.004008016032064132,
+            "all_correct": 319,
+            "none_correct": 105,
+            "exclusive": [
+              2,
+              73
+            ]
+          },
+          {
+            "n": 499,
+            "member_acc": [
+              0.625250501002004,
+              0.811623246492986
+            ],
+            "best_single": 0.811623246492986,
+            "oracle": 0.8156312625250501,
+            "headroom": 0.004008016032064132,
+            "all_correct": 310,
+            "none_correct": 92,
+            "exclusive": [
+              2,
+              95
+            ]
+          },
+          {
+            "n": 499,
+            "member_acc": [
+              0.6973947895791583,
+              0.7975951903807615
+            ],
+            "best_single": 0.7975951903807615,
+            "oracle": 0.8376753507014028,
+            "headroom": 0.04008016032064121,
+            "all_correct": 328,
+            "none_correct": 81,
+            "exclusive": [
+              20,
+              70
+            ]
+          }
+        ],
+        "oracle_mean": 0.8142952571810286,
+        "best_single_mean": 0.7982631930527723,
+        "headroom_mean": 0.01603206412825649,
+        "none_correct_mean": 92.66666666666667,
+        "verdict": "HEADROOM EXISTS - branches are complementary; a working fusion can gain up to 1.60 pts"
+      },
+      "test3_equivalence": {
+        "cnn": {
+          "per_seed": [
+            {
+              "seed": 42,
+              "arm_only_right": 6,
+              "fusion_only_right": 120,
+              "p": 1.2177468021911254e-28,
+              "delta_fusion_minus_arm": 0.2278188376753507,
+              "ci95": [
+                0.19038076152304606,
+                0.26658316633266466
+              ]
+            },
+            {
+              "seed": 43,
+              "arm_only_right": 12,
+              "fusion_only_right": 106,
+              "p": 5.775236264703375e-20,
+              "delta_fusion_minus_arm": 0.1887266533066132,
+              "ci95": [
+                0.14829659318637278,
+                0.22845691382765532
+              ]
+            },
+            {
+              "seed": 44,
+              "arm_only_right": 15,
+              "fusion_only_right": 123,
+              "p": 2.839975645346407e-22,
+              "delta_fusion_minus_arm": 0.21653787575150305,
+              "ci95": [
+                0.17434869739478964,
+                0.2585170340681363
+              ]
+            }
+          ],
+          "mean_delta": 0.21102778891115567,
+          "min_p": 1.2177468021911254e-28,
+          "arm_seed_std": 0.019117018064467868,
+          "within_seed_noise": false,
+          "verdict": "DIFFERENT - accuracy difference exceeds seed noise"
+        },
+        "cnn/unfrozen": {
+          "per_seed": [
+            {
+              "seed": 42,
+              "arm_only_right": 2,
+              "fusion_only_right": 94,
+              "p": 1.1755920753965606e-25,
+              "delta_fusion_minus_arm": 0.18402084168336677,
+              "ci95": [
+                0.15030060120240485,
+                0.218436873747495
+              ]
+            },
+            {
+              "seed": 43,
+              "arm_only_right": 1,
+              "fusion_only_right": 66,
+              "p": 9.215718466126788e-19,
+              "delta_fusion_minus_arm": 0.13013346693386774,
+              "ci95": [
+                0.10220440881763526,
+                0.16232464929859713
+              ]
+            },
+            {
+              "seed": 44,
+              "arm_only_right": 15,
+              "fusion_only_right": 75,
+              "p": 9.176485495714726e-11,
+              "delta_fusion_minus_arm": 0.12003887775551102,
+              "ci95": [
+                0.08416833667334678,
+                0.15631262525050094
+              ]
+            }
+          ],
+          "mean_delta": 0.1447310621242485,
+          "min_p": 1.1755920753965606e-25,
+          "arm_seed_std": 0.03754507814668379,
+          "within_seed_noise": false,
+          "verdict": "DIFFERENT - accuracy difference exceeds seed noise"
+        },
+        "vit": {
+          "per_seed": [
+            {
+              "seed": 42,
+              "arm_only_right": 7,
+              "fusion_only_right": 28,
+              "p": 0.0005082604475319386,
+              "delta_fusion_minus_arm": 0.041831663326653314,
+              "ci95": [
+                0.01998997995991977,
+                0.06412825651302612
+              ]
+            },
+            {
+              "seed": 43,
+              "arm_only_right": 36,
+              "fusion_only_right": 8,
+              "p": 2.5448598648836196e-05,
+              "delta_fusion_minus_arm": -0.05592184368737478,
+              "ci95": [
+                -0.08216432865731471,
+                -0.030060120240480992
+              ]
+            },
+            {
+              "seed": 44,
+              "arm_only_right": 13,
+              "fusion_only_right": 23,
+              "p": 0.13249816396273673,
+              "delta_fusion_minus_arm": 0.020200400801603208,
+              "ci95": [
+                -0.004008016032064132,
+                0.044088176352705455
+              ]
+            }
+          ],
+          "mean_delta": 0.00203674014696058,
+          "min_p": 2.5448598648836196e-05,
+          "arm_seed_std": 0.01303889198125795,
+          "within_seed_noise": true,
+          "verdict": "ERROR-SWAPPING - different decisions, accuracy difference within seed noise"
+        }
+      }
+    }
+  }
+}

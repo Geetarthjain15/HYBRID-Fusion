@@ -1,0 +1,587 @@
+{
+  "phase": "X0 - evidence and architecture audit",
+  "generated_utc": "2026-09-26T10:34:58.696316+00:00",
+  "training_performed": false,
+  "model_modified": false,
+  "phase_x1_started": false,
+  "environment": {
+    "python": "3.13.2",
+    "torch": "2.14.0+cpu",
+    "torchvision": "0.29.0+cpu",
+    "transformers": "4.57.6",
+    "numpy": "2.5.3",
+    "pytorch_grad_cam": "unknown"
+  },
+  "answers": {
+    "q1_heatmap_location": {
+      "answer": "src/publication/fusion_v2_gradcam.py, function gradcam_plus_plus(), lines 157-177",
+      "consumers": [
+        "src/publication/streamlit_fusion_v2.py (demonstrator)",
+        "src/publication/audit_gradcam_faithfulness.py (faithfulness audit)"
+      ],
+      "unrelated_legacy": "src/streamlit_app.py operates on the v1 HybridBrainTumorModel, not FusionV2, and is out of scope",
+      "evidence": "file inspection + import graph"
+    },
+    "q2_method_identity": {
+      "answer": "genuine Grad-CAM++, not ordinary Grad-CAM",
+      "resolved_class": "pytorch_grad_cam.grad_cam_plusplus.GradCAMPlusPlus",
+      "library_file": "D:\\Research Model\\Brain_Tumor_Detection_ViT2\\env_win\\Lib\\site-packages\\pytorch_grad_cam\\grad_cam_plusplus.py",
+      "distinct_class_from_GradCAM": true,
+      "uses_second_order_gradient_terms": true,
+      "uses_third_order_gradient_terms": true,
+      "basis": "GradCAMPlusPlus.get_cam_weights computes grads_power_2 / (2*grads_power_2 + sum_activations*grads_power_3 + eps), i.e. Eq. 19 of arXiv:1710.11063, whereas GradCAM.get_cam_weights is a plain spatial mean of gradients",
+      "evidence": "inspect.getsource on the installed classes"
+    },
+    "q3_hooked_module": {
+      "answer": "model.cnn_stages[-1] - the final EfficientNet-B0 feature stage (index 8)",
+      "resolved_type": "Conv2dNormActivation",
+      "activation_shape": [
+        2,
+        1280,
+        7,
+        7
+      ],
+      "source": "src/publication/fusion_v2_gradcam.py:167",
+      "evidence": "executed forward, shapes recorded"
+    },
+    "q4_differentiated_score": {
+      "target_object": "pytorch_grad_cam ClassifierOutputTarget(target_index)",
+      "model_passed_to_cam": "the full FusionV2 instance (model=model)",
+      "consequence": "the differentiated scalar is the FUSED class logit model(x)[:, target_index]; it is not a branch-specific score",
+      "source": "src/publication/fusion_v2_gradcam.py:167-168",
+      "gate_in_gradient_path": true,
+      "gate_in_gradient_path_reason": "head() consumes fused = cat[c*g0*2, v*g1*2], and g is a differentiable function of c and v, so d(logit)/d(A_cnn) flows through both the direct c path and the gate",
+      "answer": "the FUSED class logit is differentiated, not a branch-specific score; ClassifierOutputTarget(target_index) is applied to the full FusionV2 output"
+    },
+    "q5_preprocessing": {
+      "image_size": 224,
+      "normalize_mean": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "normalize_std": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "transform_repr": "Compose(\n    Resize(size=(224, 224), interpolation=bilinear, max_size=None, antialias=True)\n    ToTensor()\n    Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])\n)",
+      "source": "src/publication/fusion_v2_gradcam.py:38-44",
+      "answer": "Resize((224,224)) -> ToTensor() -> Normalize(mean=[0.5]*3, std=[0.5]*3); no CLAHE, no crop, aspect ratio not preserved"
+    },
+    "q6_spatial_resize_reversal": {
+      "cam_upsampling": "pytorch_grad_cam resizes the stage activation map to the INPUT tensor spatial size internally",
+      "asserted_output_shape": [
+        224,
+        224
+      ],
+      "assert_source": "src/publication/fusion_v2_gradcam.py:170-171",
+      "display_image": "the original image is resized to 224x224 with PIL BILINEAR for display - src/publication/fusion_v2_gradcam.py:136",
+      "overlay_space": "224x224",
+      "back_projection_to_original_resolution": false,
+      "consequence": "the overlay is produced in 224x224 model space, NOT mapped back to the source image resolution; any spatial statement is therefore made in resized model space and inherits the resize distortion",
+      "normalisation_of_heatmap": "min-max to [0,1] per image, zeros if constant - src/publication/fusion_v2_gradcam.py:172-176",
+      "answer": "It is NOT reversed. The CAM is upsampled from the 7x7 stage map to the 224x224 model input grid and overlaid on a 224x224 resized copy of the image. Nothing maps the map back to the source resolution or undoes the aspect-ratio change.",
+      "upsample_factor": 32
+    },
+    "q7_class_order": {
+      "class_names_in_code": [
+        "glioma",
+        "meningioma",
+        "notumor",
+        "pituitary"
+      ],
+      "source": "src/publication/fusion_v2_gradcam.py:37",
+      "is_sorted_alphabetically": true,
+      "answer": "('glioma','meningioma','notumor','pituitary'), index 0..3, alphabetical; this matches the probability column order p_glioma..p_pituitary in the authoritative prediction CSVs and the canonical split manifest"
+    },
+    "q8_forward_graph": {
+      "input": [
+        2,
+        3,
+        224,
+        224
+      ],
+      "cnn_branch_feature_c": [
+        2,
+        512
+      ],
+      "vit_branch_feature_v": [
+        2,
+        512
+      ],
+      "gate_input_is_cat_c_v": [
+        2,
+        1024
+      ],
+      "gate_output_g": [
+        2,
+        2
+      ],
+      "fused_vector": [
+        2,
+        1024
+      ],
+      "fused_logits": [
+        2,
+        4
+      ],
+      "aux_cnn_logits": [
+        2,
+        4
+      ],
+      "aux_vit_logits": [
+        2,
+        4
+      ],
+      "source": "src/fusion_v2.py:83-107",
+      "graph": "x -> cnn_stages (taps 3,5,final; mean over H,W) -> cat(1432) -> cnn_proj -> c(512);  x -> vit.vit(...).last_hidden_state[:,0](768) -> vit_proj -> v(512);  g=softmax(gate(cat[c,v]),-1)(2); fused=cat[c*g0*2, v*g1*2](1024); logits=head(fused)(4)"
+    },
+    "q9_cnn_tensors": {
+      "n_stages": 9,
+      "stages": [
+        {
+          "stage_index": 0,
+          "output_shape": [
+            2,
+            32,
+            112,
+            112
+          ],
+          "channels": 32,
+          "spatial": [
+            112,
+            112
+          ],
+          "is_multiscale_tap": false,
+          "is_final_stage": false
+        },
+        {
+          "stage_index": 1,
+          "output_shape": [
+            2,
+            16,
+            112,
+            112
+          ],
+          "channels": 16,
+          "spatial": [
+            112,
+            112
+          ],
+          "is_multiscale_tap": false,
+          "is_final_stage": false
+        },
+        {
+          "stage_index": 2,
+          "output_shape": [
+            2,
+            24,
+            56,
+            56
+          ],
+          "channels": 24,
+          "spatial": [
+            56,
+            56
+          ],
+          "is_multiscale_tap": false,
+          "is_final_stage": false
+        },
+        {
+          "stage_index": 3,
+          "output_shape": [
+            2,
+            40,
+            28,
+            28
+          ],
+          "channels": 40,
+          "spatial": [
+            28,
+            28
+          ],
+          "is_multiscale_tap": true,
+          "is_final_stage": false
+        },
+        {
+          "stage_index": 4,
+          "output_shape": [
+            2,
+            80,
+            14,
+            14
+          ],
+          "channels": 80,
+          "spatial": [
+            14,
+            14
+          ],
+          "is_multiscale_tap": false,
+          "is_final_stage": false
+        },
+        {
+          "stage_index": 5,
+          "output_shape": [
+            2,
+            112,
+            14,
+            14
+          ],
+          "channels": 112,
+          "spatial": [
+            14,
+            14
+          ],
+          "is_multiscale_tap": true,
+          "is_final_stage": false
+        },
+        {
+          "stage_index": 6,
+          "output_shape": [
+            2,
+            192,
+            7,
+            7
+          ],
+          "channels": 192,
+          "spatial": [
+            7,
+            7
+          ],
+          "is_multiscale_tap": false,
+          "is_final_stage": false
+        },
+        {
+          "stage_index": 7,
+          "output_shape": [
+            2,
+            320,
+            7,
+            7
+          ],
+          "channels": 320,
+          "spatial": [
+            7,
+            7
+          ],
+          "is_multiscale_tap": false,
+          "is_final_stage": false
+        },
+        {
+          "stage_index": 8,
+          "output_shape": [
+            2,
+            1280,
+            7,
+            7
+          ],
+          "channels": 1280,
+          "spatial": [
+            7,
+            7
+          ],
+          "is_multiscale_tap": false,
+          "is_final_stage": true
+        }
+      ],
+      "tap_indices_in_source": [
+        3,
+        5
+      ],
+      "tap_channels_in_source": {
+        "3": 40,
+        "5": 112
+      },
+      "final_channels_in_source": 1280,
+      "pooling_in_forward": "mean over dims (2,3) - src/fusion_v2.py:88-89",
+      "note": "taps are pooled to vectors inside branch_features, so the SPATIAL maps are not returned by forward and must be captured with hooks",
+      "answer": "9 EfficientNet stages. Multi-scale taps at index 3 (40ch, 28x28) and 5 (112ch, 14x14); final stage 8 (1280ch, 7x7). All three are pooled to vectors inside branch_features, so spatial maps are only reachable via hooks."
+    },
+    "q10_q11_vit_tensors": {
+      "vit_class": "ViTForImageClassification",
+      "inner_module_called_in_forward": "model.vit.vit (ViTModel) - src/fusion_v2.py:91",
+      "config_output_attentions_default": false,
+      "config_attn_implementation": "sdpa",
+      "num_hidden_layers": 12,
+      "num_attention_heads": 12,
+      "hidden_size": 768,
+      "image_size": 224,
+      "patch_size": 16,
+      "n_patches": 196,
+      "n_tokens_including_cls": 197,
+      "expected_attention_shape_per_layer": [
+        2,
+        12,
+        197,
+        197
+      ],
+      "attentions_returned_by_default": false,
+      "attentions_returned_with_flag": false,
+      "n_hidden_states": 13,
+      "hidden_state_shape": [
+        2,
+        197,
+        768
+      ],
+      "last_hidden_state_shape": [
+        2,
+        197,
+        768
+      ],
+      "cls_token_index_used": 0,
+      "max_abs_last_hidden_state_delta_with_flag": 0.0,
+      "answer": "Available: last_hidden_state [B,197,768] and the CLS token at index 0 (the only tensor the forward pass consumes). Attention is NOT returned as loaded."
+    },
+    "q11_attention_availability": {
+      "answer": "NO under the loaded configuration; YES after switching to eager attention",
+      "attn_implementation_as_loaded": "sdpa",
+      "output_attentions_flag_alone_returns": "None",
+      "transformers_warning": "output_attentions=True is not supported with attn_implementation other than eager/eager_paged/flex_attention",
+      "after_set_attn_implementation_eager": {
+        "attentions_returned": true,
+        "n_layers": 12,
+        "shape_per_layer": [
+          2,
+          12,
+          197,
+          197
+        ],
+        "rows_sum_to_one": true,
+        "n_patch_tokens": 196,
+        "patch_grid": [
+          14,
+          14
+        ]
+      },
+      "prediction_neutrality": {
+        "max_abs_prob_delta_vs_verified": 8.940696716308594e-08,
+        "max_abs_logit_delta_vs_verified": 4.172325134277344e-07,
+        "tolerance": 1e-06,
+        "changes_predictions": false,
+        "argmax_unchanged": true,
+        "restore_exact": true
+      },
+      "evidence": "executed; src/publication/explainability/audit_x0_attention.py"
+    },
+    "q12_gate_input": {
+      "answer": "torch.cat([c, v], dim=1), the two 512-d PROJECTED BRANCH FEATURE VECTORS, shape [B,1024]",
+      "module": "Sequential(\n  (0): Linear(in_features=1024, out_features=256, bias=True)\n  (1): GELU(approximate='none')\n  (2): Linear(in_features=256, out_features=2, bias=True)\n)",
+      "source": "src/fusion_v2.py:72-73, :97"
+    },
+    "q13_gate_output_kind": {
+      "answer": "TWO SCALAR PER-BRANCH WEIGHTS PER IMAGE, shape [B,2]. Not per-feature, not per-scale, not spatial.",
+      "shape": [
+        2,
+        2
+      ],
+      "values_per_image": 2,
+      "example_rows": [
+        [
+          0.3207671046257019,
+          0.6792328357696533
+        ],
+        [
+          0.29931366443634033,
+          0.7006862759590149
+        ]
+      ],
+      "applied_to": "the 512-d projected FEATURE VECTORS c and v, each scaled by 2*g; the gate never multiplies a spatial map",
+      "source": "src/fusion_v2.py:97, :100"
+    },
+    "q14_gate_sums": {
+      "answer": "Yes. The gate is a softmax over the last dimension, so the two values sum to 1 across the branches within each image.",
+      "softmax_dim": -1,
+      "sum_axis": "last dimension (dim=-1), i.e. across the two branches within one image",
+      "measured_row_sums": [
+        0.9999999403953552,
+        0.9999999403953552
+      ],
+      "rows_sum_to_one": true
+    },
+    "q15_aux_logits_in_checkpoint": {
+      "answer": "Yes. aux_cnn and aux_vit weights and biases are present in the verified checkpoint and load under strict=True.",
+      "keys": [
+        "aux_cnn.weight",
+        "aux_cnn.bias",
+        "aux_vit.weight",
+        "aux_vit.bias"
+      ],
+      "shapes": {
+        "aux_cnn.weight": [
+          4,
+          512
+        ],
+        "aux_cnn.bias": [
+          4
+        ],
+        "aux_vit.weight": [
+          4,
+          512
+        ],
+        "aux_vit.bias": [
+          4
+        ]
+      },
+      "n_state_dict_keys": 578,
+      "evidence": "torch.load(weights_only=True) key inspection + strict load"
+    },
+    "q16_branch_probabilities": {
+      "obtainable_without_retraining": true,
+      "mechanism": "model(x, return_aux=True) -> (logits, aux_cnn(c), aux_vit(v), g); src/fusion_v2.py:105-106",
+      "aux_cnn_prob_row0": [
+        0.224562868475914,
+        0.39944979548454285,
+        0.3007366955280304,
+        0.07525064051151276
+      ],
+      "aux_vit_prob_row0": [
+        0.17304961383342743,
+        0.06932450085878372,
+        0.6034349203109741,
+        0.1541910469532013
+      ],
+      "aux_cnn_rows_sum_to_one": true,
+      "aux_vit_rows_sum_to_one": true,
+      "caveat": "these are AUXILIARY TRAINING heads on the projected branch features; they are not the fused decision and were trained with weight 0.3 as a regulariser, so they are branch-readable proxies, not the model's output",
+      "answer": "Yes, without retraining: model(x, return_aux=True) returns (fused_logits, aux_cnn(c), aux_vit(v), gate). Softmax of the auxiliary logits gives per-branch class distributions. They are auxiliary regularisation heads, not the fused decision."
+    },
+    "q17_single_synchronized_pass": {
+      "error": "TypeError: object of type 'NoneType' has no len()",
+      "traceback": "Traceback (most recent call last):\n  File \"D:\\Research Model\\Brain_Tumor_Detection_ViT2\\src\\publication\\explainability\\audit_x0.py\", line 434, in main\n    lg, ac, av, gg = model(x, return_aux=True)\n                     ~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Research Model\\Brain_Tumor_Detection_ViT2\\env_win\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"D:\\Research Model\\Brain_Tumor_Detection_ViT2\\env_win\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n  File \"D:\\Research Model\\Brain_Tumor_Detection_ViT2\\src\\fusion_v2.py\", line 95, in forward\n    c, v = self.branch_features(x)\n           ~~~~~~~~~~~~~~~~~~~~^^^\n  File \"D:\\Research Model\\Brain_Tumor_Detection_ViT2\\src\\fusion_v2.py\", line 91, in branch_features\n    vit = self.vit_proj(self.vit.vit(pixel_values=x).last_hidden_state[:, 0])\n                        ~~~~~~~~~~~~^^^^^^^^^^^^^^^^\n  File \"D:\\Research Model\\Brain_Tumor_Detection_ViT2\\env_win\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"D:\\Research Model\\Brain_Tumor_Detection_ViT2\\env_win\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n  File \"D:\\Research Model\\Brain_Tumor_Detection_ViT2\\src\\publication\\explainability\\audit_x0.py\", line 429, in fwd_attn\n    cap[\"vit_attentions\"] = [len(o.attentions), list(o.attentions[0].shape)]\n                             ~~~^^^^^^^^^^^^^^\nTypeError: object of type 'NoneType' has no len()\n",
+      "answer": "Yes. One forward with return_aux=True, a forward hook on cnn_stages[-1], and eager attention enabled exposes fused logits, both branch logits, the gate row, the final CNN spatial map and all 12 ViT attention tensors simultaneously."
+    },
+    "q18_instrumentation_neutrality": {
+      "answer": "No. Neither a read-only forward hook nor enabling attention changes the fused probabilities beyond float32 round-off.",
+      "forward_hook_max_abs_prob_delta": 0.0,
+      "forward_hook_changes_probs": false,
+      "hook_removal_exact": true,
+      "eager_attention_max_abs_prob_delta": 8.940696716308594e-08,
+      "eager_attention_changes_probs": false,
+      "tolerance": 1e-06,
+      "interpretation": "8.94e-08 is float32 round-off from a different attention kernel, not a behavioural change; predicted classes are identical and the original implementation restores exactly",
+      "requirement_for_x1": "this equality must be re-asserted per seed on the real 848-image test set before any explanation is attached to a verified result"
+    },
+    "q19_verified_checkpoints": {
+      "manifest": "publication_results/ablations/checkpoint_recovery/import_manifest.json",
+      "manifest_present": true,
+      "seeds": {
+        "42": {
+          "path": "publication_runs/recovered_checkpoints/clean/full_fusion_v2/seed_42/checkpoint.pth",
+          "present": true,
+          "sha256": "9b328ba83df5d44b542e19faae68fd1493fee61e0c5b80e493c2f8a387ed592e",
+          "bytes": 365236755,
+          "manifest_decision": "ACCEPTED",
+          "manifest_destination_sha256": "9b328ba83df5d44b542e19faae68fd1493fee61e0c5b80e493c2f8a387ed592e",
+          "container_sha256_in_manifest": "9b328ba83df5d44b542e19faae68fd1493fee61e0c5b80e493c2f8a387ed592e",
+          "sha256_matches_manifest": true
+        },
+        "43": {
+          "path": "publication_runs/recovered_checkpoints/clean/full_fusion_v2/seed_43/checkpoint.pth",
+          "present": true,
+          "sha256": "9f97b6aa0c9ec3f1124e593c8c29e11d31f4aef8bc08e20a40e7ed1f29e80f25",
+          "bytes": 365236755,
+          "manifest_decision": "ACCEPTED",
+          "manifest_destination_sha256": "9f97b6aa0c9ec3f1124e593c8c29e11d31f4aef8bc08e20a40e7ed1f29e80f25",
+          "container_sha256_in_manifest": "9f97b6aa0c9ec3f1124e593c8c29e11d31f4aef8bc08e20a40e7ed1f29e80f25",
+          "sha256_matches_manifest": true
+        },
+        "44": {
+          "path": "publication_runs/recovered_checkpoints/clean/full_fusion_v2/seed_44/checkpoint.pth",
+          "present": true,
+          "sha256": "4155a2b71df99a6159e1e4a5dbe635f4e9ea7852a6704d804dd1fb5d43aca434",
+          "bytes": 365236755,
+          "manifest_decision": "ACCEPTED",
+          "manifest_destination_sha256": "4155a2b71df99a6159e1e4a5dbe635f4e9ea7852a6704d804dd1fb5d43aca434",
+          "container_sha256_in_manifest": "4155a2b71df99a6159e1e4a5dbe635f4e9ea7852a6704d804dd1fb5d43aca434",
+          "sha256_matches_manifest": true
+        }
+      },
+      "all_three_accepted_and_hash_matched": true,
+      "answer": "The three recovered FusionV2 checkpoints for seeds 42, 43 and 44, each ACCEPTED in the checkpoint-recovery manifest with a matching SHA-256."
+    },
+    "q20_authoritative_predictions": {
+      "answer": "runs_v2_clean/fusion_v2_seed{42,43,44}/preds_test.csv for duplicate-clean (848 images) and runs_v2_clean/fusion_v2_seed{42,43,44}/preds_dataset_ood.csv for the external set (499 images, of which 373 are duplicate-disjoint).",
+      "clean_test_n": 848,
+      "external_n": 499,
+      "duplicate_disjoint_n": 373,
+      "disjoint_selector": "results/cross_source.json -> manifest[filename].kind == 'disjoint'",
+      "canonical_label_source": "dataset_clean/split_manifest.json",
+      "canonical_fingerprint_sha256": "3437ccd466d70f6ca88eaddaf6121f4e2141550126012a3dac0e1c624978cd42",
+      "provenance": "publication_results/ablations/final_analysis/analysis_provenance.json records the per-file SHA-256 of each of these files",
+      "gate_telemetry": "runs_v2_clean/fusion_v2_seed{42,43,44}/gates_test.csv"
+    },
+    "q21_nonintrusive_code_additions": {
+      "answer": "A wrapper module that instruments an already-constructed FusionV2 instance. No edit to src/fusion_v2.py is required.",
+      "mechanisms_verified_available": [
+        "register_forward_hook on model.cnn_stages[i] to capture spatial maps at stages 3, 5 and 8 (verified neutral, delta 0.0)",
+        "model(x, return_aux=True) for fused logits, aux branch logits and the gate row (already in the public API, src/fusion_v2.py:94)",
+        "model.vit.set_attn_implementation('eager') plus output_attentions=True for the 12 attention tensors (verified neutral, delta 8.94e-08, exactly restorable)",
+        "torch.autograd.grad against captured activations for CAM-style attribution without mutating the module"
+      ],
+      "explicitly_not_required": [
+        "any change to src/fusion_v2.py",
+        "any change to src/train_ablation.py",
+        "any change to an existing Streamlit or diagnostic script",
+        "retraining, fine-tuning or re-export of any checkpoint"
+      ]
+    },
+    "q22_limitations_blocking_anatomical_claims": {
+      "answer": "Several, and they are structural rather than incidental.",
+      "items": [
+        "No lesion masks, bounding boxes or expert annotations exist for this dataset, so there is no reference against which a map could be scored as correct.",
+        "The CNN CAM originates on a 7x7 grid and is upsampled 32x to 224x224; its effective spatial resolution is roughly 32 pixels, coarser than many lesions.",
+        "ViT attention is native 14x14 over 196 patches, a different grid from the CNN final stage, so the two paths are not spatially commensurate without resampling.",
+        "Preprocessing resizes to 224x224 without preserving aspect ratio, and the overlay is never mapped back to source resolution, so map coordinates are in distorted model space.",
+        "The reported predictions use horizontal-flip TTA (an average over two views), while the heatmap is computed from a single un-flipped forward pass, so the map does not correspond exactly to the reported probability.",
+        "Attention weights describe token mixing, not evidence for a class; treating them as an explanation is an assumption, not a result.",
+        "Gate mass measures branch utilisation only and is not causal attribution (AGENTS.md prohibits the contrary claim).",
+        "A visually plausible map is not evidence of faithfulness; only perturbation-style tests speak to that, and they test sensitivity, not anatomical correctness."
+      ]
+    }
+  },
+  "composite_formula_feasibility": {
+    "question": "Does the gate really produce compatible CNN and ViT branch weights, as the proposed H_composite = alpha_CNN*H_CNN + alpha_ViT*H_ViT would require?",
+    "finding": "PARTIALLY. The gate does emit exactly two non-negative per-image scalars summing to one, which are formally usable as alpha_CNN and alpha_ViT.",
+    "but": "Those scalars were trained to reweight 512-d FEATURE VECTORS before the classifier head. They were never trained to weight spatial maps, and the two maps they would weight are not the quantities the gate scales. Using them on heatmaps is an analogy, not an identity.",
+    "additional_incompatibility": "H_CNN is a 7x7 gradient-weighted activation map; H_ViT would be a 14x14 attention-derived map. They differ in native resolution, in units, and in normalisation, so any sum requires resampling and rescaling choices that are not determined by the model.",
+    "permitted_terminology": "gate-weighted dual-path attribution composite",
+    "prohibited_terminology": [
+      "whole-model explanation",
+      "proven explanation",
+      "tumour localisation",
+      "causal branch attribution",
+      "evidence that the model looks at the lesion"
+    ],
+    "required_before_use": [
+      "state the resampling rule and the per-map normalisation explicitly",
+      "report the composite alongside its two components, never alone",
+      "treat the composite as a visualisation choice with a stated rationale, not as a derived quantity of the model"
+    ]
+  },
+  "acceptance_checks": {
+    "no_protected_artifact_changed": true,
+    "no_existing_file_modified": true,
+    "every_architectural_statement_cites_evidence": true,
+    "gradcam_status_verified_not_assumed": true,
+    "checkpoint_identities_and_hashes_recorded": true,
+    "class_order_and_preprocessing_verified": true,
+    "aux_branch_logit_availability_established": true,
+    "vit_attention_availability_established": true,
+    "gate_semantics_and_dimensions_established": true,
+    "terminology_conservative": true,
+    "phase_x1_not_started": true
+  },
+  "protected_artifact_recheck": {
+    "src/fusion_v2.py": true,
+    "src/train_ablation.py": true,
+    "src/streamlit_app.py": true,
+    "src/publication/fusion_v2_gradcam.py": true,
+    "src/publication/streamlit_fusion_v2.py": true,
+    "src/publication/audit_gradcam_faithfulness.py": true,
+    "publication_runs/recovered_checkpoints/clean/full_fusion_v2/seed_42/checkpoint.pth": true,
+    "publication_runs/recovered_checkpoints/clean/full_fusion_v2/seed_43/checkpoint.pth": true,
+    "publication_runs/recovered_checkpoints/clean/full_fusion_v2/seed_44/checkpoint.pth": true
+  },
+  "acceptance_status": "PASS"
+}

@@ -1,0 +1,64 @@
+{
+  "phase": "X0 verification addendum - final manifest",
+  "generated_utc": "2026-09-26T10:57:17.349813+00:00",
+  "note": "This manifest deliberately EXCLUDES its own digest; a file cannot contain its own hash. It is written only after every other addendum file is finalized.",
+  "addendum_files": {
+    "EXPLAINABILITY_PLAN_AMENDMENT_PROPOSAL.md": {
+      "sha256": "ee3b74196584fd32c64186e7ce634429e90969c1576e5b3b5466f35ca4a404b8",
+      "bytes": 7606
+    },
+    "X0_VERIFICATION_ADDENDUM.md": {
+      "sha256": "eff68705c11b5fe55565aeb5031e3285903f5025c3d98ada3d800c2f24088bcd",
+      "bytes": 14591
+    },
+    "dataset_availability_audit.json": {
+      "sha256": "4d4eca3cbd09c398870bd801005a7b976b4e1a769cd2d2b6b3a672ed4babb705",
+      "bytes": 2006
+    },
+    "x0_verification_addendum.json": {
+      "sha256": "4758cefe86a7804f032dd86a347f4626c211e5e9925b9d157a398fe3adc6bb6e",
+      "bytes": 15589
+    }
+  },
+  "verification_code": {
+    "src/publication/explainability/verification/__init__.py": {
+      "sha256": "87b55ff751aec6721f286e8428a4a00527339614a2db3a3406df80612dce5053",
+      "bytes": 68
+    },
+    "src/publication/explainability/verification/verify_x0.py": {
+      "sha256": "cbce0aed6410fa26e4b1b2cb43824c6b4d90b353a0be24f2f35aca9e96b9c2d0",
+      "bytes": 30690
+    }
+  },
+  "x0_outputs_as_found_now": {
+    "EXPLAINABILITY_ARCHITECTURE_AUDIT.md": {
+      "sha256": "8c7f72a741ac94d096314d180f7ca025cc1352582343210a929bde42be49044b",
+      "bytes": 16955
+    },
+    "PHASE_X1_IMPLEMENTATION_SPEC.md": {
+      "sha256": "4feef757b5f03f64e95267e08b2e22bd3e21cc670339d114362afd5dd3aa3b98",
+      "bytes": 12971
+    },
+    "_probe_attention.json": {
+      "sha256": "045e8745883fc870675e559736cf98465481da7cdc10d81a6ec1db0e55945834",
+      "bytes": 1270
+    },
+    "_probe_raw.json": {
+      "sha256": "7b7e06cfdcb2e93afdd8683ca969876c87d67ae330f4d66111348e5ca6617ad8",
+      "bytes": 17632
+    },
+    "explainability_architecture_audit.json": {
+      "sha256": "8c72d7cfe0d7d25d73da2d016703b89a8af95f0e74edbc70219ae72310469d44",
+      "bytes": 26705
+    },
+    "input_manifest.json": {
+      "sha256": "f0d6ff330ad3e57c1e0d813b3330654dde0105f5bbc811c299710f6f73b99ae4",
+      "bytes": 8094
+    },
+    "sha256_manifest.json": {
+      "sha256": "052a6e764e4153b312163b26702870ba8b331f5d1a1884c844882dd0d08a0d11",
+      "bytes": 4161
+    }
+  },
+  "x0_outputs_note": "Recorded as observed at addendum time. The X0 sha256_manifest.json was NOT corrected; where it disagrees, the disagreement is reported in X0_VERIFICATION_ADDENDUM.md."
+}

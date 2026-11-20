@@ -1,0 +1,47 @@
+{
+  "probe": "ViT attention availability and prediction neutrality",
+  "tolerance": 1e-06,
+  "checkpoint_sha256": "9b328ba83df5d44b542e19faae68fd1493fee61e0c5b80e493c2f8a387ed592e",
+  "reference_probs_row0": [
+    0.23335865139961243,
+    0.13701042532920837,
+    0.568756639957428,
+    0.06087425723671913
+  ],
+  "attn_implementation_as_loaded": "sdpa",
+  "flag_only": {
+    "attentions_is_none": true,
+    "note": "transformers warns that output_attentions is unsupported unless attn_implementation is eager/eager_paged/flex_attention"
+  },
+  "eager_switch": {
+    "attn_implementation_after_switch": "eager",
+    "attentions_returned": true,
+    "n_layers": 12,
+    "shape_layer0": [
+      2,
+      12,
+      197,
+      197
+    ],
+    "rows_sum_to_one": true,
+    "cls_row_shape": [
+      2,
+      12,
+      196
+    ],
+    "n_patch_tokens": 196,
+    "patch_grid": [
+      14,
+      14
+    ],
+    "max_abs_prob_delta_vs_verified": 8.940696716308594e-08,
+    "max_abs_logit_delta_vs_verified": 4.172325134277344e-07,
+    "changes_fused_probs_beyond_tolerance": false,
+    "argmax_unchanged": true
+  },
+  "restore": {
+    "attn_implementation_restored": "sdpa",
+    "exact_restore": true,
+    "max_abs_prob_delta": 0.0
+  }
+}

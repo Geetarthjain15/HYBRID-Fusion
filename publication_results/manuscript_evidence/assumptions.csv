@@ -1,0 +1,8 @@
+assumption,status,evidence,remaining_consequence
+Image labels are correct,untreated,no independent relabelling or clinician adjudication available,label error may bias all metrics
+Near-duplicate clusters identify the targeted image-level duplication,treated partially,duplicate-clean split and split manifest,does not establish patient independence
+Held-out images represent independent patients,not established,patient audit found no defensible patient/study key,same-patient leakage cannot be excluded
+Seeds 42–44 characterize training variability,treated partially,three independently trained seeds,n=3 gives an imprecise estimate of seed spread
+Clean-test distribution represents deployment institutions/scanners,untreated,single benchmark family; acquisition provenance unavailable,no multi-institutional generalization claim
+"Saved probabilities, filenames and labels align",treated,Phase 3A/addendum canonical fingerprint and Phase 3B validation,no identified alignment failure
+Gate mass measures causal branch importance,rejected assumption,gate utilization separated from controlled ablation evidence,gate plots remain descriptive only

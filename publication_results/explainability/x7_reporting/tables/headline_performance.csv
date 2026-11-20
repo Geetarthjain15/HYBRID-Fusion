@@ -1,0 +1,4 @@
+setting,regime,n_images,accuracy_mean,accuracy_sd_across_seeds,macro_f1_mean,macro_f1_sd_across_seeds,n_seeds,source_file
+original,conventional,1052,0.9914448669201521,0.0009505703422053591,0.9912372864910132,0.0009268306358111225,3,publication_results/metrics/fusion_v2_metrics.json
+clean,duplicate-clean,848,0.9827044025157233,0.0006808375815915797,0.982761297247453,0.00037062909191767245,3,publication_results/metrics/fusion_v2_metrics.json
+cross_source_disjoint,duplicate-disjoint cross-source,373,0.6952636282394996,0.019761701865501337,0.6868664396294806,0.02210109585002889,3,publication_results/metrics/fusion_v2_metrics.json

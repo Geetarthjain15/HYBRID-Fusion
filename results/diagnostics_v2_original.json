@@ -1,0 +1,67 @@
+{
+  "runs": "runs_v2_original",
+  "subset": null,
+  "evalsets": {
+    "test": {
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "arms": {
+        "fusion_v2": {
+          "acc_mean": 0.9914448669201521,
+          "n_seeds": 3,
+          "acc_std": 0.0009505703422053591,
+          "acc_per_seed": [
+            0.9904942965779467,
+            0.9914448669201521,
+            0.9923954372623575
+          ]
+        }
+      },
+      "test1_oracle": {},
+      "test3_equivalence": {}
+    },
+    "dataset_ood": {
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "arms": {
+        "fusion_v2": {
+          "acc_mean": 0.7555110220440882,
+          "n_seeds": 3,
+          "acc_std": 0.02755055528029566,
+          "acc_per_seed": [
+            0.779559118236473,
+            0.7254509018036072,
+            0.7615230460921844
+          ]
+        }
+      },
+      "test1_oracle": {},
+      "test3_equivalence": {}
+    }
+  },
+  "test2_gate_mass": {
+    "files": {
+      "gates_test.csv": {
+        "n": 1052,
+        "gate_cnn_mean": 0.24268601806083653,
+        "gate_cnn_std": 0.3455554477561827,
+        "gate_vit_mean": 0.7573139819391634,
+        "frac_images_cnn_dominant": 0.2262357414448669,
+        "per_class_gate_cnn": {
+          "glioma": 0.8644104156378601,
+          "meningioma": 0.03598571544715447,
+          "notumor": 0.050931293333333336,
+          "pituitary": 0.08031211406844108
+        }
+      }
+    },
+    "gate_cnn_overall": 0.24268601806083653,
+    "verdict": "BOTH BRANCHES USED - gate mass is shared, the fusion is genuinely mixing"
+  }
+}

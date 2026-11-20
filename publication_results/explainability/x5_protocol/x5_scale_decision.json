@@ -1,0 +1,76 @@
+{
+  "amends": "x5_protocol_lock.json",
+  "approved_by": "user, explicitly, for the full-set Kaggle GPU evaluation",
+  "basis": {
+    "decided_from": "measured runtime and storage only",
+    "dry_run_sha256": "f1340ab99e177f9faa6870c1d4cb6312d42772fc022160e53a292bef7f81d37e",
+    "faithfulness_values_available_at_decision_time": false,
+    "gpu_ratio_source": "measured in X3 on this code path: CPU 0.404 s/img vs Tesla T4 0.023 s/img = 17.6x",
+    "measured_cpu_seconds_per_image_total": 73.80095565319061,
+    "projected_cpu_hours": 52.1526753282547,
+    "projected_forward_passes": 717408,
+    "projected_gpu_hours": 2.9690879518560847,
+    "projected_storage_mb": 17.217792
+  },
+  "batching_note": "the locked protocol records batch size rather than fixing it. The runner batches the 47 masked variants of one image into a single forward, which is a scheduling choice, not a protocol change; the batch size actually used is recorded with the results.",
+  "checksum_verification_steps": [
+    "1. Before the run: faithfulness.py verifies x5_protocol_lock.json hashes to a553c93b... and halts if it does not.",
+    "2. Before the run: all 10 code files and 3 checkpoints are verified against UPLOAD_MANIFEST.json in the notebook, and the X1 manifest is verified with its 848 / 243-228-116-261 counts.",
+    "3. After the run: KAGGLE_OUTPUT_SHA256.json records a digest for every produced file.",
+    "4. On return to the project host: every downloaded file is re-hashed against KAGGLE_OUTPUT_SHA256.json.",
+    "5. On return: the 150-file Phase 0 preservation baseline is re-checked, which Kaggle cannot do (--skip-preservation is passed there).",
+    "6. On return: the protocol lock hash recorded in the results is compared against a553c93b... to prove the protocol did not change between lock and run."
+  ],
+  "decided_utc": "2026-09-26T23:54:01.789907+00:00",
+  "decision": {
+    "compute": "Kaggle GPU (Tesla T4)",
+    "image_seed_pairs": 2544,
+    "images": 848,
+    "methods": [
+      "cnn_gradcampp",
+      "vit_grad_x_input",
+      "composite_equal",
+      "composite_gate_weighted",
+      "baseline_random",
+      "baseline_centre_prior"
+    ],
+    "n_methods": 6,
+    "scope": "FULL SET",
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "subset": "NONE - no subsetting, so no selection decision arises and no faithfulness value can influence which images are evaluated"
+  },
+  "document": "X5 scale-decision amendment",
+  "expected_runtime": {
+    "caveat": "the GPU figure is EXTRAPOLATED from the X3 measured CPU-to-T4 ratio on a different workload (attribution, not masked forward passes). It is a projection, not a measurement, and the actual runtime is recorded when the run completes.",
+    "headroom": "the projection would have to be wrong by more than 3x to exhaust a single session",
+    "kaggle_t4_hours": 2.97,
+    "session_limit_hours": 9,
+    "statement": "approximately 3 hours on a Kaggle Tesla T4"
+  },
+  "output_paths": {
+    "files": [
+      "x5_faithfulness.json",
+      "X5_FAITHFULNESS_REPORT.md",
+      "per_image_curves.csv",
+      "stability.csv",
+      "bootstrap_effects.csv",
+      "sha256_manifest.json"
+    ],
+    "overwrite_policy": "the runner refuses to overwrite any existing path",
+    "results_root": "publication_results/explainability/x5_faithfulness/"
+  },
+  "prohibited": [
+    "changing any locked protocol parameter",
+    "selecting a subset using faithfulness values",
+    "reporting these results as external or cross-source evidence (Phase X6)",
+    "any anatomical, tumour or clinical claim"
+  ],
+  "protocol_lock_sha256": "a553c93b3eeb654f7adaed319a499404d7a83efbe9dac576f482a0b10cf2a1a5",
+  "protocol_lock_unmodified": true,
+  "protocol_parameters_changed": "none",
+  "status": "APPROVED - full X5 run authorised but NOT yet executed"
+}

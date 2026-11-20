@@ -1,0 +1,9 @@
+check,result,source_file
+C1_deterministic_repeat,True,publication_results/explainability/x4_sanity/x4_sanity.json
+C2_batch_vs_single,True,publication_results/explainability/x4_sanity/x4_sanity.json
+C3_target_class_sensitivity,True,publication_results/explainability/x4_sanity/x4_sanity.json
+C4_finite_and_nonconstant,True,publication_results/explainability/x4_sanity/x4_sanity.json
+C5_native_shapes,True,publication_results/explainability/x4_sanity/x4_sanity.json
+C6_orientation_preserved,True,publication_results/explainability/x4_sanity/x4_sanity.json
+C7_hook_and_gradient_cleanup,True,publication_results/explainability/x4_sanity/x4_sanity.json
+C8_cnn_equivalence_le_1e-5,True,publication_results/explainability/x4_sanity/x4_sanity.json

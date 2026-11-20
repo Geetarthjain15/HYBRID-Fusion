@@ -1,0 +1,613 @@
+{
+  "phase": "3B - final controlled statistical analysis",
+  "generated_utc": "2026-09-24T16:24:07.556101+00:00",
+  "project_root": "D:/Research Model/Brain_Tumor_Detection_ViT2",
+  "canonical_mapping": {
+    "source": "dataset_clean/split_manifest.json",
+    "source_sha256": "a02bcb62847ce1b9146a3e769f41f88ec1afce5a46d03fb5aaffb0ef43a0e6d2",
+    "n_identities": 848,
+    "fingerprint_sha256": "3437ccd466d70f6ca88eaddaf6121f4e2141550126012a3dac0e1c624978cd42",
+    "class_counts": {
+      "glioma": 243,
+      "meningioma": 228,
+      "notumor": 116,
+      "pituitary": 261
+    },
+    "class_order": [
+      "glioma",
+      "meningioma",
+      "notumor",
+      "pituitary"
+    ],
+    "evidence_note": "derived from the split manifest; dataset_clean/Testing contains no images locally, so directory enumeration was unavailable as a cross-check"
+  },
+  "inputs": [
+    {
+      "variant": "full_fusion_v2",
+      "seed": 42,
+      "predictions": "runs_v2_clean/fusion_v2_seed42/preds_test.csv",
+      "predictions_sha256": "247e6494d7315856a5fbb2a26b2eed789f77a880696c724b8a79243fd47c20b4",
+      "metrics_json": "runs_v2_clean/fusion_v2_seed42/metrics.json",
+      "metrics_json_sha256": "f73aa753d3230c60f3c8840bb11a504ff5c3044a86bbe6183e112a2ab304117f",
+      "external_predictions": "runs_v2_clean/fusion_v2_seed42/preds_dataset_ood.csv",
+      "external_sha256": "2999ee6c9173e5a6d4d1c795f1178043001ba16b94800ac76ff3ee60dc93ad55",
+      "fingerprint_sha256": "3437ccd466d70f6ca88eaddaf6121f4e2141550126012a3dac0e1c624978cd42",
+      "n_documented_argmax_ties": 0,
+      "max_prob_sum_deviation": 1.000000000139778e-06
+    },
+    {
+      "variant": "full_fusion_v2",
+      "seed": 43,
+      "predictions": "runs_v2_clean/fusion_v2_seed43/preds_test.csv",
+      "predictions_sha256": "bb142d3d33528fdb0d5ad915af3840102f5d93411cdba1ae8540ff03a92c77b5",
+      "metrics_json": "runs_v2_clean/fusion_v2_seed43/metrics.json",
+      "metrics_json_sha256": "b6fc17cb3b3945d8e00e628240508ea30a8d4702b414942f261278b7cd6f892f",
+      "external_predictions": "runs_v2_clean/fusion_v2_seed43/preds_dataset_ood.csv",
+      "external_sha256": "555621abe80e49d46afa8aff640eef0eb6ea582506f8c4468c097007714dbbfe",
+      "fingerprint_sha256": "3437ccd466d70f6ca88eaddaf6121f4e2141550126012a3dac0e1c624978cd42",
+      "n_documented_argmax_ties": 0,
+      "max_prob_sum_deviation": 1.000000000139778e-06
+    },
+    {
+      "variant": "full_fusion_v2",
+      "seed": 44,
+      "predictions": "runs_v2_clean/fusion_v2_seed44/preds_test.csv",
+      "predictions_sha256": "fe00252503bf19b210540d84ba788f3cd92be048c126692869d7646e4c169a40",
+      "metrics_json": "runs_v2_clean/fusion_v2_seed44/metrics.json",
+      "metrics_json_sha256": "a3b656c128e93cd00a6ab54398785a86fffa07da4ce305eb6c34e25787cb15c1",
+      "external_predictions": "runs_v2_clean/fusion_v2_seed44/preds_dataset_ood.csv",
+      "external_sha256": "c894dfa58ca6ec505b15f134225aee147c0271958c9422db5ccea6a3cf478597",
+      "fingerprint_sha256": "3437ccd466d70f6ca88eaddaf6121f4e2141550126012a3dac0e1c624978cd42",
+      "n_documented_argmax_ties": 0,
+      "max_prob_sum_deviation": 1.000000000139778e-06
+    },
+    {
+      "variant": "no_gate",
+      "seed": 42,
+      "predictions": "publication_runs/ablations/clean/no_gate/seed_42/preds_test.csv",
+      "predictions_sha256": "8bf17d12dd9dcdfd61d80960618fcf6345a211eec3ada33103337aacfa5a8878",
+      "metrics_json": "publication_runs/ablations/clean/no_gate/seed_42/metrics.json",
+      "metrics_json_sha256": "d28a57230f95431d04061bb74c16da88d5a0df4dfbe75817a7fa4d442a4eaddd",
+      "external_predictions": "publication_runs/ablations/clean/no_gate/seed_42/preds_dataset_ood.csv",
+      "external_sha256": "4bfc031e49c6ad351b7382df852bf789fada948ce430ae0d897870d7849abcbf",
+      "fingerprint_sha256": "3437ccd466d70f6ca88eaddaf6121f4e2141550126012a3dac0e1c624978cd42",
+      "n_documented_argmax_ties": 0,
+      "max_prob_sum_deviation": 1.000000000139778e-06
+    },
+    {
+      "variant": "no_gate",
+      "seed": 43,
+      "predictions": "publication_runs/ablations/clean/no_gate/seed_43/preds_test.csv",
+      "predictions_sha256": "f9cbc7c77f6baa6fc8c3b9a2e1d34ef0e3fe8753ee28ca07dd29c582c99be239",
+      "metrics_json": "publication_runs/ablations/clean/no_gate/seed_43/metrics.json",
+      "metrics_json_sha256": "4215543abad2b0f2f79626ff8f8700f22a48d8e1a3ed95b1997ad683be3afa5b",
+      "external_predictions": "publication_runs/ablations/clean/no_gate/seed_43/preds_dataset_ood.csv",
+      "external_sha256": "3add72310577a3a368885c11481c5467b21c95e3d05ca21ed3962bc31924cf20",
+      "fingerprint_sha256": "3437ccd466d70f6ca88eaddaf6121f4e2141550126012a3dac0e1c624978cd42",
+      "n_documented_argmax_ties": 0,
+      "max_prob_sum_deviation": 1.000000000139778e-06
+    },
+    {
+      "variant": "no_gate",
+      "seed": 44,
+      "predictions": "publication_runs/ablations/clean/no_gate/seed_44/preds_test.csv",
+      "predictions_sha256": "91e8e45e1f42653ff357bcbecb75cb5c2dc83624a1deed24b685a049c315c296",
+      "metrics_json": "publication_runs/ablations/clean/no_gate/seed_44/metrics.json",
+      "metrics_json_sha256": "65ed0a9c3499bebeb586bd054b9d4e0dd9b1cb325b7efcf0ad5a0a6b600521a2",
+      "external_predictions": "publication_runs/ablations/clean/no_gate/seed_44/preds_dataset_ood.csv",
+      "external_sha256": "7064360979f8c2fb2943d535fa10e1040d0c91e79094e6da33ff6615550f2527",
+      "fingerprint_sha256": "3437ccd466d70f6ca88eaddaf6121f4e2141550126012a3dac0e1c624978cd42",
+      "n_documented_argmax_ties": 0,
+      "max_prob_sum_deviation": 1.000000000139778e-06
+    },
+    {
+      "variant": "no_multiscale",
+      "seed": 42,
+      "predictions": "publication_runs/ablations/clean/no_multiscale/seed_42/preds_test.csv",
+      "predictions_sha256": "0a833fb32a1f783aeda86cb9b93046a668178f379bf72d2a44b7800352474409",
+      "metrics_json": "publication_runs/ablations/clean/no_multiscale/seed_42/metrics.json",
+      "metrics_json_sha256": "f227c40e73534092eb1556e537bd8b9ebf86d0e761c000f83d834dc1c687f948",
+      "external_predictions": "publication_runs/ablations/clean/no_multiscale/seed_42/preds_dataset_ood.csv",
+      "external_sha256": "cad1a513c47c2a83e1028905517d3ec1586c37e715d207fa237bf80f59c3069f",
+      "fingerprint_sha256": "3437ccd466d70f6ca88eaddaf6121f4e2141550126012a3dac0e1c624978cd42",
+      "n_documented_argmax_ties": 0,
+      "max_prob_sum_deviation": 1.000000000139778e-06
+    },
+    {
+      "variant": "no_multiscale",
+      "seed": 43,
+      "predictions": "publication_runs/ablations/clean/no_multiscale/seed_43/preds_test.csv",
+      "predictions_sha256": "cc17055ba9e94f448a50bc1cc76f8feeb81f584979fa7bbf585ce48b8c5ac115",
+      "metrics_json": "publication_runs/ablations/clean/no_multiscale/seed_43/metrics.json",
+      "metrics_json_sha256": "b06eb6fa4355f9623a2e975c1946fd2a13005ca401eb934255532ed2610a3f7c",
+      "external_predictions": "publication_runs/ablations/clean/no_multiscale/seed_43/preds_dataset_ood.csv",
+      "external_sha256": "71387d55ba89a2c28879cc59033ec3903764cc3d955fe8dbe4eae6117c2c292c",
+      "fingerprint_sha256": "3437ccd466d70f6ca88eaddaf6121f4e2141550126012a3dac0e1c624978cd42",
+      "n_documented_argmax_ties": 0,
+      "max_prob_sum_deviation": 1.000000000139778e-06
+    },
+    {
+      "variant": "no_multiscale",
+      "seed": 44,
+      "predictions": "publication_runs/ablations/clean/no_multiscale/seed_44/preds_test.csv",
+      "predictions_sha256": "2f82e2cc5aac42e4740fe56e320271e38b0dca2dfaed8df77bcba9d461b359ae",
+      "metrics_json": "publication_runs/ablations/clean/no_multiscale/seed_44/metrics.json",
+      "metrics_json_sha256": "e562f471f295902a48e6386fcda52a5906c0519ccff0c54f707125b257e4740e",
+      "external_predictions": "publication_runs/ablations/clean/no_multiscale/seed_44/preds_dataset_ood.csv",
+      "external_sha256": "8d1f07534fb06e20dfe1a0a856c8811ee4feae4963428fb486e3eaa3fa8d3935",
+      "fingerprint_sha256": "3437ccd466d70f6ca88eaddaf6121f4e2141550126012a3dac0e1c624978cd42",
+      "n_documented_argmax_ties": 0,
+      "max_prob_sum_deviation": 1.000000000139778e-06
+    },
+    {
+      "variant": "no_auxiliary_loss",
+      "seed": 42,
+      "predictions": "publication_runs/ablations/clean/no_auxiliary_loss/seed_42/preds_test.csv",
+      "predictions_sha256": "ebf796f0a22b54f6a375ed1b9d029e57977f122bdf6be6d0a1f258845ef38d04",
+      "metrics_json": "publication_runs/ablations/clean/no_auxiliary_loss/seed_42/metrics.json",
+      "metrics_json_sha256": "aa4b17e983b76b86f5c740100e7ac09b6b546724bb1e3759e2204e11116ba0c4",
+      "external_predictions": "publication_runs/ablations/clean/no_auxiliary_loss/seed_42/preds_dataset_ood.csv",
+      "external_sha256": "aa89bd686c4e9a797c7247537613fb00ac77f996b211a111147117ff9de0c3d2",
+      "fingerprint_sha256": "3437ccd466d70f6ca88eaddaf6121f4e2141550126012a3dac0e1c624978cd42",
+      "n_documented_argmax_ties": 0,
+      "max_prob_sum_deviation": 1.000000000139778e-06
+    },
+    {
+      "variant": "no_auxiliary_loss",
+      "seed": 43,
+      "predictions": "publication_runs/ablations/clean/no_auxiliary_loss/seed_43/preds_test.csv",
+      "predictions_sha256": "b25696d2f11912bf59dc7ebbdc74548444ebf0390fd44ae27eb9ffc33f399d6a",
+      "metrics_json": "publication_runs/ablations/clean/no_auxiliary_loss/seed_43/metrics.json",
+      "metrics_json_sha256": "1e8cf335924497023242a1901ac7afbba4746281b67de65686bb08af3e6f7cb5",
+      "external_predictions": "publication_runs/ablations/clean/no_auxiliary_loss/seed_43/preds_dataset_ood.csv",
+      "external_sha256": "0bf3c5596a82dd8a1ed28de4c9d0a25422ae080dc1f037010bb36913e0da905b",
+      "fingerprint_sha256": "3437ccd466d70f6ca88eaddaf6121f4e2141550126012a3dac0e1c624978cd42",
+      "n_documented_argmax_ties": 0,
+      "max_prob_sum_deviation": 1.000000000139778e-06
+    },
+    {
+      "variant": "no_auxiliary_loss",
+      "seed": 44,
+      "predictions": "publication_runs/ablations/clean/no_auxiliary_loss/seed_44/preds_test.csv",
+      "predictions_sha256": "1637bd9a44dd1b137eae11c22de259b3a060d26012b512fd658a830a4d67e3c1",
+      "metrics_json": "publication_runs/ablations/clean/no_auxiliary_loss/seed_44/metrics.json",
+      "metrics_json_sha256": "4a2f472487d31a1d1d31dc9365bf8313e477f5dc8ed00886b480a846b6792d2c",
+      "external_predictions": "publication_runs/ablations/clean/no_auxiliary_loss/seed_44/preds_dataset_ood.csv",
+      "external_sha256": "24a4e1b8f96f428d70fedaacffe747f78b960c3e866a032dcf5ad7faae483d61",
+      "fingerprint_sha256": "3437ccd466d70f6ca88eaddaf6121f4e2141550126012a3dac0e1c624978cd42",
+      "n_documented_argmax_ties": 0,
+      "max_prob_sum_deviation": 1.000000000139778e-06
+    },
+    {
+      "variant": "no_ema",
+      "seed": 42,
+      "predictions": "publication_runs/ablations/clean/no_ema/seed_42/preds_test.csv",
+      "predictions_sha256": "faa004c73966119383aa15fd071e4ea1b37b6e1e686e08a400c9d945aa2fd865",
+      "metrics_json": "publication_runs/ablations/clean/no_ema/seed_42/metrics.json",
+      "metrics_json_sha256": "d70e199bfe71307c74e46b31269a1cc78344b7659a7db863b8f33505348c6c73",
+      "external_predictions": "publication_runs/ablations/clean/no_ema/seed_42/preds_dataset_ood.csv",
+      "external_sha256": "bc3267a76f7e3a3f4bed87af8f5b5590c39c59f1ff675abc99af140461fb60e9",
+      "fingerprint_sha256": "3437ccd466d70f6ca88eaddaf6121f4e2141550126012a3dac0e1c624978cd42",
+      "n_documented_argmax_ties": 0,
+      "max_prob_sum_deviation": 1.000000000139778e-06
+    },
+    {
+      "variant": "no_ema",
+      "seed": 43,
+      "predictions": "publication_runs/ablations/clean/no_ema/seed_43/preds_test.csv",
+      "predictions_sha256": "00fc76e9a6f1ccf30a1f6ff7f5cc330a06598e616a59bb0882577d601cc1bc98",
+      "metrics_json": "publication_runs/ablations/clean/no_ema/seed_43/metrics.json",
+      "metrics_json_sha256": "a0cc5d1fd7307b8997e4d4dd9edbc11dc7d27f49e820368b7f91a5dfdeecea3b",
+      "external_predictions": "publication_runs/ablations/clean/no_ema/seed_43/preds_dataset_ood.csv",
+      "external_sha256": "a6dd341b9840b7a3115d54556fbfc933caf5c34cfb0d5fad18196453fe53c78d",
+      "fingerprint_sha256": "3437ccd466d70f6ca88eaddaf6121f4e2141550126012a3dac0e1c624978cd42",
+      "n_documented_argmax_ties": 0,
+      "max_prob_sum_deviation": 1.000000000139778e-06
+    },
+    {
+      "variant": "no_ema",
+      "seed": 44,
+      "predictions": "publication_runs/ablations/clean/no_ema/seed_44/preds_test.csv",
+      "predictions_sha256": "78434a9c6bc950f31e5fda56abf510236a71b74bf83ad491e92fccf56a9a7939",
+      "metrics_json": "publication_runs/ablations/clean/no_ema/seed_44/metrics.json",
+      "metrics_json_sha256": "6d528acce03e28d4f5e1364c2d07e2441b8a99671f79ed8e48f9d43fc4f7926c",
+      "external_predictions": "publication_runs/ablations/clean/no_ema/seed_44/preds_dataset_ood.csv",
+      "external_sha256": "463f9fda1b7eb02323bf04e93bf7f236d3c2edb88fb872f0ffc88ed6424b8a4e",
+      "fingerprint_sha256": "3437ccd466d70f6ca88eaddaf6121f4e2141550126012a3dac0e1c624978cd42",
+      "n_documented_argmax_ties": 0,
+      "max_prob_sum_deviation": 1.000000000139778e-06
+    },
+    {
+      "variant": "cnn_branch_only",
+      "seed": 42,
+      "predictions": "publication_runs/ablations/clean/cnn_branch_only/seed_42/preds_test.csv",
+      "predictions_sha256": "8c2d25fb5fc9706b8cc4f812d2f248d811e7d1332882e9b8afeed25a6694ad84",
+      "metrics_json": "publication_runs/ablations/clean/cnn_branch_only/seed_42/metrics.json",
+      "metrics_json_sha256": "0089f64f76fdcbe79b271607d4acd5bf678f5228fc085ffd41036f97eb78877a",
+      "external_predictions": "publication_runs/ablations/clean/cnn_branch_only/seed_42/preds_dataset_ood.csv",
+      "external_sha256": "d03167197de81838e3532e06e337186abec6e5c0fe3989a13bd7f146281fbeaa",
+      "fingerprint_sha256": "3437ccd466d70f6ca88eaddaf6121f4e2141550126012a3dac0e1c624978cd42",
+      "n_documented_argmax_ties": 0,
+      "max_prob_sum_deviation": 1.000000000139778e-06
+    },
+    {
+      "variant": "cnn_branch_only",
+      "seed": 43,
+      "predictions": "publication_runs/ablations/clean/cnn_branch_only/seed_43/preds_test.csv",
+      "predictions_sha256": "690e97f352c277e80f2527ef06e3eb713f2bce5d2a41593188000c8ac0602c7f",
+      "metrics_json": "publication_runs/ablations/clean/cnn_branch_only/seed_43/metrics.json",
+      "metrics_json_sha256": "e9e77afacfd0b0ef408d122f607dca1ca96d3bf183c09b9cabd727e1f422721a",
+      "external_predictions": "publication_runs/ablations/clean/cnn_branch_only/seed_43/preds_dataset_ood.csv",
+      "external_sha256": "e7cdf4b12fac7fdef7bfae1e4ec2628ed68272424c078fb20a9be29d9908beab",
+      "fingerprint_sha256": "3437ccd466d70f6ca88eaddaf6121f4e2141550126012a3dac0e1c624978cd42",
+      "n_documented_argmax_ties": 0,
+      "max_prob_sum_deviation": 1.000000000139778e-06
+    },
+    {
+      "variant": "cnn_branch_only",
+      "seed": 44,
+      "predictions": "publication_runs/ablations/clean/cnn_branch_only/seed_44/preds_test.csv",
+      "predictions_sha256": "02b4ac8e613c1a9139c0dc134c199b65830ceff13bad123882ce350ede367109",
+      "metrics_json": "publication_runs/ablations/clean/cnn_branch_only/seed_44/metrics.json",
+      "metrics_json_sha256": "9301d389b391bea73af4f60dfeaeaa63b28d89a938e4d6cdcfe8000cba8a85e3",
+      "external_predictions": "publication_runs/ablations/clean/cnn_branch_only/seed_44/preds_dataset_ood.csv",
+      "external_sha256": "a8dd4e5a43c83fe25e24354107a7ed78c42e8bb8338b3f63704f33fc32ada5b8",
+      "fingerprint_sha256": "3437ccd466d70f6ca88eaddaf6121f4e2141550126012a3dac0e1c624978cd42",
+      "n_documented_argmax_ties": 0,
+      "max_prob_sum_deviation": 1.000000000139778e-06
+    },
+    {
+      "variant": "vit_branch_only",
+      "seed": 42,
+      "predictions": "publication_runs/ablations/clean/vit_branch_only/seed_42/preds_test.csv",
+      "predictions_sha256": "fbfa21183ecfaecd4522e3698f5a09c0b146c38b975e6cf6d3b3edfb91262f45",
+      "metrics_json": "publication_runs/ablations/clean/vit_branch_only/seed_42/metrics.json",
+      "metrics_json_sha256": "efdc7df122cda4a2790f37c76a90b6d3df9f81840c59e439258a50f6fb61bf0d",
+      "external_predictions": "publication_runs/ablations/clean/vit_branch_only/seed_42/preds_dataset_ood.csv",
+      "external_sha256": "16145222450e234ef19b5f07ecf8facc02983b32c69d6fe751d2c8540f3e015e",
+      "fingerprint_sha256": "3437ccd466d70f6ca88eaddaf6121f4e2141550126012a3dac0e1c624978cd42",
+      "n_documented_argmax_ties": 0,
+      "max_prob_sum_deviation": 1.000000000139778e-06
+    },
+    {
+      "variant": "vit_branch_only",
+      "seed": 43,
+      "predictions": "publication_runs/ablations/clean/vit_branch_only/seed_43/preds_test.csv",
+      "predictions_sha256": "7e231a68aa306e6868e23aaeb03002d4efff8766220307e3cb7ddc943985dc57",
+      "metrics_json": "publication_runs/ablations/clean/vit_branch_only/seed_43/metrics.json",
+      "metrics_json_sha256": "11fc4f9f6ffc368c67b3f1bd9694641476fac8713c740170abbf7cb51f190c73",
+      "external_predictions": "publication_runs/ablations/clean/vit_branch_only/seed_43/preds_dataset_ood.csv",
+      "external_sha256": "b076d06b2f5cf4755beb26272e98ae744582ade8c43da2828d1cad37cdc86072",
+      "fingerprint_sha256": "3437ccd466d70f6ca88eaddaf6121f4e2141550126012a3dac0e1c624978cd42",
+      "n_documented_argmax_ties": 0,
+      "max_prob_sum_deviation": 1.000000000139778e-06
+    },
+    {
+      "variant": "vit_branch_only",
+      "seed": 44,
+      "predictions": "publication_runs/ablations/clean/vit_branch_only/seed_44/preds_test.csv",
+      "predictions_sha256": "63281de9abc969d8304e558e84fa2f5627c624be3a2cb22b905875f073e4cb09",
+      "metrics_json": "publication_runs/ablations/clean/vit_branch_only/seed_44/metrics.json",
+      "metrics_json_sha256": "09b73d2c3c4e10b08074f0d8333746ffc437c336ddc6043a994ffc55a293ecca",
+      "external_predictions": "publication_runs/ablations/clean/vit_branch_only/seed_44/preds_dataset_ood.csv",
+      "external_sha256": "f851b85049ecae6ae70536a102ab1a99019fe7e7b74395ce2ba71b447acc5471",
+      "fingerprint_sha256": "3437ccd466d70f6ca88eaddaf6121f4e2141550126012a3dac0e1c624978cd42",
+      "n_documented_argmax_ties": 0,
+      "max_prob_sum_deviation": 1.000000000139778e-06
+    },
+    {
+      "variant": "no_tta",
+      "seed": 42,
+      "predictions": "publication_runs/ablations/clean/no_tta/seed_42/preds_test.csv",
+      "predictions_sha256": "613b9e46bdc014f8e1954b3798284fe472325fc886e40e979b1bfaaa318175c3",
+      "metrics_json": "publication_runs/ablations/clean/no_tta/seed_42/metrics.json",
+      "metrics_json_sha256": "90540b3bc7541ef773595824a79f9aa6a43ac8fa3c5e8b8aaaa0c5cb4b1146bb",
+      "external_predictions": "publication_runs/ablations/clean/no_tta/seed_42/preds_dataset_ood.csv",
+      "external_sha256": "5253afe01517ce92e53aa84d1bdaad29dc05a6b49ea54cd81d9a4814f6d4254e",
+      "fingerprint_sha256": "3437ccd466d70f6ca88eaddaf6121f4e2141550126012a3dac0e1c624978cd42",
+      "n_documented_argmax_ties": 0,
+      "max_prob_sum_deviation": 1.000000000139778e-06
+    },
+    {
+      "variant": "no_tta",
+      "seed": 43,
+      "predictions": "publication_runs/ablations/clean/no_tta/seed_43/preds_test.csv",
+      "predictions_sha256": "31743099af26c313ed2b4e439fd9998e2948ea7a0125982cb60b581e45722845",
+      "metrics_json": "publication_runs/ablations/clean/no_tta/seed_43/metrics.json",
+      "metrics_json_sha256": "e610b150d94635f1ed7c57e63770eb1f9a3e2c39a9daad78bb4d1e7ccea59431",
+      "external_predictions": "publication_runs/ablations/clean/no_tta/seed_43/preds_dataset_ood.csv",
+      "external_sha256": "26d9854a82e39108e6b73c9f746614a2de46dc049a30a59b6e385d3771ac88d6",
+      "fingerprint_sha256": "3437ccd466d70f6ca88eaddaf6121f4e2141550126012a3dac0e1c624978cd42",
+      "n_documented_argmax_ties": 0,
+      "max_prob_sum_deviation": 1.000000000139778e-06
+    },
+    {
+      "variant": "no_tta",
+      "seed": 44,
+      "predictions": "publication_runs/ablations/clean/no_tta/seed_44/preds_test.csv",
+      "predictions_sha256": "60b62f1d5b61039b81ffd271902b5197a10c7464845996c246e575aa7cbcb6c3",
+      "metrics_json": "publication_runs/ablations/clean/no_tta/seed_44/metrics.json",
+      "metrics_json_sha256": "45ac61aba0bfbb388ff679579f37532b05bdc8eafd984273b8aa828572939d9d",
+      "external_predictions": "publication_runs/ablations/clean/no_tta/seed_44/preds_dataset_ood.csv",
+      "external_sha256": "c2c12c64985a71c3d35f4e39f7e81c80aae4db2587f1c850cd95cf4e2aa6c7ab",
+      "fingerprint_sha256": "3437ccd466d70f6ca88eaddaf6121f4e2141550126012a3dac0e1c624978cd42",
+      "n_documented_argmax_ties": 0,
+      "max_prob_sum_deviation": 1.000000000139778e-06
+    }
+  ],
+  "prerequisite_gate": {
+    "checks": {
+      "phase3a_pass": true,
+      "addendum_pass": true,
+      "canonical_848_identities": true,
+      "canonical_fingerprint_matches_addendum": true,
+      "imported_hashes_match": true,
+      "reference_reproduces": true
+    },
+    "evidence": {
+      "phase3a": {
+        "acceptance_status": "PASS",
+        "n_accepted": 21,
+        "n_rejected": 0,
+        "training_performed": false
+      },
+      "addendum": {
+        "acceptance_status": "PASS",
+        "counts": {
+          "reference": 3,
+          "training": 18,
+          "evaluation_only": 3
+        },
+        "all_runs_share_canonical_mapping": true,
+        "reference_summary": {
+          "accuracy_mean_pct": 98.27044025157234,
+          "accuracy_sd_pct": 0.06808375815915797,
+          "macro_f1_mean_pct": 98.2761297247453,
+          "macro_f1_sd_pct": 0.037062909191767246,
+          "verified_accuracy": [
+            98.27,
+            0.07
+          ],
+          "verified_macro_f1": [
+            98.28,
+            0.04
+          ],
+          "accuracy_mean_diff_pp": 0.0004402515723427314,
+          "accuracy_sd_diff_pp": 0.001916241840842034,
+          "macro_f1_mean_diff_pp": 0.0038702752546981856,
+          "macro_f1_sd_diff_pp": 0.002937090808232755,
+          "reproduces": true
+        }
+      },
+      "canonical_mapping": {
+        "source": "dataset_clean/split_manifest.json",
+        "source_sha256": "a02bcb62847ce1b9146a3e769f41f88ec1afce5a46d03fb5aaffb0ef43a0e6d2",
+        "n_identities": 848,
+        "fingerprint_sha256": "3437ccd466d70f6ca88eaddaf6121f4e2141550126012a3dac0e1c624978cd42",
+        "class_counts": {
+          "glioma": 243,
+          "meningioma": 228,
+          "notumor": 116,
+          "pituitary": 261
+        },
+        "class_order": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "evidence_note": "derived from the split manifest; dataset_clean/Testing contains no images locally, so directory enumeration was unavailable as a cross-check"
+      },
+      "import_integrity": {
+        "files_rehashed": 189,
+        "problems": [],
+        "n_problems": 0
+      }
+    },
+    "all_passed": true,
+    "n_expected_imported_files": 189,
+    "imported_files_rehashed": 189
+  },
+  "metric_conventions": {
+    "source": "src/publication/evaluate_fusion_v2.py (Phase 1), imported unchanged",
+    "class_order": [
+      "glioma",
+      "meningioma",
+      "notumor",
+      "pituitary"
+    ],
+    "averaging": "macro = unweighted mean over the four classes, so each class counts equally regardless of support",
+    "zero_division_policy": "precision, recall, specificity and F1 are defined as 0.0 when their denominator is 0; ROC-AUC and AP return not-available rather than 0 when the class has no positives or no negatives",
+    "balanced_accuracy": "unweighted mean of per-class recall",
+    "specificity": "TN / (TN + FP), computed one-vs-rest per class",
+    "nll": "-mean(log p_true), probabilities clipped at 1e-12",
+    "brier": "multiclass Brier = mean over images of sum_k (p_k - onehot_k)^2",
+    "ece": "expected calibration error over 15 equal-width bins on [0,1] applied to the maximum predicted probability",
+    "ece_bins": 15,
+    "ece_bin_edges": "linspace(0, 1, 16); first bin closed at both ends, rest (lo, hi]",
+    "roc_auc": "one-vs-rest, Mann-Whitney rank identity with ties averaged; not-available when undefined",
+    "average_precision": "one-vs-rest step-wise average precision (AP): mean of precision at each positive, no interpolation. This is AP, NOT the trapezoidal area under an interpolated precision-recall curve; the two are computed differently and are not interchangeable",
+    "seed_summary": "arithmetic mean and sample SD with ddof=1 over 3 seeds"
+  },
+  "multiple_comparison_control": {
+    "family": "all 21 seed-specific McNemar tests (7 variants x 3 seeds)",
+    "method": "Holm-Bonferroni step-down, monotonicity enforced",
+    "n_tests": 21,
+    "alpha": 0.05,
+    "n_significant_after_holm": 3,
+    "n_significant_before_holm": 4,
+    "why_this_family": "The primary family is all 21 seed-specific tests. Correcting across 7 while selecting or pooling one p-value per variant would be a smaller, more permissive family reached by discarding evidence, so it is not used. The variant-level view below is descriptive only.",
+    "what_is_not_done": [
+      "the 2,544 predictions are 848 images scored three times and are never pooled as independent observations",
+      "no single combined McNemar p-value is manufactured per variant",
+      "n=3 seeds is not treated as sufficient for a normal-theory test",
+      "nonsignificance is never reported as equivalence"
+    ]
+  },
+  "bootstrap": {
+    "iterations": 10000,
+    "seed": 20260924,
+    "resampling_unit": "image",
+    "stratified_by": "true class",
+    "paired": true
+  },
+  "gate_provenance": {
+    "strengthened": true,
+    "source": "publication_results/ablations/checkpoint_recovery/import_manifest.json",
+    "source_sha256": "2d172681c148c126b624b14594c2ec19b816d2efa81a15e7abf674ec8a432a2e",
+    "per_seed": {
+      "42": {
+        "available": true,
+        "decision": "ACCEPTED",
+        "checkpoint_sha256": "9b328ba83df5d44b542e19faae68fd1493fee61e0c5b80e493c2f8a387ed592e",
+        "strict_load": true,
+        "state_dict_keys": 578,
+        "n_missing": 0,
+        "n_unexpected": 0,
+        "n_shape_mismatch": 0,
+        "loaded_into_gated_architecture": true,
+        "loaded_into_multiscale_architecture": true,
+        "cnn_proj_in_features": 1432,
+        "gate_is_learned_module": true,
+        "gate_parameter_count": 262914,
+        "gate_cnn_mean_on_probe": 0.280799925327301,
+        "gate_cnn_std_on_probe": 0.027212733402848244,
+        "gate_separated_from_uniform_mixing": true,
+        "n_predictions_compared": 848,
+        "n_pred_label_mismatch": 0,
+        "max_abs_prob_diff": 4.824623107912984e-06,
+        "accuracy_diff_pp": 0.0,
+        "reference_predictions_reproduced": true,
+        "seed_establishes_gated_reference": true
+      },
+      "43": {
+        "available": true,
+        "decision": "ACCEPTED",
+        "checkpoint_sha256": "9f97b6aa0c9ec3f1124e593c8c29e11d31f4aef8bc08e20a40e7ed1f29e80f25",
+        "strict_load": true,
+        "state_dict_keys": 578,
+        "n_missing": 0,
+        "n_unexpected": 0,
+        "n_shape_mismatch": 0,
+        "loaded_into_gated_architecture": true,
+        "loaded_into_multiscale_architecture": true,
+        "cnn_proj_in_features": 1432,
+        "gate_is_learned_module": true,
+        "gate_parameter_count": 262914,
+        "gate_cnn_mean_on_probe": 0.30059614777565,
+        "gate_cnn_std_on_probe": 0.013137903064489365,
+        "gate_separated_from_uniform_mixing": true,
+        "n_predictions_compared": 848,
+        "n_pred_label_mismatch": 0,
+        "max_abs_prob_diff": 3.926410675036962e-06,
+        "accuracy_diff_pp": 0.0,
+        "reference_predictions_reproduced": true,
+        "seed_establishes_gated_reference": true
+      },
+      "44": {
+        "available": true,
+        "decision": "ACCEPTED",
+        "checkpoint_sha256": "4155a2b71df99a6159e1e4a5dbe635f4e9ea7852a6704d804dd1fb5d43aca434",
+        "strict_load": true,
+        "state_dict_keys": 578,
+        "n_missing": 0,
+        "n_unexpected": 0,
+        "n_shape_mismatch": 0,
+        "loaded_into_gated_architecture": true,
+        "loaded_into_multiscale_architecture": true,
+        "cnn_proj_in_features": 1432,
+        "gate_is_learned_module": true,
+        "gate_parameter_count": 262914,
+        "gate_cnn_mean_on_probe": 0.33688557147979736,
+        "gate_cnn_std_on_probe": 0.019794955849647522,
+        "gate_separated_from_uniform_mixing": true,
+        "n_predictions_compared": 848,
+        "n_pred_label_mismatch": 0,
+        "max_abs_prob_diff": 3.985546112084126e-06,
+        "accuracy_diff_pp": 0.0,
+        "reference_predictions_reproduced": true,
+        "seed_establishes_gated_reference": true
+      }
+    },
+    "argument": "src/fusion_v2.py forward() computes cat([c*g_cnn*2, v*g_vit*2]) when gated and cat([c, v]) when not, so the two paths coincide only at a gate mass of exactly 0.5/0.5. The recovered checkpoints load strictly into FusionV2(gated=True, multiscale=True) with 578/578 keys and no missing, unexpected or mis-shaped tensors; their probe gate mass is separated from uniform 0.5/0.5 mixing; and evaluating through that gated path reproduces every one of the 848 recorded reference predictions with no pred_label mismatch. The reference predictions were therefore produced by the gated forward path.",
+    "consequence": "The Phase 3A Addendum resolved the reference `gated` setting only from the launch specification, its weakest evidence class. That caveat is SUPERSEDED: the reference is gated on machine-readable, independently checkable evidence.",
+    "what_this_does_not_establish": "Gate mass measures branch utilization only. It is not evidence of causal branch contribution, of explanation, or of anatomical attention, and no such claim is made from it."
+  },
+  "no_tta_provenance": {
+    "all_seeds_clean": true,
+    "per_seed": {
+      "42": {
+        "source_checkpoint_recorded": "9b328ba83df5d44b542e19faae68fd1493fee61e0c5b80e493c2f8a387ed592e",
+        "verified_recovered_checkpoint": "9b328ba83df5d44b542e19faae68fd1493fee61e0c5b80e493c2f8a387ed592e",
+        "identical_checkpoint": true,
+        "trained": false,
+        "checkpoint_written": false,
+        "no_weights_changed": true,
+        "tta_flag": false,
+        "checkpoint_in_run_dir": false,
+        "tta_is_the_only_change": true
+      },
+      "43": {
+        "source_checkpoint_recorded": "9f97b6aa0c9ec3f1124e593c8c29e11d31f4aef8bc08e20a40e7ed1f29e80f25",
+        "verified_recovered_checkpoint": "9f97b6aa0c9ec3f1124e593c8c29e11d31f4aef8bc08e20a40e7ed1f29e80f25",
+        "identical_checkpoint": true,
+        "trained": false,
+        "checkpoint_written": false,
+        "no_weights_changed": true,
+        "tta_flag": false,
+        "checkpoint_in_run_dir": false,
+        "tta_is_the_only_change": true
+      },
+      "44": {
+        "source_checkpoint_recorded": "4155a2b71df99a6159e1e4a5dbe635f4e9ea7852a6704d804dd1fb5d43aca434",
+        "verified_recovered_checkpoint": "4155a2b71df99a6159e1e4a5dbe635f4e9ea7852a6704d804dd1fb5d43aca434",
+        "identical_checkpoint": true,
+        "trained": false,
+        "checkpoint_written": false,
+        "no_weights_changed": true,
+        "tta_flag": false,
+        "checkpoint_in_run_dir": false,
+        "tta_is_the_only_change": true
+      }
+    },
+    "note": "no_tta is an evaluation-only variant: the same verified checkpoint, scored with horizontal-flip TTA disabled. No training occurred and no checkpoint was written."
+  },
+  "code": {
+    "src/publication/final_analysis.py": "9b2b47c565141841cc6fb803067d80b84993c626e2e6e3cf6bf72e7a751b6759",
+    "src/publication/evaluate_fusion_v2.py": "a80053ea4bf310299a1c7b790cb4726acb76b0fa164c7134a8f763e7c63aec00",
+    "src/publication/session_artifact_contract.py": "8ef96d501e2b72132cc617cbf5e528e9f37e2470cc58884526c81b5996fab862",
+    "src/fusion_v2.py": "dd1a1180459b9eb1a3e1a02716d0406722f97d2e0eb1b9922ac551d0cdba1292",
+    "src/train_ablation.py": "ed8bf84c4953a3c4bc4ac035784241d022316f04e4d0f6cd295c98c1126ab15c"
+  },
+  "acceptance_checks": {
+    "prerequisite_gate_passed": true,
+    "all_24_run_identities_revalidated": true,
+    "all_runs_share_canonical_fingerprint": true,
+    "reference_accuracy_reproduced": true,
+    "reference_macro_f1_recomputed": true,
+    "seven_variants_x_three_seeds": true,
+    "exactly_21_mcnemar_tests": true,
+    "holm_applied_across_all_21": true,
+    "bootstrap_unit_is_image": true,
+    "bootstrap_iterations_at_least_10000": true,
+    "seed_sd_and_bootstrap_kept_separate": true,
+    "no_tta_provenance_clean": true,
+    "no_brain_meta_statistical_comparison": true,
+    "no_training_or_reimport": true,
+    "statistical_audit_intact": true,
+    "no_effect_size_threshold_in_any_verdict": true,
+    "verdict_vocabulary_is_the_four_cautious_categories": true
+  },
+  "acceptance_status": "PASS",
+  "limitations": [
+    "No run stores a macro-F1 value. Every macro-F1 reported here is independently recomputed from the prediction CSVs. This is a recomputation, not a stored-metric reproduction, and is never described as one.",
+    "Canonical clean-test membership rests on dataset_clean/split_manifest.json. dataset_clean/Testing holds no images locally, so a directory enumeration cross-check of the 848 identities is unavailable.",
+    "The bootstrap resampling unit is an image. No patient or study identifiers exist for this split, so no patient-level or study-level uncertainty is available at any confidence level, and none is claimed.",
+    "Seed spread (n=3, ddof=1) and the bootstrap interval measure different things and are reported separately. The seed SD is not a confidence interval and three seeds cannot support a normal-theory test.",
+    "A non-significant McNemar result means no detectable difference under this protocol on 848 images. It is not evidence of equivalence, and the component verdicts are worded accordingly.",
+    "Gate mass measures branch utilization only. It is not evidence of causal branch contribution, of explanation, or of anatomical attention.",
+    "The external 499-image summary is descriptive. It is external_full, which includes 126 images having a near-duplicate in training, and it is neither the verified 373-image duplicate-disjoint result nor a zero-shot generalization measurement.",
+    "No comparison against BRAIN-META is computed or implied: its per-image predictions are unavailable, so no statistical statement about it is possible from this repository.",
+    "These are in-distribution duplicate-clean test results for one dataset family. They support no claim of clinical readiness, patient-level independence, or generalization across hospitals or scanners."
+  ]
+}

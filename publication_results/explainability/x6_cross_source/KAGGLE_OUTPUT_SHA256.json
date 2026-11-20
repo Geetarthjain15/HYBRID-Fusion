@@ -1,0 +1,12 @@
+{
+  "x6_cross_source/X6_CROSS_SOURCE_REPORT.md": "afcb09d33b3451862ffbb7daf1eb2886cacbd4263203103ca86cf5de175300f8",
+  "x6_cross_source/X6_CROSS_SOURCE_REPORT_smoke.md": "4edbe6d5f8161ae17523103b1fd622a615d8a04e02731e5f34f449a829603faa",
+  "x6_cross_source/per_image_curves.csv": "d8d9c587cefd3a47dec84c9d65d2316053fa7fae61bf5d744dd224eb467340ee",
+  "x6_cross_source/per_image_curves_smoke.csv": "fb32eaa16446b5be9727f45a7b25c2ac9e13867e6bc670903459a69b0527dd83",
+  "x6_cross_source/shift_effects.csv": "8ecff7b3958ab51b1d960d7bdddbc4d38ccca76031c1f4b1f7466415786b8cc0",
+  "x6_cross_source/shift_effects_smoke.csv": "8f6d9bcf8a6fee87869ccee273cd8fad846b6adf46992247dfed5e6f0661672d",
+  "x6_cross_source/stability.csv": "32ef743303af2adc28ebcf9b559056e2070b102befe43850ce8ea914fce23a2d",
+  "x6_cross_source/stability_smoke.csv": "fd0e88eb20e9dbe4841cd9db708ab0051989fc50a6acba434cd66764a0109c63",
+  "x6_cross_source/x6_cross_source.json": "2abf8282cae1ddcf05833093b471e733a878abc0ba0f6108ab529ae9b4de0b4b",
+  "x6_cross_source/x6_cross_source_smoke.json": "b5e8fb3cfcf7ab8f38f4eeb75ac9795788a07ca97be97e87763ca2ef0f47d52a"
+}

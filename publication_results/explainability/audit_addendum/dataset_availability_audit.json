@@ -1,0 +1,71 @@
+{
+  "claim_under_test": "Phase X0 recorded that dataset_clean/Testing holds no images locally. That was repeated from an earlier phase rather than re-verified.",
+  "inspected": {
+    "dataset_clean/Testing": {
+      "path": "dataset_clean/Testing",
+      "exists": false,
+      "is_dir": false
+    },
+    "dataset_clean": {
+      "path": "dataset_clean",
+      "exists": true,
+      "is_dir": true,
+      "recursive_file_count": 2,
+      "subdirectories": 0,
+      "files_by_extension": {
+        ".json": 2
+      },
+      "files_by_detected_signature": {},
+      "n_files_with_image_signature": 0
+    },
+    "dataset/Testing": {
+      "path": "dataset/Testing",
+      "exists": true,
+      "is_dir": true,
+      "recursive_file_count": 1052,
+      "subdirectories": 4,
+      "files_by_extension": {
+        ".jpg": 1052
+      },
+      "files_by_detected_signature": {
+        "JPEG": 1052
+      },
+      "n_files_with_image_signature": 1052
+    },
+    "dataset": {
+      "path": "dataset",
+      "exists": true,
+      "is_dir": true,
+      "recursive_file_count": 7023,
+      "subdirectories": 10,
+      "files_by_extension": {
+        ".jpg": 7023
+      },
+      "files_by_detected_signature": {
+        "JPEG": 7023
+      },
+      "n_files_with_image_signature": 7023
+    }
+  },
+  "authoritative_split_manifest": {
+    "path": "dataset_clean/split_manifest.json",
+    "present": true,
+    "n_testing_entries": 848,
+    "n_unique_testing_filenames": 848,
+    "sha256": "a02bcb62847ce1b9146a3e769f41f88ec1afce5a46d03fb5aaffb0ef43a0e6d2",
+    "filename_match_by_location": {
+      "dataset/Testing": {
+        "matched_filenames": 103,
+        "fraction_of_848": 0.1215
+      },
+      "dataset": {
+        "matched_filenames": 848,
+        "fraction_of_848": 1.0
+      }
+    }
+  },
+  "clean_test_images_present_locally": false,
+  "n_clean_test_images_found": 0,
+  "best_filename_match_any_location": 848,
+  "exact_848_available": true
+}

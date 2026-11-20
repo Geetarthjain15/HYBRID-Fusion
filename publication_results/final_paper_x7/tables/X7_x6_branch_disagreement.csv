@@ -1,0 +1,4 @@
+comparison,rate,source_file
+cnn_vs_fused_rate,0.3315460232350313,publication_results/explainability/x6_cross_source/x6_cross_source.json
+vit_vs_fused_rate,0.03306523681858802,publication_results/explainability/x6_cross_source/x6_cross_source.json
+cnn_vs_vit_rate,0.34226988382484363,publication_results/explainability/x6_cross_source/x6_cross_source.json

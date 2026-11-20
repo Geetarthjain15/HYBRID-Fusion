@@ -1,0 +1,97 @@
+{
+  "phase": "X0",
+  "generated_utc": "2026-09-26T10:37:36.804862+00:00",
+  "outputs": {
+    "EXPLAINABILITY_ARCHITECTURE_AUDIT.md": {
+      "sha256": "8c7f72a741ac94d096314d180f7ca025cc1352582343210a929bde42be49044b",
+      "bytes": 16955
+    },
+    "PHASE_X1_IMPLEMENTATION_SPEC.md": {
+      "sha256": "4feef757b5f03f64e95267e08b2e22bd3e21cc670339d114362afd5dd3aa3b98",
+      "bytes": 12971
+    },
+    "_probe_attention.json": {
+      "sha256": "045e8745883fc870675e559736cf98465481da7cdc10d81a6ec1db0e55945834",
+      "bytes": 1270
+    },
+    "_probe_raw.json": {
+      "sha256": "7b7e06cfdcb2e93afdd8683ca969876c87d67ae330f4d66111348e5ca6617ad8",
+      "bytes": 17632
+    },
+    "explainability_architecture_audit.json": {
+      "sha256": "6ccb79a7c7218b7e772917e55c5ba2bb4e275efb8feacae72b8d61c3f2c86272",
+      "bytes": 26076
+    },
+    "input_manifest.json": {
+      "sha256": "f0d6ff330ad3e57c1e0d813b3330654dde0105f5bbc811c299710f6f73b99ae4",
+      "bytes": 8094
+    }
+  },
+  "new_code": {
+    "src/publication/explainability/__init__.py": {
+      "sha256": "ec387a98bc43233092d3f14f2eb4cf6a233658eb25b7228b45032c02d7a53e37",
+      "bytes": 55
+    },
+    "src/publication/explainability/audit_x0.py": {
+      "sha256": "cbb8aedc780086df587ef7b0d171cf8484c2acafbad88638a75a2ded06364d39",
+      "bytes": 22853
+    },
+    "src/publication/explainability/audit_x0_attention.py": {
+      "sha256": "903e8a4d177fc806ca20c5e4cfad9d13fa617c92d5cd29c3bf47b740ff90bd4c",
+      "bytes": 6544
+    },
+    "src/publication/explainability/write_x0_audit.py": {
+      "sha256": "c9c6839cdee3019628df8e1ee29e3721818ce042e9203e811c58d678d4811416",
+      "bytes": 19989
+    }
+  },
+  "protected_baseline_recheck": {
+    "src/fusion_v2.py": {
+      "before": "dd1a1180459b9eb1a3e1a02716d0406722f97d2e0eb1b9922ac551d0cdba1292",
+      "after": "dd1a1180459b9eb1a3e1a02716d0406722f97d2e0eb1b9922ac551d0cdba1292",
+      "unchanged": true
+    },
+    "src/train_ablation.py": {
+      "before": "ed8bf84c4953a3c4bc4ac035784241d022316f04e4d0f6cd295c98c1126ab15c",
+      "after": "ed8bf84c4953a3c4bc4ac035784241d022316f04e4d0f6cd295c98c1126ab15c",
+      "unchanged": true
+    },
+    "src/streamlit_app.py": {
+      "before": "bfae3567ba77d62b82659d77351eed364226c496a9e6c23cbddd68a61f636e1d",
+      "after": "bfae3567ba77d62b82659d77351eed364226c496a9e6c23cbddd68a61f636e1d",
+      "unchanged": true
+    },
+    "src/publication/fusion_v2_gradcam.py": {
+      "before": "595e325602d8320fe44d77f88e3cf16275745c108a8ac537cb5f2e15bcccbcea",
+      "after": "595e325602d8320fe44d77f88e3cf16275745c108a8ac537cb5f2e15bcccbcea",
+      "unchanged": true
+    },
+    "src/publication/streamlit_fusion_v2.py": {
+      "before": "341626ee4297bee1122f7afefebdbeb8d43e0d8e5c083af145a14409fa0a9139",
+      "after": "341626ee4297bee1122f7afefebdbeb8d43e0d8e5c083af145a14409fa0a9139",
+      "unchanged": true
+    },
+    "src/publication/audit_gradcam_faithfulness.py": {
+      "before": "5ecb9c2ae0a4d71e426a921dee6f7d45122cfc417710a1ccbc93504339cf1b3a",
+      "after": "5ecb9c2ae0a4d71e426a921dee6f7d45122cfc417710a1ccbc93504339cf1b3a",
+      "unchanged": true
+    },
+    "publication_runs/recovered_checkpoints/clean/full_fusion_v2/seed_42/checkpoint.pth": {
+      "before": "9b328ba83df5d44b542e19faae68fd1493fee61e0c5b80e493c2f8a387ed592e",
+      "after": "9b328ba83df5d44b542e19faae68fd1493fee61e0c5b80e493c2f8a387ed592e",
+      "unchanged": true
+    },
+    "publication_runs/recovered_checkpoints/clean/full_fusion_v2/seed_43/checkpoint.pth": {
+      "before": "9f97b6aa0c9ec3f1124e593c8c29e11d31f4aef8bc08e20a40e7ed1f29e80f25",
+      "after": "9f97b6aa0c9ec3f1124e593c8c29e11d31f4aef8bc08e20a40e7ed1f29e80f25",
+      "unchanged": true
+    },
+    "publication_runs/recovered_checkpoints/clean/full_fusion_v2/seed_44/checkpoint.pth": {
+      "before": "4155a2b71df99a6159e1e4a5dbe635f4e9ea7852a6704d804dd1fb5d43aca434",
+      "after": "4155a2b71df99a6159e1e4a5dbe635f4e9ea7852a6704d804dd1fb5d43aca434",
+      "unchanged": true
+    }
+  },
+  "all_protected_unchanged": true,
+  "changed_protected": []
+}

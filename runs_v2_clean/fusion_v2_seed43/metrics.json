@@ -1,0 +1,56 @@
+{
+  "run": "fusion_v2_seed43",
+  "arch": "fusion_v2",
+  "seed": 43,
+  "warm_start": null,
+  "device": "cuda",
+  "unfreeze_all_cnn": true,
+  "vit_source": "google/vit-base-patch16-224",
+  "unfreeze_all_vit": true,
+  "aux_weight": 0.3,
+  "backbone_lr_mult": 0.1,
+  "ema": true,
+  "tta": true,
+  "train_dir": "/kaggle/working/dataset_clean/Training",
+  "test_dir": "/kaggle/working/dataset_clean/Testing",
+  "n_train": 4080,
+  "n_val": 720,
+  "n_test": 848,
+  "params_total": 91211918,
+  "params_trainable": 91211918,
+  "epochs": 15,
+  "batch_size": 16,
+  "lr": 0.0001,
+  "weight_decay": 0.05,
+  "label_smoothing": 0.1,
+  "seeding": {
+    "seed": 43,
+    "deterministic": false,
+    "cudnn_deterministic": false,
+    "cudnn_benchmark": true
+  },
+  "env": {
+    "python": "3.12.13",
+    "platform": "Linux-6.12.90+-x86_64-with-glibc2.35",
+    "torch": "2.10.0+cu128",
+    "cuda_available": true,
+    "cuda_device": "Tesla T4",
+    "cudnn": 91002,
+    "transformers": "4.57.6",
+    "torchvision": "0.25.0+cu128"
+  },
+  "best_val_acc": 0.9819444444444444,
+  "test_acc": 0.9823113207547169,
+  "per_class_test_acc": {
+    "glioma": 0.9711934156378601,
+    "meningioma": 0.9780701754385965,
+    "notumor": 0.9827586206896551,
+    "pituitary": 0.9961685823754789
+  },
+  "final_train_acc": 0.9987745098039216,
+  "epochs_run": 15,
+  "total_minutes": 45.4,
+  "extra_eval_acc": {
+    "dataset_ood": 0.7474949899799599
+  }
+}

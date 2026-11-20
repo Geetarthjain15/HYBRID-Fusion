@@ -1,0 +1,168 @@
+{
+  "phase": "X2b",
+  "mode": "neutrality_full",
+  "created_utc": "2026-09-26T16:23:36.553230+00:00",
+  "attn_implementation": "sdpa",
+  "attribution_method": "gradient_x_input",
+  "attribution_site": "vit.vit.embeddings output, patch tokens 1:197",
+  "target_rule": "predicted class from recorded inference",
+  "batch_size": 16,
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "n_images": 848,
+  "neutrality_tolerance": 1e-06,
+  "class_order": [
+    "glioma",
+    "meningioma",
+    "notumor",
+    "pituitary"
+  ],
+  "checkpoint_sha256": {
+    "42": "9b328ba83df5d44b542e19faae68fd1493fee61e0c5b80e493c2f8a387ed592e",
+    "43": "9f97b6aa0c9ec3f1124e593c8c29e11d31f4aef8bc08e20a40e7ed1f29e80f25",
+    "44": "4155a2b71df99a6159e1e4a5dbe635f4e9ea7852a6704d804dd1fb5d43aca434"
+  },
+  "environment": {
+    "python": "3.13.2",
+    "torch": "2.14.0+cpu",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "inputs": {
+    "manifest": "publication_runs/explainability/reconstructed_clean_test/RECONSTRUCTION_MANIFEST.json",
+    "manifest_sha256": "9a10cb6e7f29eaa7f92abea62cb1526d19f7796e86aa5c409dfead0be9237240",
+    "reference_predictions": [
+      "runs_v2_clean/fusion_v2_seed42/preds_test.csv",
+      "runs_v2_clean/fusion_v2_seed43/preds_test.csv",
+      "runs_v2_clean/fusion_v2_seed44/preds_test.csv"
+    ],
+    "baseline_manifest": "publication_results/audit/baseline_manifest.json"
+  },
+  "source_gate": {
+    "no_set_attn_implementation_call": true,
+    "no_output_attentions_request": true
+  },
+  "degenerate_site_probe": {
+    "final_cls_grad_abs_sum": 0.7017652988433838,
+    "final_patch_grad_abs_sum": 0.0,
+    "final_patch_grad_nonzero": 0,
+    "final_patch_grad_numel": 150528
+  },
+  "per_seed": [
+    {
+      "seed": 42,
+      "checkpoint_sha256": "9b328ba83df5d44b542e19faae68fd1493fee61e0c5b80e493c2f8a387ed592e",
+      "n_images": 848,
+      "batch_size": 16,
+      "attn_impl_before": "sdpa",
+      "attn_impl_after": "sdpa",
+      "attn_impls_observed": [
+        "sdpa"
+      ],
+      "hooks_registered_inside": 1,
+      "hooks_after_exit": 0,
+      "param_grads_all_none": true,
+      "model_still_eval": true,
+      "state_dict_digest_before": "dd28803462f53d53454cc2d8e3447f1039d52f93394992a069f45cc448821917",
+      "state_dict_digest_after": "dd28803462f53d53454cc2d8e3447f1039d52f93394992a069f45cc448821917",
+      "state_dict_unchanged": true,
+      "max_abs_prob_diff_single": 0.0,
+      "max_abs_prob_diff_tta": 0.0,
+      "max_abs_prob_diff_vs_recorded_tta": 4.824623107912984e-06,
+      "n_over_tolerance": 0,
+      "pred_label_changes_vs_plain": 0,
+      "pred_label_changes_vs_recorded": 0,
+      "accuracy_instrumented_pct": 98.23113207547169,
+      "accuracy_recorded_pct": 98.23113207547169,
+      "accuracy_diff_pp": 0.0,
+      "maps_valid": 848,
+      "filename_mismatches": 0,
+      "true_label_mismatches": 0,
+      "runtime_s": 628.3836319446564
+    },
+    {
+      "seed": 43,
+      "checkpoint_sha256": "9f97b6aa0c9ec3f1124e593c8c29e11d31f4aef8bc08e20a40e7ed1f29e80f25",
+      "n_images": 848,
+      "batch_size": 16,
+      "attn_impl_before": "sdpa",
+      "attn_impl_after": "sdpa",
+      "attn_impls_observed": [
+        "sdpa"
+      ],
+      "hooks_registered_inside": 1,
+      "hooks_after_exit": 0,
+      "param_grads_all_none": true,
+      "model_still_eval": true,
+      "state_dict_digest_before": "238788e3e3ba43d5d63d787f12a977f488202f2d239a55e2dd9ec1efe8394212",
+      "state_dict_digest_after": "238788e3e3ba43d5d63d787f12a977f488202f2d239a55e2dd9ec1efe8394212",
+      "state_dict_unchanged": true,
+      "max_abs_prob_diff_single": 0.0,
+      "max_abs_prob_diff_tta": 0.0,
+      "max_abs_prob_diff_vs_recorded_tta": 3.926410675036962e-06,
+      "n_over_tolerance": 0,
+      "pred_label_changes_vs_plain": 0,
+      "pred_label_changes_vs_recorded": 0,
+      "accuracy_instrumented_pct": 98.23113207547169,
+      "accuracy_recorded_pct": 98.23113207547169,
+      "accuracy_diff_pp": 0.0,
+      "maps_valid": 848,
+      "filename_mismatches": 0,
+      "true_label_mismatches": 0,
+      "runtime_s": 683.8035430908203
+    },
+    {
+      "seed": 44,
+      "checkpoint_sha256": "4155a2b71df99a6159e1e4a5dbe635f4e9ea7852a6704d804dd1fb5d43aca434",
+      "n_images": 848,
+      "batch_size": 16,
+      "attn_impl_before": "sdpa",
+      "attn_impl_after": "sdpa",
+      "attn_impls_observed": [
+        "sdpa"
+      ],
+      "hooks_registered_inside": 1,
+      "hooks_after_exit": 0,
+      "param_grads_all_none": true,
+      "model_still_eval": true,
+      "state_dict_digest_before": "12462c09684e17ebf62ac45241634a752909fe5a49231dc02f659fb92aa7f893",
+      "state_dict_digest_after": "12462c09684e17ebf62ac45241634a752909fe5a49231dc02f659fb92aa7f893",
+      "state_dict_unchanged": true,
+      "max_abs_prob_diff_single": 0.0,
+      "max_abs_prob_diff_tta": 0.0,
+      "max_abs_prob_diff_vs_recorded_tta": 3.985546112084126e-06,
+      "n_over_tolerance": 0,
+      "pred_label_changes_vs_plain": 0,
+      "pred_label_changes_vs_recorded": 0,
+      "accuracy_instrumented_pct": 98.34905660377359,
+      "accuracy_recorded_pct": 98.34905660377359,
+      "accuracy_diff_pp": 0.0,
+      "maps_valid": 848,
+      "filename_mismatches": 0,
+      "true_label_mismatches": 0,
+      "runtime_s": 667.2583856582642
+    }
+  ],
+  "acceptance": {
+    "A1_sdpa_active_throughout": true,
+    "A2_eager_route_unreachable": true,
+    "A3_zero_pred_label_changes": true,
+    "A4_accuracy_diff_zero_pp": true,
+    "A5_max_prob_diff_within_tol": true,
+    "A6_all_maps_valid": true,
+    "A7_no_retained_state": true,
+    "A8_exact_restoration": true,
+    "A10_identity": true,
+    "site_correction_still_required": true
+  },
+  "preservation": {
+    "checked": 150,
+    "altered": 0,
+    "altered_paths": [],
+    "missing": [],
+    "available": true
+  },
+  "overall": "PASS"
+}

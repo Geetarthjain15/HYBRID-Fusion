@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "checks": {
+    "docx_exists": true,
+    "docx_container_valid": true,
+    "contains_99.14 \u00b1 0.10%": true,
+    "contains_98.27 \u00b1 0.07%": true,
+    "contains_69.53 \u00b1 1.98%": true,
+    "contains_97.10%": true,
+    "contains_contextual reference only": true,
+    "contains_Patient-level independence cannot be verified": true,
+    "contains_no detectable accuracy benefit under this protocol": true,
+    "prohibited_claims_are_framed_as_warnings": true,
+    "pdf_nine_pages": true,
+    "pdf_searchable": true,
+    "rendered_pages_present": true,
+    "protected_artifacts_unchanged": true
+  },
+  "page_count": 9,
+  "protected_artifacts_checked": 150,
+  "protected_artifacts_changed": []
+}

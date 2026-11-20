@@ -1,0 +1,205 @@
+{
+  "agreement": {
+    "metric": "Spearman rank correlation on the common grid",
+    "scope": "descriptive; CNN-ViT agreement is NOT evidence that either map is correct"
+  },
+  "auc": {
+    "normalisation": "x axis scaled to [0,1]",
+    "rule": "trapezoidal over the 21 scored points including both endpoints"
+  },
+  "bootstrap": {
+    "iterations": 10000,
+    "paired": "methods compared on the same resampled image sets",
+    "quantities": "every headline quantity, reported with 95% percentile CIs",
+    "seed": 20260927,
+    "stratification": "by true class",
+    "unit": "image"
+  },
+  "common_grid": [
+    14,
+    14
+  ],
+  "deletion": {
+    "fractions": "equal steps of 5% from 0% to 100% of the 196 grid cells",
+    "order": "descending map value; ties broken by ascending flat grid index",
+    "score": "fused softmax probability of the locked target class",
+    "start": "unmodified image",
+    "steps": 20
+  },
+  "determinism": {
+    "batch_size_recorded": true,
+    "cudnn_benchmark": false,
+    "note": "batch size changes float32 reduction order; the value actually used is recorded with the results",
+    "torch_deterministic": true
+  },
+  "environment": {
+    "python": "3.13.2",
+    "torch": "2.14.0+cpu",
+    "transformers": "4.57.6"
+  },
+  "inputs": {
+    "reconstruction_manifest_sha256": "9a10cb6e7f29eaa7f92abea62cb1526d19f7796e86aa5c409dfead0be9237240",
+    "x3_amendment_sha256": "8f7368bab2b9ca82e00ba0f11850f84e342fe675b3bc59a37296a81f574c10ba",
+    "x3_attribution_json_sha256": "31ef6c6709e1949a0d8dc3f548337936719164c26472f4fe29396d59ac361dd8",
+    "x4_sanity_json_sha256": "c100eedfa36fadaff40471430f41fd230ae5c49bb8674b24518efaa996672027"
+  },
+  "insertion": {
+    "fractions": "equal steps of 5% from 0% to 100% of the 196 grid cells",
+    "order": "descending map value; ties broken by ascending flat grid index",
+    "score": "fused softmax probability of the locked target class",
+    "start": "fully masked image (all cells at the mask value)",
+    "steps": 20
+  },
+  "locked_utc": "2026-09-26T23:09:55.480921+00:00",
+  "masking": {
+    "explanation": "eval_transform normalises with mean 0.5 and std 0.5, so a raw mid-grey pixel of 0.5 maps to exactly 0.0 in tensor space; masking therefore replaces a region with the dataset channel mean",
+    "mask_upsample_14_to_224": "nearest-neighbour, exact 16x16 pixel blocks",
+    "mask_value_normalised_tensor": 0.0,
+    "mask_value_raw_pixel": 0.5,
+    "rationale": "nearest keeps each grid cell a hard-edged block so the masked fraction is exact; bilinear would blur the boundary and make the fraction approximate"
+  },
+  "method_set_divergence_from_adopted_plan": "The adopted plan's X5 section lists ViT attention rollout and gradient-weighted ViT attention. Both were removed by the approved X3 amendment because they require eager attention, which failed the X2 neutrality gate. The ViT method evaluated here is the SDPA-safe Gradient x Input method verified in X2b and X3.",
+  "methods": [
+    {
+      "id": "cnn_gradcampp",
+      "native_grid": [
+        7,
+        7
+      ],
+      "source": "X3 CNN Grad-CAM++ at native stage-8 resolution"
+    },
+    {
+      "id": "vit_grad_x_input",
+      "native_grid": [
+        14,
+        14
+      ],
+      "source": "X3 ViT patch-embedding Gradient x Input (the X2b method)"
+    },
+    {
+      "id": "composite_equal",
+      "native_grid": [
+        14,
+        14
+      ],
+      "note": "formed in X5 only; X3 deliberately formed no composite",
+      "source": "0.5 * norm(cnn) + 0.5 * norm(vit), both on the common grid"
+    },
+    {
+      "gate_source": "model(x, return_aux=True) gate from the same forward pass that produced the maps and the target class",
+      "id": "composite_gate_weighted",
+      "native_grid": [
+        14,
+        14
+      ],
+      "note": "gate mass measures branch utilisation, not causal importance",
+      "source": "gate[:,0] * norm(cnn) + gate[:,1] * norm(vit)"
+    },
+    {
+      "id": "baseline_random",
+      "native_grid": [
+        14,
+        14
+      ],
+      "source": "deterministic uniform random map, null baseline"
+    },
+    {
+      "id": "baseline_centre_prior",
+      "native_grid": [
+        14,
+        14
+      ],
+      "source": "deterministic isotropic Gaussian centred on the grid, sigma = grid/4, null baseline"
+    }
+  ],
+  "normalisation": {
+    "constant_map_policy": "a map with max == min becomes all zeros and is recorded as degenerate; X4 established no real map is constant",
+    "rule": "per-map min-max to [0,1] after resampling"
+  },
+  "phase": "X5",
+  "prohibited_in_x5": [
+    "any anatomical, tumour, lesion or clinical claim",
+    "any attention-based claim (no attention matrix is read)",
+    "treating CNN-ViT agreement as evidence of correctness",
+    "treating gate mass as causal importance",
+    "altering any locked parameter after observing a result",
+    "selecting the evaluated subset using faithfulness values",
+    "external or cross-source evaluation (that is Phase X6)"
+  ],
+  "protocol_version": "1.0",
+  "purpose": "Quantitative faithfulness and stability evaluation of the X3 attribution maps. Locked before any faithfulness value is computed.",
+  "resampling": {
+    "cnn_7_to_14": "bilinear, align_corners=False",
+    "implementation": "torch.nn.functional.interpolate",
+    "order": "resample FIRST, normalise SECOND"
+  },
+  "seeds": {
+    "bootstrap": 20260927,
+    "model_seeds": [
+      42,
+      43,
+      44
+    ],
+    "noise_transform": 20260927,
+    "random_baseline": 20260927,
+    "subset_sampling_if_needed": 20260927
+  },
+  "stability": {
+    "label_preserving": true,
+    "map_comparison": "Spearman rank correlation on the common grid, after inverting the geometric transform on the map",
+    "prediction_change_recorded": true,
+    "transformations": [
+      {
+        "id": "hflip",
+        "spec": "horizontal flip"
+      },
+      {
+        "id": "rot_plus10",
+        "spec": "+10 degrees, bilinear, zero fill"
+      },
+      {
+        "id": "rot_minus10",
+        "spec": "-10 degrees, bilinear, zero fill"
+      },
+      {
+        "id": "scale_plus5",
+        "spec": "+5% scale about centre, bilinear"
+      },
+      {
+        "id": "scale_minus5",
+        "spec": "-5% scale about centre, bilinear"
+      },
+      {
+        "id": "noise",
+        "spec": "additive Gaussian, sigma=0.01 in normalised tensor space, fixed seed 20260927"
+      }
+    ]
+  },
+  "subset_decision": {
+    "amendment_procedure": "the decision is appended as a separate, separately hashed amendment; the original lock hash is never rewritten",
+    "decision_rule": "taken from measured runtime and storage ALONE. Faithfulness values are not computed in the dry run, so the subset cannot be a function of the answer.",
+    "if_subset_required": {
+      "recorded": "every selected filename written into the amendment",
+      "rule": "stratified by true class, proportional allocation",
+      "sampling_seed": 20260927,
+      "selection_time": "before any faithfulness value is computed"
+    },
+    "status": "OPEN at lock time - to be fixed by the dry run"
+  },
+  "target_class": {
+    "identical_to": "X3 target_mode 'predicted (recorded inference)'",
+    "note": "the same target index is used for every method on a given image, so methods are compared on one decision",
+    "rule": "predicted class from the recorded inference"
+  },
+  "top_k_metrics": [
+    "confidence_drop",
+    "prediction_change_rate"
+  ],
+  "top_k_percent": [
+    1,
+    5,
+    10,
+    20,
+    50
+  ]
+}

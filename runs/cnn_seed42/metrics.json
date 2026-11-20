@@ -1,0 +1,46 @@
+{
+  "run": "cnn_seed42",
+  "arch": "cnn",
+  "seed": 42,
+  "warm_start": null,
+  "device": "cpu",
+  "train_dir": "dataset/Training",
+  "test_dir": "dataset/Testing",
+  "n_train": 5076,
+  "n_val": 895,
+  "n_test": 1052,
+  "params_total": 4666496,
+  "params_trainable": 1071108,
+  "epochs": 15,
+  "batch_size": 16,
+  "lr": 0.0001,
+  "weight_decay": 0.05,
+  "label_smoothing": 0.1,
+  "seeding": {
+    "seed": 42,
+    "deterministic": false,
+    "cudnn_deterministic": false,
+    "cudnn_benchmark": true
+  },
+  "env": {
+    "python": "3.13.2",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "torch": "2.14.0+cpu",
+    "cuda_available": false,
+    "cuda_device": null,
+    "cudnn": null,
+    "transformers": "4.57.6",
+    "torchvision": "0.29.0+cpu"
+  },
+  "best_val_acc": 0.9452513966480447,
+  "test_acc": 0.9182509505703422,
+  "per_class_test_acc": {
+    "glioma": 0.9382716049382716,
+    "meningioma": 0.7967479674796748,
+    "notumor": 0.98,
+    "pituitary": 0.9429657794676806
+  },
+  "final_train_acc": 0.9223798266351458,
+  "epochs_run": 13,
+  "total_minutes": 56.9
+}

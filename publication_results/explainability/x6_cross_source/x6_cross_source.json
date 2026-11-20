@@ -1,0 +1,84 @@
+{
+  "phase": "X6",
+  "mode": "full",
+  "created_utc": "2026-09-27T19:17:24.221195+00:00",
+  "protocol_lock_sha256": "a553c93b3eeb654f7adaed319a499404d7a83efbe9dac576f482a0b10cf2a1a5",
+  "selector_sha256": "e8a27a92495e2f44c2ef7af655128a8ea83574cbb271e6b09ce7d4f99b4c3cbb",
+  "n_selector_images": 373,
+  "n_evaluated_images": 373,
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "methods": [
+    "cnn_gradcampp",
+    "vit_grad_x_input",
+    "composite_equal",
+    "composite_gate_weighted",
+    "baseline_random",
+    "baseline_centre_prior"
+  ],
+  "runtime_seconds": 5238.174728631973,
+  "neutrality": {
+    "max_instrumented_vs_plain_single": 0.0,
+    "max_recomputed_tta_vs_recorded": 1.782758712765009e-06,
+    "label_changes_vs_recorded": 0
+  },
+  "class_errors": {
+    "glioma": {
+      "images_per_seed": 52,
+      "recall_seed_mean": 0.9807692307692308,
+      "recall_seed_sd": 0.019230769230769218
+    },
+    "meningioma": {
+      "images_per_seed": 122,
+      "recall_seed_mean": 0.860655737704918,
+      "recall_seed_sd": 0.029553698979213
+    },
+    "notumor": {
+      "images_per_seed": 88,
+      "recall_seed_mean": 1.0,
+      "recall_seed_sd": 0.0
+    },
+    "pituitary": {
+      "images_per_seed": 111,
+      "recall_seed_mean": 0.13813813813813813,
+      "recall_seed_sd": 0.046230643598620585
+    },
+    "pituitary_to_notumor": {
+      "predictions": 260,
+      "image_seed_pairs": 333
+    }
+  },
+  "branch_disagreement": {
+    "cnn_vs_fused_rate": 0.3315460232350313,
+    "vit_vs_fused_rate": 0.03306523681858802,
+    "cnn_vs_vit_rate": 0.34226988382484363
+  },
+  "preservation": {
+    "checked": 0,
+    "altered": 0,
+    "skipped": true
+  },
+  "environment": {
+    "python": "3.12.13",
+    "torch": "2.10.0+cu128",
+    "transformers": "5.0.0",
+    "device": "cuda",
+    "cuda_device": "Tesla T4"
+  },
+  "external_labels_used_for_selection_or_tuning": false,
+  "scope_limit": "association under source shift; not mechanism or localisation",
+  "acceptance_checks": {
+    "protocol_lock_identical_to_x5": true,
+    "selector_exactly_373": true,
+    "evaluated_expected_scope": true,
+    "neutrality_exact": true,
+    "recorded_predictions_reproduced": true,
+    "no_external_label_selection_or_tuning": true,
+    "clean_and_external_not_pooled": true,
+    "preservation": null
+  },
+  "acceptance_status": "PASS"
+}

@@ -1,0 +1,2 @@
+setting,regime,n_images,accuracy_mean,accuracy_sd_across_seeds,macro_f1_mean,macro_f1_sd_across_seeds,n_seeds,source_file
+original,conventional,1052,0.9914448669201521,0.0009505703422053591,0.9912372864910132,0.0009268306358111225,3,publication_results/metrics/fusion_v2_metrics.json

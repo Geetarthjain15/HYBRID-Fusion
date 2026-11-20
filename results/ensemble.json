@@ -1,0 +1,81 @@
+{
+  "members": [
+    "runs_original\\cnn_seed42_unfrozen\\preds_test.csv",
+    "runs_original\\cnn_seed43_unfrozen\\preds_test.csv",
+    "runs_original\\cnn_seed44_unfrozen\\preds_test.csv",
+    "runs_original\\vit_seed42\\preds_test.csv",
+    "runs_original\\vit_seed43\\preds_test.csv",
+    "runs_original\\vit_seed44\\preds_test.csv",
+    "runs_v2_original\\fusion_v2_seed42\\preds_test.csv",
+    "runs_v2_original\\fusion_v2_seed43\\preds_test.csv",
+    "runs_v2_original\\fusion_v2_seed44\\preds_test.csv"
+  ],
+  "n_total": 1052,
+  "n_fit": 420,
+  "n_holdout": 632,
+  "member_acc": [
+    0.9942965779467681,
+    0.9952471482889734,
+    0.9942965779467681,
+    0.9876425855513308,
+    0.9885931558935361,
+    0.9847908745247148,
+    0.9904942965779467,
+    0.9914448669201521,
+    0.9923954372623575
+  ],
+  "combiners": {
+    "mean": {
+      "weights": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fit_acc": 0.9928571428571429,
+      "holdout_acc": 0.9936708860759493,
+      "full_acc": 0.9933460076045627,
+      "holdout_errors": 4
+    },
+    "weighted": {
+      "weights": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.5
+      ],
+      "fit_acc": 0.9952380952380953,
+      "holdout_acc": 0.995253164556962,
+      "full_acc": 0.9952471482889734,
+      "holdout_errors": 3
+    },
+    "power": {
+      "weights": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.5
+      ],
+      "fit_acc": 0.9952380952380953,
+      "holdout_acc": 0.995253164556962,
+      "full_acc": 0.9952471482889734,
+      "holdout_errors": 3
+    }
+  },
+  "best": "weighted"
+}

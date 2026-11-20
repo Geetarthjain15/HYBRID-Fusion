@@ -1,0 +1,86 @@
+{
+  "version": "v2",
+  "zip": "fusionv2_code_session2_v2.zip",
+  "zip_sha256": "5d0729faa54a098553be13096daf317da9d0010be952fd23a7bfbb5db6073045",
+  "zip_bytes": 58329,
+  "n_files": 15,
+  "files": [
+    {
+      "path": "src/fusion_v2.py",
+      "bytes": 7056,
+      "sha256": "dd1a1180459b9eb1a3e1a02716d0406722f97d2e0eb1b9922ac551d0cdba1292"
+    },
+    {
+      "path": "src/train_ablation.py",
+      "bytes": 19571,
+      "sha256": "ed8bf84c4953a3c4bc4ac035784241d022316f04e4d0f6cd295c98c1126ab15c"
+    },
+    {
+      "path": "src/make_clean_split.py",
+      "bytes": 6298,
+      "sha256": "07557298a6aa127bc246e7c665391d46b4db785d3ba318ff728a7abe3d457b62"
+    },
+    {
+      "path": "src/seeding.py",
+      "bytes": 2580,
+      "sha256": "a34679fc1070ab15a34f31cf11d232121e4218b7747c292023587c3e2ec3e11d"
+    },
+    {
+      "path": "src/hybrid_model.py",
+      "bytes": 1525,
+      "sha256": "6ae47d39bf3de1581d2cd8b06e42cb44a524e63e206439974b40c739f370f890"
+    },
+    {
+      "path": "src/publication/__init__.py",
+      "bytes": 149,
+      "sha256": "fed671cc2354b7566ac91712c8555dbfe7acad5d8706aeee721fd139db9a3322"
+    },
+    {
+      "path": "src/publication/session_scope.py",
+      "bytes": 1855,
+      "sha256": "51cdb4b7d7b31a417c835ac845cc4629e797074874dec11e18533ac1c75540e8"
+    },
+    {
+      "path": "src/publication/session1_config.py",
+      "bytes": 6583,
+      "sha256": "1d3c82c64fca325f0675243941c3802d5f350865e02dd02f5b15a30d424e1737"
+    },
+    {
+      "path": "src/publication/session2_config.py",
+      "bytes": 8298,
+      "sha256": "9344e3ff191e9df5935ab45f73b74783ecc5400c77e4577d85790fa8c11b1231"
+    },
+    {
+      "path": "src/publication/session2_driver.py",
+      "bytes": 22070,
+      "sha256": "92c0487cda84269e0dea666f227b138ac47bd182a204d0ffc71b8e53c26e923a"
+    },
+    {
+      "path": "src/publication/train_ablation_variant.py",
+      "bytes": 25880,
+      "sha256": "f2351e9093aeaa1928f4fde9a88470adcd173d48371f341265830e798625c90d"
+    },
+    {
+      "path": "src/publication/validate_run_outputs.py",
+      "bytes": 8923,
+      "sha256": "146414f7a6527c6a3991d261fa53449205e58c5910f69a382fdadd82929c77b6"
+    },
+    {
+      "path": "src/publication/ablation_models.py",
+      "bytes": 6440,
+      "sha256": "47e277c903dc215075d110fe7c3f461a92e19008a61d3c0d7ce27c751b52730c"
+    },
+    {
+      "path": "src/publication/run_ablations.py",
+      "bytes": 33629,
+      "sha256": "7ef4ca1f13b418723c9c692e94bfdd279d486626d9286c9278007b5fadd90e89"
+    },
+    {
+      "path": "src/publication/test_ablations.py",
+      "bytes": 21056,
+      "sha256": "c3e03928ed3440130591847cfbc5bd0fa79474761cef51ede61c3b8689c87321"
+    }
+  ],
+  "generated_utc": "2026-09-24T07:53:18.802796+00:00",
+  "changes_from_v1": "validator is now gate-aware per session: cnn_branch_only and vit_branch_only correctly expect NO gate CSVs. Adds a regression test (18 total)."
+}

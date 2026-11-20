@@ -1,0 +1,47 @@
+{
+  "phase": "X6",
+  "landing_date_local": "2026-09-28",
+  "source_directory": "D:/Research Model/_incoming/x6_gpu",
+  "kaggle_runtime_seconds": 5384.2,
+  "kaggle_accelerator": "Tesla T4",
+  "kaggle_output_manifest_sha256": "ab6e69b9572a05b5e5d2fe0dd59b64785c68fafd3e7009f11bfc9ab6cffbfd49",
+  "protocol_lock_sha256": "a553c93b3eeb654f7adaed319a499404d7a83efbe9dac576f482a0b10cf2a1a5",
+  "downloaded_files_declared": 10,
+  "downloaded_hash_mismatches": 0,
+  "landed_full_run_files": [
+    "X6_CROSS_SOURCE_REPORT.md",
+    "per_image_curves.csv",
+    "shift_effects.csv",
+    "stability.csv",
+    "x6_cross_source.json",
+    "KAGGLE_OUTPUT_SHA256.json"
+  ],
+  "smoke_files_overwritten": false,
+  "scope": {
+    "unique_external_images": 373,
+    "seeds": [42, 43, 44],
+    "image_seed_rows": 1119,
+    "methods": 6,
+    "stability_transformations": 6,
+    "stability_rows": 6714,
+    "shift_effect_rows": 30
+  },
+  "neutrality": {
+    "max_instrumented_vs_plain_single": 0.0,
+    "max_recomputed_tta_vs_recorded": 0.000001782758712765009,
+    "label_changes_vs_recorded": 0
+  },
+  "baseline_reproduction": {
+    "accuracy_seed_42_percent": 71.0455764075067,
+    "accuracy_seed_43_percent": 67.29222520107238,
+    "accuracy_seed_44_percent": 70.24128686327077,
+    "accuracy_mean_percent": 69.52636282394995,
+    "accuracy_sample_sd_percent": 1.976170186550132
+  },
+  "local_preservation": {
+    "checked": 150,
+    "altered": 0
+  },
+  "acceptance_status": "PASS",
+  "claim_boundary": "Associations under source shift only; not mechanism, anatomical localisation, or clinical validity."
+}

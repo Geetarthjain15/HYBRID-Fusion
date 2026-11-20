@@ -1,0 +1,8 @@
+component,ablation,observed_delta_accuracy_pp,verdict,holm_significant_seeds,permitted_interpretation
+learned gate,no_gate,+0.0000,no detectable accuracy benefit under this protocol,0,use the Phase 3B verdict verbatim; do not infer equivalence or zero effect
+multi-scale taps,no_multiscale,-0.0393,no detectable accuracy benefit under this protocol,0,use the Phase 3B verdict verbatim; do not infer equivalence or zero effect
+auxiliary losses,no_auxiliary_loss,-0.5503,suggestive but inconclusive,0,use the Phase 3B verdict verbatim; do not infer equivalence or zero effect
+EMA,no_ema,+0.0393,no detectable accuracy benefit under this protocol,0,use the Phase 3B verdict verbatim; do not infer equivalence or zero effect
+ViT branch contribution,cnn_branch_only,-2.5943,supported by consistent accuracy evidence,3,removing the ViT branch caused consistent accuracy loss
+CNN branch contribution,vit_branch_only,-0.2358,suggestive but inconclusive,0,use the Phase 3B verdict verbatim; do not infer equivalence or zero effect
+TTA,no_tta,-0.0786,no detectable accuracy benefit under this protocol,0,use the Phase 3B verdict verbatim; do not infer equivalence or zero effect

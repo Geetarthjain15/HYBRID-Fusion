@@ -1,0 +1,7 @@
+{
+  "publication_results/explainability/x2b_token_attribution/x2b_neutrality_smoke.json": "a2fccd4b430468a4585f1202c784500a563892ff096a08ebf7edbf022446b085",
+  "publication_results/explainability/x2b_token_attribution/X2B_NEUTRALITY_REPORT_smoke.md": "7bc62837a3632d2e363faa01b0b629bff0b38775471dea1a4f78503fad812d18",
+  "publication_results/explainability/x2b_token_attribution/per_seed_neutrality_smoke.csv": "9e814f1db6a3fdd1d8a10a3599589b9194c8cb7adb803d5746d42688a568be1a",
+  "publication_results/explainability/x2b_token_attribution/per_image_neutrality_smoke.csv": "4630ed0fdbafa6c2c2dc3bff6dcce57b37e7be74df0ca9827d1c85e66c52a7fb",
+  "publication_results/explainability/x2b_token_attribution/token_maps_seed42_smoke.npz": "ecd07291c4d433bb1d0123d4a0ce37346d5a70e4612b9fa66a9e5de05e71cfcd"
+}

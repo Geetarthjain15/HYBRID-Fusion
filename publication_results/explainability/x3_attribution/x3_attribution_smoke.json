@@ -1,0 +1,98 @@
+{
+  "phase": "X3",
+  "mode": "smoke",
+  "created_utc": "2026-09-26T16:53:55.636063+00:00",
+  "amendment": "publication_results/explainability/X3_BRANCH_ATTRIBUTION_AMENDMENT_PROPOSAL.md",
+  "amendment_sha256": "8f7368bab2b9ca82e00ba0f11850f84e342fe675b3bc59a37296a81f574c10ba",
+  "attn_implementation": "sdpa",
+  "cnn_method": "gradcam_plus_plus_native_7x7",
+  "vit_method": "gradient_x_input_patch_embedding_14x14",
+  "target_mode": "predicted (recorded inference)",
+  "composite_formed": false,
+  "seeds": [
+    42
+  ],
+  "batch_size": 8,
+  "class_order": [
+    "glioma",
+    "meningioma",
+    "notumor",
+    "pituitary"
+  ],
+  "environment": {
+    "python": "3.13.2",
+    "torch": "2.14.0+cpu",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "cuda": false
+  },
+  "source_gates": {
+    "cnn_attribution.py": {
+      "no_set_attn_implementation_call": true,
+      "no_output_attentions_request": true
+    },
+    "vit_attribution.py": {
+      "no_set_attn_implementation_call": true,
+      "no_output_attentions_request": true
+    },
+    "run_attribution.py": {
+      "no_set_attn_implementation_call": true,
+      "no_output_attentions_request": true
+    }
+  },
+  "per_seed": [
+    {
+      "seed": 42,
+      "checkpoint_sha256": "9b328ba83df5d44b542e19faae68fd1493fee61e0c5b80e493c2f8a387ed592e",
+      "n_images": 8,
+      "batch_size": 8,
+      "attn_impls_observed": [
+        "sdpa"
+      ],
+      "hooks_inside": 2,
+      "hooks_after_exit": 0,
+      "param_grads_all_none": true,
+      "model_still_eval": true,
+      "state_dict_unchanged": true,
+      "max_abs_prob_diff_single": 0.0,
+      "max_abs_prob_diff_tta": 0.0,
+      "pred_label_changes_vs_plain": 0,
+      "pred_label_changes_vs_recorded": 0,
+      "accuracy_instrumented_pct": 100.0,
+      "accuracy_recorded_pct": 100.0,
+      "accuracy_diff_pp": 0.0,
+      "cnn_maps_valid": 8,
+      "vit_maps_valid": 8,
+      "targets_synchronized": true,
+      "filename_mismatches": 0,
+      "true_label_mismatches": 0,
+      "gradcam_equivalence_max_abs_diff": 1.9669532775878906e-06,
+      "gradcam_equivalence_n": 8,
+      "attribution_seconds": 3.3359551429748535,
+      "attribution_s_per_image": 0.4169943928718567
+    }
+  ],
+  "checks": {
+    "S1_sdpa_throughout": true,
+    "S2_eager_route_unreachable": true,
+    "S3_cnn_maps_valid_7x7": true,
+    "S4_vit_maps_valid_14x14": true,
+    "S5_gradcam_equivalence_le_1e-5": true,
+    "S6_neutrality": true,
+    "S7_zero_label_changes": true,
+    "S8_targets_synchronized": true,
+    "S9_identity": true,
+    "no_retained_state": true,
+    "preservation": true
+  },
+  "preservation": {
+    "checked": 150,
+    "altered": 0,
+    "altered_paths": []
+  },
+  "overall": "PASS",
+  "measured_attribution_s_per_image": 0.4169943928718567,
+  "full_grid_extrapolation_min": {
+    "attribution_only": 17.680562257766724,
+    "note": "plus plain reference pass, TTA check and equivalence check; see report for the measured wall-clock breakdown"
+  }
+}

@@ -1,0 +1,5 @@
+model,protocol,n_images,accuracy_pct,f1_pct,uncertainty,comparability,source
+FusionV2,conventional/original held-out image split,1052,99.14 ± 0.10,99.12 ± 0.09,sample SD across seeds 42/43/44,contextual only versus BRAIN-META,fusion_v2_metrics.json: settings.original
+FusionV2,duplicate-clean held-out image split,848,98.27 ± 0.07,98.28 ± 0.04,sample SD across seeds 42/43/44,primary internal protocol; not identical to BRAIN-META,fusion_v2_metrics.json: settings.clean
+FusionV2,duplicate-disjoint cross-source image subset,373,69.53 ± 1.98,available in machine-readable metrics; not used for base-paper headline comparison,sample SD across seeds 42/43/44,different source and subset; not comparable to BRAIN-META test split,fusion_v2_metrics.json: settings.cross_source_disjoint
+BRAIN-META (XGBoost meta-learner),paper-reported 80/20 split; 5712 training and 1311 testing images,1311,97.10,96.94,not reported with multi-seed uncertainty in cited result,"contextual only; different preprocessing, split and ten-model stacking pipeline",base PDF pp. 5 and 8; DOI 10.1016/j.mex.2025.103769

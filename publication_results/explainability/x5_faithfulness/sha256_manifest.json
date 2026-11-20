@@ -1,0 +1,7 @@
+{
+  "publication_results/explainability/x5_faithfulness/x5_faithfulness.json": "9a66acd12541f3fd066d1572cc376327507493973678cce6293eea6e23920f3d",
+  "publication_results/explainability/x5_faithfulness/X5_FAITHFULNESS_REPORT.md": "c8caa669c9d2aa8bf27844571b5b5babda2ad433e0e8e5feffed3394613af2fc",
+  "publication_results/explainability/x5_faithfulness/per_image_curves.csv": "d407fef2d99045feaefe8d59c531f43f062cc6783b016bc515f5b34cfea3aec5",
+  "publication_results/explainability/x5_faithfulness/bootstrap_effects.csv": "9b12211f2a6e3a041aed99d0396ffc3087e7a324c2aafb583832ab930a76e6ce",
+  "publication_results/explainability/x5_faithfulness/stability.csv": "73daac236df5401c7953dd5494117eedddaaf161d51bb22b687658508538c549"
+}

@@ -1,0 +1,244 @@
+{
+  "protocol": "supervised target-source calibration; all reported meta-predictions out-of-fold",
+  "n_disjoint": 373,
+  "classes": [
+    "glioma",
+    "meningioma",
+    "notumor",
+    "pituitary"
+  ],
+  "families": {
+    "cnn": [
+      "runs_clean\\cnn_seed42_unfrozen\\preds_dataset_ood.csv",
+      "runs_clean\\cnn_seed43_unfrozen\\preds_dataset_ood.csv",
+      "runs_clean\\cnn_seed44_unfrozen\\preds_dataset_ood.csv"
+    ],
+    "vit": [
+      "runs_clean\\vit_seed42\\preds_dataset_ood.csv",
+      "runs_clean\\vit_seed43\\preds_dataset_ood.csv",
+      "runs_clean\\vit_seed44\\preds_dataset_ood.csv"
+    ],
+    "fusion": [
+      "runs_clean\\fusion_seed42\\preds_dataset_ood.csv",
+      "runs_clean\\fusion_seed43\\preds_dataset_ood.csv",
+      "runs_clean\\fusion_seed44\\preds_dataset_ood.csv"
+    ],
+    "fusion_v2": [
+      "runs_v2_clean\\fusion_v2_seed42\\preds_dataset_ood.csv",
+      "runs_v2_clean\\fusion_v2_seed43\\preds_dataset_ood.csv",
+      "runs_v2_clean\\fusion_v2_seed44\\preds_dataset_ood.csv"
+    ]
+  },
+  "feature_count": 16,
+  "folds": 5,
+  "repeats": 5,
+  "seed": 42,
+  "meta_learner": "multinomial logistic regression, fixed C=1.0",
+  "baselines": {
+    "cnn": {
+      "accuracy": 0.5495978552278821,
+      "macro_f1": 0.5471826315694837
+    },
+    "vit": {
+      "accuracy": 0.7345844504021448,
+      "macro_f1": 0.7354170295055723
+    },
+    "fusion": {
+      "accuracy": 0.7453083109919572,
+      "macro_f1": 0.7473361206907451
+    },
+    "fusion_v2": {
+      "accuracy": 0.6890080428954424,
+      "macro_f1": 0.672921730515602
+    }
+  },
+  "repeated_fold_summary": {
+    "accuracy_mean": 0.9372396396396395,
+    "accuracy_sd": 0.024402428271230712,
+    "macro_f1_mean": 0.9412499934902808,
+    "macro_f1_sd": 0.023081706299501556,
+    "accuracy_min": 0.8918918918918919,
+    "accuracy_max": 0.9733333333333334
+  },
+  "consensus_oof": {
+    "accuracy": 0.935656836461126,
+    "macro_f1": 0.9403217542409542
+  },
+  "fold_results": [
+    {
+      "fold": 1,
+      "n_train": 298,
+      "n_test": 75,
+      "accuracy": 0.9733333333333334,
+      "macro_f1": 0.9752415458937198
+    },
+    {
+      "fold": 2,
+      "n_train": 298,
+      "n_test": 75,
+      "accuracy": 0.96,
+      "macro_f1": 0.9635672098296683
+    },
+    {
+      "fold": 3,
+      "n_train": 298,
+      "n_test": 75,
+      "accuracy": 0.9066666666666666,
+      "macro_f1": 0.9124991244544615
+    },
+    {
+      "fold": 4,
+      "n_train": 299,
+      "n_test": 74,
+      "accuracy": 0.918918918918919,
+      "macro_f1": 0.929263565891473
+    },
+    {
+      "fold": 5,
+      "n_train": 299,
+      "n_test": 74,
+      "accuracy": 0.918918918918919,
+      "macro_f1": 0.9197908232118758
+    },
+    {
+      "fold": 6,
+      "n_train": 298,
+      "n_test": 75,
+      "accuracy": 0.96,
+      "macro_f1": 0.9643308080808081
+    },
+    {
+      "fold": 7,
+      "n_train": 298,
+      "n_test": 75,
+      "accuracy": 0.9733333333333334,
+      "macro_f1": 0.9760504201680673
+    },
+    {
+      "fold": 8,
+      "n_train": 298,
+      "n_test": 75,
+      "accuracy": 0.92,
+      "macro_f1": 0.9126068376068376
+    },
+    {
+      "fold": 9,
+      "n_train": 299,
+      "n_test": 74,
+      "accuracy": 0.9459459459459459,
+      "macro_f1": 0.9535024154589372
+    },
+    {
+      "fold": 10,
+      "n_train": 299,
+      "n_test": 74,
+      "accuracy": 0.8918918918918919,
+      "macro_f1": 0.9055119130953307
+    },
+    {
+      "fold": 11,
+      "n_train": 298,
+      "n_test": 75,
+      "accuracy": 0.96,
+      "macro_f1": 0.9582489023978386
+    },
+    {
+      "fold": 12,
+      "n_train": 298,
+      "n_test": 75,
+      "accuracy": 0.9066666666666666,
+      "macro_f1": 0.910752560133365
+    },
+    {
+      "fold": 13,
+      "n_train": 298,
+      "n_test": 75,
+      "accuracy": 0.9333333333333333,
+      "macro_f1": 0.9381336841197162
+    },
+    {
+      "fold": 14,
+      "n_train": 299,
+      "n_test": 74,
+      "accuracy": 0.9594594594594594,
+      "macro_f1": 0.9646089036821303
+    },
+    {
+      "fold": 15,
+      "n_train": 299,
+      "n_test": 74,
+      "accuracy": 0.9459459459459459,
+      "macro_f1": 0.95
+    },
+    {
+      "fold": 16,
+      "n_train": 298,
+      "n_test": 75,
+      "accuracy": 0.8933333333333333,
+      "macro_f1": 0.9041666666666667
+    },
+    {
+      "fold": 17,
+      "n_train": 298,
+      "n_test": 75,
+      "accuracy": 0.9466666666666667,
+      "macro_f1": 0.9462982816641352
+    },
+    {
+      "fold": 18,
+      "n_train": 298,
+      "n_test": 75,
+      "accuracy": 0.9466666666666667,
+      "macro_f1": 0.9516052762568442
+    },
+    {
+      "fold": 19,
+      "n_train": 299,
+      "n_test": 74,
+      "accuracy": 0.9459459459459459,
+      "macro_f1": 0.9521934978456719
+    },
+    {
+      "fold": 20,
+      "n_train": 299,
+      "n_test": 74,
+      "accuracy": 0.9324324324324325,
+      "macro_f1": 0.9345685642678123
+    },
+    {
+      "fold": 21,
+      "n_train": 298,
+      "n_test": 75,
+      "accuracy": 0.9466666666666667,
+      "macro_f1": 0.9509232011250293
+    },
+    {
+      "fold": 22,
+      "n_train": 298,
+      "n_test": 75,
+      "accuracy": 0.9066666666666666,
+      "macro_f1": 0.9130263157894737
+    },
+    {
+      "fold": 23,
+      "n_train": 298,
+      "n_test": 75,
+      "accuracy": 0.9733333333333334,
+      "macro_f1": 0.9747474747474748
+    },
+    {
+      "fold": 24,
+      "n_train": 299,
+      "n_test": 74,
+      "accuracy": 0.9324324324324325,
+      "macro_f1": 0.9280236050003492
+    },
+    {
+      "fold": 25,
+      "n_train": 299,
+      "n_test": 74,
+      "accuracy": 0.9324324324324325,
+      "macro_f1": 0.9415882398693318
+    }
+  ]
+}

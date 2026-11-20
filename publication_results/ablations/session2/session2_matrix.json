@@ -1,0 +1,294 @@
+{
+  "session": "session_2",
+  "split": "clean",
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "generated_utc": "2026-09-24T00:25:48.547032+00:00",
+  "training_variants": [
+    "no_ema",
+    "cnn_branch_only",
+    "vit_branch_only"
+  ],
+  "eval_only_variants": [
+    "no_tta"
+  ],
+  "out_of_scope": {
+    "no_gate": "Session 1 - already trained there",
+    "no_multiscale": "Session 1 - already trained there",
+    "no_auxiliary_loss": "Session 1 - already trained there",
+    "full_fusion_v2": "reused - predictions and verified checkpoints already exist; retraining it would replace a verified reference with an unverified one"
+  },
+  "n_training_cells": 9,
+  "n_eval_cells": 3,
+  "n_cells_total": 12,
+  "estimated_minutes_total": 288,
+  "estimated_gpu_hours": 4.8,
+  "preflight_expected": {
+    "n_pooled": 7023,
+    "n_clusters": 5648,
+    "n_redundant_dropped": 1375,
+    "n_train": 4800,
+    "n_test": 848,
+    "n_model_train": 4080,
+    "n_val": 720,
+    "hamming_threshold": 8,
+    "split_seed": 42,
+    "class_counts": {
+      "Training": {
+        "glioma": 1377,
+        "meningioma": 1290,
+        "notumor": 655,
+        "pituitary": 1478
+      },
+      "Testing": {
+        "glioma": 243,
+        "meningioma": 228,
+        "notumor": 116,
+        "pituitary": 261
+      }
+    },
+    "split_manifest_sha256": "a02bcb62847ce1b9146a3e769f41f88ec1afce5a46d03fb5aaffb0ef43a0e6d2",
+    "split_report_sha256": "8487d31c0f0b06a4afaf493f6a5597e8f8e45feafe7679b77a745b070e34abc0"
+  },
+  "reference_config": {
+    "arch": "fusion_v2",
+    "unfreeze_all_cnn": true,
+    "unfreeze_all_vit": true,
+    "backbone_lr_mult": 0.1,
+    "aux_weight": 0.3,
+    "ema": true,
+    "tta": true,
+    "lr": 0.0001,
+    "weight_decay": 0.05,
+    "label_smoothing": 0.1,
+    "batch_size": 16,
+    "epochs": 15,
+    "params_total": 91211918,
+    "params_trainable": 91211918,
+    "n_train": 4080,
+    "n_val": 720,
+    "n_test": 848
+  },
+  "recovered_checkpoints": {
+    "42": {
+      "relative_path": "clean/full_fusion_v2/seed_42/checkpoint.pth",
+      "seed": 42,
+      "bytes": 365236755,
+      "sha256": "9b328ba83df5d44b542e19faae68fd1493fee61e0c5b80e493c2f8a387ed592e",
+      "architecture": "FusionV2 (gated, multi-scale, proj_dim 512)",
+      "verification_status": "ACCEPTED - strict load, gate intact, predictions reproduced",
+      "expected_clean_test_accuracy": 0.9823
+    },
+    "43": {
+      "relative_path": "clean/full_fusion_v2/seed_43/checkpoint.pth",
+      "seed": 43,
+      "bytes": 365236755,
+      "sha256": "9f97b6aa0c9ec3f1124e593c8c29e11d31f4aef8bc08e20a40e7ed1f29e80f25",
+      "architecture": "FusionV2 (gated, multi-scale, proj_dim 512)",
+      "verification_status": "ACCEPTED - strict load, gate intact, predictions reproduced",
+      "expected_clean_test_accuracy": 0.9823
+    },
+    "44": {
+      "relative_path": "clean/full_fusion_v2/seed_44/checkpoint.pth",
+      "seed": 44,
+      "bytes": 365236755,
+      "sha256": "4155a2b71df99a6159e1e4a5dbe635f4e9ea7852a6704d804dd1fb5d43aca434",
+      "architecture": "FusionV2 (gated, multi-scale, proj_dim 512)",
+      "verification_status": "ACCEPTED - strict load, gate intact, predictions reproduced",
+      "expected_clean_test_accuracy": 0.9835
+    }
+  },
+  "required_artifacts_training": [
+    "checkpoint.pth",
+    "metrics.json",
+    "history.json",
+    "preds_test.csv",
+    "preds_dataset_ood.csv",
+    "config.json",
+    "environment.json",
+    "run.log"
+  ],
+  "required_artifacts_eval_only": [
+    "metrics.json",
+    "preds_test.csv",
+    "preds_dataset_ood.csv",
+    "config.json",
+    "environment.json",
+    "run.log",
+    "source_checkpoint_sha256.txt"
+  ],
+  "forbidden_artifacts_eval_only": [
+    "checkpoint.pth"
+  ],
+  "gate_artifacts": [
+    "gates_test.csv",
+    "gates_dataset_ood.csv"
+  ],
+  "variants_with_gates": [
+    "no_ema",
+    "no_tta"
+  ],
+  "overfitting_surveillance": {
+    "reference": {
+      "source": "runs_v2_clean/fusion_v2_seed42/history.json",
+      "max_train_val_gap_pp": 1.62,
+      "best_epoch": 8,
+      "epochs_run": 12,
+      "early_stopping_fired": true
+    },
+    "flag_threshold_gap_pp": 5.0,
+    "policy": "measured and flagged, never auto-corrected; recipe unchanged so the ablation stays controlled. no_ema is the variant most likely to widen the gap, and that would be the finding rather than a fault."
+  },
+  "uploads": {
+    "code": {
+      "zip": "fusionv2_code_session2_v1.zip",
+      "sha256": "33bae5e3b79bb84c25cea27bde6b1a7a3dda850798b86560b3cefa9bc1fb26a0",
+      "n_files": 15
+    },
+    "checkpoints": {
+      "zip": "fusionv2_recovered_checkpoints_v1.zip",
+      "sha256": "321affcdcef48f6ff257ee79e4eeb81d19f0313aaea5028bbce05b29f4e397c3",
+      "bytes": 1095710773,
+      "n": 3
+    }
+  },
+  "training_launched": false,
+  "kaggle_upload_performed": false,
+  "cells": [
+    {
+      "variant": "no_ema",
+      "seed": 42,
+      "split": "clean",
+      "mode": "train",
+      "output_dir": "publication_runs/session_2/clean/no_ema/seed_42",
+      "estimated_minutes": 45,
+      "gate_csvs_expected": true,
+      "writes_checkpoint": true,
+      "source_checkpoint": null
+    },
+    {
+      "variant": "no_ema",
+      "seed": 43,
+      "split": "clean",
+      "mode": "train",
+      "output_dir": "publication_runs/session_2/clean/no_ema/seed_43",
+      "estimated_minutes": 45,
+      "gate_csvs_expected": true,
+      "writes_checkpoint": true,
+      "source_checkpoint": null
+    },
+    {
+      "variant": "no_ema",
+      "seed": 44,
+      "split": "clean",
+      "mode": "train",
+      "output_dir": "publication_runs/session_2/clean/no_ema/seed_44",
+      "estimated_minutes": 45,
+      "gate_csvs_expected": true,
+      "writes_checkpoint": true,
+      "source_checkpoint": null
+    },
+    {
+      "variant": "cnn_branch_only",
+      "seed": 42,
+      "split": "clean",
+      "mode": "train",
+      "output_dir": "publication_runs/session_2/clean/cnn_branch_only/seed_42",
+      "estimated_minutes": 10,
+      "gate_csvs_expected": false,
+      "writes_checkpoint": true,
+      "source_checkpoint": null
+    },
+    {
+      "variant": "cnn_branch_only",
+      "seed": 43,
+      "split": "clean",
+      "mode": "train",
+      "output_dir": "publication_runs/session_2/clean/cnn_branch_only/seed_43",
+      "estimated_minutes": 10,
+      "gate_csvs_expected": false,
+      "writes_checkpoint": true,
+      "source_checkpoint": null
+    },
+    {
+      "variant": "cnn_branch_only",
+      "seed": 44,
+      "split": "clean",
+      "mode": "train",
+      "output_dir": "publication_runs/session_2/clean/cnn_branch_only/seed_44",
+      "estimated_minutes": 10,
+      "gate_csvs_expected": false,
+      "writes_checkpoint": true,
+      "source_checkpoint": null
+    },
+    {
+      "variant": "vit_branch_only",
+      "seed": 42,
+      "split": "clean",
+      "mode": "train",
+      "output_dir": "publication_runs/session_2/clean/vit_branch_only/seed_42",
+      "estimated_minutes": 38,
+      "gate_csvs_expected": false,
+      "writes_checkpoint": true,
+      "source_checkpoint": null
+    },
+    {
+      "variant": "vit_branch_only",
+      "seed": 43,
+      "split": "clean",
+      "mode": "train",
+      "output_dir": "publication_runs/session_2/clean/vit_branch_only/seed_43",
+      "estimated_minutes": 38,
+      "gate_csvs_expected": false,
+      "writes_checkpoint": true,
+      "source_checkpoint": null
+    },
+    {
+      "variant": "vit_branch_only",
+      "seed": 44,
+      "split": "clean",
+      "mode": "train",
+      "output_dir": "publication_runs/session_2/clean/vit_branch_only/seed_44",
+      "estimated_minutes": 38,
+      "gate_csvs_expected": false,
+      "writes_checkpoint": true,
+      "source_checkpoint": null
+    },
+    {
+      "variant": "no_tta",
+      "seed": 42,
+      "split": "clean",
+      "mode": "eval_only",
+      "output_dir": "publication_runs/session_2/clean/no_tta/seed_42",
+      "estimated_minutes": 3,
+      "gate_csvs_expected": true,
+      "writes_checkpoint": false,
+      "source_checkpoint": "clean/full_fusion_v2/seed_42/checkpoint.pth"
+    },
+    {
+      "variant": "no_tta",
+      "seed": 43,
+      "split": "clean",
+      "mode": "eval_only",
+      "output_dir": "publication_runs/session_2/clean/no_tta/seed_43",
+      "estimated_minutes": 3,
+      "gate_csvs_expected": true,
+      "writes_checkpoint": false,
+      "source_checkpoint": "clean/full_fusion_v2/seed_43/checkpoint.pth"
+    },
+    {
+      "variant": "no_tta",
+      "seed": 44,
+      "split": "clean",
+      "mode": "eval_only",
+      "output_dir": "publication_runs/session_2/clean/no_tta/seed_44",
+      "estimated_minutes": 3,
+      "gate_csvs_expected": true,
+      "writes_checkpoint": false,
+      "source_checkpoint": "clean/full_fusion_v2/seed_44/checkpoint.pth"
+    }
+  ]
+}

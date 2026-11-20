@@ -1,0 +1,53 @@
+{
+  "phase": "X6",
+  "mode": "smoke",
+  "created_utc": "2026-09-27T11:30:54.208392+00:00",
+  "protocol_lock_sha256": "a553c93b3eeb654f7adaed319a499404d7a83efbe9dac576f482a0b10cf2a1a5",
+  "selector_sha256": "e8a27a92495e2f44c2ef7af655128a8ea83574cbb271e6b09ce7d4f99b4c3cbb",
+  "n_selector_images": 373,
+  "n_evaluated_images": 8,
+  "seeds": [
+    42
+  ],
+  "methods": [
+    "cnn_gradcampp",
+    "vit_grad_x_input",
+    "composite_equal",
+    "composite_gate_weighted",
+    "baseline_random",
+    "baseline_centre_prior"
+  ],
+  "runtime_seconds": 507.3407242298126,
+  "neutrality": {
+    "max_instrumented_vs_plain_single": 0.0,
+    "max_recomputed_tta_vs_recorded": 1.4541244506283135e-06,
+    "label_changes_vs_recorded": 0
+  },
+  "pituitary_to_notumor_predictions": 2,
+  "preservation": {
+    "checked": 150,
+    "altered": 0,
+    "altered_paths": [],
+    "skipped": false
+  },
+  "environment": {
+    "python": "3.13.2",
+    "torch": "2.14.0+cpu",
+    "transformers": "4.57.6",
+    "device": "cpu",
+    "cuda_device": null
+  },
+  "external_labels_used_for_selection_or_tuning": false,
+  "scope_limit": "association under source shift; not mechanism or localisation",
+  "acceptance_checks": {
+    "protocol_lock_identical_to_x5": true,
+    "selector_exactly_373": true,
+    "evaluated_expected_scope": true,
+    "neutrality_exact": true,
+    "recorded_predictions_reproduced": true,
+    "no_external_label_selection_or_tuning": true,
+    "clean_and_external_not_pooled": true,
+    "preservation": true
+  },
+  "acceptance_status": "PASS"
+}

@@ -1,0 +1,25 @@
+{
+  "source": "/kaggle/input/datasets/geetarthjain/brain-tumor-mri-data/dataset",
+  "out": "/kaggle/working/dataset_clean",
+  "seed": 42,
+  "hamming_threshold": 8,
+  "n_pooled": 7023,
+  "n_clusters": 5648,
+  "n_redundant_dropped": 1375,
+  "counts": {
+    "Training": {
+      "glioma": 1377,
+      "meningioma": 1290,
+      "notumor": 655,
+      "pituitary": 1478
+    },
+    "Testing": {
+      "glioma": 243,
+      "meningioma": 228,
+      "notumor": 116,
+      "pituitary": 261
+    }
+  },
+  "n_train": 4800,
+  "n_test": 848
+}

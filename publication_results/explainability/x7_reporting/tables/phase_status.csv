@@ -1,0 +1,10 @@
+phase,status,role,source_file
+X0,PASS,architecture/evidence audit,publication_results/explainability/audit/explainability_architecture_audit.json
+X0a,PASS,verification addendum,publication_results/explainability/audit_addendum/x0_verification_addendum.json
+X1,PASS,clean-test reconstruction,publication_results/explainability/x1_reconstruction/x1_reconstruction.json
+X2,FAIL,preserved failed eager-attention route,publication_results/explainability/x2_instrumentation/x2_neutrality.json
+X2b,PASS,accepted SDPA-preserving replacement,publication_results/explainability/x2b_token_attribution/x2b_neutrality.json
+X3,PASS (PRESERVATION NOT VERIFIED ON THIS HOST),dual-path attribution extraction,publication_results/explainability/x3_attribution/x3_attribution.json
+X4,PASS,sanity checks,publication_results/explainability/x4_sanity/x4_sanity.json
+X5,PASS,faithfulness/stability,publication_results/explainability/x5_faithfulness/X5_LANDING_PROVENANCE.json
+X6,PASS,locked cross-source analysis,publication_results/explainability/x6_cross_source/x6_cross_source.json

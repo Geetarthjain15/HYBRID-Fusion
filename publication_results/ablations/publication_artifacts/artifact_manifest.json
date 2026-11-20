@@ -1,0 +1,107 @@
+{
+  "phase": "3C",
+  "source": "publication_results/ablations/final_analysis/final_ablation_analysis.json",
+  "source_sha256": "7e16ad3d62fc9d1605a3b8ec72a4bdd8a93649e997222efd1e7b76652ea4e368",
+  "phase3b_acceptance_status": "PASS",
+  "training_performed": false,
+  "model_modified": false,
+  "n_images_per_seed": 848,
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "visual_inspection": "PASS \u2014 all six PNG figures visually inspected for legibility, clipping, overlap, labels, and misleading axes.",
+  "files": [
+    {
+      "path": "publication_results/ablations/publication_artifacts/figures/ablation_accuracy.pdf",
+      "bytes": 23157,
+      "sha256": "94e732e7ac72ae1101482a2c197eb712abaf4d524ca9b07158362f918b707b7f"
+    },
+    {
+      "path": "publication_results/ablations/publication_artifacts/figures/ablation_accuracy.png",
+      "bytes": 117228,
+      "sha256": "e1bcbe8dc9752c92779460088e57cbf8e85c71ea129f63e35b9f78edb0599cff"
+    },
+    {
+      "path": "publication_results/ablations/publication_artifacts/figures/ablation_confusion_comparison.pdf",
+      "bytes": 21966,
+      "sha256": "af6959780f0a1c05d27274868556566bf54d8c7e7549afdaf99a81fe04c10d39"
+    },
+    {
+      "path": "publication_results/ablations/publication_artifacts/figures/ablation_confusion_comparison.png",
+      "bytes": 166285,
+      "sha256": "631fc30e8bf3b46b4ab0b27bdab2f999f0b8db04de8ba5e7a720baa327c817ed"
+    },
+    {
+      "path": "publication_results/ablations/publication_artifacts/figures/gate_mass_by_class.pdf",
+      "bytes": 17676,
+      "sha256": "e8666e88e03d6d315111db013ea527a4c5014cc18bf141909ef6d72a874b0606"
+    },
+    {
+      "path": "publication_results/ablations/publication_artifacts/figures/gate_mass_by_class.png",
+      "bytes": 97495,
+      "sha256": "4738ef534425980dddaefb04f435defa6617c2e08786cf5a5e28c0d85d37db36"
+    },
+    {
+      "path": "publication_results/ablations/publication_artifacts/figures/paired_disagreements.pdf",
+      "bytes": 22863,
+      "sha256": "a0e6808689beee41b7f385684b2edebbf1a49400b6f2cd798370c726aa1a3960"
+    },
+    {
+      "path": "publication_results/ablations/publication_artifacts/figures/paired_disagreements.png",
+      "bytes": 139755,
+      "sha256": "29d482ff8499285e380fc4416e1a156ab2e4740271e041dc741781e791f70e4c"
+    },
+    {
+      "path": "publication_results/ablations/publication_artifacts/figures/reference_confusion.pdf",
+      "bytes": 19566,
+      "sha256": "881190603655b319a6f79c97d9fa6445f003912adbafbb1808748f5af9869257"
+    },
+    {
+      "path": "publication_results/ablations/publication_artifacts/figures/reference_confusion.png",
+      "bytes": 120951,
+      "sha256": "60e96c99a0dafaad9fe68bd3b8d1ddc8cfe498410b593eae568fed7cb627b330"
+    },
+    {
+      "path": "publication_results/ablations/publication_artifacts/figures/reference_reliability.pdf",
+      "bytes": 21250,
+      "sha256": "ebf49f1d84f50a6154928b470487ba46ec9c3898574a8e17a8d266f8d4d011a3"
+    },
+    {
+      "path": "publication_results/ablations/publication_artifacts/figures/reference_reliability.png",
+      "bytes": 211594,
+      "sha256": "5a60cf109816d7d824bf4947e4f65deb2305a1e7b587346283ae45a37bb1749d"
+    },
+    {
+      "path": "publication_results/ablations/publication_artifacts/PHASE3C_ARTIFACTS.md",
+      "bytes": 2386,
+      "sha256": "d3830492585555c4abc9e27376ec64444d3c752a1a56d9f723a3af16ee3c9c9b"
+    },
+    {
+      "path": "publication_results/ablations/publication_artifacts/tables/experiment_provenance.csv",
+      "bytes": 1437,
+      "sha256": "fd4148226b5f93b23ad1fa149fc3c4918ea8f6f9cfd4028a09574ea9fc8347d0"
+    },
+    {
+      "path": "publication_results/ablations/publication_artifacts/tables/final_ablation_table.csv",
+      "bytes": 1320,
+      "sha256": "b9f62c9e2a0f119957f60c49f5e1da59a0ea7f8ab31b2a3ddf0221df49fb016a"
+    },
+    {
+      "path": "publication_results/ablations/publication_artifacts/tables/per_class_metrics.csv",
+      "bytes": 20397,
+      "sha256": "4730ef584a885ff7cb4d5189bc4651825bb8fcaab28dc9d174db77fa0ed2d31c"
+    },
+    {
+      "path": "publication_results/ablations/publication_artifacts/VISUAL_INSPECTION.md",
+      "bytes": 136,
+      "sha256": "3e5dba7626cb44b4d9f0a04eddd6ca01e608d516be0b4d532a29dc0dc5e8f31e"
+    }
+  ],
+  "environment": {
+    "python": "3.13.2",
+    "matplotlib": "3.11.2"
+  },
+  "acceptance_status": "PASS"
+}

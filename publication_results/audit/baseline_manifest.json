@@ -1,0 +1,2063 @@
+{
+  "phase": "0 - immutable baseline audit",
+  "generated_utc": "2026-09-23T20:11:24.451849+00:00",
+  "project_root": "D:\\Research Model\\Brain_Tumor_Detection_ViT2",
+  "environment": {
+    "python": "3.13.2",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.5.3"
+  },
+  "tolerance_pp": 0.01,
+  "verified_constants_source": "CLAUDE.md :: Scientific ground truth",
+  "inventory": {
+    "prediction_csvs": [
+      {
+        "path": "runs/cnn_seed42/preds_test.csv",
+        "bytes": 77758,
+        "mtime_utc": "2026-09-21T19:11:50+00:00",
+        "sha256": "004dace0a50462c203af31e8b6585a6bbf1dbe81bf25d2f05aac6a00476e22ac",
+        "rows": 1052
+      },
+      {
+        "path": "runs_original/fusion_seed44/preds_dataset_ood.csv",
+        "bytes": 54185,
+        "mtime_utc": "2026-09-22T05:17:52+00:00",
+        "sha256": "3bfea325ee1b03a9087c4d0ca4c874084e91e54b3a889c19e140da81382a5f6f",
+        "rows": 499
+      },
+      {
+        "path": "runs_original/fusion_seed44/preds_test.csv",
+        "bytes": 77826,
+        "mtime_utc": "2026-09-22T05:17:44+00:00",
+        "sha256": "45fe4d3295e2d04c6ee00faf25115d9cf40e706e483e8c955c40532211758ed8",
+        "rows": 1052
+      },
+      {
+        "path": "runs_original/cnn_seed42_unfrozen/preds_dataset_ood.csv",
+        "bytes": 54060,
+        "mtime_utc": "2026-09-22T02:36:26+00:00",
+        "sha256": "94004604f6f2bcd67ee94e3017159a4027ea527cc1a4b36745034c782f1016e1",
+        "rows": 499
+      },
+      {
+        "path": "runs_original/cnn_seed42_unfrozen/preds_test.csv",
+        "bytes": 77825,
+        "mtime_utc": "2026-09-22T02:36:24+00:00",
+        "sha256": "03a173641c9a0f1956ee28aa86d879ce91c70cbb9b8188db113ce06ce14a1610",
+        "rows": 1052
+      },
+      {
+        "path": "runs_original/vit_seed44/preds_dataset_ood.csv",
+        "bytes": 54260,
+        "mtime_utc": "2026-09-22T04:56:54+00:00",
+        "sha256": "5d29bb8cbf4ee0b538199b72e09bf4339627a3bf4798b43bf5797b7982bf8610",
+        "rows": 499
+      },
+      {
+        "path": "runs_original/vit_seed44/preds_test.csv",
+        "bytes": 77840,
+        "mtime_utc": "2026-09-22T04:56:46+00:00",
+        "sha256": "b3b0193e5bf3d2165ac48aae8285efb88f7875b68ce10ad5a346ba0dd601f73f",
+        "rows": 1052
+      },
+      {
+        "path": "runs_original/vit_seed42/preds_dataset_ood.csv",
+        "bytes": 54131,
+        "mtime_utc": "2026-09-22T03:00:00+00:00",
+        "sha256": "4150f4a1b5a22d6230df3033249767aa3a07beef3474f7f2cffbcb09b146ded8",
+        "rows": 499
+      },
+      {
+        "path": "runs_original/vit_seed42/preds_test.csv",
+        "bytes": 77831,
+        "mtime_utc": "2026-09-22T02:59:52+00:00",
+        "sha256": "19cedc3bda8e419b18ddea10d0a5385682ad1f4520c0c4a4cc17e8890200ef1d",
+        "rows": 1052
+      },
+      {
+        "path": "runs_original/cnn_seed42/preds_dataset_ood.csv",
+        "bytes": 53980,
+        "mtime_utc": "2026-09-22T02:28:48+00:00",
+        "sha256": "e09d87dbb6b3405b56a59faf2ee28995ffdbc9539704899f2dd89f65e8014c93",
+        "rows": 499
+      },
+      {
+        "path": "runs_original/cnn_seed42/preds_test.csv",
+        "bytes": 77809,
+        "mtime_utc": "2026-09-22T02:28:46+00:00",
+        "sha256": "358d1fbd566ac6224d286c214f9f1dbfd89193ec82102cccebe5a82ed16851c9",
+        "rows": 1052
+      },
+      {
+        "path": "runs_original/vit_seed43/preds_dataset_ood.csv",
+        "bytes": 54217,
+        "mtime_utc": "2026-09-22T04:02:10+00:00",
+        "sha256": "f08168c68c0e91ffb3dc2251560c30f8afbe6d042a010bc204e5786915e2b7c6",
+        "rows": 499
+      },
+      {
+        "path": "runs_original/vit_seed43/preds_test.csv",
+        "bytes": 77825,
+        "mtime_utc": "2026-09-22T04:02:02+00:00",
+        "sha256": "8b645c7d5701ef77af357dd1ee0e078988c9f6fdca39bffd89a5da3fc4720f78",
+        "rows": 1052
+      },
+      {
+        "path": "runs_original/cnn_seed44_unfrozen/preds_dataset_ood.csv",
+        "bytes": 53959,
+        "mtime_utc": "2026-09-22T04:39:24+00:00",
+        "sha256": "487f1799a93b1e34e4e7851beb2f645b7bb26aa5bde65324554feec59999b109",
+        "rows": 499
+      },
+      {
+        "path": "runs_original/cnn_seed44_unfrozen/preds_test.csv",
+        "bytes": 77826,
+        "mtime_utc": "2026-09-22T04:39:20+00:00",
+        "sha256": "67bfc82ff2030eb920f6ede0e88605d0afebabf93434bbebeb3ce80cf9ad636e",
+        "rows": 1052
+      },
+      {
+        "path": "runs_original/cnn_seed44/preds_dataset_ood.csv",
+        "bytes": 53946,
+        "mtime_utc": "2026-09-22T04:33:12+00:00",
+        "sha256": "069a50ab4e2782b74073251670dd3aa2061153bf080c152abfb11b54f574bb77",
+        "rows": 499
+      },
+      {
+        "path": "runs_original/cnn_seed44/preds_test.csv",
+        "bytes": 77783,
+        "mtime_utc": "2026-09-22T04:33:10+00:00",
+        "sha256": "35558aebe0960cab3d7ff43fbbd6f3a26fe189292aead830be48a5477b793345",
+        "rows": 1052
+      },
+      {
+        "path": "runs_original/cnn_seed43_unfrozen/preds_dataset_ood.csv",
+        "bytes": 54059,
+        "mtime_utc": "2026-09-22T03:38:38+00:00",
+        "sha256": "a25b4063b416b97a741b42f1eec87e8b9b82c2f667d128dcabc72492faa250b1",
+        "rows": 499
+      },
+      {
+        "path": "runs_original/cnn_seed43_unfrozen/preds_test.csv",
+        "bytes": 77829,
+        "mtime_utc": "2026-09-22T03:38:36+00:00",
+        "sha256": "a6147b6fcb07af9a4bbffdcefee91fcc36bcb4c675617af01e06376b2a5718ef",
+        "rows": 1052
+      },
+      {
+        "path": "runs_original/fusion_seed42/preds_dataset_ood.csv",
+        "bytes": 54162,
+        "mtime_utc": "2026-09-22T03:25:50+00:00",
+        "sha256": "8ac0e9654fd00eab3592310ebce4e4bbfc7ba7a851acbce238eb6b5662700831",
+        "rows": 499
+      },
+      {
+        "path": "runs_original/fusion_seed42/preds_test.csv",
+        "bytes": 77831,
+        "mtime_utc": "2026-09-22T03:25:40+00:00",
+        "sha256": "f12600ead3fe671457a48b3e67ec7760009f63a7b6dd4b167d0f616c585dce5e",
+        "rows": 1052
+      },
+      {
+        "path": "runs_original/cnn_seed43/preds_dataset_ood.csv",
+        "bytes": 53943,
+        "mtime_utc": "2026-09-22T03:30:58+00:00",
+        "sha256": "5785ce0558ffdd9dbb94b4e9ccb250804d77ac784cab3602d91ccf8a62c2b691",
+        "rows": 499
+      },
+      {
+        "path": "runs_original/cnn_seed43/preds_test.csv",
+        "bytes": 77780,
+        "mtime_utc": "2026-09-22T03:30:54+00:00",
+        "sha256": "b978465ec9dab495752e2e20350258b5d10534a2d9ef50a6f547ef45082b47f3",
+        "rows": 1052
+      },
+      {
+        "path": "runs_original/fusion_seed43/preds_dataset_ood.csv",
+        "bytes": 54221,
+        "mtime_utc": "2026-09-22T04:28:00+00:00",
+        "sha256": "f7e63ff59d7d3d31f1820170776df8bf9043cef5b6e293470717a92dccdf64c7",
+        "rows": 499
+      },
+      {
+        "path": "runs_original/fusion_seed43/preds_test.csv",
+        "bytes": 77830,
+        "mtime_utc": "2026-09-22T04:27:52+00:00",
+        "sha256": "bd249989e65fd17f54389ff0cd18b4306365f82336502e944cc3e0f28c6f7a12",
+        "rows": 1052
+      },
+      {
+        "path": "runs_clean/fusion_seed44/preds_dataset_ood.csv",
+        "bytes": 54284,
+        "mtime_utc": "2026-09-22T07:41:36+00:00",
+        "sha256": "37d63443d3acab2c4d63193d8e6a03278fa310f1404b82109dde3a6363f53ffd",
+        "rows": 499
+      },
+      {
+        "path": "runs_clean/fusion_seed44/preds_test.csv",
+        "bytes": 63189,
+        "mtime_utc": "2026-09-22T07:41:26+00:00",
+        "sha256": "2ac6e346a4b96c81e7f104fa0d712af2b512b0000ade4901d52bda2a34f58603",
+        "rows": 848
+      },
+      {
+        "path": "runs_clean/cnn_seed42_unfrozen/preds_dataset_ood.csv",
+        "bytes": 54040,
+        "mtime_utc": "2026-09-22T05:26:52+00:00",
+        "sha256": "f7266fcde413415adb186f334a728f2a3935a44574801979aa3a85921a2f5fda",
+        "rows": 499
+      },
+      {
+        "path": "runs_clean/cnn_seed42_unfrozen/preds_test.csv",
+        "bytes": 63182,
+        "mtime_utc": "2026-09-22T05:26:50+00:00",
+        "sha256": "f8623eb43fc201c8ecdee98020c4aace509131c0ebc2b349ccc2b2e67645cca5",
+        "rows": 848
+      },
+      {
+        "path": "runs_clean/vit_seed44/preds_dataset_ood.csv",
+        "bytes": 54241,
+        "mtime_utc": "2026-09-22T07:20:44+00:00",
+        "sha256": "6c7a22ba94f3919e5c5f6327d25d70ebb562aea5197cc283736e4db742ae56fd",
+        "rows": 499
+      },
+      {
+        "path": "runs_clean/vit_seed44/preds_test.csv",
+        "bytes": 63195,
+        "mtime_utc": "2026-09-22T07:20:36+00:00",
+        "sha256": "0b0a142fdc2cbbf957879adbde192895ea81b8142475e24f5a56d7ab15969a0c",
+        "rows": 848
+      },
+      {
+        "path": "runs_clean/vit_seed42/preds_dataset_ood.csv",
+        "bytes": 54224,
+        "mtime_utc": "2026-09-22T05:45:50+00:00",
+        "sha256": "d722baba2da5d81acc4c5e0537dd2102785001ac8cf7465dff48fd56624a5785",
+        "rows": 499
+      },
+      {
+        "path": "runs_clean/vit_seed42/preds_test.csv",
+        "bytes": 63182,
+        "mtime_utc": "2026-09-22T05:45:42+00:00",
+        "sha256": "9c3c732592d072accc01d24c39d02e4768d3146a7a972a97e36111853693c159",
+        "rows": 848
+      },
+      {
+        "path": "runs_clean/cnn_seed42/preds_dataset_ood.csv",
+        "bytes": 54027,
+        "mtime_utc": "2026-09-22T05:21:50+00:00",
+        "sha256": "6a70e12b08d699d99243bee10dd2e2effdc2f0d01942d3ca0e7caa51a8adacf2",
+        "rows": 499
+      },
+      {
+        "path": "runs_clean/cnn_seed42/preds_test.csv",
+        "bytes": 63289,
+        "mtime_utc": "2026-09-22T05:21:46+00:00",
+        "sha256": "fa5aaad421128a2935ecb53d31b84471cd2501ec654eb1bebb952d0d36b3b33f",
+        "rows": 848
+      },
+      {
+        "path": "runs_clean/vit_seed43/preds_dataset_ood.csv",
+        "bytes": 54250,
+        "mtime_utc": "2026-09-22T06:31:22+00:00",
+        "sha256": "3c9483632beac534e785793788661044c6aa21fd96b60023e7d8a3a83ab61c4b",
+        "rows": 499
+      },
+      {
+        "path": "runs_clean/vit_seed43/preds_test.csv",
+        "bytes": 63197,
+        "mtime_utc": "2026-09-22T06:31:14+00:00",
+        "sha256": "9f6a27bc204c809cf91ac479007d65850d422191666791e5c69a5c3345b3f157",
+        "rows": 848
+      },
+      {
+        "path": "runs_clean/cnn_seed44_unfrozen/preds_dataset_ood.csv",
+        "bytes": 54103,
+        "mtime_utc": "2026-09-22T07:01:42+00:00",
+        "sha256": "35363d51f2ad78c4409ed1213a358d93337ca38f0646d21f4143f831737ae227",
+        "rows": 499
+      },
+      {
+        "path": "runs_clean/cnn_seed44_unfrozen/preds_test.csv",
+        "bytes": 63188,
+        "mtime_utc": "2026-09-22T07:01:38+00:00",
+        "sha256": "028ee612458d69851d77b13e6006f9734116cdf544c150ad5f1c89a4c5aa27c0",
+        "rows": 848
+      },
+      {
+        "path": "runs_clean/cnn_seed44/preds_dataset_ood.csv",
+        "bytes": 54044,
+        "mtime_utc": "2026-09-22T06:56:04+00:00",
+        "sha256": "1e1d72d18a67eb5257715b6c8020a46656f218c6aafd2928a334a0283eab10cb",
+        "rows": 499
+      },
+      {
+        "path": "runs_clean/cnn_seed44/preds_test.csv",
+        "bytes": 63285,
+        "mtime_utc": "2026-09-22T06:56:00+00:00",
+        "sha256": "df668862aae10caa83fee13b6098d118d411c83a29098b110e8ece7b8b89c846",
+        "rows": 848
+      },
+      {
+        "path": "runs_clean/cnn_seed43_unfrozen/preds_dataset_ood.csv",
+        "bytes": 54000,
+        "mtime_utc": "2026-09-22T06:14:48+00:00",
+        "sha256": "03deaba1ad1d4feab4330f86cd1764ad16dba1b6f678eb6ad426c7d711aa97a0",
+        "rows": 499
+      },
+      {
+        "path": "runs_clean/cnn_seed43_unfrozen/preds_test.csv",
+        "bytes": 63181,
+        "mtime_utc": "2026-09-22T06:14:46+00:00",
+        "sha256": "27f2f4a3e3cf73cf021b864048b6f7c545fc039e383eb4dc0b6bbe77c6bf5c14",
+        "rows": 848
+      },
+      {
+        "path": "runs_clean/fusion_seed42/preds_dataset_ood.csv",
+        "bytes": 54275,
+        "mtime_utc": "2026-09-22T06:06:38+00:00",
+        "sha256": "be1aa6ec5e7aaea3babbb06b2d62c0679d2e735bacbe81cdc82d3c267bcdbacd",
+        "rows": 499
+      },
+      {
+        "path": "runs_clean/fusion_seed42/preds_test.csv",
+        "bytes": 63196,
+        "mtime_utc": "2026-09-22T06:06:28+00:00",
+        "sha256": "7a5533bae198ff9f8d2826a8ea3796a41cfa01e53d717c669f142bbe7f217d3d",
+        "rows": 848
+      },
+      {
+        "path": "runs_clean/cnn_seed43/preds_dataset_ood.csv",
+        "bytes": 54028,
+        "mtime_utc": "2026-09-22T06:10:34+00:00",
+        "sha256": "a4b866ad2f85b52a10ee4a66ee65802b39da81e919e3156c2709950bd66a9fda",
+        "rows": 499
+      },
+      {
+        "path": "runs_clean/cnn_seed43/preds_test.csv",
+        "bytes": 63288,
+        "mtime_utc": "2026-09-22T06:10:30+00:00",
+        "sha256": "4e0a12216b3a2786a6b042ad6b960cb0e04733c36371ed5a8f13b68f9174e499",
+        "rows": 848
+      },
+      {
+        "path": "runs_clean/fusion_seed43/preds_dataset_ood.csv",
+        "bytes": 54176,
+        "mtime_utc": "2026-09-22T06:52:08+00:00",
+        "sha256": "3d99bdee5abca24965143b320e360c7fd95fc05ec1c99f68ff8562d75f73018c",
+        "rows": 499
+      },
+      {
+        "path": "runs_clean/fusion_seed43/preds_test.csv",
+        "bytes": 63169,
+        "mtime_utc": "2026-09-22T06:52:00+00:00",
+        "sha256": "a7d23283e57f9b07d6eb69c10f945b0a1048332612b16c0bd225cf7739c57e84",
+        "rows": 848
+      },
+      {
+        "path": "runs_v2_original/fusion_v2_seed43/preds_dataset_ood.csv",
+        "bytes": 54135,
+        "mtime_utc": "2026-09-22T15:07:00+00:00",
+        "sha256": "1fd2a80e23b56cc9fb24885dd5a24347a54594283a580375ca5b998a8600a85f",
+        "rows": 499
+      },
+      {
+        "path": "runs_v2_original/fusion_v2_seed43/preds_test.csv",
+        "bytes": 77825,
+        "mtime_utc": "2026-09-22T15:06:48+00:00",
+        "sha256": "f228d1490910410ee4a75eac3eaa3bc83a14d75ad69d9e8a21ca77975851f963",
+        "rows": 1052
+      },
+      {
+        "path": "runs_v2_original/fusion_v2_seed42/preds_dataset_ood.csv",
+        "bytes": 54189,
+        "mtime_utc": "2026-09-22T14:13:14+00:00",
+        "sha256": "fb34eb7334467f538cdfcb9a3b64e26d8e19b368bc18da0903fbb64a4c584641",
+        "rows": 499
+      },
+      {
+        "path": "runs_v2_original/fusion_v2_seed42/preds_test.csv",
+        "bytes": 77823,
+        "mtime_utc": "2026-09-22T14:13:02+00:00",
+        "sha256": "0514ea27fb045aae657cd74434a1b93514224589217e2806687a40a976859a6c",
+        "rows": 1052
+      },
+      {
+        "path": "runs_v2_original/fusion_v2_seed44/preds_dataset_ood.csv",
+        "bytes": 54178,
+        "mtime_utc": "2026-09-22T16:04:32+00:00",
+        "sha256": "7d006ddfeb96fbc071399835800ef617ae93778cbe4a354f14bd0d4a68fcd3f8",
+        "rows": 499
+      },
+      {
+        "path": "runs_v2_original/fusion_v2_seed44/preds_test.csv",
+        "bytes": 77832,
+        "mtime_utc": "2026-09-22T16:04:20+00:00",
+        "sha256": "afc39cfcdefb4dfc7929a16d0dc2f158fc1132791cf994b12d9d6238c1ae0256",
+        "rows": 1052
+      },
+      {
+        "path": "runs_v2_clean/fusion_v2_seed43/preds_dataset_ood.csv",
+        "bytes": 54175,
+        "mtime_utc": "2026-09-22T17:27:52+00:00",
+        "sha256": "555621abe80e49d46afa8aff640eef0eb6ea582506f8c4468c097007714dbbfe",
+        "rows": 499
+      },
+      {
+        "path": "runs_v2_clean/fusion_v2_seed43/preds_test.csv",
+        "bytes": 63191,
+        "mtime_utc": "2026-09-22T17:27:40+00:00",
+        "sha256": "bb142d3d33528fdb0d5ad915af3840102f5d93411cdba1ae8540ff03a92c77b5",
+        "rows": 848
+      },
+      {
+        "path": "runs_v2_clean/fusion_v2_seed42/preds_dataset_ood.csv",
+        "bytes": 54229,
+        "mtime_utc": "2026-09-22T16:41:42+00:00",
+        "sha256": "2999ee6c9173e5a6d4d1c795f1178043001ba16b94800ac76ff3ee60dc93ad55",
+        "rows": 499
+      },
+      {
+        "path": "runs_v2_clean/fusion_v2_seed42/preds_test.csv",
+        "bytes": 63168,
+        "mtime_utc": "2026-09-22T16:41:30+00:00",
+        "sha256": "247e6494d7315856a5fbb2a26b2eed789f77a880696c724b8a79243fd47c20b4",
+        "rows": 848
+      },
+      {
+        "path": "runs_v2_clean/fusion_v2_seed44/preds_dataset_ood.csv",
+        "bytes": 54200,
+        "mtime_utc": "2026-09-22T18:05:06+00:00",
+        "sha256": "c894dfa58ca6ec505b15f134225aee147c0271958c9422db5ccea6a3cf478597",
+        "rows": 499
+      },
+      {
+        "path": "runs_v2_clean/fusion_v2_seed44/preds_test.csv",
+        "bytes": 63170,
+        "mtime_utc": "2026-09-22T18:04:54+00:00",
+        "sha256": "fe00252503bf19b210540d84ba788f3cd92be048c126692869d7646e4c169a40",
+        "rows": 848
+      }
+    ],
+    "metric_files": [
+      {
+        "path": "runs/cnn_seed42/history.json",
+        "bytes": 2527,
+        "mtime_utc": "2026-09-20T19:48:04+00:00",
+        "sha256": "82e1b9e9778df37156f51cf0e48af398b89f5824668d3b4d65e9627442fe676b"
+      },
+      {
+        "path": "runs/cnn_seed42/metrics.json",
+        "bytes": 1114,
+        "mtime_utc": "2026-09-20T19:48:48+00:00",
+        "sha256": "1c6f7cf8a943f28cf64298be52af20be35f3b53bfae84692cca4ff3e49c06bd1"
+      },
+      {
+        "path": "runs_original/fusion_seed44/history.json",
+        "bytes": 2232,
+        "mtime_utc": "2026-09-22T05:17:14+00:00",
+        "sha256": "5b1106900edbafaba9ccf6c74d98344c1fc0d68e9b5b9b36ca8b12538b2a19b3"
+      },
+      {
+        "path": "runs_original/fusion_seed44/metrics.json",
+        "bytes": 1368,
+        "mtime_utc": "2026-09-22T05:17:52+00:00",
+        "sha256": "9075b0cd6cb175a4550db6e7f023772ed5d4397d3fad1f9b9af082a78b451022"
+      },
+      {
+        "path": "runs_original/cnn_seed42_unfrozen/history.json",
+        "bytes": 2765,
+        "mtime_utc": "2026-09-22T02:36:18+00:00",
+        "sha256": "1c0367f001aaa30781717583b865042d5fd173f3b5de50a6867c69c93e69855f"
+      },
+      {
+        "path": "runs_original/cnn_seed42_unfrozen/metrics.json",
+        "bytes": 1367,
+        "mtime_utc": "2026-09-22T02:36:26+00:00",
+        "sha256": "a4461b7b2f7cce27b2987313ea69cbbcb02176daa3042bfa0bd4386232c3681f"
+      },
+      {
+        "path": "runs_original/vit_seed44/history.json",
+        "bytes": 2046,
+        "mtime_utc": "2026-09-22T04:56:18+00:00",
+        "sha256": "32a8e2411d745b0fe80018644a4eef0e3d10b523d15c066ad3edfe8ffa6ff71f"
+      },
+      {
+        "path": "runs_original/vit_seed44/metrics.json",
+        "bytes": 1362,
+        "mtime_utc": "2026-09-22T04:56:54+00:00",
+        "sha256": "a2eeaf325b794ab2616c49890ce5c95fd9dcc27356e2609d702d515c80d78fd7"
+      },
+      {
+        "path": "runs_original/vit_seed42/history.json",
+        "bytes": 2767,
+        "mtime_utc": "2026-09-22T02:59:26+00:00",
+        "sha256": "b2b051c8f7a80944b9d3c07f75e4adb96f71e9cdf6fd04560a12c47ab048a072"
+      },
+      {
+        "path": "runs_original/vit_seed42/metrics.json",
+        "bytes": 1363,
+        "mtime_utc": "2026-09-22T03:00:00+00:00",
+        "sha256": "74f5fdfa06e7a9e629c9a0d139d856749a80c4a3cfcbc86169f99dde62bbcfef"
+      },
+      {
+        "path": "runs_original/cnn_seed42/history.json",
+        "bytes": 2764,
+        "mtime_utc": "2026-09-22T02:28:40+00:00",
+        "sha256": "6e0bce35ebedf34ce2c68e69105deedad05c1dd51ac07b05eb526d0ed2dca5b0"
+      },
+      {
+        "path": "runs_original/cnn_seed42/metrics.json",
+        "bytes": 1358,
+        "mtime_utc": "2026-09-22T02:28:48+00:00",
+        "sha256": "f83de1d054fa68fd301bb1613d360fc049780b23b0c6e31b61946835ecc7073e"
+      },
+      {
+        "path": "runs_original/vit_seed43/history.json",
+        "bytes": 2769,
+        "mtime_utc": "2026-09-22T04:01:34+00:00",
+        "sha256": "ee0613c0d66b9406e5cf4fde3163fcd993beb580a32bf33c8a15415f4de0f925"
+      },
+      {
+        "path": "runs_original/vit_seed43/metrics.json",
+        "bytes": 1363,
+        "mtime_utc": "2026-09-22T04:02:10+00:00",
+        "sha256": "9a3bc24daa72dc74b368c598549106429bb30553733bce759113de2a978464ea"
+      },
+      {
+        "path": "runs_original/cnn_seed44_unfrozen/history.json",
+        "bytes": 2233,
+        "mtime_utc": "2026-09-22T04:39:14+00:00",
+        "sha256": "99fb728f62389d4e09c4ce085a3bfe338be4f91899c560a871fc9f378235b638"
+      },
+      {
+        "path": "runs_original/cnn_seed44_unfrozen/metrics.json",
+        "bytes": 1368,
+        "mtime_utc": "2026-09-22T04:39:24+00:00",
+        "sha256": "9ffac0c3a536f1bcb3daaf77793f08428193c1a92b78d6fbd404ed165388ad47"
+      },
+      {
+        "path": "runs_original/cnn_seed44/history.json",
+        "bytes": 2759,
+        "mtime_utc": "2026-09-22T04:33:04+00:00",
+        "sha256": "c97d98584a84b2dd2e4dcbaf5cc024a4e5cc34dd5ced1e7c8ef18f3669d9881b"
+      },
+      {
+        "path": "runs_original/cnn_seed44/metrics.json",
+        "bytes": 1359,
+        "mtime_utc": "2026-09-22T04:33:12+00:00",
+        "sha256": "9ee3ba8fa032dd8cf8fb31bb37dbb0eaa47e1dd31b8327f3d3e83dd96a106a34"
+      },
+      {
+        "path": "runs_original/cnn_seed43_unfrozen/history.json",
+        "bytes": 2767,
+        "mtime_utc": "2026-09-22T03:38:30+00:00",
+        "sha256": "254e9985d96cae5532a63fc5c3735a76616e6c3e9b8cc4c8ca33feed534802e3"
+      },
+      {
+        "path": "runs_original/cnn_seed43_unfrozen/metrics.json",
+        "bytes": 1366,
+        "mtime_utc": "2026-09-22T03:38:38+00:00",
+        "sha256": "a70b19a896914e5f2ae82f4fdc74c8ea4f90335fb0ac196c78a4dd18019f34a9"
+      },
+      {
+        "path": "runs_original/fusion_seed42/history.json",
+        "bytes": 2773,
+        "mtime_utc": "2026-09-22T03:25:10+00:00",
+        "sha256": "3fc2c2a403a362559b053f055d491f2f0e0270778ec1c03f8d571c676dd37f52"
+      },
+      {
+        "path": "runs_original/fusion_seed42/metrics.json",
+        "bytes": 1368,
+        "mtime_utc": "2026-09-22T03:25:50+00:00",
+        "sha256": "b8886a52bcb6fdfaa9dfbb16858a90e4fc521fd1f872e1b7ef933d0b3308a816"
+      },
+      {
+        "path": "runs_original/cnn_seed43/history.json",
+        "bytes": 2767,
+        "mtime_utc": "2026-09-22T03:30:48+00:00",
+        "sha256": "f8e30b84c2ddd8ec23bab4e938418c1f63b51ad763ea7459ca57d65408ffcfe5"
+      },
+      {
+        "path": "runs_original/cnn_seed43/metrics.json",
+        "bytes": 1346,
+        "mtime_utc": "2026-09-22T03:30:58+00:00",
+        "sha256": "2a4d8ac7fccfd9e209abcdbcdf6fea0ecba6a70498b91d249181925209a2f517"
+      },
+      {
+        "path": "runs_original/fusion_seed43/history.json",
+        "bytes": 2769,
+        "mtime_utc": "2026-09-22T04:27:22+00:00",
+        "sha256": "7060cf5a6bdaab09581da9e9a4f45bc7141e9ca9b665bd70644a44f179b3e8e7"
+      },
+      {
+        "path": "runs_original/fusion_seed43/metrics.json",
+        "bytes": 1368,
+        "mtime_utc": "2026-09-22T04:28:00+00:00",
+        "sha256": "6917b6df70ff46af475920ab1adbaf0fdba01758ad3afd87579dc699fdd60a35"
+      },
+      {
+        "path": "runs_clean/fusion_seed44/history.json",
+        "bytes": 2720,
+        "mtime_utc": "2026-09-22T07:41:02+00:00",
+        "sha256": "4f3017764b2078d6eabb9a88cb84f8a918ee27e52051a2f60eda5f854c857186"
+      },
+      {
+        "path": "runs_clean/fusion_seed44/metrics.json",
+        "bytes": 1298,
+        "mtime_utc": "2026-09-22T07:41:36+00:00",
+        "sha256": "321b6da5ca52ffc78465360f274cc67f6ace843b81d3d1109690b8488875f999"
+      },
+      {
+        "path": "runs_clean/cnn_seed42_unfrozen/history.json",
+        "bytes": 2229,
+        "mtime_utc": "2026-09-22T05:26:44+00:00",
+        "sha256": "7c1a043bbd86899a674bf59ac7a4bb8affce82b3cb2f7594e2f0f07d27c7d3ba"
+      },
+      {
+        "path": "runs_clean/cnn_seed42_unfrozen/metrics.json",
+        "bytes": 1282,
+        "mtime_utc": "2026-09-22T05:26:52+00:00",
+        "sha256": "0448fcc1eeff0e8d0192f73ff97f9abdbb67e446c0ddf8b9b4de18baa3132312"
+      },
+      {
+        "path": "runs_clean/vit_seed44/history.json",
+        "bytes": 2736,
+        "mtime_utc": "2026-09-22T07:20:14+00:00",
+        "sha256": "8290bc0a461b19fc32af8d6bc6e167a655cfa24ff8004929c02239ef0be17f50"
+      },
+      {
+        "path": "runs_clean/vit_seed44/metrics.json",
+        "bytes": 1291,
+        "mtime_utc": "2026-09-22T07:20:44+00:00",
+        "sha256": "1027c0d7ea5ace0a041daaf3d32775fddecbd5f7281f0dc858b8ae81f168e05a"
+      },
+      {
+        "path": "runs_clean/vit_seed42/history.json",
+        "bytes": 2756,
+        "mtime_utc": "2026-09-22T05:45:20+00:00",
+        "sha256": "7ff38fd651446920b8ccdcbd2eb4c0aa837fbd0a46c23b95fe18e8ccc18f34dc"
+      },
+      {
+        "path": "runs_clean/vit_seed42/metrics.json",
+        "bytes": 1292,
+        "mtime_utc": "2026-09-22T05:45:50+00:00",
+        "sha256": "c990bc987ce246a39f0ef668d93c12723618a1295739018675f7bb8e1e92bfd4"
+      },
+      {
+        "path": "runs_clean/cnn_seed42/history.json",
+        "bytes": 2738,
+        "mtime_utc": "2026-09-22T05:21:42+00:00",
+        "sha256": "2c27a17304d2a544e525151f0cbbf2467dc53029fe3975b53bf00c0051583347"
+      },
+      {
+        "path": "runs_clean/cnn_seed42/metrics.json",
+        "bytes": 1289,
+        "mtime_utc": "2026-09-22T05:21:50+00:00",
+        "sha256": "775e4e6218679ce589afb9caef91785ca83e9f53cf7a2dbba6ee8e8afc1bef57"
+      },
+      {
+        "path": "runs_clean/vit_seed43/history.json",
+        "bytes": 2404,
+        "mtime_utc": "2026-09-22T06:30:52+00:00",
+        "sha256": "8d856d3de4545f54f9f073d9b453e08644baed04e396c77819862cc6be38daa7"
+      },
+      {
+        "path": "runs_clean/vit_seed43/metrics.json",
+        "bytes": 1291,
+        "mtime_utc": "2026-09-22T06:31:22+00:00",
+        "sha256": "d5c53b0df4b5335b12f9da27052ddb393e35f487642068ca71da29c9c6dc0bb1"
+      },
+      {
+        "path": "runs_clean/cnn_seed44_unfrozen/history.json",
+        "bytes": 2407,
+        "mtime_utc": "2026-09-22T07:01:34+00:00",
+        "sha256": "bec89b2419785736a4745e84e71e6de4e1c59f1a4d3532a0bac919111a418fa6"
+      },
+      {
+        "path": "runs_clean/cnn_seed44_unfrozen/metrics.json",
+        "bytes": 1285,
+        "mtime_utc": "2026-09-22T07:01:42+00:00",
+        "sha256": "865620003fb5f3c34bdb6c2c9aaa623f0b8a712992b26a49a9a0411b5df38084"
+      },
+      {
+        "path": "runs_clean/cnn_seed44/history.json",
+        "bytes": 2381,
+        "mtime_utc": "2026-09-22T06:55:56+00:00",
+        "sha256": "b9a22a8506b85604c744853007965366b4b4ca103b5e859ba1cfdce23dfae5aa"
+      },
+      {
+        "path": "runs_clean/cnn_seed44/metrics.json",
+        "bytes": 1289,
+        "mtime_utc": "2026-09-22T06:56:04+00:00",
+        "sha256": "29285615a6ff3bad7438e26e31a4362bcf594ba468eb78b38def7b452f13c3cf"
+      },
+      {
+        "path": "runs_clean/cnn_seed43_unfrozen/history.json",
+        "bytes": 1851,
+        "mtime_utc": "2026-09-22T06:14:42+00:00",
+        "sha256": "effb7f6d3f68758911d01b322723705a57097fe5072756f661ecba4158f95419"
+      },
+      {
+        "path": "runs_clean/cnn_seed43_unfrozen/metrics.json",
+        "bytes": 1295,
+        "mtime_utc": "2026-09-22T06:14:48+00:00",
+        "sha256": "35a369f0429d3fa6453b875d20e5e1ba35d0572ee91abde26566458b436ab752"
+      },
+      {
+        "path": "runs_clean/fusion_seed42/history.json",
+        "bytes": 2744,
+        "mtime_utc": "2026-09-22T06:06:04+00:00",
+        "sha256": "f574fdbd0a6d939c9e92529c1f46b71d8bd1df2991eeae8d3d93306ee3e67373"
+      },
+      {
+        "path": "runs_clean/fusion_seed42/metrics.json",
+        "bytes": 1297,
+        "mtime_utc": "2026-09-22T06:06:38+00:00",
+        "sha256": "358ddf5bb3ac666a732e233c0179be5017bfc4a75c6cd72f35e56b5de2b78b8a"
+      },
+      {
+        "path": "runs_clean/cnn_seed43/history.json",
+        "bytes": 2765,
+        "mtime_utc": "2026-09-22T06:10:26+00:00",
+        "sha256": "356fc247381aba3552c652d3be74932da6a6c070df98bacf2c27b7c32a326f73"
+      },
+      {
+        "path": "runs_clean/cnn_seed43/metrics.json",
+        "bytes": 1289,
+        "mtime_utc": "2026-09-22T06:10:34+00:00",
+        "sha256": "3176bd95e853d659a26fbe02a4174e349cbb09c2472276f0cd92637b3c7fe618"
+      },
+      {
+        "path": "runs_clean/fusion_seed43/history.json",
+        "bytes": 2744,
+        "mtime_utc": "2026-09-22T06:51:34+00:00",
+        "sha256": "0e48eee2a11954f61514d298c6cc1cb4306c9a40fa9c592299c79f42a6f1c4d9"
+      },
+      {
+        "path": "runs_clean/fusion_seed43/metrics.json",
+        "bytes": 1298,
+        "mtime_utc": "2026-09-22T06:52:08+00:00",
+        "sha256": "cd55f9f087af4a23a82cb55a3913b49cb5160bd26499eb78bf87cf92f35dd365"
+      },
+      {
+        "path": "runs_v2_original/fusion_v2_seed43/gates_dataset_ood.csv",
+        "bytes": 40955,
+        "mtime_utc": "2026-09-22T15:06:22+00:00",
+        "sha256": "8d94dc7becd0fcd43e9578604ec208d2febc460a551e405e035c1d899d666101",
+        "rows": 499,
+        "kind": "gates"
+      },
+      {
+        "path": "runs_v2_original/fusion_v2_seed43/gates_test.csv",
+        "bytes": 49421,
+        "mtime_utc": "2026-09-22T15:06:14+00:00",
+        "sha256": "5d8eeea29af4d85ee5198676cb9db85525670b758a0d9c917ea7d1f1b10febe9",
+        "rows": 1052,
+        "kind": "gates"
+      },
+      {
+        "path": "runs_v2_original/fusion_v2_seed43/history.json",
+        "bytes": 2593,
+        "mtime_utc": "2026-09-22T15:05:32+00:00",
+        "sha256": "bf8888c80e685fe9678a2a9fcdc9a1340fdc48a955bb29eab71739d80cc40426"
+      },
+      {
+        "path": "runs_v2_original/fusion_v2_seed43/metrics.json",
+        "bytes": 1479,
+        "mtime_utc": "2026-09-22T15:07:00+00:00",
+        "sha256": "fafb571d2a6a1c18bea0f2ed408cb4d795860ce3e718309ba34c396a59722cc3"
+      },
+      {
+        "path": "runs_v2_original/fusion_v2_seed42/gates_dataset_ood.csv",
+        "bytes": 40955,
+        "mtime_utc": "2026-09-22T14:12:36+00:00",
+        "sha256": "dbc4864f3e595da22e0c1652c2efd653cbdeddac6d148f992a8710b354036cd0",
+        "rows": 499,
+        "kind": "gates"
+      },
+      {
+        "path": "runs_v2_original/fusion_v2_seed42/gates_test.csv",
+        "bytes": 49421,
+        "mtime_utc": "2026-09-22T14:12:28+00:00",
+        "sha256": "8c64441ca0be5d2b986c60f2417d4559d8dadb0cc9c3200faf3813d13aedd271",
+        "rows": 1052,
+        "kind": "gates"
+      },
+      {
+        "path": "runs_v2_original/fusion_v2_seed42/history.json",
+        "bytes": 1845,
+        "mtime_utc": "2026-09-22T14:11:46+00:00",
+        "sha256": "3ef85ec22f01114e219d9fabc9e7ca60c61bfc2ca4327f0266003b05d9614b68"
+      },
+      {
+        "path": "runs_v2_original/fusion_v2_seed42/metrics.json",
+        "bytes": 1478,
+        "mtime_utc": "2026-09-22T14:13:14+00:00",
+        "sha256": "c85a4fe95a4cfbe4d3136afc874073444ef1ded3ebeed5b67fd9617977edd116"
+      },
+      {
+        "path": "runs_v2_original/fusion_v2_seed44/gates_dataset_ood.csv",
+        "bytes": 40955,
+        "mtime_utc": "2026-09-22T16:03:54+00:00",
+        "sha256": "75f60a8a699db80be0e78dd3cf2e08181e04b7b43f7a928e8b18037a99314dc7",
+        "rows": 499,
+        "kind": "gates"
+      },
+      {
+        "path": "runs_v2_original/fusion_v2_seed44/gates_test.csv",
+        "bytes": 49421,
+        "mtime_utc": "2026-09-22T16:03:46+00:00",
+        "sha256": "6fcf65e80f065cec05925d52d50e2a9cc3f7b07bda297135b31ac98a8d38cc01",
+        "rows": 1052,
+        "kind": "gates"
+      },
+      {
+        "path": "runs_v2_original/fusion_v2_seed44/history.json",
+        "bytes": 2760,
+        "mtime_utc": "2026-09-22T16:03:06+00:00",
+        "sha256": "9b0a6942b722fce64b648b058a40d462576ebd910f7606e8962c4113938e7bd5"
+      },
+      {
+        "path": "runs_v2_original/fusion_v2_seed44/metrics.json",
+        "bytes": 1480,
+        "mtime_utc": "2026-09-22T16:04:32+00:00",
+        "sha256": "f16054d872821b0bef3dba43df8d7f35294ab9cf7e6fe2345b7968aa6ff338fc"
+      },
+      {
+        "path": "runs_v2_clean/fusion_v2_seed43/gates_dataset_ood.csv",
+        "bytes": 40955,
+        "mtime_utc": "2026-09-22T17:27:18+00:00",
+        "sha256": "10ffdec7fa9c6a29f50178b6221027992d9a064056d235272eb87b7a306671d5",
+        "rows": 499,
+        "kind": "gates"
+      },
+      {
+        "path": "runs_v2_clean/fusion_v2_seed43/gates_test.csv",
+        "bytes": 40125,
+        "mtime_utc": "2026-09-22T17:27:12+00:00",
+        "sha256": "ed3fdd0b1b76b0e680dd4bd6681269629a621c42a4678bcf3e34fa3fe87c7a4e",
+        "rows": 848,
+        "kind": "gates"
+      },
+      {
+        "path": "runs_v2_clean/fusion_v2_seed43/history.json",
+        "bytes": 2765,
+        "mtime_utc": "2026-09-22T17:26:38+00:00",
+        "sha256": "bf9f907c63b6e59effa0c4f3ace7c7fbd9c9db59cb3a68eedc0f30007d927833"
+      },
+      {
+        "path": "runs_v2_clean/fusion_v2_seed43/metrics.json",
+        "bytes": 1409,
+        "mtime_utc": "2026-09-22T17:27:52+00:00",
+        "sha256": "b6fc17cb3b3945d8e00e628240508ea30a8d4702b414942f261278b7cd6f892f"
+      },
+      {
+        "path": "runs_v2_clean/fusion_v2_seed42/gates_dataset_ood.csv",
+        "bytes": 40955,
+        "mtime_utc": "2026-09-22T16:41:10+00:00",
+        "sha256": "b9c44c03fdf3753deb9d9ab76ab1cbd54a45f9ff4c490e9cf5131b0f9fb89056",
+        "rows": 499,
+        "kind": "gates"
+      },
+      {
+        "path": "runs_v2_clean/fusion_v2_seed42/gates_test.csv",
+        "bytes": 40125,
+        "mtime_utc": "2026-09-22T16:41:02+00:00",
+        "sha256": "a060b82a376471f711b3572827db21707bae6878900107a310ddbe0d3d1a906f",
+        "rows": 848,
+        "kind": "gates"
+      },
+      {
+        "path": "runs_v2_clean/fusion_v2_seed42/history.json",
+        "bytes": 2205,
+        "mtime_utc": "2026-09-22T16:40:30+00:00",
+        "sha256": "8133dd955077b711ec631eb765cc25dc074fdfa18bf457d0156aace10079c91f"
+      },
+      {
+        "path": "runs_v2_clean/fusion_v2_seed42/metrics.json",
+        "bytes": 1409,
+        "mtime_utc": "2026-09-22T16:41:42+00:00",
+        "sha256": "f73aa753d3230c60f3c8840bb11a504ff5c3044a86bbe6183e112a2ab304117f"
+      },
+      {
+        "path": "runs_v2_clean/fusion_v2_seed44/gates_dataset_ood.csv",
+        "bytes": 40955,
+        "mtime_utc": "2026-09-22T18:04:34+00:00",
+        "sha256": "81f1ba3b055e9f36e382c61c04d37e6d717c8af605c2d2d13f7f52cd59cf02d2",
+        "rows": 499,
+        "kind": "gates"
+      },
+      {
+        "path": "runs_v2_clean/fusion_v2_seed44/gates_test.csv",
+        "bytes": 40125,
+        "mtime_utc": "2026-09-22T18:04:26+00:00",
+        "sha256": "a2ec51f6e74bd6376f41b5e440c14589640720263af86db0f331c06f3203c725",
+        "rows": 848,
+        "kind": "gates"
+      },
+      {
+        "path": "runs_v2_clean/fusion_v2_seed44/history.json",
+        "bytes": 2211,
+        "mtime_utc": "2026-09-22T18:03:54+00:00",
+        "sha256": "3beb8d56c181c7691d584e33ed16158380f701c10db002e3deade66482c29511"
+      },
+      {
+        "path": "runs_v2_clean/fusion_v2_seed44/metrics.json",
+        "bytes": 1409,
+        "mtime_utc": "2026-09-22T18:05:06+00:00",
+        "sha256": "a3b656c128e93cd00a6ab54398785a86fffa07da4ce305eb6c34e25787cb15c1"
+      },
+      {
+        "path": "results/cross_source.json",
+        "bytes": 83457,
+        "mtime_utc": "2026-09-23T04:43:26+00:00",
+        "sha256": "e8a27a92495e2f44c2ef7af655128a8ea83574cbb271e6b09ce7d4f99b4c3cbb"
+      },
+      {
+        "path": "results/cross_source_stacking.json",
+        "bytes": 5830,
+        "mtime_utc": "2026-09-23T15:05:32+00:00",
+        "sha256": "f0a9ec50139acf5d8b544c3dc5073b77a07d7d740f5e70bf18c293d5d766f3f7"
+      },
+      {
+        "path": "results/diagnostics_clean.json",
+        "bytes": 14609,
+        "mtime_utc": "2026-09-23T04:43:30+00:00",
+        "sha256": "bc9701ab13cdd6c8c797cd723b2ea2224c5f740ebf329d95b5bb7c18cd12cf39"
+      },
+      {
+        "path": "results/diagnostics_crosssource_clean.json",
+        "bytes": 7386,
+        "mtime_utc": "2026-09-23T04:43:34+00:00",
+        "sha256": "16992aa8dd9be448a8932b543b6e2e2f1f50f81d1ec33e29ff2a2b4afda4bc3b"
+      },
+      {
+        "path": "results/diagnostics_crosssource_original.json",
+        "bytes": 7398,
+        "mtime_utc": "2026-09-23T04:43:40+00:00",
+        "sha256": "00434c87dd7c9f2f8da115e0ffbb795c57ee2b845c314fa3c04b5136fe8f054c"
+      },
+      {
+        "path": "results/diagnostics_crosssource_v2_clean.json",
+        "bytes": 1232,
+        "mtime_utc": "2026-09-23T04:43:46+00:00",
+        "sha256": "7d4318929332e1d7829cabb7fe55b7604803c521b5db5189908bcbae883f32e4"
+      },
+      {
+        "path": "results/diagnostics_crosssource_v2_original.json",
+        "bytes": 1246,
+        "mtime_utc": "2026-09-23T04:43:52+00:00",
+        "sha256": "d34b385cb41d8865ad3c2b7d7306b3518178451a2f1dc3e0ced8013f12baf607"
+      },
+      {
+        "path": "results/diagnostics_original.json",
+        "bytes": 14538,
+        "mtime_utc": "2026-09-23T04:43:38+00:00",
+        "sha256": "cb09c5dd5e8fcc303f362732e2e39c4e1260cb9d398bc2d8eddcb49f345e1d78"
+      },
+      {
+        "path": "results/diagnostics_v2_clean.json",
+        "bytes": 1664,
+        "mtime_utc": "2026-09-23T04:43:44+00:00",
+        "sha256": "e72043f87e268e4f8833c888c64f9db8bdc9293b35a0fe9803bc745d7932b9c9"
+      },
+      {
+        "path": "results/diagnostics_v2_original.json",
+        "bytes": 1664,
+        "mtime_utc": "2026-09-23T04:54:02+00:00",
+        "sha256": "a7fa20032270885b75c444db6866451c3ba5f19f7823208d7f205ba95f51614f"
+      },
+      {
+        "path": "results/ensemble.json",
+        "bytes": 1856,
+        "mtime_utc": "2026-09-23T07:36:16+00:00",
+        "sha256": "ee3c5e0736b130e5ab844f55cf3100c9d66f0efabdafa72a44dbf31000bc3eb5"
+      },
+      {
+        "path": "results_original/ablation_table.json",
+        "bytes": 5083,
+        "mtime_utc": "2026-09-22T07:41:38+00:00",
+        "sha256": "757239db9295d0b6bce9194fae799dad19165685ba38be9adedeefab0fbd019f"
+      },
+      {
+        "path": "results_clean/ablation_table.json",
+        "bytes": 5319,
+        "mtime_utc": "2026-09-22T07:41:40+00:00",
+        "sha256": "09ff3cd82d9bef5c9efc734df584865c4391c2ece0242cdf3204ac3941b2150f"
+      },
+      {
+        "path": "results_v2_original/ablation_table.json",
+        "bytes": 945,
+        "mtime_utc": "2026-09-22T18:05:10+00:00",
+        "sha256": "e19818af48e350fe10752b4454698cddca7bf5c293615a693b381c8b11cfa2b4"
+      },
+      {
+        "path": "results_v2_clean/ablation_table.json",
+        "bytes": 968,
+        "mtime_utc": "2026-09-22T18:05:10+00:00",
+        "sha256": "decf06178b85fdeb0626b612e4caa54f0fab5fd2b1436b94b485da8804953b2a"
+      }
+    ],
+    "n_prediction_csvs": 61,
+    "n_metric_files": 89,
+    "directories_present": [
+      "runs",
+      "runs_original",
+      "runs_clean",
+      "runs_v2_original",
+      "runs_v2_clean",
+      "results",
+      "results_original",
+      "results_clean",
+      "results_v2_original",
+      "results_v2_clean"
+    ],
+    "directories_absent": []
+  },
+  "validation": {
+    "files": [
+      {
+        "path": "runs/cnn_seed42/preds_test.csv",
+        "n_rows": 1052,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_original/fusion_seed44/preds_dataset_ood.csv",
+        "n_rows": 499,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_original/fusion_seed44/preds_test.csv",
+        "n_rows": 1052,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_original/cnn_seed42_unfrozen/preds_dataset_ood.csv",
+        "n_rows": 499,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_original/cnn_seed42_unfrozen/preds_test.csv",
+        "n_rows": 1052,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_original/vit_seed44/preds_dataset_ood.csv",
+        "n_rows": 499,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_original/vit_seed44/preds_test.csv",
+        "n_rows": 1052,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_original/vit_seed42/preds_dataset_ood.csv",
+        "n_rows": 499,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_original/vit_seed42/preds_test.csv",
+        "n_rows": 1052,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_original/cnn_seed42/preds_dataset_ood.csv",
+        "n_rows": 499,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_original/cnn_seed42/preds_test.csv",
+        "n_rows": 1052,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_original/vit_seed43/preds_dataset_ood.csv",
+        "n_rows": 499,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_original/vit_seed43/preds_test.csv",
+        "n_rows": 1052,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_original/cnn_seed44_unfrozen/preds_dataset_ood.csv",
+        "n_rows": 499,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_original/cnn_seed44_unfrozen/preds_test.csv",
+        "n_rows": 1052,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_original/cnn_seed44/preds_dataset_ood.csv",
+        "n_rows": 499,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_original/cnn_seed44/preds_test.csv",
+        "n_rows": 1052,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_original/cnn_seed43_unfrozen/preds_dataset_ood.csv",
+        "n_rows": 499,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_original/cnn_seed43_unfrozen/preds_test.csv",
+        "n_rows": 1052,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_original/fusion_seed42/preds_dataset_ood.csv",
+        "n_rows": 499,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_original/fusion_seed42/preds_test.csv",
+        "n_rows": 1052,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_original/cnn_seed43/preds_dataset_ood.csv",
+        "n_rows": 499,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_original/cnn_seed43/preds_test.csv",
+        "n_rows": 1052,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_original/fusion_seed43/preds_dataset_ood.csv",
+        "n_rows": 499,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_original/fusion_seed43/preds_test.csv",
+        "n_rows": 1052,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_clean/fusion_seed44/preds_dataset_ood.csv",
+        "n_rows": 499,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_clean/fusion_seed44/preds_test.csv",
+        "n_rows": 848,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_clean/cnn_seed42_unfrozen/preds_dataset_ood.csv",
+        "n_rows": 499,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_clean/cnn_seed42_unfrozen/preds_test.csv",
+        "n_rows": 848,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_clean/vit_seed44/preds_dataset_ood.csv",
+        "n_rows": 499,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_clean/vit_seed44/preds_test.csv",
+        "n_rows": 848,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_clean/vit_seed42/preds_dataset_ood.csv",
+        "n_rows": 499,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_clean/vit_seed42/preds_test.csv",
+        "n_rows": 848,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_clean/cnn_seed42/preds_dataset_ood.csv",
+        "n_rows": 499,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_clean/cnn_seed42/preds_test.csv",
+        "n_rows": 848,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_clean/vit_seed43/preds_dataset_ood.csv",
+        "n_rows": 499,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_clean/vit_seed43/preds_test.csv",
+        "n_rows": 848,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_clean/cnn_seed44_unfrozen/preds_dataset_ood.csv",
+        "n_rows": 499,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_clean/cnn_seed44_unfrozen/preds_test.csv",
+        "n_rows": 848,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_clean/cnn_seed44/preds_dataset_ood.csv",
+        "n_rows": 499,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_clean/cnn_seed44/preds_test.csv",
+        "n_rows": 848,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_clean/cnn_seed43_unfrozen/preds_dataset_ood.csv",
+        "n_rows": 499,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_clean/cnn_seed43_unfrozen/preds_test.csv",
+        "n_rows": 848,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_clean/fusion_seed42/preds_dataset_ood.csv",
+        "n_rows": 499,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_clean/fusion_seed42/preds_test.csv",
+        "n_rows": 848,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_clean/cnn_seed43/preds_dataset_ood.csv",
+        "n_rows": 499,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_clean/cnn_seed43/preds_test.csv",
+        "n_rows": 848,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_clean/fusion_seed43/preds_dataset_ood.csv",
+        "n_rows": 499,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_clean/fusion_seed43/preds_test.csv",
+        "n_rows": 848,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_v2_original/fusion_v2_seed43/preds_dataset_ood.csv",
+        "n_rows": 499,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_v2_original/fusion_v2_seed43/preds_test.csv",
+        "n_rows": 1052,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_v2_original/fusion_v2_seed42/preds_dataset_ood.csv",
+        "n_rows": 499,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_v2_original/fusion_v2_seed42/preds_test.csv",
+        "n_rows": 1052,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_v2_original/fusion_v2_seed44/preds_dataset_ood.csv",
+        "n_rows": 499,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_v2_original/fusion_v2_seed44/preds_test.csv",
+        "n_rows": 1052,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_v2_clean/fusion_v2_seed43/preds_dataset_ood.csv",
+        "n_rows": 499,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_v2_clean/fusion_v2_seed43/preds_test.csv",
+        "n_rows": 848,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_v2_clean/fusion_v2_seed42/preds_dataset_ood.csv",
+        "n_rows": 499,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_v2_clean/fusion_v2_seed42/preds_test.csv",
+        "n_rows": 848,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_v2_clean/fusion_v2_seed44/preds_dataset_ood.csv",
+        "n_rows": 499,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      },
+      {
+        "path": "runs_v2_clean/fusion_v2_seed44/preds_test.csv",
+        "n_rows": 848,
+        "classes": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ],
+        "argmax_ties": 0,
+        "status": "ok"
+      }
+    ],
+    "n_ok": 61,
+    "n_failed": 0,
+    "distinct_class_orders": [
+      [
+        "glioma",
+        "meningioma",
+        "notumor",
+        "pituitary"
+      ]
+    ]
+  },
+  "recomputed": {
+    "original": {
+      "per_seed": {
+        "42": {
+          "accuracy": 0.9904942965779467,
+          "macro_f1": 0.9903605987702262,
+          "n_images": 1052,
+          "source": "runs_v2_original/fusion_v2_seed42/preds_test.csv",
+          "sha256": "0514ea27fb045aae657cd74434a1b93514224589217e2806687a40a976859a6c"
+        },
+        "43": {
+          "accuracy": 0.9914448669201521,
+          "macro_f1": 0.9911440487418265,
+          "n_images": 1052,
+          "source": "runs_v2_original/fusion_v2_seed43/preds_test.csv",
+          "sha256": "f228d1490910410ee4a75eac3eaa3bc83a14d75ad69d9e8a21ca77975851f963"
+        },
+        "44": {
+          "accuracy": 0.9923954372623575,
+          "macro_f1": 0.992207211960987,
+          "n_images": 1052,
+          "source": "runs_v2_original/fusion_v2_seed44/preds_test.csv",
+          "sha256": "afc39cfcdefb4dfc7929a16d0dc2f158fc1132791cf994b12d9d6238c1ae0256"
+        }
+      },
+      "accuracy_mean_sd": [
+        0.9914448669201521,
+        0.0009505703422053591
+      ],
+      "macro_f1_mean_sd": [
+        0.9912372864910132,
+        0.0009268306358111225
+      ],
+      "n_images": 1052
+    },
+    "clean": {
+      "per_seed": {
+        "42": {
+          "accuracy": 0.9823113207547169,
+          "macro_f1": 0.9825717299784569,
+          "n_images": 848,
+          "source": "runs_v2_clean/fusion_v2_seed42/preds_test.csv",
+          "sha256": "247e6494d7315856a5fbb2a26b2eed789f77a880696c724b8a79243fd47c20b4"
+        },
+        "43": {
+          "accuracy": 0.9823113207547169,
+          "macro_f1": 0.9825237946925456,
+          "n_images": 848,
+          "source": "runs_v2_clean/fusion_v2_seed43/preds_test.csv",
+          "sha256": "bb142d3d33528fdb0d5ad915af3840102f5d93411cdba1ae8540ff03a92c77b5"
+        },
+        "44": {
+          "accuracy": 0.9834905660377359,
+          "macro_f1": 0.9831883670713568,
+          "n_images": 848,
+          "source": "runs_v2_clean/fusion_v2_seed44/preds_test.csv",
+          "sha256": "fe00252503bf19b210540d84ba788f3cd92be048c126692869d7646e4c169a40"
+        }
+      },
+      "accuracy_mean_sd": [
+        0.9827044025157233,
+        0.0006808375815915797
+      ],
+      "macro_f1_mean_sd": [
+        0.982761297247453,
+        0.00037062909191767245
+      ],
+      "n_images": 848
+    },
+    "external_full_original": {
+      "per_seed": {
+        "42": {
+          "accuracy": 0.779559118236473,
+          "macro_f1": 0.743171768707483,
+          "n_images": 499,
+          "source": "runs_v2_original/fusion_v2_seed42/preds_dataset_ood.csv",
+          "sha256": "fb34eb7334467f538cdfcb9a3b64e26d8e19b368bc18da0903fbb64a4c584641"
+        },
+        "43": {
+          "accuracy": 0.7254509018036072,
+          "macro_f1": 0.6571071144559819,
+          "n_images": 499,
+          "source": "runs_v2_original/fusion_v2_seed43/preds_dataset_ood.csv",
+          "sha256": "1fd2a80e23b56cc9fb24885dd5a24347a54594283a580375ca5b998a8600a85f"
+        },
+        "44": {
+          "accuracy": 0.7615230460921844,
+          "macro_f1": 0.7060544723299579,
+          "n_images": 499,
+          "source": "runs_v2_original/fusion_v2_seed44/preds_dataset_ood.csv",
+          "sha256": "7d006ddfeb96fbc071399835800ef617ae93778cbe4a354f14bd0d4a68fcd3f8"
+        }
+      },
+      "accuracy_mean_sd": [
+        0.7555110220440882,
+        0.02755055528029566
+      ],
+      "macro_f1_mean_sd": [
+        0.7021111184978076,
+        0.04316762337031954
+      ],
+      "n_images": 499
+    },
+    "external_full_clean": {
+      "per_seed": {
+        "42": {
+          "accuracy": 0.7755511022044088,
+          "macro_f1": 0.7244095757720834,
+          "n_images": 499,
+          "source": "runs_v2_clean/fusion_v2_seed42/preds_dataset_ood.csv",
+          "sha256": "2999ee6c9173e5a6d4d1c795f1178043001ba16b94800ac76ff3ee60dc93ad55"
+        },
+        "43": {
+          "accuracy": 0.7474949899799599,
+          "macro_f1": 0.6824248438466853,
+          "n_images": 499,
+          "source": "runs_v2_clean/fusion_v2_seed43/preds_dataset_ood.csv",
+          "sha256": "555621abe80e49d46afa8aff640eef0eb6ea582506f8c4468c097007714dbbfe"
+        },
+        "44": {
+          "accuracy": 0.7715430861723447,
+          "macro_f1": 0.7114236761392047,
+          "n_images": 499,
+          "source": "runs_v2_clean/fusion_v2_seed44/preds_dataset_ood.csv",
+          "sha256": "c894dfa58ca6ec505b15f134225aee147c0271958c9422db5ccea6a3cf478597"
+        }
+      },
+      "accuracy_mean_sd": [
+        0.7648630594522379,
+        0.01517410379639353
+      ],
+      "macro_f1_mean_sd": [
+        0.7060860319193245,
+        0.021495284670722568
+      ],
+      "n_images": 499
+    },
+    "cross_source_disjoint_clean": {
+      "per_seed": {
+        "42": {
+          "accuracy": 0.710455764075067,
+          "macro_f1": 0.7066147211869137,
+          "n_images": 373,
+          "source": "runs_v2_clean/fusion_v2_seed42/preds_dataset_ood.csv"
+        },
+        "43": {
+          "accuracy": 0.6729222520107239,
+          "macro_f1": 0.6629936392928484,
+          "n_images": 373,
+          "source": "runs_v2_clean/fusion_v2_seed43/preds_dataset_ood.csv"
+        },
+        "44": {
+          "accuracy": 0.7024128686327078,
+          "macro_f1": 0.69099095840868,
+          "n_images": 373,
+          "source": "runs_v2_clean/fusion_v2_seed44/preds_dataset_ood.csv"
+        }
+      },
+      "accuracy_mean_sd": [
+        0.6952636282394996,
+        0.019761701865501337
+      ],
+      "macro_f1_mean_sd": [
+        0.6868664396294806,
+        0.02210109585002889
+      ],
+      "n_images": 373,
+      "subset_definition": "results/cross_source.json :: manifest kind == disjoint"
+    },
+    "cross_source_disjoint_original": {
+      "per_seed": {
+        "42": {
+          "accuracy": 0.7131367292225201,
+          "macro_f1": 0.7258105382053803,
+          "n_images": 373,
+          "source": "runs_v2_original/fusion_v2_seed42/preds_dataset_ood.csv"
+        },
+        "43": {
+          "accuracy": 0.646112600536193,
+          "macro_f1": 0.6422862733293196,
+          "n_images": 373,
+          "source": "runs_v2_original/fusion_v2_seed43/preds_dataset_ood.csv"
+        },
+        "44": {
+          "accuracy": 0.6890080428954424,
+          "macro_f1": 0.6877934585840441,
+          "n_images": 373,
+          "source": "runs_v2_original/fusion_v2_seed44/preds_dataset_ood.csv"
+        }
+      },
+      "accuracy_mean_sd": [
+        0.6827524575513851,
+        0.03394713121219409
+      ],
+      "macro_f1_mean_sd": [
+        0.685296756706248,
+        0.04181806841511847
+      ],
+      "n_images": 373,
+      "subset_definition": "results/cross_source.json :: manifest kind == disjoint"
+    }
+  },
+  "comparisons": [
+    {
+      "setting": "original",
+      "metric": "accuracy",
+      "recomputed_mean_pct": 99.1445,
+      "recomputed_sd_pct": 0.0951,
+      "verified_mean_pct": 99.14,
+      "verified_sd_pct": 0.1,
+      "abs_diff_mean_pp": 0.0045,
+      "abs_diff_sd_pp": 0.0049,
+      "tolerance_pp": 0.01,
+      "pass": true
+    },
+    {
+      "setting": "original",
+      "metric": "macro_f1",
+      "recomputed_mean_pct": 99.1237,
+      "recomputed_sd_pct": 0.0927,
+      "verified_mean_pct": 99.12,
+      "verified_sd_pct": 0.09,
+      "abs_diff_mean_pp": 0.0037,
+      "abs_diff_sd_pp": 0.0027,
+      "tolerance_pp": 0.01,
+      "pass": true
+    },
+    {
+      "setting": "clean",
+      "metric": "accuracy",
+      "recomputed_mean_pct": 98.2704,
+      "recomputed_sd_pct": 0.0681,
+      "verified_mean_pct": 98.27,
+      "verified_sd_pct": 0.07,
+      "abs_diff_mean_pp": 0.0004,
+      "abs_diff_sd_pp": 0.0019,
+      "tolerance_pp": 0.01,
+      "pass": true
+    },
+    {
+      "setting": "clean",
+      "metric": "macro_f1",
+      "recomputed_mean_pct": 98.2761,
+      "recomputed_sd_pct": 0.0371,
+      "verified_mean_pct": 98.28,
+      "verified_sd_pct": 0.04,
+      "abs_diff_mean_pp": 0.0039,
+      "abs_diff_sd_pp": 0.0029,
+      "tolerance_pp": 0.01,
+      "pass": true
+    },
+    {
+      "setting": "cross_source_disjoint (clean split)",
+      "metric": "accuracy",
+      "recomputed_mean_pct": 69.5264,
+      "recomputed_sd_pct": 1.9762,
+      "verified_mean_pct": 69.53,
+      "verified_sd_pct": 1.98,
+      "abs_diff_mean_pp": 0.0036,
+      "abs_diff_sd_pp": 0.0038,
+      "tolerance_pp": 0.01,
+      "pass": true
+    }
+  ],
+  "checks": {
+    "A2_manifest_complete": true,
+    "A3_fusion_v2_reproduces": true,
+    "A4_disjoint_count_373": true,
+    "A5_all_csvs_valid": true
+  },
+  "failures": [],
+  "cross_source": {
+    "path": "results/cross_source.json",
+    "sha256": "e8a27a92495e2f44c2ef7af655128a8ea83574cbb271e6b09ce7d4f99b4c3cbb",
+    "n_total": 499,
+    "n_overlapping": 126,
+    "n_disjoint_reported": 373,
+    "n_disjoint_from_manifest": 373,
+    "hamming_threshold": 8,
+    "by_class": {
+      "glioma": {
+        "overlapping": 93,
+        "disjoint": 52
+      },
+      "meningioma": {
+        "overlapping": 1,
+        "disjoint": 122
+      },
+      "notumor": {
+        "overlapping": 27,
+        "disjoint": 88
+      },
+      "pituitary": {
+        "overlapping": 5,
+        "disjoint": 111
+      }
+    }
+  },
+  "acceptance_status": "PASS"
+}

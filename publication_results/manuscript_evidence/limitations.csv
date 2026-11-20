@@ -1,0 +1,8 @@
+limitation,treatment,remaining_risk,allowed_wording,prohibited_wording
+Patient identity unavailable,metadata and filename audit,patient-level independence cannot be verified,held-out images on a duplicate-clean partition,patient-independent split
+Cross-source degradation,373-image duplicate-disjoint evaluation,69.53 ± 1.98% accuracy and class-specific failure,substantial cross-source degradation was observed,robust across hospitals or scanners
+Only three training seeds,report seed values and sample SD,uncertain run-to-run variability,mean ± seed SD for seeds 42–44,seed SD is a confidence interval
+Base-paper protocols differ,separate rows and contextual label,reported values do not estimate controlled model difference,reported-value contextual comparison,FusionV2 statistically outperforms BRAIN-META
+Ablation multiplicity,Holm correction across 21 seed-specific tests,limited power for small component effects,no detectable accuracy benefit under this protocol,component is useless or equivalent
+Calibration analysis exploratory,descriptive NLL/Brier/ECE only,no prespecified paired calibration inference,numerically lower/higher in these runs,better calibrated
+No clinical validation,explicit scope restriction,clinical utility and safety unknown,research benchmark result,clinically ready

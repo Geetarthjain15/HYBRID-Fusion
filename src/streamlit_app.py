@@ -93,22 +93,19 @@ with st.sidebar:
 {per_class_rows}
             """)
         else:
-            st.caption("⚠️ Example numbers — run `train.py` to generate real, verifiable metrics (`src/metrics.json`).")
-            st.markdown("""
-        | Metric | Value |
-        |---|---|
-        | **Training Acc** | 97.98% |
-        | **Best Val Acc** | 78.17% |
-        | **Meningioma** | 98.26% |
-        | **No Tumor** | 100.0% |
-        """)
+            st.caption("No metrics file found. Run `train.py` to generate `src/metrics.json`.")
     else:
+        # The shipped ViT checkpoint (vit_brain_tumor_5class.pth) scores at
+        # chance on the held-out test set (26.1% acc, macro ROC-AUC 0.50) - it
+        # predicts 'pituitary' for ~99% of inputs. Shown for reference only.
+        st.warning("This checkpoint is NOT a trained baseline: 26.1% test accuracy "
+                   "(chance = 25%). Use the Hybrid model.")
         st.markdown("""
         | Metric | Value |
         |---|---|
-        | **Baseline Acc** | 94.01% |
-        | **Avg Recall** | 91.2% |
-        | **Device** | ViT-B/16 |
+        | **Test Acc** | 26.05% |
+        | **Macro ROC-AUC** | 0.503 |
+        | **Backbone** | ViT-B/16 |
         """)
     st.markdown("---")
 

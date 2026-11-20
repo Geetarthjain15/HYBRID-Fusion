@@ -1,0 +1,417 @@
+{
+  "package": "final multi-scale EfficientNet-B0\u2013ViT-B/16 fusion manuscript",
+  "generated_utc": "2026-09-25T10:21:44.255875+00:00",
+  "file_count_excluding_manifest": 82,
+  "files": [
+    {
+      "path": "CLAIMS_AND_CITATIONS_AUDIT.md",
+      "bytes": 2326,
+      "sha256": "3244bb11abec55f1e040915e9e8ead8433885110e6c9abe74820e7c97f1d7592"
+    },
+    {
+      "path": "EVIDENCE_TRACEABILITY.csv",
+      "bytes": 15159,
+      "sha256": "acc48185f4c4a78905239cc7373570dc27464cfadaea71613d68e60b3d362ff9"
+    },
+    {
+      "path": "figures/cross_source_ablation_accuracy.pdf",
+      "bytes": 17665,
+      "sha256": "d41c80124dfa1720f1ef03143f2b6fd9a30d7e436ced0ed2ab164e6a8fddad80"
+    },
+    {
+      "path": "figures/cross_source_ablation_accuracy.png",
+      "bytes": 78228,
+      "sha256": "95b72d32069d4d3c7497824a336ab82b45c4bff4549e64a08131254c9788ee7f"
+    },
+    {
+      "path": "figures/figure_01_architecture.pdf",
+      "bytes": 37800,
+      "sha256": "fba6fa2edb5af21e25891591ffe4fdddfc0fd02406feb3768db62ae768181e21"
+    },
+    {
+      "path": "figures/figure_01_architecture.png",
+      "bytes": 240343,
+      "sha256": "a03179821cfcb409dfdf21087979fc897b13ef8a41f2c416f4bd4efe44156848"
+    },
+    {
+      "path": "figures/figure_02_evaluation_map.pdf",
+      "bytes": 41235,
+      "sha256": "3510b7e643ce267c4220bc52d911b95b5e4abb7b55b80cef0257dcdee88094e5"
+    },
+    {
+      "path": "figures/figure_02_evaluation_map.png",
+      "bytes": 247525,
+      "sha256": "4c402c2a2675ba1d5461eda84eae8fd04829b3e746d795c9004a6f1078da83e8"
+    },
+    {
+      "path": "figures/figure_03_regime_collapse.pdf",
+      "bytes": 36655,
+      "sha256": "422d0621726e4ad50ac2c20f8fa693f73c21121a2a9e71b1fa2453e6f99b71e9"
+    },
+    {
+      "path": "figures/figure_03_regime_collapse.png",
+      "bytes": 197263,
+      "sha256": "ddd7580ca4e33bbed252213829599c30bca55e983383283dea4582ac0b040a9a"
+    },
+    {
+      "path": "figures/figure_04_confusion_matrices.pdf",
+      "bytes": 30172,
+      "sha256": "772374801b1561cda34fadedb6308d582b0c94f3d5dde908f55e32a9d99cc70f"
+    },
+    {
+      "path": "figures/figure_04_confusion_matrices.png",
+      "bytes": 319636,
+      "sha256": "34e95456357c3ef0a9ad5dbf639e1b581e9be4c10dc67261aab0d206c217eec1"
+    },
+    {
+      "path": "figures/figure_05_ablation_forest.pdf",
+      "bytes": 35823,
+      "sha256": "363778cf612a928a29e584649d84ee4d96050abec1a2bc425493e1a58933d231"
+    },
+    {
+      "path": "figures/figure_05_ablation_forest.png",
+      "bytes": 258339,
+      "sha256": "a90ffb30bb09ea96d05abcb9e443a703c17c9559c085f9e925f8100e841c2b74"
+    },
+    {
+      "path": "figures/figure_06_calibration.pdf",
+      "bytes": 36197,
+      "sha256": "4ccf8bb04593234b8550fba75a4b44d5bce4d0fe19d6131afd2f27331f5a809b"
+    },
+    {
+      "path": "figures/figure_06_calibration.png",
+      "bytes": 329574,
+      "sha256": "0a933ace2d28e7ff7abf9d947dfcd820b472896fd551bb342bae703ef2a10e64"
+    },
+    {
+      "path": "figures/figure_07_gate_behaviour.pdf",
+      "bytes": 32681,
+      "sha256": "d70ab76b8b731c59a4a3e4c05e845ec947fbf22461408d770b4b385b2cdf8623"
+    },
+    {
+      "path": "figures/figure_07_gate_behaviour.png",
+      "bytes": 233791,
+      "sha256": "59fdcb0135d464db1be57588d94abf96edb546aad9750c35c15ef8bf5cb3c115"
+    },
+    {
+      "path": "figures/figure_08_class_failure.pdf",
+      "bytes": 36273,
+      "sha256": "bd73f41b66625436ffd5a3883ea52b4c7343d7ddef138d49f9d2bc081d3ced8e"
+    },
+    {
+      "path": "figures/figure_08_class_failure.png",
+      "bytes": 253196,
+      "sha256": "1aaceaf671273c7f12761182f4d677f83b4210f479c8e26cb8d145c1f807ff0a"
+    },
+    {
+      "path": "figures/figure_09_cross_source_ablation_accuracy.pdf",
+      "bytes": 17665,
+      "sha256": "d41c80124dfa1720f1ef03143f2b6fd9a30d7e436ced0ed2ab164e6a8fddad80"
+    },
+    {
+      "path": "figures/figure_09_cross_source_ablation_accuracy.png",
+      "bytes": 78228,
+      "sha256": "95b72d32069d4d3c7497824a336ab82b45c4bff4549e64a08131254c9788ee7f"
+    },
+    {
+      "path": "figures/figure_10_pituitary_recall_by_ablation.pdf",
+      "bytes": 18611,
+      "sha256": "2c67057a17a6661019b4ab5be0c379f8bfa13b2295e1787fb0cdde1387d682ea"
+    },
+    {
+      "path": "figures/figure_10_pituitary_recall_by_ablation.png",
+      "bytes": 78344,
+      "sha256": "4290f9a931ce4cd5c24bc73bb2ae9f677b3de4100fc8596a4783c0ff7d1d4d56"
+    },
+    {
+      "path": "figures/figure_11_gradcam_audit.pdf",
+      "bytes": 501711,
+      "sha256": "1d9d0d437b5b31c3d749d688cc9f933966c91c090823da1254e98ae72f10f5ee"
+    },
+    {
+      "path": "figures/figure_11_gradcam_audit.png",
+      "bytes": 1403455,
+      "sha256": "14842d230f3a3bd0a1afec6bd22eba5a10105eb6489563ce1fb36db1ab6478c0"
+    },
+    {
+      "path": "figures/glioma_faithfulness.pdf",
+      "bytes": 185794,
+      "sha256": "834be534a22f2f248596f475823a17ba2dc13c12d9c25a65223fadb9de65e323"
+    },
+    {
+      "path": "figures/glioma_faithfulness.png",
+      "bytes": 618883,
+      "sha256": "7679280c41662e602e44b1c3dedf5d4875831f78653e9b20a454594a4ab5ddd4"
+    },
+    {
+      "path": "figures/meningioma_faithfulness.pdf",
+      "bytes": 205229,
+      "sha256": "278d2bdd4948a9694d60d81558b4c519689834c43b2f5cd3c4c08a9c61d8b6e2"
+    },
+    {
+      "path": "figures/meningioma_faithfulness.png",
+      "bytes": 661202,
+      "sha256": "fb5d15efb8304945518a61ac8db89944f4b798b673ef582a29dd2cd874fc8d67"
+    },
+    {
+      "path": "figures/notumor_faithfulness.pdf",
+      "bytes": 176014,
+      "sha256": "878677917dc40e706e3f7ea42f8b94c4c8bec27d772c84f7fef09e75622da543"
+    },
+    {
+      "path": "figures/notumor_faithfulness.png",
+      "bytes": 585952,
+      "sha256": "19f25f9db84b71574b580e6000506934965bf59385ab633b2270a3576b7cadb7"
+    },
+    {
+      "path": "figures/pituitary_faithfulness.pdf",
+      "bytes": 220067,
+      "sha256": "b392e24d1a7a6b3dad441089b73015dbe3fdcfb9c8c68ec477e51f574c4c981e"
+    },
+    {
+      "path": "figures/pituitary_faithfulness.png",
+      "bytes": 711688,
+      "sha256": "6457301abb809afba74526934907d3207ed08b0de896bf3d28c63591855e0fdb"
+    },
+    {
+      "path": "figures/pituitary_recall_by_ablation.pdf",
+      "bytes": 18611,
+      "sha256": "2c67057a17a6661019b4ab5be0c379f8bfa13b2295e1787fb0cdde1387d682ea"
+    },
+    {
+      "path": "figures/pituitary_recall_by_ablation.png",
+      "bytes": 78344,
+      "sha256": "4290f9a931ce4cd5c24bc73bb2ae9f677b3de4100fc8596a4783c0ff7d1d4d56"
+    },
+    {
+      "path": "FUSION_NETWORK_MANUSCRIPT.docx",
+      "bytes": 3441207,
+      "sha256": "dc62166d23f3771b06175e7ade0abd5dc1fc77c9c60aa7d8de516540c8ab0cb1"
+    },
+    {
+      "path": "FUSION_NETWORK_MANUSCRIPT.md",
+      "bytes": 43973,
+      "sha256": "43e1aceec11d21c704145c33286388aaeaa5170bf883e67ffecec6b0426923cc"
+    },
+    {
+      "path": "FUSION_NETWORK_MANUSCRIPT.pdf",
+      "bytes": 1427090,
+      "sha256": "18a3ac6c64445e5024558b77416a52d5990a7bb9d08fa4c0d846505642807864"
+    },
+    {
+      "path": "generation/make_deliverable_manifest.py",
+      "bytes": 1025,
+      "sha256": "d43159a957afb452cf9f83fe20570317db808425456b86b5a16f49090bd18871"
+    },
+    {
+      "path": "generation/make_final_docx.py",
+      "bytes": 21134,
+      "sha256": "344ddeb2a3d85a7a736432b993283e062fed934f4b650445055676a7d7546a49"
+    },
+    {
+      "path": "generation/make_final_figures.py",
+      "bytes": 33968,
+      "sha256": "055787afaf7ce71bf0b5203ae14277a59ccac45bb98d45c1d4d6fcb511918b3f"
+    },
+    {
+      "path": "generation/make_qa_contact_sheets.py",
+      "bytes": 1592,
+      "sha256": "a9722ccde2f718fa45492026e5b4f2ff3e9ac6584c9298b42c8031be244cdc46"
+    },
+    {
+      "path": "generation/make_supplement_docx.py",
+      "bytes": 21162,
+      "sha256": "0635f6508f8182e05d8f6c20fa515d594866a983ab066794ab05a73ddd08b704"
+    },
+    {
+      "path": "generation/make_xai_montage.py",
+      "bytes": 1753,
+      "sha256": "f350e23a90c3abae5dd79cadc285ea962c2a8f0245307f70ad421049740bd850"
+    },
+    {
+      "path": "generation/validate_final_package.py",
+      "bytes": 4240,
+      "sha256": "23011cc1924a4dd7d7e44fb9f01d5e24c0c40ae956e5e9f87cd18376ecf76def"
+    },
+    {
+      "path": "qa/manuscript_contact_sheet.png",
+      "bytes": 1609428,
+      "sha256": "0973fc60091b80327fe6fa12ce971c41bba39d4eca85c48b32d310ce6c3d72a0"
+    },
+    {
+      "path": "qa/manuscript_pages/page-01.png",
+      "bytes": 306249,
+      "sha256": "c08eedea116d1b32650a550a98ac7963ef92b6611b2a201ed7dfb31b0651739e"
+    },
+    {
+      "path": "qa/manuscript_pages/page-02.png",
+      "bytes": 285680,
+      "sha256": "853e759ed5c5b22f2731d648932c11884b1e4643a494b8690bf3f04c7186c647"
+    },
+    {
+      "path": "qa/manuscript_pages/page-03.png",
+      "bytes": 282828,
+      "sha256": "131b227416b126d31c89335199c015a88c1e445755107a4f2dcde8858996db15"
+    },
+    {
+      "path": "qa/manuscript_pages/page-04.png",
+      "bytes": 289073,
+      "sha256": "f3e1ab26be9fd3b83a9b41212316949c8a2eabbef70b4c1e96193870cc727de8"
+    },
+    {
+      "path": "qa/manuscript_pages/page-05.png",
+      "bytes": 327684,
+      "sha256": "de25568d462a3932f2464b15b36506f09c5829703450e18c9f50f2c95c32b5ff"
+    },
+    {
+      "path": "qa/manuscript_pages/page-06.png",
+      "bytes": 236115,
+      "sha256": "319377c3ddf91a54bbe20941b0d506c72b1bb50826ad6f4ec96720867a6181bf"
+    },
+    {
+      "path": "qa/manuscript_pages/page-07.png",
+      "bytes": 299151,
+      "sha256": "09ceaf57d0f477e523b4c7fdc5c53513aec0906617fc95bd99022c687eb48f6c"
+    },
+    {
+      "path": "qa/manuscript_pages/page-08.png",
+      "bytes": 194663,
+      "sha256": "5f90ba1acda3f6155fda6526c5fe8c2aa0276a5ee44e247e69811c8681473ab1"
+    },
+    {
+      "path": "qa/manuscript_pages/page-09.png",
+      "bytes": 221050,
+      "sha256": "e61f1f11f25fc0f653128850095e91aac60a5808e5ca8b0033cc875b094116e6"
+    },
+    {
+      "path": "qa/manuscript_pages/page-10.png",
+      "bytes": 130869,
+      "sha256": "8783a92e2f3e29ae2eedcc65c49bbc4b53c390294bf7ae44b2cdc38fbd08c4b7"
+    },
+    {
+      "path": "qa/manuscript_pages/page-11.png",
+      "bytes": 229921,
+      "sha256": "5f72a635b50191ad35a365850c1fcc3c184c424c92468e23c3eec52c33e840d7"
+    },
+    {
+      "path": "qa/manuscript_pages/page-12.png",
+      "bytes": 215078,
+      "sha256": "d32e70ce7384f8548cb9f3d394af5f2675a746b7b13ff0960d5a1424b3db176b"
+    },
+    {
+      "path": "qa/manuscript_pages/page-13.png",
+      "bytes": 384705,
+      "sha256": "9f76b1b77efb8f0e3dea9b69f3f3c6153a5b8263b48eff85c9ecb4a4b0cce5c0"
+    },
+    {
+      "path": "qa/manuscript_pages/page-14.png",
+      "bytes": 253206,
+      "sha256": "3e46d35e3ffd7c14440f216e4b43ccb46b32cf1184e6761f6be1804c9d298827"
+    },
+    {
+      "path": "qa/manuscript_pages/page-15.png",
+      "bytes": 335072,
+      "sha256": "a391e94002f8a6fb6312468ecccc0f277932424c069c3d9ea450522d695cf016"
+    },
+    {
+      "path": "qa/manuscript_pages/page-16.png",
+      "bytes": 272150,
+      "sha256": "69a7ef6c0e0c9f7032422541bdfc5ace5503e1a87fa74bfe11bc9b2bfa4ccb72"
+    },
+    {
+      "path": "qa/PACKAGE_VALIDATION.json",
+      "bytes": 2000,
+      "sha256": "bac896c5e016845d3eb8ec9cce78e86963ee425404aba03e798d34f79896d8f6"
+    },
+    {
+      "path": "qa/page4_final.png",
+      "bytes": 412788,
+      "sha256": "62e91c9854b0ef2c2a965a2b91e030f78bcc10474c3f7622cc5385565c23d65f"
+    },
+    {
+      "path": "qa/supplement_contact_sheet.png",
+      "bytes": 410012,
+      "sha256": "9235054ee29ca4658a63bc08c723abfd21b81de1799e130bbac37370089cd746"
+    },
+    {
+      "path": "qa/supplement_pages/page-1.png",
+      "bytes": 209308,
+      "sha256": "3812036513dbecf22575256f3a3bc7d7f588b6ecd14ed20a7b8bfda744eddcf1"
+    },
+    {
+      "path": "qa/supplement_pages/page-2.png",
+      "bytes": 141717,
+      "sha256": "c4887e5b529dd61607965677c85a88cb1ce3532c88ef39a0f486dd104ae14194"
+    },
+    {
+      "path": "qa/supplement_pages/page-3.png",
+      "bytes": 188898,
+      "sha256": "f5619d9110f2b6371e7bc5e4f24b566ec6dbda43c1415b1273efbd1d01fc7361"
+    },
+    {
+      "path": "qa/supplement_pages/page-4.png",
+      "bytes": 183161,
+      "sha256": "b593d6b7c9b667bf8d48053cace4c6dc36e6722c9f6760386ad0162ce3960a7f"
+    },
+    {
+      "path": "qa/supplement_pages/page-5.png",
+      "bytes": 233199,
+      "sha256": "c50134766216328546cdfc692e66b1045e32e074f094f38a82c0cd0d7f229cdb"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1667,
+      "sha256": "6923021f571bd5dd1cd8ec8e9183f8b551c8b48855988bc3c90cc910074a654f"
+    },
+    {
+      "path": "supplement/FUSION_NETWORK_SUPPLEMENT.docx",
+      "bytes": 11754,
+      "sha256": "a42e26d64ea588b5d16cb601a77d5bde71bf5342c24691eaab9a3249af6ea9d3"
+    },
+    {
+      "path": "supplement/FUSION_NETWORK_SUPPLEMENT.md",
+      "bytes": 13877,
+      "sha256": "5e22141b19f017d866d254e200c3fec06d749c157b8fea6a7ab96622b20cc78a"
+    },
+    {
+      "path": "supplement/FUSION_NETWORK_SUPPLEMENT.pdf",
+      "bytes": 257116,
+      "sha256": "aaed4a2475527bc0ba1762c0c16ff9f1eef859295e2ee071c0984b8984796bf3"
+    },
+    {
+      "path": "tables/ASSUMPTIONS_LIMITATIONS.csv",
+      "bytes": 5114,
+      "sha256": "fef2cadefa5b09ca810a4fa563cc33be4b2ed4963ac6f0c9578b6f2f7e7cacc4"
+    },
+    {
+      "path": "tables/BASE_PAPER_COMPARISON.csv",
+      "bytes": 3269,
+      "sha256": "dfeb561a9fb253d1b29d2e057217a93cba1643be5d039bd753844cc0ddf4f6b4"
+    },
+    {
+      "path": "tables/CROSS_SOURCE_ABLATIONS.csv",
+      "bytes": 840,
+      "sha256": "4923ccf7e81e4b7e5781e20c393cbfad8904ab8552c6747324555540aa0f8104"
+    },
+    {
+      "path": "tables/FINAL_ABLATIONS.csv",
+      "bytes": 1552,
+      "sha256": "99a53d8a649381e69b55740121a1a3adb839d0e2a0795b34aeb486c857ac912a"
+    },
+    {
+      "path": "tables/XAI_AUDIT_SUMMARY.csv",
+      "bytes": 335,
+      "sha256": "29608a9be9f11c0b2851063b32e99657ea693f0059132d5e804efc642f9a00ce"
+    },
+    {
+      "path": "TEMPLATE_FIDELITY_REPORT.md",
+      "bytes": 1833,
+      "sha256": "5969fc89a239910d2f048fe0f4a927c7eed70f90c66ccb65f36d988f191e25dc"
+    },
+    {
+      "path": "VISUAL_QA_REPORT.md",
+      "bytes": 1876,
+      "sha256": "2ae151b6e6b4b1bdb458bbda71cdf594201f20dcde58558f1278700ae403031b"
+    }
+  ]
+}

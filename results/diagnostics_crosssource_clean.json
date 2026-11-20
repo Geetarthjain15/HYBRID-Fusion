@@ -1,0 +1,244 @@
+{
+  "runs": "runs_clean",
+  "subset": "results/cross_source_disjoint_manifest.txt",
+  "evalsets": {
+    "dataset_ood": {
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "arms": {
+        "cnn": {
+          "acc_mean": 0.484361036639857,
+          "n_seeds": 3,
+          "acc_std": 0.020299940467561315,
+          "acc_per_seed": [
+            0.4932975871313673,
+            0.46112600536193027,
+            0.49865951742627346
+          ]
+        },
+        "cnn/unfrozen": {
+          "acc_mean": 0.5522788203753352,
+          "n_seeds": 3,
+          "acc_std": 0.047657878913220285,
+          "acc_per_seed": [
+            0.5361930294906166,
+            0.514745308310992,
+            0.6058981233243967
+          ]
+        },
+        "fusion": {
+          "acc_mean": 0.741733690795353,
+          "n_seeds": 3,
+          "acc_std": 0.05046580126361212,
+          "acc_per_seed": [
+            0.774798927613941,
+            0.6836461126005362,
+            0.7667560321715817
+          ]
+        },
+        "vit": {
+          "acc_mean": 0.738159070598749,
+          "n_seeds": 3,
+          "acc_std": 0.01616009054515199,
+          "acc_per_seed": [
+            0.7211796246648794,
+            0.7533512064343163,
+            0.739946380697051
+          ]
+        }
+      },
+      "test1_oracle": {
+        "branches": [
+          "cnn:unfrozen",
+          "vit:"
+        ],
+        "per_seed": [
+          {
+            "n": 373,
+            "member_acc": [
+              0.5361930294906166,
+              0.7211796246648794
+            ],
+            "best_single": 0.7211796246648794,
+            "oracle": 0.7265415549597856,
+            "headroom": 0.00536193029490617,
+            "all_correct": 198,
+            "none_correct": 102,
+            "exclusive": [
+              2,
+              71
+            ]
+          },
+          {
+            "n": 373,
+            "member_acc": [
+              0.514745308310992,
+              0.7533512064343163
+            ],
+            "best_single": 0.7533512064343163,
+            "oracle": 0.7587131367292225,
+            "headroom": 0.00536193029490617,
+            "all_correct": 190,
+            "none_correct": 90,
+            "exclusive": [
+              2,
+              91
+            ]
+          },
+          {
+            "n": 373,
+            "member_acc": [
+              0.6058981233243967,
+              0.739946380697051
+            ],
+            "best_single": 0.739946380697051,
+            "oracle": 0.7882037533512064,
+            "headroom": 0.04825737265415542,
+            "all_correct": 208,
+            "none_correct": 79,
+            "exclusive": [
+              18,
+              68
+            ]
+          }
+        ],
+        "oracle_mean": 0.7578194816800715,
+        "best_single_mean": 0.738159070598749,
+        "headroom_mean": 0.019660411081322587,
+        "none_correct_mean": 90.33333333333333,
+        "verdict": "HEADROOM EXISTS - branches are complementary; a working fusion can gain up to 1.97 pts"
+      },
+      "test3_equivalence": {
+        "cnn": {
+          "per_seed": [
+            {
+              "seed": 42,
+              "arm_only_right": 6,
+              "fusion_only_right": 111,
+              "p": 3.9756315677653657e-26,
+              "delta_fusion_minus_arm": 0.2813077747989276,
+              "ci95": [
+                0.23324396782841816,
+                0.3297587131367292
+              ]
+            },
+            {
+              "seed": 43,
+              "arm_only_right": 12,
+              "fusion_only_right": 95,
+              "p": 3.485417306224237e-17,
+              "delta_fusion_minus_arm": 0.222087399463807,
+              "ci95": [
+                0.1742627345844504,
+                0.2707774798927614
+              ]
+            },
+            {
+              "seed": 44,
+              "arm_only_right": 15,
+              "fusion_only_right": 115,
+              "p": 2.84856058032079e-20,
+              "delta_fusion_minus_arm": 0.2686439678284182,
+              "ci95": [
+                0.21447721179624668,
+                0.3190348525469169
+              ]
+            }
+          ],
+          "mean_delta": 0.2573463806970509,
+          "min_p": 3.9756315677653657e-26,
+          "arm_seed_std": 0.020299940467561315,
+          "within_seed_noise": false,
+          "verdict": "DIFFERENT - accuracy difference exceeds seed noise"
+        },
+        "cnn/unfrozen": {
+          "per_seed": [
+            {
+              "seed": 42,
+              "arm_only_right": 2,
+              "fusion_only_right": 91,
+              "p": 8.829183686723235e-25,
+              "delta_fusion_minus_arm": 0.23868686327077743,
+              "ci95": [
+                0.19571045576407498,
+                0.2841823056300268
+              ]
+            },
+            {
+              "seed": 43,
+              "arm_only_right": 1,
+              "fusion_only_right": 64,
+              "p": 3.577867169202165e-18,
+              "delta_fusion_minus_arm": 0.16834048257372652,
+              "ci95": [
+                0.13136729222520105,
+                0.20643431635388743
+              ]
+            },
+            {
+              "seed": 44,
+              "arm_only_right": 14,
+              "fusion_only_right": 74,
+              "p": 5.0891941127085865e-11,
+              "delta_fusion_minus_arm": 0.16098176943699732,
+              "ci95": [
+                0.11528150134048265,
+                0.20650134048257276
+              ]
+            }
+          ],
+          "mean_delta": 0.18933637176050042,
+          "min_p": 8.829183686723235e-25,
+          "arm_seed_std": 0.047657878913220285,
+          "within_seed_noise": false,
+          "verdict": "DIFFERENT - accuracy difference exceeds seed noise"
+        },
+        "vit": {
+          "per_seed": [
+            {
+              "seed": 42,
+              "arm_only_right": 6,
+              "fusion_only_right": 26,
+              "p": 0.0005350527353584766,
+              "delta_fusion_minus_arm": 0.05397694369973185,
+              "ci95": [
+                0.024128686327077764,
+                0.08310991957104552
+              ]
+            },
+            {
+              "seed": 43,
+              "arm_only_right": 34,
+              "fusion_only_right": 8,
+              "p": 6.877111491121468e-05,
+              "delta_fusion_minus_arm": -0.06977265415549595,
+              "ci95": [
+                -0.1045576407506702,
+                -0.03753351206434319
+              ]
+            },
+            {
+              "seed": 44,
+              "arm_only_right": 12,
+              "fusion_only_right": 22,
+              "p": 0.12144948495551944,
+              "delta_fusion_minus_arm": 0.026871313672922226,
+              "ci95": [
+                -0.002680965147453085,
+                0.05898123324396776
+              ]
+            }
+          ],
+          "mean_delta": 0.003691867739052707,
+          "min_p": 6.877111491121468e-05,
+          "arm_seed_std": 0.01616009054515199,
+          "within_seed_noise": true,
+          "verdict": "ERROR-SWAPPING - different decisions, accuracy difference within seed noise"
+        }
+      }
+    }
+  }
+}

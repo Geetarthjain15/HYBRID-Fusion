@@ -1,0 +1,389 @@
+{
+  "phase": "X2 - read-only dual-path instrumentation",
+  "generated_utc": "2026-09-26T12:05:32.652535+00:00",
+  "mode": "full",
+  "training_performed": false,
+  "model_modified": false,
+  "raw_tensors_persisted": false,
+  "tolerances": {
+    "neutrality_abs_prob": 1e-06,
+    "gate_row_sum": 1e-06,
+    "attention_row_sum": 0.0001,
+    "accuracy_pp": 0.0
+  },
+  "expected_tensor_schema": {
+    "fused_logits": "[B, 4]",
+    "fused_probs": "[B, 4]",
+    "aux_cnn_logits": "[B, 4]",
+    "aux_cnn_probs": "[B, 4]",
+    "aux_vit_logits": "[B, 4]",
+    "aux_vit_probs": "[B, 4]",
+    "gate": "[B, 2]",
+    "cnn_maps[3]": "[B, 40, 28, 28]",
+    "cnn_maps[5]": "[B, 112, 14, 14]",
+    "cnn_maps[8]": "[B, 1280, 7, 7]",
+    "vit_attention": "12 x [B, 12, 197, 197]",
+    "target_index": "[B]"
+  },
+  "environment": {
+    "python": "3.13.2",
+    "torch": "2.14.0+cpu",
+    "numpy": "2.5.3",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "device": "cpu"
+  },
+  "inputs": {
+    "reconstructed_root": "publication_runs/explainability/reconstructed_clean_test",
+    "reconstruction_manifest_sha256": "9a10cb6e7f29eaa7f92abea62cb1526d19f7796e86aa5c409dfead0be9237240",
+    "x1_report_sha256": "d2a2886f2194462102668a73bf23c269f85d86a2b705ec99206197c41ba5cd12"
+  },
+  "n_images": 848,
+  "per_seed": {
+    "42": {
+      "seed": 42,
+      "checkpoint_sha256": "9b328ba83df5d44b542e19faae68fd1493fee61e0c5b80e493c2f8a387ed592e",
+      "checkpoint_path": "publication_runs/recovered_checkpoints/clean/full_fusion_v2/seed_42/checkpoint.pth",
+      "reference_csv": "runs_v2_clean/fusion_v2_seed42/preds_test.csv",
+      "reference_sha256": "247e6494d7315856a5fbb2a26b2eed789f77a880696c724b8a79243fd47c20b4",
+      "n_images": 848,
+      "neutrality_max_abs_dp_single_pass": 1.6093254089355469e-06,
+      "neutrality_max_abs_dp_tta": 8.940696716308594e-07,
+      "neutrality_n_images_over_tolerance": 3,
+      "neutrality_predicted_class_changes": 0,
+      "neutrality_tolerance": 1e-06,
+      "neutrality_pass": false,
+      "identity_n_compared": 848,
+      "identity_n_filename_mismatch": 0,
+      "identity_n_true_label_mismatch": 0,
+      "identity_n_pred_label_mismatch": 0,
+      "identity_pred_mismatch_examples": [],
+      "identity_accuracy_instrumented": 0.9823113207547169,
+      "identity_accuracy_recorded": 0.9823113207547169,
+      "identity_accuracy_diff_pp": 0.0,
+      "identity_max_abs_dp_vs_recorded": 4.9438323974637655e-06,
+      "identity_mean_abs_dp_vs_recorded": 4.679251569766445e-07,
+      "identity_note": "probability residual vs the recorded CSV is the cross-machine floating-point difference documented in X1 (~4e-06); it is NOT held to the 1e-6 neutrality tolerance, which measures instrumentation only",
+      "tensor_schema": {
+        "fused_logits": [
+          16,
+          4
+        ],
+        "fused_probs": [
+          16,
+          4
+        ],
+        "tta_probs": [
+          16,
+          4
+        ],
+        "aux_cnn_logits": [
+          16,
+          4
+        ],
+        "aux_cnn_probs": [
+          16,
+          4
+        ],
+        "aux_vit_logits": [
+          16,
+          4
+        ],
+        "aux_vit_probs": [
+          16,
+          4
+        ],
+        "gate": [
+          16,
+          2
+        ],
+        "target_index": [
+          16
+        ],
+        "cnn_maps[3]": [
+          16,
+          40,
+          28,
+          28
+        ],
+        "cnn_maps[5]": [
+          16,
+          112,
+          14,
+          14
+        ],
+        "cnn_maps[8]": [
+          16,
+          1280,
+          7,
+          7
+        ],
+        "vit_attention": "12 x [16, 12, 197, 197]"
+      },
+      "validation": {
+        "all_groups_present": true,
+        "gate_shape_ok": true,
+        "gate_finite": true,
+        "gate_nonnegative": true,
+        "gate_rows_sum_to_one": true,
+        "attention_shape_ok": true,
+        "attention_finite": true,
+        "attention_rows_sum_to_one": true,
+        "cnn_stage_shapes_ok": true,
+        "cnn_maps_finite": true,
+        "aux_probs_sum_to_one": true,
+        "target_matches_fused_argmax": true,
+        "no_grad_retained": true,
+        "nothing_requires_grad": true
+      },
+      "gate_max_abs_sum_error": 1.1920928955078125e-07,
+      "attention_max_abs_row_sum_error": 8.344650268554688e-07,
+      "hooks_during_context": 3,
+      "hooks_after_context": 0,
+      "attn_impl_before": "sdpa",
+      "attn_impl_during": "eager",
+      "attn_impl_after": "sdpa",
+      "attn_impl_restored": true,
+      "restore_max_abs_dp": 0.0,
+      "restore_exact": true,
+      "seconds": 1303.1
+    },
+    "43": {
+      "seed": 43,
+      "checkpoint_sha256": "9f97b6aa0c9ec3f1124e593c8c29e11d31f4aef8bc08e20a40e7ed1f29e80f25",
+      "checkpoint_path": "publication_runs/recovered_checkpoints/clean/full_fusion_v2/seed_43/checkpoint.pth",
+      "reference_csv": "runs_v2_clean/fusion_v2_seed43/preds_test.csv",
+      "reference_sha256": "bb142d3d33528fdb0d5ad915af3840102f5d93411cdba1ae8540ff03a92c77b5",
+      "n_images": 848,
+      "neutrality_max_abs_dp_single_pass": 1.0132789611816406e-06,
+      "neutrality_max_abs_dp_tta": 9.5367431640625e-07,
+      "neutrality_n_images_over_tolerance": 1,
+      "neutrality_predicted_class_changes": 0,
+      "neutrality_tolerance": 1e-06,
+      "neutrality_pass": false,
+      "identity_n_compared": 848,
+      "identity_n_filename_mismatch": 0,
+      "identity_n_true_label_mismatch": 0,
+      "identity_n_pred_label_mismatch": 0,
+      "identity_pred_mismatch_examples": [],
+      "identity_accuracy_instrumented": 0.9823113207547169,
+      "identity_accuracy_recorded": 0.9823113207547169,
+      "identity_accuracy_diff_pp": 0.0,
+      "identity_max_abs_dp_vs_recorded": 3.628387451160009e-06,
+      "identity_mean_abs_dp_vs_recorded": 4.5071159619436654e-07,
+      "identity_note": "probability residual vs the recorded CSV is the cross-machine floating-point difference documented in X1 (~4e-06); it is NOT held to the 1e-6 neutrality tolerance, which measures instrumentation only",
+      "tensor_schema": {
+        "fused_logits": [
+          16,
+          4
+        ],
+        "fused_probs": [
+          16,
+          4
+        ],
+        "tta_probs": [
+          16,
+          4
+        ],
+        "aux_cnn_logits": [
+          16,
+          4
+        ],
+        "aux_cnn_probs": [
+          16,
+          4
+        ],
+        "aux_vit_logits": [
+          16,
+          4
+        ],
+        "aux_vit_probs": [
+          16,
+          4
+        ],
+        "gate": [
+          16,
+          2
+        ],
+        "target_index": [
+          16
+        ],
+        "cnn_maps[3]": [
+          16,
+          40,
+          28,
+          28
+        ],
+        "cnn_maps[5]": [
+          16,
+          112,
+          14,
+          14
+        ],
+        "cnn_maps[8]": [
+          16,
+          1280,
+          7,
+          7
+        ],
+        "vit_attention": "12 x [16, 12, 197, 197]"
+      },
+      "validation": {
+        "all_groups_present": true,
+        "gate_shape_ok": true,
+        "gate_finite": true,
+        "gate_nonnegative": true,
+        "gate_rows_sum_to_one": true,
+        "attention_shape_ok": true,
+        "attention_finite": true,
+        "attention_rows_sum_to_one": true,
+        "cnn_stage_shapes_ok": true,
+        "cnn_maps_finite": true,
+        "aux_probs_sum_to_one": true,
+        "target_matches_fused_argmax": true,
+        "no_grad_retained": true,
+        "nothing_requires_grad": true
+      },
+      "gate_max_abs_sum_error": 1.1920928955078125e-07,
+      "attention_max_abs_row_sum_error": 8.344650268554688e-07,
+      "hooks_during_context": 3,
+      "hooks_after_context": 0,
+      "attn_impl_before": "sdpa",
+      "attn_impl_during": "eager",
+      "attn_impl_after": "sdpa",
+      "attn_impl_restored": true,
+      "restore_max_abs_dp": 0.0,
+      "restore_exact": true,
+      "seconds": 1270.3
+    },
+    "44": {
+      "seed": 44,
+      "checkpoint_sha256": "4155a2b71df99a6159e1e4a5dbe635f4e9ea7852a6704d804dd1fb5d43aca434",
+      "checkpoint_path": "publication_runs/recovered_checkpoints/clean/full_fusion_v2/seed_44/checkpoint.pth",
+      "reference_csv": "runs_v2_clean/fusion_v2_seed44/preds_test.csv",
+      "reference_sha256": "fe00252503bf19b210540d84ba788f3cd92be048c126692869d7646e4c169a40",
+      "n_images": 848,
+      "neutrality_max_abs_dp_single_pass": 8.642673492431641e-07,
+      "neutrality_max_abs_dp_tta": 5.364418029785156e-07,
+      "neutrality_n_images_over_tolerance": 0,
+      "neutrality_predicted_class_changes": 0,
+      "neutrality_tolerance": 1e-06,
+      "neutrality_pass": true,
+      "identity_n_compared": 848,
+      "identity_n_filename_mismatch": 0,
+      "identity_n_true_label_mismatch": 0,
+      "identity_n_pred_label_mismatch": 0,
+      "identity_pred_mismatch_examples": [],
+      "identity_accuracy_instrumented": 0.9834905660377359,
+      "identity_accuracy_recorded": 0.9834905660377359,
+      "identity_accuracy_diff_pp": 0.0,
+      "identity_max_abs_dp_vs_recorded": 4.313575744596676e-06,
+      "identity_mean_abs_dp_vs_recorded": 4.761733176563723e-07,
+      "identity_note": "probability residual vs the recorded CSV is the cross-machine floating-point difference documented in X1 (~4e-06); it is NOT held to the 1e-6 neutrality tolerance, which measures instrumentation only",
+      "tensor_schema": {
+        "fused_logits": [
+          16,
+          4
+        ],
+        "fused_probs": [
+          16,
+          4
+        ],
+        "tta_probs": [
+          16,
+          4
+        ],
+        "aux_cnn_logits": [
+          16,
+          4
+        ],
+        "aux_cnn_probs": [
+          16,
+          4
+        ],
+        "aux_vit_logits": [
+          16,
+          4
+        ],
+        "aux_vit_probs": [
+          16,
+          4
+        ],
+        "gate": [
+          16,
+          2
+        ],
+        "target_index": [
+          16
+        ],
+        "cnn_maps[3]": [
+          16,
+          40,
+          28,
+          28
+        ],
+        "cnn_maps[5]": [
+          16,
+          112,
+          14,
+          14
+        ],
+        "cnn_maps[8]": [
+          16,
+          1280,
+          7,
+          7
+        ],
+        "vit_attention": "12 x [16, 12, 197, 197]"
+      },
+      "validation": {
+        "all_groups_present": true,
+        "gate_shape_ok": true,
+        "gate_finite": true,
+        "gate_nonnegative": true,
+        "gate_rows_sum_to_one": true,
+        "attention_shape_ok": true,
+        "attention_finite": true,
+        "attention_rows_sum_to_one": true,
+        "cnn_stage_shapes_ok": true,
+        "cnn_maps_finite": true,
+        "aux_probs_sum_to_one": true,
+        "target_matches_fused_argmax": true,
+        "no_grad_retained": true,
+        "nothing_requires_grad": true
+      },
+      "gate_max_abs_sum_error": 1.1920928955078125e-07,
+      "attention_max_abs_row_sum_error": 8.344650268554688e-07,
+      "hooks_during_context": 3,
+      "hooks_after_context": 0,
+      "attn_impl_before": "sdpa",
+      "attn_impl_during": "eager",
+      "attn_impl_after": "sdpa",
+      "attn_impl_restored": true,
+      "restore_max_abs_dp": 0.0,
+      "restore_exact": true,
+      "seconds": 1284.9
+    }
+  },
+  "acceptance_checks": {
+    "A_neutrality_within_1e-6_all_images": false,
+    "A_zero_predicted_class_changes": true,
+    "B_zero_filename_mismatch": true,
+    "B_zero_true_label_mismatch": true,
+    "B_zero_pred_label_mismatch": true,
+    "B_accuracy_diff_zero_pp": true,
+    "gate_finite_nonneg_sums_to_one": true,
+    "attention_shape_and_row_sums_valid": true,
+    "cnn_stage_shapes_valid": true,
+    "all_tensor_groups_present": true,
+    "target_matches_fused_argmax": true,
+    "no_hooks_retained": true,
+    "no_gradients_retained": true,
+    "attention_implementation_restored": true,
+    "restore_reproduces_exactly": true,
+    "raw_tensors_not_persisted": true,
+    "all_seeds_covered": true,
+    "all_848_images_per_seed": true
+  },
+  "acceptance_status": "FAIL",
+  "elapsed_seconds": 3868.4
+}

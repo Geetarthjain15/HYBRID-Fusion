@@ -1,0 +1,9 @@
+variant,description,accuracy_mean_pct,accuracy_sd_ddof1_pct,macro_f1_mean_pct,macro_f1_sd_ddof1_pct,observed_mean_delta_accuracy_pp,per_seed_delta_accuracy_pp,adverse_at_every_seed,n_holm_significant_of_3,n_bootstrap_ci_excludes_zero_of_3,min_unadjusted_p,min_holm_adjusted_p,verdict
+full_fusion_v2,Full AGMF-Net (reference),98.2704,0.0681,98.2761,0.0371,reference,reference,-,-,-,-,-,reference model
+cnn_branch_only,ViT branch removed (CNN only),95.6761,0.3404,95.8981,0.4026,-2.5943,-2.9481; -2.3585; -2.4764,True,3,3,4.126e-05,0.0008664,supported by consistent accuracy evidence
+no_auxiliary_loss,Auxiliary branch losses removed,97.7201,0.4766,97.7334,0.3873,-0.5503,-0.9434; -0.5896; -0.1179,True,0,1,0.03857,0.6943,suggestive but inconclusive
+vit_branch_only,CNN branch removed (ViT only),98.0346,0.1362,97.9598,0.1599,-0.2358,-0.1179; -0.3538; -0.2358,True,0,0,0.5488,1,suggestive but inconclusive
+no_tta,TTA removed,98.1918,0.2455,98.2056,0.1922,-0.0786,-0.1179; -0.2358; +0.1179,False,0,0,0.625,1,no detectable accuracy benefit under this protocol
+no_multiscale,Multi-scale taps removed,98.2311,0.2043,98.1875,0.2136,-0.0393,+0.1179; +0.1179; -0.3538,False,0,0,0.5488,1,no detectable accuracy benefit under this protocol
+no_gate,Adaptive gate removed,98.2704,0.1801,98.2270,0.1255,0.0000,+0.0000; -0.1179; +0.1179,False,0,0,1,1,no detectable accuracy benefit under this protocol
+no_ema,EMA removed,98.3097,0.2968,98.3517,0.2406,0.0393,+0.1179; -0.2358; +0.2358,False,0,0,0.625,1,no detectable accuracy benefit under this protocol

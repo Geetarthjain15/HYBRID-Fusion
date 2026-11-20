@@ -1,0 +1,9 @@
+filename,seed,target_index,max_abs_diff_vs_helper,within_tol
+glioma_00000.jpg,42,0,7.748603820800781e-07,True
+glioma_00006.jpg,42,0,1.9669532775878906e-06,True
+meningioma_00314.jpg,42,1,8.344650268554688e-07,True
+meningioma_00361.jpg,42,1,6.556510925292969e-07,True
+notumor_00761.jpg,42,2,7.152557373046875e-07,True
+notumor_00877.jpg,42,2,1.6093254089355469e-06,True
+pituitary_01016.jpg,42,3,1.430511474609375e-06,True
+pituitary_01018.jpg,42,3,1.2814998626708984e-06,True

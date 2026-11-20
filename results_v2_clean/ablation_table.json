@@ -1,0 +1,40 @@
+{
+  "groups": [
+    {
+      "split": "dataset_clean",
+      "arch": "fusion_v2",
+      "variant": "unfrozen",
+      "n_seeds": 3,
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "params_trainable": 91211918,
+      "acc_mean": 0.9827044025157233,
+      "acc_std": 0.0006808375815915797,
+      "f1_mean": 0.982761297247453,
+      "f1_std": 0.00037062909191767245,
+      "recall_mean": {
+        "glioma": 0.982167352537723,
+        "meningioma": 0.9736842105263158,
+        "notumor": 0.9798850574712644,
+        "pituitary": 0.9923371647509578
+      },
+      "recall_std": {
+        "glioma": 0.010356425837134092,
+        "meningioma": 0.004385964912280715,
+        "notumor": 0.004977157493013994,
+        "pituitary": 0.0038314176245210496
+      },
+      "n_test": 848,
+      "extra_acc": {
+        "dataset_ood": {
+          "mean": 0.7648630594522379,
+          "std": 0.01517410379639353
+        }
+      }
+    }
+  ],
+  "mcnemar_vs_fusion": []
+}

@@ -1,0 +1,186 @@
+"""
+One command that regenerates every result in the paper.
+
+Delete results/ and run this; every table, diagnostic and manifest comes back
+byte-identical from the prediction CSVs. Nothing in the manuscript can drift
+from the runs that produced it.
+
+    python src/make_paper_results.py
+
+Stages:
+    1  cross-source split     which dataset_ood images are re-encodes vs genuinely unseen
+    2  diagnostics            the three-test protocol, per split and per regime
+    3  ensemble               logit-level fusion over existing checkpoints
+    4  tables                 T1-T5 in Markdown and LaTeX
+    5  summary                results/paper/SUMMARY.md - the claims, with their evidence
+"""
+
+import json
+import os
+import subprocess
+import sys
+
+PY = sys.executable
+SRC = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(SRC)
+
+
+def run(args, desc):
+    print("\n" + "=" * 70 + "\n  " + desc + "\n" + "=" * 70, flush=True)
+    r = subprocess.run([PY] + args, cwd=ROOT)
+    if r.returncode != 0:
+        print("  !! failed: %s" % desc)
+    return r.returncode == 0
+
+
+def main():
+    os.makedirs(os.path.join(ROOT, "results"), exist_ok=True)
+    import glob as _g
+    # Discover run directories rather than hardcoding names: Kaggle writes
+    # runs_v2_original / runs_v2_clean, a local merge may add others.
+    runs = sorted(os.path.basename(d) for d in _g.glob(os.path.join(ROOT, "runs_*"))
+                  if os.path.isdir(d))
+    print("run directories found: %s" % ", ".join(runs))
+
+    # 1 -----------------------------------------------------------------
+    # The reference images live wherever dataset/ is; on Kaggle that is under
+    # /kaggle/input, locally it is beside this file. Skip the stage rather than
+    # crash when the raw images are not mounted - every later stage is optional
+    # on its output.
+    src_dir = os.environ.get("BTD_DATA")
+    if not src_dir:
+        cand = [os.path.join(ROOT, "dataset")] + _g.glob("/kaggle/input/**/dataset", recursive=True)
+        src_dir = next((c for c in cand if os.path.isdir(os.path.join(c, "Training"))), None)
+    ood_dir = os.path.join(src_dir, "..", "dataset_ood", "Testing") if src_dir else None
+    if src_dir and os.path.isdir(ood_dir or ""):
+        run([f"{SRC}/filter_cross_source.py", "--src", src_dir, "--ood", ood_dir,
+             "--preds", "runs_*/*/preds_dataset_ood.csv",
+             "--out", "results/cross_source.json"], "1. cross-source split")
+    else:
+        print("\n[skip] 1. cross-source split - raw images not found "
+              "(set BTD_DATA=/path/to/dataset). Run this stage locally.")
+
+    # 2 -----------------------------------------------------------------
+    manifest = "results/cross_source_disjoint_manifest.txt"
+    for rd in runs:
+        tag = rd.replace("runs_", "")
+        run([f"{SRC}/diagnostics.py", "--runs", rd,
+             "--gates", "%s/*/gates_test.csv" % rd,
+             "--out", "results/diagnostics_%s.json" % tag],
+            "2a. diagnostics - %s (all regimes)" % tag)
+        if os.path.exists(os.path.join(ROOT, manifest)):
+            run([f"{SRC}/diagnostics.py", "--runs", rd, "--evalsets", "dataset_ood",
+                 "--subset", manifest, "--gates", "%s/*/gates_dataset_ood.csv" % rd,
+                 "--out", "results/diagnostics_crosssource_%s.json" % tag],
+                "2b. diagnostics - %s (true cross-source only)" % tag)
+
+    # 3 -----------------------------------------------------------------
+    import glob
+    members = []
+    for pat in ("runs_original/cnn_seed*_unfrozen/preds_test.csv",
+                "runs_original/vit_seed*/preds_test.csv",
+                "runs_v2_original/fusion_v2_seed*/preds_test.csv",
+                "runs_v2/fusion_v2_seed*/preds_test.csv"):
+        members += sorted(glob.glob(os.path.join(ROOT, pat)))
+    members = [m for m in members if os.path.exists(m)]
+    if len(members) >= 2:
+        run([f"{SRC}/ensemble.py", "--preds"] + [os.path.relpath(m, ROOT) for m in members]
+            + ["--out", "results/ensemble.json"], "3. ensemble over existing checkpoints")
+
+    # 4 -----------------------------------------------------------------
+    if runs:
+        run([f"{SRC}/paper_tables.py", "--runs"] + runs + ["--out", "results/paper"],
+            "4. paper tables")
+    else:
+        print("\n[skip] 4. paper tables - no runs_* directories found")
+
+    # 5 -----------------------------------------------------------------
+    write_summary(runs)
+    print("\nAll results in results/. Tables: results/paper/tables.{md,tex}")
+
+
+def write_summary(runs):
+    """Every claim the paper makes, next to the file that proves it."""
+    R = os.path.join(ROOT, "results")
+
+    def j(name):
+        p = os.path.join(R, name)
+        return json.load(open(p)) if os.path.exists(p) else None
+
+    cs = j("cross_source.json")
+    lines = ["# Results summary", "",
+             "Generated by `src/make_paper_results.py`. Every number traces to a "
+             "prediction CSV under `runs_*/`.", ""]
+
+    lines += ["## Claim 1 - the benchmark cannot separate these architectures", ""]
+    for tag in ("original", "clean"):
+        d = j("diagnostics_%s.json" % tag)
+        if not d:
+            continue
+        t = d["evalsets"].get("test", {})
+        o = t.get("test1_oracle", {})
+        if o:
+            lines.append("- **%s split**: best single branch %.2f%%, oracle ceiling %.2f%% "
+                         "(headroom %+.2f pts). %s"
+                         % (tag, 100 * o["best_single_mean"], 100 * o["oracle_mean"],
+                            100 * o["headroom_mean"], o["verdict"]))
+        eq = (t.get("test3_equivalence") or {}).get("vit")
+        if eq:
+            lines.append("  - fusion vs ViT-only: %+.2f pts, min p = %.3f, seed s.d. %.2f -> **%s**"
+                         % (100 * eq["mean_delta"], eq["min_p"], 100 * eq["arm_seed_std"], eq["verdict"]))
+
+    lines += ["", "## Claim 2 - evaluation regime changes the architecture ranking", ""]
+    if cs:
+        lines.append("- `dataset_ood` splits into %d re-encoded images and %d genuinely unseen "
+                     "(256-bit dHash, Hamming <= %d)."
+                     % (cs["n_overlapping"], cs["n_disjoint"], cs["hamming_threshold"]))
+        for c, v in cs["by_class"].items():
+            lines.append("  - %s: %d overlapping / %d disjoint" % (c, v["overlapping"], v["disjoint"]))
+    for tag in ("original", "clean"):
+        d = j("diagnostics_crosssource_%s.json" % tag)
+        if not d:
+            continue
+        a = d["evalsets"].get("dataset_ood", {}).get("arms", {})
+        if a:
+            best_in = "cnn/unfrozen"
+            lines.append("- **%s split, true cross-source**: %s" % (tag, ", ".join(
+                "%s %.2f%%" % (k, 100 * v["acc_mean"]) for k, v in sorted(a.items()))))
+            if best_in in a:
+                vit = a.get("vit", {}).get("acc_mean", 0)
+                lines.append("  - the in-distribution winner (%s) drops to %.2f%% while ViT holds "
+                             "%.2f%% - a rank inversion of %.1f pts"
+                             % (best_in, 100 * a[best_in]["acc_mean"], 100 * vit,
+                                100 * (vit - a[best_in]["acc_mean"])))
+
+    lines += ["", "## Claim 3 - the fusion does not fuse (and what fixes it)", ""]
+    for tag in runs:
+        d = j("diagnostics_%s.json" % tag.replace("runs_", ""))
+        if d and "test2_gate_mass" in d:
+            g = d["test2_gate_mass"]
+            lines.append("- **%s**: gate mass cnn %.3f / vit %.3f -> %s"
+                         % (tag, g["gate_cnn_overall"], 1 - g["gate_cnn_overall"], g["verdict"]))
+    ens = j("ensemble.json")
+    if ens:
+        b = ens["combiners"][ens["best"]]
+        lines.append("- Logit-level ensembling of %d members reaches %.2f%% on held-out data "
+                     "vs %.2f%% for the best single member - %s"
+                     % (len(ens["members"]), 100 * b["holdout_acc"], 100 * max(ens["member_acc"]),
+                        "a gain" if b["holdout_acc"] > max(ens["member_acc"]) else "no gain"))
+
+    lines += ["", "## Files", "",
+              "| File | Contents |", "|---|---|",
+              "| `results/paper/tables.md` / `.tex` | T1-T5, ready to paste |",
+              "| `results/cross_source.json` | per-image overlap classification + re-scored runs |",
+              "| `results/diagnostics_*.json` | the three-test protocol, full per-seed detail |",
+              "| `results/ensemble.json` | logit-fusion weights and held-out scores |",
+              "| `runs_*/*/preds_*.csv` | raw per-image probabilities (the audit trail) |",
+              "| `runs_v2/*/gates_*.csv` | per-image gate mass (TEST 2 evidence) |", ""]
+
+    os.makedirs(os.path.join(R, "paper"), exist_ok=True)
+    out = os.path.join(R, "paper", "SUMMARY.md")
+    open(out, "w").write("\n".join(lines) + "\n")
+    print("\nwrote %s" % out)
+
+
+if __name__ == "__main__":
+    main()

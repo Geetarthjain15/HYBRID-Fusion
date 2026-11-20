@@ -1,0 +1,483 @@
+{
+  "phase": "X0 - evidence and architecture audit",
+  "generated_utc": "2026-09-26T10:31:26.890941+00:00",
+  "training_performed": false,
+  "model_modified": false,
+  "device": "cpu",
+  "tolerance_fused_probability": 1e-06,
+  "environment": {
+    "python": "3.13.2",
+    "torch": "2.14.0+cpu",
+    "torchvision": "0.29.0+cpu",
+    "transformers": "4.57.6",
+    "numpy": "2.5.3",
+    "pytorch_grad_cam": "unknown"
+  },
+  "q2_gradcam_identity": {
+    "resolved_class": "pytorch_grad_cam.grad_cam_plusplus.GradCAMPlusPlus",
+    "is_distinct_class_from_GradCAM": true,
+    "mro": [
+      "GradCAMPlusPlus",
+      "BaseCAM",
+      "object"
+    ],
+    "get_cam_weights_source": "    def get_cam_weights(self,\n                        input_tensor,\n                        target_layers,\n                        target_category,\n                        activations,\n                        grads):\n        grads_power_2 = grads**2\n        grads_power_3 = grads_power_2 * grads\n        # Equation 19 in https://arxiv.org/abs/1710.11063\n        spatial_axes = tuple(range(2, activations.ndim))\n        sum_activations = np.sum(activations, axis=spatial_axes)\n        sum_activations = sum_activations.reshape(\n            sum_activations.shape + (1,) * len(spatial_axes))\n        eps = 0.000001\n        aij = grads_power_2 / (2 * grads_power_2 +\n                               sum_activations * grads_power_3 + eps)\n        # Now bring back the ReLU from eq.7 in the paper,\n        # And zero out aijs where the activations are 0\n        aij = np.where(grads != 0, aij, 0)\n\n        weights = np.maximum(grads, 0) * aij\n        weights = np.sum(weights, axis=spatial_axes)\n        return weights\n",
+    "uses_second_order_terms": true,
+    "uses_third_order_terms": true,
+    "defines_alpha_weighting": false,
+    "gradcam_get_cam_weights_source": "    def get_cam_weights(self,\n                        input_tensor,\n                        target_layer,\n                        target_category,\n                        activations,\n                        grads):\n        # 2D image\n        if len(grads.shape) == 4:\n            return np.mean(grads, axis=(2, 3))\n        \n        # 3D image\n        elif len(grads.shape) == 5:\n            return np.mean(grads, axis=(2, 3, 4))\n        \n        else:\n            raise ValueError(\"Invalid grads shape.\" \n                             \"Shape of grads should be 4 (2D image) or 5 (3D image).\")\n",
+    "source_file": "D:\\Research Model\\Brain_Tumor_Detection_ViT2\\env_win\\Lib\\site-packages\\pytorch_grad_cam\\grad_cam_plusplus.py"
+  },
+  "q19_checkpoints": {
+    "manifest": "publication_results/ablations/checkpoint_recovery/import_manifest.json",
+    "manifest_present": true,
+    "seeds": {
+      "42": {
+        "path": "publication_runs/recovered_checkpoints/clean/full_fusion_v2/seed_42/checkpoint.pth",
+        "present": true,
+        "sha256": "9b328ba83df5d44b542e19faae68fd1493fee61e0c5b80e493c2f8a387ed592e",
+        "bytes": 365236755,
+        "manifest_decision": "ACCEPTED",
+        "manifest_destination_sha256": "9b328ba83df5d44b542e19faae68fd1493fee61e0c5b80e493c2f8a387ed592e",
+        "container_sha256_in_manifest": "9b328ba83df5d44b542e19faae68fd1493fee61e0c5b80e493c2f8a387ed592e",
+        "sha256_matches_manifest": true
+      },
+      "43": {
+        "path": "publication_runs/recovered_checkpoints/clean/full_fusion_v2/seed_43/checkpoint.pth",
+        "present": true,
+        "sha256": "9f97b6aa0c9ec3f1124e593c8c29e11d31f4aef8bc08e20a40e7ed1f29e80f25",
+        "bytes": 365236755,
+        "manifest_decision": "ACCEPTED",
+        "manifest_destination_sha256": "9f97b6aa0c9ec3f1124e593c8c29e11d31f4aef8bc08e20a40e7ed1f29e80f25",
+        "container_sha256_in_manifest": "9f97b6aa0c9ec3f1124e593c8c29e11d31f4aef8bc08e20a40e7ed1f29e80f25",
+        "sha256_matches_manifest": true
+      },
+      "44": {
+        "path": "publication_runs/recovered_checkpoints/clean/full_fusion_v2/seed_44/checkpoint.pth",
+        "present": true,
+        "sha256": "4155a2b71df99a6159e1e4a5dbe635f4e9ea7852a6704d804dd1fb5d43aca434",
+        "bytes": 365236755,
+        "manifest_decision": "ACCEPTED",
+        "manifest_destination_sha256": "4155a2b71df99a6159e1e4a5dbe635f4e9ea7852a6704d804dd1fb5d43aca434",
+        "container_sha256_in_manifest": "4155a2b71df99a6159e1e4a5dbe635f4e9ea7852a6704d804dd1fb5d43aca434",
+        "sha256_matches_manifest": true
+      }
+    },
+    "all_three_accepted_and_hash_matched": true
+  },
+  "q7_class_order": {
+    "class_names_in_code": [
+      "glioma",
+      "meningioma",
+      "notumor",
+      "pituitary"
+    ],
+    "source": "src/publication/fusion_v2_gradcam.py:37",
+    "is_sorted_alphabetically": true
+  },
+  "q5_preprocessing": {
+    "image_size": 224,
+    "normalize_mean": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "normalize_std": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "transform_repr": "Compose(\n    Resize(size=(224, 224), interpolation=bilinear, max_size=None, antialias=True)\n    ToTensor()\n    Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])\n)",
+    "source": "src/publication/fusion_v2_gradcam.py:38-44"
+  },
+  "loaded_checkpoint": {
+    "seed": 42,
+    "sha256": "9b328ba83df5d44b542e19faae68fd1493fee61e0c5b80e493c2f8a387ed592e",
+    "strict_load": true,
+    "note": "load_verified_model uses load_state_dict(strict=True) and verifies the SHA-256 against the recovery manifest (src/publication/fusion_v2_gradcam.py:115-131)"
+  },
+  "q15_aux_in_checkpoint": {
+    "n_state_dict_keys": 578,
+    "aux_keys": [
+      "aux_cnn.weight",
+      "aux_cnn.bias",
+      "aux_vit.weight",
+      "aux_vit.bias"
+    ],
+    "aux_shapes": {
+      "aux_cnn.weight": [
+        4,
+        512
+      ],
+      "aux_cnn.bias": [
+        4
+      ],
+      "aux_vit.weight": [
+        4,
+        512
+      ],
+      "aux_vit.bias": [
+        4
+      ]
+    },
+    "gate_keys": [
+      "gate.0.weight",
+      "gate.0.bias",
+      "gate.2.weight",
+      "gate.2.bias"
+    ],
+    "gate_shapes": {
+      "gate.0.weight": [
+        256,
+        1024
+      ],
+      "gate.0.bias": [
+        256
+      ],
+      "gate.2.weight": [
+        2,
+        256
+      ],
+      "gate.2.bias": [
+        2
+      ]
+    },
+    "aux_present": true
+  },
+  "q8_forward_graph": {
+    "input": [
+      2,
+      3,
+      224,
+      224
+    ],
+    "cnn_branch_feature_c": [
+      2,
+      512
+    ],
+    "vit_branch_feature_v": [
+      2,
+      512
+    ],
+    "gate_input_is_cat_c_v": [
+      2,
+      1024
+    ],
+    "gate_output_g": [
+      2,
+      2
+    ],
+    "fused_vector": [
+      2,
+      1024
+    ],
+    "fused_logits": [
+      2,
+      4
+    ],
+    "aux_cnn_logits": [
+      2,
+      4
+    ],
+    "aux_vit_logits": [
+      2,
+      4
+    ],
+    "source": "src/fusion_v2.py:83-107",
+    "graph": "x -> cnn_stages (taps 3,5,final; mean over H,W) -> cat(1432) -> cnn_proj -> c(512);  x -> vit.vit(...).last_hidden_state[:,0](768) -> vit_proj -> v(512);  g=softmax(gate(cat[c,v]),-1)(2); fused=cat[c*g0*2, v*g1*2](1024); logits=head(fused)(4)"
+  },
+  "q13_q14_gate_semantics": {
+    "gate_module_repr": "Sequential(\n  (0): Linear(in_features=1024, out_features=256, bias=True)\n  (1): GELU(approximate='none')\n  (2): Linear(in_features=256, out_features=2, bias=True)\n)",
+    "gate_consumes": "torch.cat([c, v], dim=1), shape [2, 1024]",
+    "gate_returns_shape": [
+      2,
+      2
+    ],
+    "values_per_image": 2,
+    "kind": "two scalar per-branch weights per image (NOT per-feature, NOT per-scale, NOT spatial)",
+    "softmax_dim_in_source": -1,
+    "row_sums": [
+      0.9999999403953552,
+      0.9999999403953552
+    ],
+    "rows_sum_to_one": true,
+    "sum_axis": "last dimension (dim=-1), i.e. across the two branches within one image",
+    "example_rows": [
+      [
+        0.3207671046257019,
+        0.6792328357696533
+      ],
+      [
+        0.29931366443634033,
+        0.7006862759590149
+      ]
+    ],
+    "source": "src/fusion_v2.py:72-73 (module), :97 (softmax), :100 (application)",
+    "applied_to": "the 512-d projected FEATURE VECTORS c and v, each scaled by 2*g; the gate never multiplies a spatial map"
+  },
+  "q16_branch_probabilities": {
+    "obtainable_without_retraining": true,
+    "mechanism": "model(x, return_aux=True) -> (logits, aux_cnn(c), aux_vit(v), g); src/fusion_v2.py:105-106",
+    "aux_cnn_prob_row0": [
+      0.224562868475914,
+      0.39944979548454285,
+      0.3007366955280304,
+      0.07525064051151276
+    ],
+    "aux_vit_prob_row0": [
+      0.17304961383342743,
+      0.06932450085878372,
+      0.6034349203109741,
+      0.1541910469532013
+    ],
+    "aux_cnn_rows_sum_to_one": true,
+    "aux_vit_rows_sum_to_one": true,
+    "caveat": "these are AUXILIARY TRAINING heads on the projected branch features; they are not the fused decision and were trained with weight 0.3 as a regulariser, so they are branch-readable proxies, not the model's output"
+  },
+  "q10_q11_vit_tensors": {
+    "vit_class": "ViTForImageClassification",
+    "inner_module_called_in_forward": "model.vit.vit (ViTModel) - src/fusion_v2.py:91",
+    "config_output_attentions_default": false,
+    "config_attn_implementation": "sdpa",
+    "num_hidden_layers": 12,
+    "num_attention_heads": 12,
+    "hidden_size": 768,
+    "image_size": 224,
+    "patch_size": 16,
+    "n_patches": 196,
+    "n_tokens_including_cls": 197,
+    "expected_attention_shape_per_layer": [
+      2,
+      12,
+      197,
+      197
+    ],
+    "attentions_returned_by_default": false,
+    "attentions_returned_with_flag": false,
+    "n_hidden_states": 13,
+    "hidden_state_shape": [
+      2,
+      197,
+      768
+    ],
+    "last_hidden_state_shape": [
+      2,
+      197,
+      768
+    ],
+    "cls_token_index_used": 0,
+    "max_abs_last_hidden_state_delta_with_flag": 0.0
+  },
+  "q18_instrumentation_neutrality": {
+    "max_abs_prob_delta_output_attentions": 0.0,
+    "output_attentions_changes_fused_probs": false,
+    "restore_exact": true,
+    "hooked_tensor_shape": [
+      2,
+      1280,
+      7,
+      7
+    ],
+    "max_abs_prob_delta_forward_hook": 0.0,
+    "forward_hook_changes_fused_probs": false,
+    "hook_removal_exact": true,
+    "tolerance": 1e-06
+  },
+  "q9_cnn_spatial_stages": {
+    "n_stages": 9,
+    "stages": [
+      {
+        "stage_index": 0,
+        "output_shape": [
+          2,
+          32,
+          112,
+          112
+        ],
+        "channels": 32,
+        "spatial": [
+          112,
+          112
+        ],
+        "is_multiscale_tap": false,
+        "is_final_stage": false
+      },
+      {
+        "stage_index": 1,
+        "output_shape": [
+          2,
+          16,
+          112,
+          112
+        ],
+        "channels": 16,
+        "spatial": [
+          112,
+          112
+        ],
+        "is_multiscale_tap": false,
+        "is_final_stage": false
+      },
+      {
+        "stage_index": 2,
+        "output_shape": [
+          2,
+          24,
+          56,
+          56
+        ],
+        "channels": 24,
+        "spatial": [
+          56,
+          56
+        ],
+        "is_multiscale_tap": false,
+        "is_final_stage": false
+      },
+      {
+        "stage_index": 3,
+        "output_shape": [
+          2,
+          40,
+          28,
+          28
+        ],
+        "channels": 40,
+        "spatial": [
+          28,
+          28
+        ],
+        "is_multiscale_tap": true,
+        "is_final_stage": false
+      },
+      {
+        "stage_index": 4,
+        "output_shape": [
+          2,
+          80,
+          14,
+          14
+        ],
+        "channels": 80,
+        "spatial": [
+          14,
+          14
+        ],
+        "is_multiscale_tap": false,
+        "is_final_stage": false
+      },
+      {
+        "stage_index": 5,
+        "output_shape": [
+          2,
+          112,
+          14,
+          14
+        ],
+        "channels": 112,
+        "spatial": [
+          14,
+          14
+        ],
+        "is_multiscale_tap": true,
+        "is_final_stage": false
+      },
+      {
+        "stage_index": 6,
+        "output_shape": [
+          2,
+          192,
+          7,
+          7
+        ],
+        "channels": 192,
+        "spatial": [
+          7,
+          7
+        ],
+        "is_multiscale_tap": false,
+        "is_final_stage": false
+      },
+      {
+        "stage_index": 7,
+        "output_shape": [
+          2,
+          320,
+          7,
+          7
+        ],
+        "channels": 320,
+        "spatial": [
+          7,
+          7
+        ],
+        "is_multiscale_tap": false,
+        "is_final_stage": false
+      },
+      {
+        "stage_index": 8,
+        "output_shape": [
+          2,
+          1280,
+          7,
+          7
+        ],
+        "channels": 1280,
+        "spatial": [
+          7,
+          7
+        ],
+        "is_multiscale_tap": false,
+        "is_final_stage": true
+      }
+    ],
+    "tap_indices_in_source": [
+      3,
+      5
+    ],
+    "tap_channels_in_source": {
+      "3": 40,
+      "5": 112
+    },
+    "final_channels_in_source": 1280,
+    "pooling_in_forward": "mean over dims (2,3) - src/fusion_v2.py:88-89",
+    "note": "taps are pooled to vectors inside branch_features, so the SPATIAL maps are not returned by forward and must be captured with hooks"
+  },
+  "q3_hooked_module": {
+    "hooked_in_current_code": "model.cnn_stages[-1]",
+    "source": "src/publication/fusion_v2_gradcam.py:167",
+    "resolved_module_type": "Conv2dNormActivation",
+    "resolved_module_repr_head": "Conv2dNormActivation(\n  (0): Conv2d(320, 1280, kernel_size=(1, 1), stride=(1, 1), bias=False)\n  (1): BatchNorm2d(1280, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)\n  (2): SiLU(inplace=True)\n)",
+    "output_shape_on_probe": [
+      2,
+      1280,
+      7,
+      7
+    ]
+  },
+  "q4_target_score": {
+    "target_object": "pytorch_grad_cam ClassifierOutputTarget(target_index)",
+    "model_passed_to_cam": "the full FusionV2 instance (model=model)",
+    "consequence": "the differentiated scalar is the FUSED class logit model(x)[:, target_index]; it is not a branch-specific score",
+    "source": "src/publication/fusion_v2_gradcam.py:167-168",
+    "gate_in_gradient_path": true,
+    "gate_in_gradient_path_reason": "head() consumes fused = cat[c*g0*2, v*g1*2], and g is a differentiable function of c and v, so d(logit)/d(A_cnn) flows through both the direct c path and the gate"
+  },
+  "q6_spatial_resize": {
+    "cam_upsampling": "pytorch_grad_cam resizes the stage activation map to the INPUT tensor spatial size internally",
+    "asserted_output_shape": [
+      224,
+      224
+    ],
+    "assert_source": "src/publication/fusion_v2_gradcam.py:170-171",
+    "display_image": "the original image is resized to 224x224 with PIL BILINEAR for display - src/publication/fusion_v2_gradcam.py:136",
+    "overlay_space": "224x224",
+    "back_projection_to_original_resolution": false,
+    "consequence": "the overlay is produced in 224x224 model space, NOT mapped back to the source image resolution; any spatial statement is therefore made in resized model space and inherits the resize distortion",
+    "normalisation_of_heatmap": "min-max to [0,1] per image, zeros if constant - src/publication/fusion_v2_gradcam.py:172-176"
+  },
+  "q17_synchronized_pass": {
+    "error": "TypeError: object of type 'NoneType' has no len()",
+    "traceback": "Traceback (most recent call last):\n  File \"D:\\Research Model\\Brain_Tumor_Detection_ViT2\\src\\publication\\explainability\\audit_x0.py\", line 434, in main\n    lg, ac, av, gg = model(x, return_aux=True)\n                     ~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Research Model\\Brain_Tumor_Detection_ViT2\\env_win\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"D:\\Research Model\\Brain_Tumor_Detection_ViT2\\env_win\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n  File \"D:\\Research Model\\Brain_Tumor_Detection_ViT2\\src\\fusion_v2.py\", line 95, in forward\n    c, v = self.branch_features(x)\n           ~~~~~~~~~~~~~~~~~~~~^^^\n  File \"D:\\Research Model\\Brain_Tumor_Detection_ViT2\\src\\fusion_v2.py\", line 91, in branch_features\n    vit = self.vit_proj(self.vit.vit(pixel_values=x).last_hidden_state[:, 0])\n                        ~~~~~~~~~~~~^^^^^^^^^^^^^^^^\n  File \"D:\\Research Model\\Brain_Tumor_Detection_ViT2\\env_win\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"D:\\Research Model\\Brain_Tumor_Detection_ViT2\\env_win\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n  File \"D:\\Research Model\\Brain_Tumor_Detection_ViT2\\src\\publication\\explainability\\audit_x0.py\", line 429, in fwd_attn\n    cap[\"vit_attentions\"] = [len(o.attentions), list(o.attentions[0].shape)]\n                             ~~~^^^^^^^^^^^^^^\nTypeError: object of type 'NoneType' has no len()\n"
+  }
+}

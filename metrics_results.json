@@ -1,0 +1,1309 @@
+{
+  "hybrid_test": {
+    "tag": "hybrid_test",
+    "csv": "/mnt/user-data/uploads/Research Model--Brain_Tumor_Detection_ViT2/preds_hybrid_test.csv",
+    "n_images": 1052,
+    "classes": [
+      "glioma",
+      "meningioma",
+      "notumor",
+      "pituitary"
+    ],
+    "headline": {
+      "accuracy": 0.9876,
+      "accuracy_ci95": [
+        0.981,
+        0.9933
+      ],
+      "balanced_accuracy": 0.9874,
+      "balanced_accuracy_ci95": [
+        0.9805,
+        0.9936
+      ],
+      "macro_f1": 0.9873,
+      "macro_f1_ci95": [
+        0.9803,
+        0.9933
+      ],
+      "weighted_f1": 0.9877,
+      "cohen_kappa": 0.9835,
+      "mcc": 0.9835,
+      "roc_auc_macro_ovr": 0.9996,
+      "roc_auc_weighted_ovr": 0.9996
+    },
+    "per_class": [
+      {
+        "class": "glioma",
+        "support": 243,
+        "precision": 0.9877,
+        "recall": 0.9877,
+        "f1": 0.9877,
+        "roc_auc_ovr": 0.9995,
+        "pr_auc": 0.9985
+      },
+      {
+        "class": "meningioma",
+        "support": 246,
+        "precision": 0.972,
+        "recall": 0.9878,
+        "f1": 0.9798,
+        "roc_auc_ovr": 0.9992,
+        "pr_auc": 0.9974
+      },
+      {
+        "class": "notumor",
+        "support": 300,
+        "precision": 0.9933,
+        "recall": 0.9933,
+        "f1": 0.9933,
+        "roc_auc_ovr": 0.9999,
+        "pr_auc": 0.9997
+      },
+      {
+        "class": "pituitary",
+        "support": 263,
+        "precision": 0.9961,
+        "recall": 0.981,
+        "f1": 0.9885,
+        "roc_auc_ovr": 0.9998,
+        "pr_auc": 0.9994
+      }
+    ],
+    "confusion_matrix": {
+      "labels": [
+        "glioma",
+        "meningioma",
+        "notumor",
+        "pituitary"
+      ],
+      "counts": [
+        [
+          240,
+          3,
+          0,
+          0
+        ],
+        [
+          0,
+          243,
+          2,
+          1
+        ],
+        [
+          2,
+          0,
+          298,
+          0
+        ],
+        [
+          1,
+          4,
+          0,
+          258
+        ]
+      ],
+      "row_normalised": [
+        [
+          0.9877,
+          0.0123,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.9878,
+          0.0081,
+          0.0041
+        ],
+        [
+          0.0067,
+          0.0,
+          0.9933,
+          0.0
+        ],
+        [
+          0.0038,
+          0.0152,
+          0.0,
+          0.981
+        ]
+      ]
+    },
+    "top_confusions": [
+      {
+        "true": "pituitary",
+        "predicted": "meningioma",
+        "n": 4
+      },
+      {
+        "true": "glioma",
+        "predicted": "meningioma",
+        "n": 3
+      },
+      {
+        "true": "meningioma",
+        "predicted": "notumor",
+        "n": 2
+      },
+      {
+        "true": "notumor",
+        "predicted": "glioma",
+        "n": 2
+      },
+      {
+        "true": "meningioma",
+        "predicted": "pituitary",
+        "n": 1
+      },
+      {
+        "true": "pituitary",
+        "predicted": "glioma",
+        "n": 1
+      }
+    ],
+    "calibration": {
+      "ece_15bin": 0.0703,
+      "mce_15bin": 0.4939,
+      "brier_multiclass": 0.0279,
+      "mean_confidence": 0.9181,
+      "accuracy_minus_confidence": 0.0695,
+      "reliability_bins": [
+        {
+          "bin_lo": 0.0,
+          "bin_hi": 0.06666666666666667,
+          "n": 0,
+          "acc": null,
+          "conf": null
+        },
+        {
+          "bin_lo": 0.06666666666666667,
+          "bin_hi": 0.13333333333333333,
+          "n": 0,
+          "acc": null,
+          "conf": null
+        },
+        {
+          "bin_lo": 0.13333333333333333,
+          "bin_hi": 0.2,
+          "n": 0,
+          "acc": null,
+          "conf": null
+        },
+        {
+          "bin_lo": 0.2,
+          "bin_hi": 0.26666666666666666,
+          "n": 0,
+          "acc": null,
+          "conf": null
+        },
+        {
+          "bin_lo": 0.26666666666666666,
+          "bin_hi": 0.3333333333333333,
+          "n": 0,
+          "acc": null,
+          "conf": null
+        },
+        {
+          "bin_lo": 0.3333333333333333,
+          "bin_hi": 0.4,
+          "n": 0,
+          "acc": null,
+          "conf": null
+        },
+        {
+          "bin_lo": 0.4,
+          "bin_hi": 0.4666666666666667,
+          "n": 1,
+          "acc": 0.0,
+          "conf": 0.442271
+        },
+        {
+          "bin_lo": 0.4666666666666667,
+          "bin_hi": 0.5333333333333333,
+          "n": 3,
+          "acc": 1.0,
+          "conf": 0.5060936666666667
+        },
+        {
+          "bin_lo": 0.5333333333333333,
+          "bin_hi": 0.6,
+          "n": 11,
+          "acc": 0.7272727272727273,
+          "conf": 0.565013090909091
+        },
+        {
+          "bin_lo": 0.6,
+          "bin_hi": 0.6666666666666666,
+          "n": 4,
+          "acc": 0.75,
+          "conf": 0.64513025
+        },
+        {
+          "bin_lo": 0.6666666666666666,
+          "bin_hi": 0.7333333333333333,
+          "n": 2,
+          "acc": 1.0,
+          "conf": 0.6885325
+        },
+        {
+          "bin_lo": 0.7333333333333333,
+          "bin_hi": 0.8,
+          "n": 14,
+          "acc": 0.7857142857142857,
+          "conf": 0.764019
+        },
+        {
+          "bin_lo": 0.8,
+          "bin_hi": 0.8666666666666667,
+          "n": 21,
+          "acc": 0.8571428571428571,
+          "conf": 0.8379011428571427
+        },
+        {
+          "bin_lo": 0.8666666666666667,
+          "bin_hi": 0.9333333333333333,
+          "n": 566,
+          "acc": 0.9964664310954063,
+          "conf": 0.9177413639575973
+        },
+        {
+          "bin_lo": 0.9333333333333333,
+          "bin_hi": 1.0,
+          "n": 430,
+          "acc": 1.0,
+          "conf": 0.9442207372093022
+        }
+      ],
+      "log_loss": 0.1079
+    },
+    "confidence": {
+      "overall": {
+        "mean": 0.9181,
+        "median": 0.9293,
+        "p05": 0.8602,
+        "p95": 0.9543,
+        "min": 0.4423,
+        "max": 0.9779
+      },
+      "when_correct": {
+        "n": 1039,
+        "mean": 0.9206
+      },
+      "when_wrong": {
+        "n": 13,
+        "mean": 0.7186
+      }
+    },
+    "selective_prediction": {
+      "aurc": 0.0008,
+      "risk_at_coverage": {
+        "50%": 0.0,
+        "70%": 0.0014,
+        "80%": 0.0012,
+        "90%": 0.0011,
+        "100%": 0.0124
+      }
+    },
+    "confidence_gate_40_60": {
+      "refused": {
+        "n": 0,
+        "pct": 0.0,
+        "accuracy": null
+      },
+      "warned": {
+        "n": 15,
+        "pct": 1.43,
+        "accuracy": 0.7333
+      },
+      "accepted": {
+        "n": 1037,
+        "pct": 98.57,
+        "accuracy": 0.9913
+      },
+      "served_overall": {
+        "n": 1052,
+        "pct": 100.0,
+        "accuracy": 0.9876
+      }
+    }
+  },
+  "vit_test": {
+    "tag": "vit_test",
+    "csv": "/mnt/user-data/uploads/Research Model--Brain_Tumor_Detection_ViT2/preds_vit_test.csv",
+    "n_images": 1052,
+    "classes": [
+      "glioma",
+      "meningioma",
+      "notumor",
+      "pituitary"
+    ],
+    "headline": {
+      "accuracy": 0.2605,
+      "accuracy_ci95": [
+        0.2348,
+        0.2861
+      ],
+      "balanced_accuracy": 0.2613,
+      "balanced_accuracy_ci95": [
+        0.2545,
+        0.2685
+      ],
+      "macro_f1": 0.1263,
+      "macro_f1_ci95": [
+        0.1122,
+        0.1419
+      ],
+      "weighted_f1": 0.1248,
+      "cohen_kappa": 0.0151,
+      "mcc": 0.0398,
+      "roc_auc_macro_ovr": 0.503,
+      "roc_auc_weighted_ovr": 0.5009
+    },
+    "per_class": [
+      {
+        "class": "glioma",
+        "support": 243,
+        "precision": 0.1714,
+        "recall": 0.0247,
+        "f1": 0.0432,
+        "roc_auc_ovr": 0.4089,
+        "pr_auc": 0.2001
+      },
+      {
+        "class": "meningioma",
+        "support": 246,
+        "precision": 0.2609,
+        "recall": 0.0244,
+        "f1": 0.0446,
+        "roc_auc_ovr": 0.5281,
+        "pr_auc": 0.2544
+      },
+      {
+        "class": "notumor",
+        "support": 300,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "roc_auc_ovr": 0.4046,
+        "pr_auc": 0.2391
+      },
+      {
+        "class": "pituitary",
+        "support": 263,
+        "precision": 0.2641,
+        "recall": 0.9962,
+        "f1": 0.4175,
+        "roc_auc_ovr": 0.6702,
+        "pr_auc": 0.3414
+      }
+    ],
+    "confusion_matrix": {
+      "labels": [
+        "glioma",
+        "meningioma",
+        "notumor",
+        "pituitary"
+      ],
+      "counts": [
+        [
+          6,
+          12,
+          0,
+          225
+        ],
+        [
+          7,
+          6,
+          2,
+          231
+        ],
+        [
+          22,
+          4,
+          0,
+          274
+        ],
+        [
+          0,
+          1,
+          0,
+          262
+        ]
+      ],
+      "row_normalised": [
+        [
+          0.0247,
+          0.0494,
+          0.0,
+          0.9259
+        ],
+        [
+          0.0285,
+          0.0244,
+          0.0081,
+          0.939
+        ],
+        [
+          0.0733,
+          0.0133,
+          0.0,
+          0.9133
+        ],
+        [
+          0.0,
+          0.0038,
+          0.0,
+          0.9962
+        ]
+      ]
+    },
+    "top_confusions": [
+      {
+        "true": "notumor",
+        "predicted": "pituitary",
+        "n": 274
+      },
+      {
+        "true": "meningioma",
+        "predicted": "pituitary",
+        "n": 231
+      },
+      {
+        "true": "glioma",
+        "predicted": "pituitary",
+        "n": 225
+      },
+      {
+        "true": "notumor",
+        "predicted": "glioma",
+        "n": 22
+      },
+      {
+        "true": "glioma",
+        "predicted": "meningioma",
+        "n": 12
+      },
+      {
+        "true": "meningioma",
+        "predicted": "glioma",
+        "n": 7
+      }
+    ],
+    "calibration": {
+      "ece_15bin": 0.1736,
+      "mce_15bin": 0.6051,
+      "brier_multiclass": 0.8124,
+      "mean_confidence": 0.4331,
+      "accuracy_minus_confidence": -0.1727,
+      "reliability_bins": [
+        {
+          "bin_lo": 0.0,
+          "bin_hi": 0.06666666666666667,
+          "n": 0,
+          "acc": null,
+          "conf": null
+        },
+        {
+          "bin_lo": 0.06666666666666667,
+          "bin_hi": 0.13333333333333333,
+          "n": 0,
+          "acc": null,
+          "conf": null
+        },
+        {
+          "bin_lo": 0.13333333333333333,
+          "bin_hi": 0.2,
+          "n": 0,
+          "acc": null,
+          "conf": null
+        },
+        {
+          "bin_lo": 0.2,
+          "bin_hi": 0.26666666666666666,
+          "n": 2,
+          "acc": 0.5,
+          "conf": 0.256841
+        },
+        {
+          "bin_lo": 0.26666666666666666,
+          "bin_hi": 0.3333333333333333,
+          "n": 44,
+          "acc": 0.1590909090909091,
+          "conf": 0.3155255454545454
+        },
+        {
+          "bin_lo": 0.3333333333333333,
+          "bin_hi": 0.4,
+          "n": 248,
+          "acc": 0.10483870967741936,
+          "conf": 0.369570060483871
+        },
+        {
+          "bin_lo": 0.4,
+          "bin_hi": 0.4666666666666667,
+          "n": 459,
+          "acc": 0.2766884531590414,
+          "conf": 0.43415555991285404
+        },
+        {
+          "bin_lo": 0.4666666666666667,
+          "bin_hi": 0.5333333333333333,
+          "n": 251,
+          "acc": 0.3904382470119522,
+          "conf": 0.4922142111553785
+        },
+        {
+          "bin_lo": 0.5333333333333333,
+          "bin_hi": 0.6,
+          "n": 47,
+          "acc": 0.3191489361702128,
+          "conf": 0.5567728085106384
+        },
+        {
+          "bin_lo": 0.6,
+          "bin_hi": 0.6666666666666666,
+          "n": 1,
+          "acc": 0.0,
+          "conf": 0.605069
+        },
+        {
+          "bin_lo": 0.6666666666666666,
+          "bin_hi": 0.7333333333333333,
+          "n": 0,
+          "acc": null,
+          "conf": null
+        },
+        {
+          "bin_lo": 0.7333333333333333,
+          "bin_hi": 0.8,
+          "n": 0,
+          "acc": null,
+          "conf": null
+        },
+        {
+          "bin_lo": 0.8,
+          "bin_hi": 0.8666666666666667,
+          "n": 0,
+          "acc": null,
+          "conf": null
+        },
+        {
+          "bin_lo": 0.8666666666666667,
+          "bin_hi": 0.9333333333333333,
+          "n": 0,
+          "acc": null,
+          "conf": null
+        },
+        {
+          "bin_lo": 0.9333333333333333,
+          "bin_hi": 1.0,
+          "n": 0,
+          "acc": null,
+          "conf": null
+        }
+      ],
+      "log_loss": 1.5398
+    },
+    "confidence": {
+      "overall": {
+        "mean": 0.4331,
+        "median": 0.4348,
+        "p05": 0.3363,
+        "p95": 0.5313,
+        "min": 0.2541,
+        "max": 0.6051
+      },
+      "when_correct": {
+        "n": 274,
+        "mean": 0.4531
+      },
+      "when_wrong": {
+        "n": 778,
+        "mean": 0.4261
+      }
+    },
+    "selective_prediction": {
+      "aurc": 0.6746,
+      "risk_at_coverage": {
+        "50%": 0.6578,
+        "70%": 0.6753,
+        "80%": 0.698,
+        "90%": 0.722,
+        "100%": 0.7395
+      }
+    },
+    "confidence_gate_40_60": {
+      "refused": {
+        "n": 294,
+        "pct": 27.95,
+        "accuracy": 0.1156
+      },
+      "warned": {
+        "n": 757,
+        "pct": 71.96,
+        "accuracy": 0.317
+      },
+      "accepted": {
+        "n": 1,
+        "pct": 0.1,
+        "accuracy": 0.0
+      },
+      "served_overall": {
+        "n": 758,
+        "pct": 72.05,
+        "accuracy": 0.3166
+      }
+    }
+  },
+  "hybrid_ood": {
+    "tag": "hybrid_ood",
+    "csv": "/mnt/user-data/uploads/Research Model--Brain_Tumor_Detection_ViT2/preds_hybrid_ood.csv",
+    "n_images": 499,
+    "classes": [
+      "glioma",
+      "meningioma",
+      "notumor",
+      "pituitary"
+    ],
+    "headline": {
+      "accuracy": 0.7876,
+      "accuracy_ci95": [
+        0.7515,
+        0.8236
+      ],
+      "balanced_accuracy": 0.7737,
+      "balanced_accuracy_ci95": [
+        0.7453,
+        0.8014
+      ],
+      "macro_f1": 0.7468,
+      "macro_f1_ci95": [
+        0.7125,
+        0.7817
+      ],
+      "weighted_f1": 0.7634,
+      "cohen_kappa": 0.7161,
+      "mcc": 0.7479,
+      "roc_auc_macro_ovr": 0.9794,
+      "roc_auc_weighted_ovr": 0.9807
+    },
+    "per_class": [
+      {
+        "class": "glioma",
+        "support": 145,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "roc_auc_ovr": 1.0,
+        "pr_auc": 1.0
+      },
+      {
+        "class": "meningioma",
+        "support": 123,
+        "precision": 0.8974,
+        "recall": 0.8537,
+        "f1": 0.875,
+        "roc_auc_ovr": 0.9857,
+        "pr_auc": 0.9609
+      },
+      {
+        "class": "notumor",
+        "support": 115,
+        "precision": 0.5485,
+        "recall": 0.9826,
+        "f1": 0.704,
+        "roc_auc_ovr": 0.9712,
+        "pr_auc": 0.8888
+      },
+      {
+        "class": "pituitary",
+        "support": 116,
+        "precision": 0.9677,
+        "recall": 0.2586,
+        "f1": 0.4082,
+        "roc_auc_ovr": 0.9606,
+        "pr_auc": 0.9048
+      }
+    ],
+    "confusion_matrix": {
+      "labels": [
+        "glioma",
+        "meningioma",
+        "notumor",
+        "pituitary"
+      ],
+      "counts": [
+        [
+          145,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          105,
+          17,
+          1
+        ],
+        [
+          0,
+          2,
+          113,
+          0
+        ],
+        [
+          0,
+          10,
+          76,
+          30
+        ]
+      ],
+      "row_normalised": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.8537,
+          0.1382,
+          0.0081
+        ],
+        [
+          0.0,
+          0.0174,
+          0.9826,
+          0.0
+        ],
+        [
+          0.0,
+          0.0862,
+          0.6552,
+          0.2586
+        ]
+      ]
+    },
+    "top_confusions": [
+      {
+        "true": "pituitary",
+        "predicted": "notumor",
+        "n": 76
+      },
+      {
+        "true": "meningioma",
+        "predicted": "notumor",
+        "n": 17
+      },
+      {
+        "true": "pituitary",
+        "predicted": "meningioma",
+        "n": 10
+      },
+      {
+        "true": "notumor",
+        "predicted": "meningioma",
+        "n": 2
+      },
+      {
+        "true": "meningioma",
+        "predicted": "pituitary",
+        "n": 1
+      }
+    ],
+    "calibration": {
+      "ece_15bin": 0.0773,
+      "mce_15bin": 0.2908,
+      "brier_multiclass": 0.291,
+      "mean_confidence": 0.819,
+      "accuracy_minus_confidence": -0.0315,
+      "reliability_bins": [
+        {
+          "bin_lo": 0.0,
+          "bin_hi": 0.06666666666666667,
+          "n": 0,
+          "acc": null,
+          "conf": null
+        },
+        {
+          "bin_lo": 0.06666666666666667,
+          "bin_hi": 0.13333333333333333,
+          "n": 0,
+          "acc": null,
+          "conf": null
+        },
+        {
+          "bin_lo": 0.13333333333333333,
+          "bin_hi": 0.2,
+          "n": 0,
+          "acc": null,
+          "conf": null
+        },
+        {
+          "bin_lo": 0.2,
+          "bin_hi": 0.26666666666666666,
+          "n": 0,
+          "acc": null,
+          "conf": null
+        },
+        {
+          "bin_lo": 0.26666666666666666,
+          "bin_hi": 0.3333333333333333,
+          "n": 0,
+          "acc": null,
+          "conf": null
+        },
+        {
+          "bin_lo": 0.3333333333333333,
+          "bin_hi": 0.4,
+          "n": 11,
+          "acc": 0.2727272727272727,
+          "conf": 0.3759435454545454
+        },
+        {
+          "bin_lo": 0.4,
+          "bin_hi": 0.4666666666666667,
+          "n": 8,
+          "acc": 0.5,
+          "conf": 0.43380675
+        },
+        {
+          "bin_lo": 0.4666666666666667,
+          "bin_hi": 0.5333333333333333,
+          "n": 21,
+          "acc": 0.5238095238095238,
+          "conf": 0.4970225714285714
+        },
+        {
+          "bin_lo": 0.5333333333333333,
+          "bin_hi": 0.6,
+          "n": 26,
+          "acc": 0.34615384615384615,
+          "conf": 0.5653303461538461
+        },
+        {
+          "bin_lo": 0.6,
+          "bin_hi": 0.6666666666666666,
+          "n": 25,
+          "acc": 0.48,
+          "conf": 0.63207208
+        },
+        {
+          "bin_lo": 0.6666666666666666,
+          "bin_hi": 0.7333333333333333,
+          "n": 25,
+          "acc": 0.56,
+          "conf": 0.7054133599999999
+        },
+        {
+          "bin_lo": 0.7333333333333333,
+          "bin_hi": 0.8,
+          "n": 29,
+          "acc": 0.4827586206896552,
+          "conf": 0.7735259655172415
+        },
+        {
+          "bin_lo": 0.8,
+          "bin_hi": 0.8666666666666667,
+          "n": 59,
+          "acc": 0.7627118644067796,
+          "conf": 0.8376786779661015
+        },
+        {
+          "bin_lo": 0.8666666666666667,
+          "bin_hi": 0.9333333333333333,
+          "n": 240,
+          "acc": 0.9458333333333333,
+          "conf": 0.9117254916666667
+        },
+        {
+          "bin_lo": 0.9333333333333333,
+          "bin_hi": 1.0,
+          "n": 55,
+          "acc": 0.9818181818181818,
+          "conf": 0.9427800727272724
+        }
+      ],
+      "log_loss": 0.5438
+    },
+    "confidence": {
+      "overall": {
+        "mean": 0.819,
+        "median": 0.8999,
+        "p05": 0.4818,
+        "p95": 0.9412,
+        "min": 0.3415,
+        "max": 0.9615
+      },
+      "when_correct": {
+        "n": 393,
+        "mean": 0.8593
+      },
+      "when_wrong": {
+        "n": 106,
+        "mean": 0.6696
+      }
+    },
+    "selective_prediction": {
+      "aurc": 0.0601,
+      "risk_at_coverage": {
+        "50%": 0.0161,
+        "70%": 0.0774,
+        "80%": 0.1253,
+        "90%": 0.1693,
+        "100%": 0.2124
+      }
+    },
+    "confidence_gate_40_60": {
+      "refused": {
+        "n": 11,
+        "pct": 2.2,
+        "accuracy": 0.2727
+      },
+      "warned": {
+        "n": 55,
+        "pct": 11.02,
+        "accuracy": 0.4364
+      },
+      "accepted": {
+        "n": 433,
+        "pct": 86.77,
+        "accuracy": 0.8453
+      },
+      "served_overall": {
+        "n": 488,
+        "pct": 97.8,
+        "accuracy": 0.7992
+      }
+    }
+  },
+  "vit_ood": {
+    "tag": "vit_ood",
+    "csv": "/mnt/user-data/uploads/Research Model--Brain_Tumor_Detection_ViT2/preds_vit_ood.csv",
+    "n_images": 499,
+    "classes": [
+      "glioma",
+      "meningioma",
+      "notumor",
+      "pituitary"
+    ],
+    "headline": {
+      "accuracy": 0.2505,
+      "accuracy_ci95": [
+        0.2144,
+        0.2886
+      ],
+      "balanced_accuracy": 0.2663,
+      "balanced_accuracy_ci95": [
+        0.2537,
+        0.28
+      ],
+      "macro_f1": 0.1364,
+      "macro_f1_ci95": [
+        0.1118,
+        0.1629
+      ],
+      "weighted_f1": 0.1316,
+      "cohen_kappa": 0.0184,
+      "mcc": 0.0382,
+      "roc_auc_macro_ovr": 0.536,
+      "roc_auc_weighted_ovr": 0.5286
+    },
+    "per_class": [
+      {
+        "class": "glioma",
+        "support": 145,
+        "precision": 0.2,
+        "recall": 0.0414,
+        "f1": 0.0686,
+        "roc_auc_ovr": 0.4342,
+        "pr_auc": 0.2538
+      },
+      {
+        "class": "meningioma",
+        "support": 123,
+        "precision": 0.2353,
+        "recall": 0.0325,
+        "f1": 0.0571,
+        "roc_auc_ovr": 0.4408,
+        "pr_auc": 0.2274
+      },
+      {
+        "class": "notumor",
+        "support": 115,
+        "precision": 0.5,
+        "recall": 0.0087,
+        "f1": 0.0171,
+        "roc_auc_ovr": 0.6228,
+        "pr_auc": 0.3172
+      },
+      {
+        "class": "pituitary",
+        "support": 116,
+        "precision": 0.2533,
+        "recall": 0.9828,
+        "f1": 0.4028,
+        "roc_auc_ovr": 0.6462,
+        "pr_auc": 0.3382
+      }
+    ],
+    "confusion_matrix": {
+      "labels": [
+        "glioma",
+        "meningioma",
+        "notumor",
+        "pituitary"
+      ],
+      "counts": [
+        [
+          6,
+          5,
+          1,
+          133
+        ],
+        [
+          8,
+          4,
+          0,
+          111
+        ],
+        [
+          14,
+          8,
+          1,
+          92
+        ],
+        [
+          2,
+          0,
+          0,
+          114
+        ]
+      ],
+      "row_normalised": [
+        [
+          0.0414,
+          0.0345,
+          0.0069,
+          0.9172
+        ],
+        [
+          0.065,
+          0.0325,
+          0.0,
+          0.9024
+        ],
+        [
+          0.1217,
+          0.0696,
+          0.0087,
+          0.8
+        ],
+        [
+          0.0172,
+          0.0,
+          0.0,
+          0.9828
+        ]
+      ]
+    },
+    "top_confusions": [
+      {
+        "true": "glioma",
+        "predicted": "pituitary",
+        "n": 133
+      },
+      {
+        "true": "meningioma",
+        "predicted": "pituitary",
+        "n": 111
+      },
+      {
+        "true": "notumor",
+        "predicted": "pituitary",
+        "n": 92
+      },
+      {
+        "true": "notumor",
+        "predicted": "glioma",
+        "n": 14
+      },
+      {
+        "true": "meningioma",
+        "predicted": "glioma",
+        "n": 8
+      },
+      {
+        "true": "notumor",
+        "predicted": "meningioma",
+        "n": 8
+      }
+    ],
+    "calibration": {
+      "ece_15bin": 0.1768,
+      "mce_15bin": 0.6,
+      "brier_multiclass": 0.7977,
+      "mean_confidence": 0.4273,
+      "accuracy_minus_confidence": -0.1768,
+      "reliability_bins": [
+        {
+          "bin_lo": 0.0,
+          "bin_hi": 0.06666666666666667,
+          "n": 0,
+          "acc": null,
+          "conf": null
+        },
+        {
+          "bin_lo": 0.06666666666666667,
+          "bin_hi": 0.13333333333333333,
+          "n": 0,
+          "acc": null,
+          "conf": null
+        },
+        {
+          "bin_lo": 0.13333333333333333,
+          "bin_hi": 0.2,
+          "n": 0,
+          "acc": null,
+          "conf": null
+        },
+        {
+          "bin_lo": 0.2,
+          "bin_hi": 0.26666666666666666,
+          "n": 0,
+          "acc": null,
+          "conf": null
+        },
+        {
+          "bin_lo": 0.26666666666666666,
+          "bin_hi": 0.3333333333333333,
+          "n": 44,
+          "acc": 0.13636363636363635,
+          "conf": 0.31445479545454547
+        },
+        {
+          "bin_lo": 0.3333333333333333,
+          "bin_hi": 0.4,
+          "n": 124,
+          "acc": 0.1935483870967742,
+          "conf": 0.3702413951612903
+        },
+        {
+          "bin_lo": 0.4,
+          "bin_hi": 0.4666666666666667,
+          "n": 191,
+          "acc": 0.2513089005235602,
+          "conf": 0.43337657591623036
+        },
+        {
+          "bin_lo": 0.4666666666666667,
+          "bin_hi": 0.5333333333333333,
+          "n": 113,
+          "acc": 0.30973451327433627,
+          "conf": 0.4927780884955752
+        },
+        {
+          "bin_lo": 0.5333333333333333,
+          "bin_hi": 0.6,
+          "n": 26,
+          "acc": 0.46153846153846156,
+          "conf": 0.5550264230769231
+        },
+        {
+          "bin_lo": 0.6,
+          "bin_hi": 0.6666666666666666,
+          "n": 1,
+          "acc": 0.0,
+          "conf": 0.600024
+        },
+        {
+          "bin_lo": 0.6666666666666666,
+          "bin_hi": 0.7333333333333333,
+          "n": 0,
+          "acc": null,
+          "conf": null
+        },
+        {
+          "bin_lo": 0.7333333333333333,
+          "bin_hi": 0.8,
+          "n": 0,
+          "acc": null,
+          "conf": null
+        },
+        {
+          "bin_lo": 0.8,
+          "bin_hi": 0.8666666666666667,
+          "n": 0,
+          "acc": null,
+          "conf": null
+        },
+        {
+          "bin_lo": 0.8666666666666667,
+          "bin_hi": 0.9333333333333333,
+          "n": 0,
+          "acc": null,
+          "conf": null
+        },
+        {
+          "bin_lo": 0.9333333333333333,
+          "bin_hi": 1.0,
+          "n": 0,
+          "acc": null,
+          "conf": null
+        }
+      ],
+      "log_loss": 1.4767
+    },
+    "confidence": {
+      "overall": {
+        "mean": 0.4273,
+        "median": 0.4283,
+        "p05": 0.3207,
+        "p95": 0.5359,
+        "min": 0.2875,
+        "max": 0.6
+      },
+      "when_correct": {
+        "n": 125,
+        "mean": 0.4439
+      },
+      "when_wrong": {
+        "n": 374,
+        "mean": 0.4218
+      }
+    },
+    "selective_prediction": {
+      "aurc": 0.6885,
+      "risk_at_coverage": {
+        "50%": 0.7068,
+        "70%": 0.7135,
+        "80%": 0.7243,
+        "90%": 0.7394,
+        "100%": 0.7495
+      }
+    },
+    "confidence_gate_40_60": {
+      "refused": {
+        "n": 168,
+        "pct": 33.67,
+        "accuracy": 0.1786
+      },
+      "warned": {
+        "n": 330,
+        "pct": 66.13,
+        "accuracy": 0.2879
+      },
+      "accepted": {
+        "n": 1,
+        "pct": 0.2,
+        "accuracy": 0.0
+      },
+      "served_overall": {
+        "n": 331,
+        "pct": 66.33,
+        "accuracy": 0.287
+      }
+    }
+  }
+}

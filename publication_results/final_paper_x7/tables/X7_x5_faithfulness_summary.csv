@@ -1,0 +1,13 @@
+metric,method,mean,ci_low,ci_high,n_images,n_seeds,source_file
+deletion_auc,cnn_gradcampp,0.36493821707340496,0.36106938916194814,0.3687183468572945,848,3,publication_results/explainability/x5_faithfulness/x5_faithfulness.json
+deletion_auc,vit_grad_x_input,0.5182363344668546,0.5119057314693356,0.524560503482946,848,3,publication_results/explainability/x5_faithfulness/x5_faithfulness.json
+deletion_auc,composite_equal,0.38463547311283536,0.3800937874855491,0.3890896401973954,848,3,publication_results/explainability/x5_faithfulness/x5_faithfulness.json
+deletion_auc,composite_gate_weighted,0.48582780903387773,0.4797465529859889,0.4918473715024104,848,3,publication_results/explainability/x5_faithfulness/x5_faithfulness.json
+deletion_auc,baseline_random,0.5624809194562634,0.557756842214412,0.567147549462165,848,3,publication_results/explainability/x5_faithfulness/x5_faithfulness.json
+deletion_auc,baseline_centre_prior,0.3524729628141375,0.3490025583019483,0.35583411428353273,848,3,publication_results/explainability/x5_faithfulness/x5_faithfulness.json
+insertion_auc,cnn_gradcampp,0.7186432605170515,0.7145986179816801,0.7226660933912257,848,3,publication_results/explainability/x5_faithfulness/x5_faithfulness.json
+insertion_auc,vit_grad_x_input,0.5813977813225136,0.5760340817456804,0.5867075177035866,848,3,publication_results/explainability/x5_faithfulness/x5_faithfulness.json
+insertion_auc,composite_equal,0.7115244450455254,0.7072059632192582,0.7157388942562917,848,3,publication_results/explainability/x5_faithfulness/x5_faithfulness.json
+insertion_auc,composite_gate_weighted,0.620343911302102,0.6153005563353083,0.6253404466438974,848,3,publication_results/explainability/x5_faithfulness/x5_faithfulness.json
+insertion_auc,baseline_random,0.5661805653997221,0.5615008047497801,0.5709143871984023,848,3,publication_results/explainability/x5_faithfulness/x5_faithfulness.json
+insertion_auc,baseline_centre_prior,0.7147500806588584,0.7107272129585679,0.7186611527237314,848,3,publication_results/explainability/x5_faithfulness/x5_faithfulness.json

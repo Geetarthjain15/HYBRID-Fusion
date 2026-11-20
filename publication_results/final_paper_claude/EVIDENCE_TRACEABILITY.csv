@@ -1,0 +1,88 @@
+manuscript_claim,exact_value,source_path,source_field_or_row,verification_status,note
+Original held-out split accuracy,99.1445 +/- 0.0951 %,publication_results/metrics/fusion_v2_metrics.json,settings.original.across_seeds.accuracy,VERIFIED,
+Original held-out split macro-F1,99.1237 +/- 0.0927 %,publication_results/metrics/fusion_v2_metrics.json,settings.original.across_seeds.macro_f1,VERIFIED,
+Original held-out split sample count,1052,publication_results/metrics/fusion_v2_metrics.json,settings.original.n_images,VERIFIED,
+Duplicate-clean held-out split accuracy,98.2704 +/- 0.0681 %,publication_results/metrics/fusion_v2_metrics.json,settings.clean.across_seeds.accuracy,VERIFIED,
+Duplicate-clean held-out split macro-F1,98.2761 +/- 0.0371 %,publication_results/metrics/fusion_v2_metrics.json,settings.clean.across_seeds.macro_f1,VERIFIED,
+Duplicate-clean held-out split sample count,848,publication_results/metrics/fusion_v2_metrics.json,settings.clean.n_images,VERIFIED,
+"External collection, all images accuracy",76.4863 +/- 1.5174 %,publication_results/metrics/fusion_v2_metrics.json,settings.external_full.across_seeds.accuracy,VERIFIED,
+"External collection, all images macro-F1",70.6086 +/- 2.1495 %,publication_results/metrics/fusion_v2_metrics.json,settings.external_full.across_seeds.macro_f1,VERIFIED,
+"External collection, all images sample count",499,publication_results/metrics/fusion_v2_metrics.json,settings.external_full.n_images,VERIFIED,
+Duplicate-disjoint cross-source accuracy,69.5264 +/- 1.9762 %,publication_results/metrics/fusion_v2_metrics.json,settings.cross_source_disjoint.across_seeds.accuracy,VERIFIED,
+Duplicate-disjoint cross-source macro-F1,68.6866 +/- 2.2101 %,publication_results/metrics/fusion_v2_metrics.json,settings.cross_source_disjoint.across_seeds.macro_f1,VERIFIED,
+Duplicate-disjoint cross-source sample count,373,publication_results/metrics/fusion_v2_metrics.json,settings.cross_source_disjoint.n_images,VERIFIED,
+Duplicate-clean balanced accuracy,0.9820,publication_results/metrics/fusion_v2_metrics.json,settings.clean.across_seeds.balanced_accuracy.mean,VERIFIED,
+Duplicate-clean macro ROC-AUC,0.9995,publication_results/metrics/fusion_v2_metrics.json,settings.clean.across_seeds.macro_roc_auc_ovr.mean,VERIFIED,
+Duplicate-clean macro average precision,0.9985,publication_results/metrics/fusion_v2_metrics.json,settings.clean.across_seeds.macro_average_precision_ovr.mean,VERIFIED,
+Duplicate-clean negative log-likelihood,0.1188,publication_results/metrics/fusion_v2_metrics.json,settings.clean.across_seeds.nll.mean,VERIFIED,
+Duplicate-clean Brier score,0.0335,publication_results/metrics/fusion_v2_metrics.json,settings.clean.across_seeds.brier.mean,VERIFIED,
+Duplicate-clean ECE (15 bins),0.0752,publication_results/metrics/fusion_v2_metrics.json,settings.clean.across_seeds.ece.mean,VERIFIED,
+Cross-source balanced accuracy,0.7449,publication_results/metrics/fusion_v2_metrics.json,settings.cross_source_disjoint.across_seeds.balanced_accuracy.mean,VERIFIED,
+Cross-source macro ROC-AUC,0.9849,publication_results/metrics/fusion_v2_metrics.json,settings.cross_source_disjoint.across_seeds.macro_roc_auc_ovr.mean,VERIFIED,
+Cross-source negative log-likelihood,0.7493,publication_results/metrics/fusion_v2_metrics.json,settings.cross_source_disjoint.across_seeds.nll.mean,VERIFIED,
+Cross-source Brier score,0.4192,publication_results/metrics/fusion_v2_metrics.json,settings.cross_source_disjoint.across_seeds.brier.mean,VERIFIED,
+Cross-source ECE (15 bins),0.1618,publication_results/metrics/fusion_v2_metrics.json,settings.cross_source_disjoint.across_seeds.ece.mean,VERIFIED,
+Accuracy drop from duplicate-clean to cross-source,28.74 percentage points,publication_results/metrics/fusion_v2_metrics.json,derived: settings.clean minus settings.cross_source_disjoint,VERIFIED,Arithmetic difference of two verified means
+Pooled image count,7023,dataset_clean/split_report.json,n_pooled,VERIFIED,
+Similarity clusters after duplicate audit,5648,dataset_clean/split_report.json,n_clusters,VERIFIED,
+Redundant images removed,1375,dataset_clean/split_report.json,n_redundant_dropped,VERIFIED,
+Duplicate-clean training images,4800,dataset_clean/split_report.json,n_train,VERIFIED,
+Duplicate-clean test images,848,dataset_clean/split_report.json,n_test,VERIFIED,
+Perceptual-hash Hamming threshold,8,dataset_clean/split_report.json,hamming_threshold,VERIFIED,
+Split seed,42,dataset_clean/split_report.json,seed,VERIFIED,
+Duplicate-clean test class counts,"glioma 243, meningioma 228, notumor 116, pituitary 261",dataset_clean/split_report.json,counts.Testing,VERIFIED,
+External collection size,499,results/cross_source.json,n_total,VERIFIED,
+External images with a near-duplicate in training,126,results/cross_source.json,n_overlapping,VERIFIED,
+Duplicate-disjoint external images,373,results/cross_source.json,n_disjoint,VERIFIED,
+"Cross-source recall, glioma",98.08 %,"runs_v2_clean/fusion_v2_seed{42,43,44}/preds_dataset_ood.csv",recomputed from prediction rows with kind=disjoint,VERIFIED,support 52 images
+"Cross-source recall, meningioma",86.07 %,"runs_v2_clean/fusion_v2_seed{42,43,44}/preds_dataset_ood.csv",recomputed from prediction rows with kind=disjoint,VERIFIED,support 122 images
+"Cross-source recall, notumor",100.00 %,"runs_v2_clean/fusion_v2_seed{42,43,44}/preds_dataset_ood.csv",recomputed from prediction rows with kind=disjoint,VERIFIED,support 88 images
+"Cross-source recall, pituitary",13.81 %,"runs_v2_clean/fusion_v2_seed{42,43,44}/preds_dataset_ood.csv",recomputed from prediction rows with kind=disjoint,VERIFIED,support 111 images
+Pituitary predictions assigned to no-tumour,260 of 333 (78.1%) from 111 images x 3 seeds,"runs_v2_clean/fusion_v2_seed{42,43,44}/preds_dataset_ood.csv",recomputed,VERIFIED,Repeated predictions of the same 111 images; not independent cases
+Total parameters,91211918,publication_results/ablations/checkpoint_recovery/import_manifest.json,seeds.42.gates.load.params_total,VERIFIED,
+Gate parameters,262914,publication_results/ablations/checkpoint_recovery/import_manifest.json,seeds.42.gates.architecture_and_gate.gate_parameter_count,VERIFIED,
+CNN projection input width (multi-scale concatenation),1432,publication_results/ablations/checkpoint_recovery/import_manifest.json,seeds.42.gates.architecture_and_gate.cnn_proj_in_features,VERIFIED,40 + 112 + 1280 = 1432
+Projection width,512,publication_results/ablations/checkpoint_recovery/import_manifest.json,seeds.42.gates.architecture_and_gate.proj_dim,VERIFIED,
+Reference checkpoints load into the gated architecture with no missing or unexpected tensors,"578/578 keys, 0 missing, 0 unexpected, 0 shape mismatches",publication_results/ablations/checkpoint_recovery/import_manifest.json,"seeds.{42,43,44}.gates.load",VERIFIED,
+Gated forward path reproduces recorded reference predictions,"848/848 images, 0 pred_label mismatches, max probability difference 4.8e-06",publication_results/ablations/checkpoint_recovery/import_manifest.json,seeds.42.gates.full_test,VERIFIED,
+"CNN gate mass, per-seed means","0.100, 0.085, 0.115","runs_v2_clean/fusion_v2_seed{42,43,44}/gates_test.csv",gate_cnn column,VERIFIED,
+CNN gate mass range across seeds,0.027 to 0.754,"runs_v2_clean/fusion_v2_seed{42,43,44}/gates_test.csv",gate_cnn column,VERIFIED,"Demonstrates the gate is input-dependent, not fixed"
+"Ablation verdict, no_gate",no detectable accuracy benefit under this protocol,publication_results/ablations/final_analysis/component_conclusions.csv,"row variant=no_gate, column verdict",VERIFIED,
+"Ablation observed mean delta accuracy, no_gate",0.0000 pp,publication_results/ablations/final_analysis/component_conclusions.csv,row variant=no_gate,VERIFIED,
+"Ablation verdict, no_multiscale",no detectable accuracy benefit under this protocol,publication_results/ablations/final_analysis/component_conclusions.csv,"row variant=no_multiscale, column verdict",VERIFIED,
+"Ablation observed mean delta accuracy, no_multiscale",-0.0393 pp,publication_results/ablations/final_analysis/component_conclusions.csv,row variant=no_multiscale,VERIFIED,
+"Ablation verdict, no_auxiliary_loss",suggestive but inconclusive,publication_results/ablations/final_analysis/component_conclusions.csv,"row variant=no_auxiliary_loss, column verdict",VERIFIED,
+"Ablation observed mean delta accuracy, no_auxiliary_loss",-0.5503 pp,publication_results/ablations/final_analysis/component_conclusions.csv,row variant=no_auxiliary_loss,VERIFIED,
+"Ablation verdict, no_ema",no detectable accuracy benefit under this protocol,publication_results/ablations/final_analysis/component_conclusions.csv,"row variant=no_ema, column verdict",VERIFIED,
+"Ablation observed mean delta accuracy, no_ema",0.0393 pp,publication_results/ablations/final_analysis/component_conclusions.csv,row variant=no_ema,VERIFIED,
+"Ablation verdict, cnn_branch_only",supported by consistent accuracy evidence,publication_results/ablations/final_analysis/component_conclusions.csv,"row variant=cnn_branch_only, column verdict",VERIFIED,
+"Ablation observed mean delta accuracy, cnn_branch_only",-2.5943 pp,publication_results/ablations/final_analysis/component_conclusions.csv,row variant=cnn_branch_only,VERIFIED,
+"Ablation verdict, vit_branch_only",suggestive but inconclusive,publication_results/ablations/final_analysis/component_conclusions.csv,"row variant=vit_branch_only, column verdict",VERIFIED,
+"Ablation observed mean delta accuracy, vit_branch_only",-0.2358 pp,publication_results/ablations/final_analysis/component_conclusions.csv,row variant=vit_branch_only,VERIFIED,
+"Ablation verdict, no_tta",no detectable accuracy benefit under this protocol,publication_results/ablations/final_analysis/component_conclusions.csv,"row variant=no_tta, column verdict",VERIFIED,
+"Ablation observed mean delta accuracy, no_tta",-0.0786 pp,publication_results/ablations/final_analysis/component_conclusions.csv,row variant=no_tta,VERIFIED,
+Number of seed-specific paired tests,21,publication_results/ablations/final_analysis/final_ablation_analysis.json,multiple_comparison_control.n_tests,VERIFIED,
+Tests significant before Holm correction,4,publication_results/ablations/final_analysis/final_ablation_analysis.json,multiple_comparison_control.n_significant_before_holm,VERIFIED,
+Tests significant after Holm correction,3,publication_results/ablations/final_analysis/final_ablation_analysis.json,multiple_comparison_control.n_significant_after_holm,VERIFIED,
+"Auxiliary-loss smallest unadjusted p, and its Holm-adjusted value",0.03857 -> 0.6943,publication_results/ablations/final_analysis/final_ablation_analysis.json,paired_tests where variant=no_auxiliary_loss,VERIFIED,
+Gate ablation discordant prediction counts,"2, 7, 3",publication_results/ablations/final_analysis/final_ablation_analysis.json,"paired_tests where variant=no_gate, mcnemar.n_discordant",VERIFIED,
+Training protocol: batch size,16,src/train_ablation.py,module constant BATCH_SIZE,VERIFIED,
+Training protocol: maximum epochs,15,src/train_ablation.py,module constant EPOCHS,VERIFIED,
+Training protocol: early-stopping patience,4,src/train_ablation.py,module constant PATIENCE,VERIFIED,
+Training protocol: learning rate,1e-4,src/train_ablation.py,module constant LR,VERIFIED,
+Training protocol: weight decay,0.05,src/train_ablation.py,module constant WEIGHT_DECAY,VERIFIED,
+Training protocol: label smoothing,0.1,src/train_ablation.py,module constant LABEL_SMOOTHING,VERIFIED,
+Training protocol: validation fraction,0.15,src/train_ablation.py,module constant VAL_FRACTION,VERIFIED,
+Training protocol: validation split seed,42,src/train_ablation.py,module constant VAL_SPLIT_SEED,VERIFIED,
+Author names and ORCID identifiers,[AUTHOR INPUT REQUIRED],-,-,AUTHOR_INPUT_REQUIRED,Not inferable from any repository artifact; must be supplied by the authors
+Affiliations and corresponding address,[AUTHOR INPUT REQUIRED],-,-,AUTHOR_INPUT_REQUIRED,Not inferable from any repository artifact; must be supplied by the authors
+Target journal,[AUTHOR INPUT REQUIRED],-,-,AUTHOR_INPUT_REQUIRED,Not inferable from any repository artifact; must be supplied by the authors
+Institutional ethics/IRB determination,[AUTHOR INPUT REQUIRED],-,-,AUTHOR_INPUT_REQUIRED,Not inferable from any repository artifact; must be supplied by the authors
+Funding statement,[AUTHOR INPUT REQUIRED],-,-,AUTHOR_INPUT_REQUIRED,Not inferable from any repository artifact; must be supplied by the authors
+Competing-interest statement,[AUTHOR INPUT REQUIRED],-,-,AUTHOR_INPUT_REQUIRED,Not inferable from any repository artifact; must be supplied by the authors
+Repository URL and archival DOI,[AUTHOR INPUT REQUIRED],-,-,AUTHOR_INPUT_REQUIRED,Not inferable from any repository artifact; must be supplied by the authors
+Acknowledgements,[AUTHOR INPUT REQUIRED],-,-,AUTHOR_INPUT_REQUIRED,Not inferable from any repository artifact; must be supplied by the authors
+CRediT contributions,[AUTHOR INPUT REQUIRED],-,-,AUTHOR_INPUT_REQUIRED,Not inferable from any repository artifact; must be supplied by the authors
+Submission date,[AUTHOR INPUT REQUIRED],-,-,AUTHOR_INPUT_REQUIRED,Not inferable from any repository artifact; must be supplied by the authors
+Training and inference wall-clock timings,[AUTHOR INPUT REQUIRED],-,-,NOT_VERIFIED,Not recorded in a form verifiable from retained artifacts; omitted rather than estimated
+BRAIN-META reported accuracy and F1,"97.10% accuracy, 96.94% F1",supplied base-paper PDF (conversation attachment),Abstract and Table 4,VERIFIED_FROM_SUPPLIED_PDF,"Read from the supplied article text; the PDF file itself is not present on disk, so no file digest could be computed"

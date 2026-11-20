@@ -1,0 +1,792 @@
+{
+  "phase": "2 - patient/study leakage feasibility audit",
+  "unverified_internal_warnings": {
+    "mentions": [
+      {
+        "path": "src/dedup_audit.py",
+        "line": 6,
+        "text": "train/test, and patients appearing on both sides. Our split is also"
+      }
+    ],
+    "status": "UNVERIFIED CLAIM - not evidence",
+    "interpretation": "An internal comment in src/dedup_audit.py warns that prior audits may have identified patient overlap, but no supporting patient identifiers or independently verified source are available in this repository. This warning is not treated as evidence that patient overlap has been proven.",
+    "basis": "CLAUDE.md evidence rule 1 treats comments and prose as claims rather than evidence. A repository-wide search for a citation (author, year, DOI, arXiv identifier or title) supporting the statement returned no match, so the claim cannot be checked from what is available here."
+  },
+  "generated_utc": "2026-09-23T20:46:53.104989+00:00",
+  "project_root": "D:\\Research Model\\Brain_Tumor_Detection_ViT2",
+  "scope": "Read-only inspection of dataset directories, embedded image metadata, sidecar files, filename patterns and repository documentation. No dataset file, run, result or prior-phase output was modified.",
+  "hard_rules_applied": [
+    "A filename component becomes a patient key only if dataset documentation explicitly defines it as one.",
+    "Perceptual-hash / visual-similarity clusters are never used as a patient key.",
+    "Sequential or contiguous numbering is never used as a patient key.",
+    "Identifiers, if any were found, are SHA-256 hashed before being written."
+  ],
+  "dataset_scan": {
+    "dataset": {
+      "present": true,
+      "n_files": 7023,
+      "extensions": {
+        ".jpg": 7023
+      },
+      "magic_types": {
+        "JPEG": 7023
+      },
+      "class_dir_counts": {
+        "pituitary": 1757,
+        "notumor": 2000,
+        "glioma": 1621,
+        "meningioma": 1645
+      },
+      "filename_patterns": {
+        "notumor_<N>": 2000,
+        "pituitary_<N>": 1757,
+        "meningioma_<N>": 1645,
+        "glioma_<N>": 1621
+      },
+      "n_distinct_filename_patterns": 4,
+      "embedded_info_keys": {
+        "jfif": 7023,
+        "jfif_density": 7023,
+        "jfif_unit": 7023,
+        "jfif_version": 7023,
+        "comment": 5
+      },
+      "images_carrying_exif": 0,
+      "exif_examples": [],
+      "dicom_preamble_hits": [],
+      "unreadable_images": [],
+      "non_image_sidecar_files": []
+    },
+    "dataset_ood": {
+      "present": true,
+      "n_files": 499,
+      "extensions": {
+        ".jpg": 499
+      },
+      "magic_types": {
+        "JPEG": 499
+      },
+      "class_dir_counts": {
+        "pituitary": 116,
+        "notumor": 115,
+        "glioma": 145,
+        "meningioma": 123
+      },
+      "filename_patterns": {
+        "Tr-gl_<N>_jpg.rf.<HEX>": 143,
+        "Tr-pi_<N>_jpg.rf.<HEX>": 114,
+        "Tr-no_<N>_jpg.rf.<HEX>": 114,
+        "m<N>-<N>-_jpg.rf.<HEX>": 94,
+        "m-<N>-_jpg.rf.<HEX>": 29,
+        "Tr-piTr_<N>_jpg.rf.<HEX>": 2,
+        "Tr-glTr_<N>_jpg.rf.<HEX>": 2,
+        "Tr-noTr_<N>_jpg.rf.<HEX>": 1
+      },
+      "n_distinct_filename_patterns": 8,
+      "embedded_info_keys": {
+        "jfif": 499,
+        "jfif_density": 499,
+        "jfif_unit": 499,
+        "jfif_version": 499
+      },
+      "images_carrying_exif": 0,
+      "exif_examples": [],
+      "dicom_preamble_hits": [],
+      "unreadable_images": [],
+      "non_image_sidecar_files": []
+    },
+    "dataset_clean": {
+      "present": true,
+      "n_files": 2,
+      "extensions": {
+        ".json": 2
+      },
+      "magic_types": {},
+      "class_dir_counts": {},
+      "filename_patterns": {},
+      "n_distinct_filename_patterns": 0,
+      "embedded_info_keys": {},
+      "images_carrying_exif": 0,
+      "exif_examples": [],
+      "dicom_preamble_hits": [],
+      "unreadable_images": [],
+      "non_image_sidecar_files": [
+        {
+          "path": "dataset_clean/split_manifest.json",
+          "bytes": 990260,
+          "sha256": "a02bcb62847ce1b9146a3e769f41f88ec1afce5a46d03fb5aaffb0ef43a0e6d2"
+        },
+        {
+          "path": "dataset_clean/split_report.json",
+          "bytes": 525,
+          "sha256": "8487d31c0f0b06a4afaf493f6a5597e8f8e45feafe7679b77a745b070e34abc0"
+        }
+      ]
+    },
+    "dataset_subsample_v1": {
+      "present": true,
+      "n_files": 1000,
+      "extensions": {
+        ".jpg": 1000
+      },
+      "magic_types": {
+        "JPEG": 1000
+      },
+      "class_dir_counts": {
+        "pituitary": 250,
+        "notumor": 250,
+        "glioma": 250,
+        "meningioma": 250
+      },
+      "filename_patterns": {
+        "pituitary_<N>": 250,
+        "notumor_<N>": 250,
+        "glioma_<N>": 250,
+        "meningioma_<N>": 250
+      },
+      "n_distinct_filename_patterns": 4,
+      "embedded_info_keys": {
+        "jfif": 1000,
+        "jfif_density": 1000,
+        "jfif_unit": 1000,
+        "jfif_version": 1000,
+        "comment": 1
+      },
+      "images_carrying_exif": 0,
+      "exif_examples": [],
+      "dicom_preamble_hits": [],
+      "unreadable_images": [],
+      "non_image_sidecar_files": []
+    }
+  },
+  "documentation_scan": {
+    "files_inspected": [
+      "CHANGELOG.md",
+      "CLAUDE.md",
+      "CLAUDE_CODE_FINAL_IMPLEMENTATION_PLAN.md",
+      "HOW_TO_START.txt",
+      "START_GUIDE.md",
+      "checks_log.txt",
+      "clean_test_manifest.txt",
+      "clean_test_manifest_v2.txt",
+      "dedup_report.json",
+      "eval_output.txt",
+      "grid_log.txt",
+      "kaggle/README.md",
+      "metrics_results.json",
+      "metrics_run_log.txt",
+      "preds_cnn_test.csv",
+      "preds_hybrid_ood.csv",
+      "preds_hybrid_test.csv",
+      "preds_vit_ood.csv",
+      "preds_vit_test.csv",
+      "requirements.txt",
+      "results_v2/ensemble.json",
+      "src/aggregate_runs.py",
+      "src/config.py",
+      "src/cross_source_stacking.py",
+      "src/dedup_audit.py",
+      "src/diagnostics.py",
+      "src/dump_predictions.py",
+      "src/ensemble.py",
+      "src/eval.py",
+      "src/filter_cross_source.py",
+      "src/fusion_v2.py",
+      "src/hybrid_model.py",
+      "src/make_clean_split.py",
+      "src/make_paper_results.py",
+      "src/metrics.json",
+      "src/paper_tables.py",
+      "src/prepare_dataset.py",
+      "src/publication/__init__.py",
+      "src/publication/audit_baseline.py",
+      "src/publication/audit_patient_groups.py",
+      "src/publication/evaluate_fusion_v2.py",
+      "src/sanity_checks.py",
+      "src/seeding.py",
+      "src/streamlit_app.py",
+      "src/train.py",
+      "src/train_ablation.py"
+    ],
+    "n_files_inspected": 46,
+    "identifier_mentions": [
+      {
+        "path": "CLAUDE_CODE_FINAL_IMPLEMENTATION_PLAN.md",
+        "line": 63,
+        "text": "15. Do not claim clinical readiness, patient-level independence, or multi-institutional generalization without evidence."
+      },
+      {
+        "path": "CLAUDE_CODE_FINAL_IMPLEMENTATION_PLAN.md",
+        "line": 162,
+        "text": "# Phase 2 - Patient/study leakage feasibility audit"
+      },
+      {
+        "path": "CLAUDE_CODE_FINAL_IMPLEMENTATION_PLAN.md",
+        "line": 166,
+        "text": "Determine whether patient-grouped evaluation is possible. Do not invent patient identifiers."
+      },
+      {
+        "path": "CLAUDE_CODE_FINAL_IMPLEMENTATION_PLAN.md",
+        "line": 171,
+        "text": "Perform a conservative patient/study leakage feasibility audit. This is an evidence-gathering task, not permission to infer unsupported patient identities."
+      },
+      {
+        "path": "CLAUDE_CODE_FINAL_IMPLEMENTATION_PLAN.md",
+        "line": 173,
+        "text": "Inspect dataset paths, filenames, manifests, archives, and available metadata for patient ID, study ID, series ID, DICOM identifiers, or stable filename grouping conventions. Do not modify any dataset"
+      },
+      {
+        "path": "CLAUDE_CODE_FINAL_IMPLEMENTATION_PLAN.md",
+        "line": 175,
+        "text": "Add src/publication/audit_patient_groups.py and write outputs only to publication_results/patient_audit/."
+      },
+      {
+        "path": "CLAUDE_CODE_FINAL_IMPLEMENTATION_PLAN.md",
+        "line": 179,
+        "text": "2. report whether a defensible patient/study grouping key exists;"
+      },
+      {
+        "path": "CLAUDE_CODE_FINAL_IMPLEMENTATION_PLAN.md",
+        "line": 182,
+        "text": "5. produce publication_results/patient_audit/PATIENT_GROUP_AUDIT.md;"
+      },
+      {
+        "path": "CLAUDE_CODE_FINAL_IMPLEMENTATION_PLAN.md",
+        "line": 186,
+        "text": "If no defensible grouping key exists, stop there and explicitly state: patient-level independence cannot be verified from the available data. Do not fabricate GroupKFold results."
+      },
+      {
+        "path": "CLAUDE_CODE_FINAL_IMPLEMENTATION_PLAN.md",
+        "line": 193,
+        "text": "- No patient identity is inferred without evidence."
+      },
+      {
+        "path": "CLAUDE_CODE_FINAL_IMPLEMENTATION_PLAN.md",
+        "line": 195,
+        "text": "- patient-grouped evaluation is feasible using a documented key; or"
+      },
+      {
+        "path": "CLAUDE_CODE_FINAL_IMPLEMENTATION_PLAN.md",
+        "line": 196,
+        "text": "- patient-level independence cannot be verified."
+      },
+      {
+        "path": "CLAUDE_CODE_FINAL_IMPLEMENTATION_PLAN.md",
+        "line": 459,
+        "text": "Prohibited claims must include clinical readiness, complete leakage elimination, patient-level independence without evidence, universal generalization, and statistical superiority over BRAIN-META with"
+      },
+      {
+        "path": "CLAUDE_CODE_FINAL_IMPLEMENTATION_PLAN.md",
+        "line": 526,
+        "text": "- Phase 2 patient/study audit is documented."
+      },
+      {
+        "path": "CLAUDE.md",
+        "line": 52,
+        "text": "6. Do not invent missing metadata, patient identifiers, citations, checkpoints, masks, or results."
+      },
+      {
+        "path": "CLAUDE.md",
+        "line": 149,
+        "text": "- patient/study grouping cannot be supported by metadata;"
+      },
+      {
+        "path": "CLAUDE.md",
+        "line": 167,
+        "text": "- The split is patient-independent."
+      },
+      {
+        "path": "CLAUDE.md",
+        "line": 168,
+        "text": "- FusionV2 universally generalizes across hospitals or scanners."
+      },
+      {
+        "path": "src/dedup_audit.py",
+        "line": 6,
+        "text": "train/test, and patients appearing on both sides. Our split is also"
+      },
+      {
+        "path": "src/publication/audit_baseline.py",
+        "line": 520,
+        "text": "\"predictions. It does not establish patient-level independence, freedom from \""
+      },
+      {
+        "path": "src/publication/evaluate_fusion_v2.py",
+        "line": 13,
+        "text": "per seed. The resampling unit is an image, not a patient:"
+      },
+      {
+        "path": "src/publication/evaluate_fusion_v2.py",
+        "line": 14,
+        "text": "patient identity is unverified for this dataset."
+      },
+      {
+        "path": "src/publication/evaluate_fusion_v2.py",
+        "line": 93,
+        "text": "SERIES_1 = \"#2a78d6\"     # observed"
+      },
+      {
+        "path": "src/publication/evaluate_fusion_v2.py",
+        "line": 94,
+        "text": "SERIES_2 = \"#eb6834\"     # reference / secondary"
+      },
+      {
+        "path": "src/publication/evaluate_fusion_v2.py",
+        "line": 272,
+        "text": "\"resampling unit is an image, not a patient\"}"
+      },
+      {
+        "path": "src/publication/evaluate_fusion_v2.py",
+        "line": 363,
+        "text": "ax.plot([0, 1], [0, 1], linewidth=2, color=SERIES_2, linestyle=(0, (4, 3)),"
+      },
+      {
+        "path": "src/publication/evaluate_fusion_v2.py",
+        "line": 365,
+        "text": "ax.plot(conf[ok], acc[ok], linewidth=2, color=SERIES_1, marker=\"o\","
+      },
+      {
+        "path": "src/publication/evaluate_fusion_v2.py",
+        "line": 375,
+        "text": "ax2.bar(centers, counts, width=w, color=SERIES_1, linewidth=0)"
+      },
+      {
+        "path": "src/publication/evaluate_fusion_v2.py",
+        "line": 429,
+        "text": "\"patient: patient identity is unverified for this dataset. \""
+      },
+      {
+        "path": "src/publication/evaluate_fusion_v2.py",
+        "line": 686,
+        "text": "\"- These metrics describe held-out images, not held-out patients. Patient-level \""
+      },
+      {
+        "path": "src/publication/evaluate_fusion_v2.py",
+        "line": 687,
+        "text": "\"independence is unverified and is the subject of Phase 2.\", \"\"]"
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 2,
+        "text": "Phase 2 - patient / study leakage feasibility audit."
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 4,
+        "text": "Answers ONE question: can this dataset support a patient-grouped evaluation?"
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 17,
+        "text": "finds images that LOOK alike. Two slices of one patient may look alike, and"
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 18,
+        "text": "so may two unrelated patients with similar anatomy at the same slice level."
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 22,
+        "text": "prepare_dataset.py), which carries no patient semantics."
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 24,
+        "text": "A filename prefix is accepted as a patient key ONLY if dataset documentation"
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 27,
+        "text": "python src/publication/audit_patient_groups.py --project-root . \\"
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 28,
+        "text": "--out-root publication_results/patient_audit"
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 64,
+        "text": "r\"patient|subject|case[_ ]?id|study|series|accession|sop[_ ]?instance|\""
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 65,
+        "text": "r\"acquisition|scanner|institution|mrn|examid\","
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 195,
+        "text": "\"\"\"Search the repo's own docs and code for any statement defining a patient,"
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 196,
+        "text": "study or series identifier. Documentation is the ONLY thing that can promote"
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 197,
+        "text": "a filename component to a patient key.\"\"\""
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 260,
+        "text": "\"would_group_by\": \"a patient/study/series field shipped with the upstream data\","
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 282,
+        "text": "\"candidate\": \"DICOM / NIfTI header metadata (PatientID, StudyInstanceUID, SeriesInstanceUID)\","
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 301,
+        "text": "\"would_group_by\": \"acquisition timestamp, device, or a custom identifier tag\","
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 306,
+        "text": "\"markers, which encode pixel aspect ratio and contain no subject, \""
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 317,
+        "text": "\"would_group_by\": \"a mapping column from filename to patient\","
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 320,
+        "text": "\"contain no patient field.\""
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 326,
+        "text": "\"membership, not subject identity.\"),"
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 339,
+        "text": "\"conversion script. It encodes position in a dataframe, not a subject. \""
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 340,
+        "text": "\"Treating adjacent indices as one patient would fabricate groupings.\"),"
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 355,
+        "text": "\"patient or study identifier. The Roboflow hash is a per-image content \""
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 357,
+        "text": "\"undocumented prefix to a patient key is explicitly out of bounds.\"),"
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 367,
+        "text": "\"reason\": (\"Visual similarity is not identity. Two slices from one study may be \""
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 368,
+        "text": "\"near-duplicates, and so may scans of two unrelated subjects with \""
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 370,
+        "text": "\"a patient key would assume the conclusion the audit exists to test.\"),"
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 379,
+        "text": "\"parquet row order, which has no documented relationship to acquisition \""
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 380,
+        "text": "\"or subject.\"),"
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 389,
+        "text": "\"class (%s). No subject-level directory exists.\""
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 392,
+        "text": "\"reason\": \"The hierarchy encodes split and class only. It carries no subject level.\","
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 403,
+        "text": "\"mention identifier-like terms, none of which defines a patient, \""
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 404,
+        "text": "\"study or series key for these filenames.\""
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 408,
+        "text": "\"defines a patient/study identifier or a filename convention that \""
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 418,
+        "text": "ap.add_argument(\"--out-root\", default=\"publication_results/patient_audit\")"
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 457,
+        "text": "\"Patient-grouped evaluation is feasible using a documented key.\""
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 459,
+        "text": "\"Patient-level independence cannot be verified from the available dataset metadata.\")"
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 461,
+        "text": "# Unverified internal warnings about patient overlap. CLAUDE.md evidence"
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 464,
+        "text": "# reported as an unverified warning and is NOT treated as proof that patient"
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 475,
+        "text": "\"phase\": \"2 - patient/study leakage feasibility audit\","
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 481,
+        "text": "\"have identified patient overlap, but no supporting patient identifiers \""
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 483,
+        "text": "\"warning is not treated as evidence that patient overlap has been \""
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 497,
+        "text": "\"A filename component becomes a patient key only if dataset documentation \""
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 499,
+        "text": "\"Perceptual-hash / visual-similarity clusters are never used as a patient key.\","
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 500,
+        "text": "\"Sequential or contiguous numbering is never used as a patient key.\","
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 509,
+        "text": "\"patient_grouping_feasible\": feasible,"
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 513,
+        "text": "\"No GroupKFold, grouped split or patient-level result was computed or \""
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 527,
+        "text": "with open(os.path.join(out_root, \"patient_group_audit.json\"), \"w\", encoding=\"utf-8\") as f:"
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 529,
+        "text": "with open(os.path.join(out_root, \"PATIENT_GROUP_AUDIT.md\"), \"w\", encoding=\"utf-8\") as f:"
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 539,
+        "text": "L = [\"# Phase 2 - Patient / Study Leakage Feasibility Audit\", \"\","
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 540,
+        "text": "\"Generated by `src/publication/audit_patient_groups.py` at %s.\" % r[\"generated_utc\"],"
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 577,
+        "text": "L += [\"\", \"JFIF keys encode pixel aspect ratio only. They carry no subject, device, \""
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 578,
+        "text": "\"timing or institution information.\", \"\"]"
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 626,
+        "text": "if not r[\"patient_grouping_feasible\"]:"
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 628,
+        "text": "\"stratify. No GroupKFold, grouped cross-validation or patient-level metric \""
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 632,
+        "text": "\"1. All reported held-out performance is **image-level**, not patient-level. \""
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 633,
+        "text": "\"If several images originate from one subject, they may fall on both sides \""
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 637,
+        "text": "\"not and cannot remove same-subject leakage, because subject identity is \""
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 639,
+        "text": "\"3. The claim *the split is patient-independent* is prohibited. So is any \""
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 641,
+        "text": "\"4. Establishing patient-level independence requires a dataset that ships \""
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 642,
+        "text": "\"subject identifiers, or DICOM originals. Neither is available here.\", \"\"]"
+      },
+      {
+        "path": "src/publication/audit_patient_groups.py",
+        "line": 659,
+        "text": "\"- acquisition or institution provenance for individual images.\", \"\"]"
+      }
+    ],
+    "n_identifier_mentions": 93
+  },
+  "source_provenance": {
+    "available": true,
+    "path": "src/prepare_dataset.py",
+    "sha256": "5d8c2c3aa058e3072e43e50e2d960e46b40598ef9430e43da1eec81616929ce6",
+    "source_repo_id": "Hemg/Brain-Tumor-MRI-Dataset",
+    "source_file": "data/train-00000-of-00001.parquet",
+    "source_columns_referenced": [
+      "image",
+      "label"
+    ],
+    "filename_construction": "f\"{args.out_dir}/{split}/{cls}/{cls}_{i:05d}.jpg\", quality=95",
+    "index_variable_source": "df.iterrows() -> i is the pandas row index of the source parquet"
+  },
+  "candidate_grouping_keys": [
+    {
+      "id": "C1",
+      "candidate": "Identifier column in the source dataset",
+      "would_group_by": "a patient/study/series field shipped with the upstream data",
+      "evidence": "src/prepare_dataset.py references only ['image', 'label'] from the source parquet (Hemg/Brain-Tumor-MRI-Dataset, file data/train-00000-of-00001.parquet). No identifier column is read, and none is written to disk.",
+      "verdict": "REJECTED",
+      "reason": "The conversion script consumes only the image bytes and the class label. Even if the upstream parquet carried an identifier, it was not retained in this repository's copy, so it cannot be recovered from what is on disk."
+    },
+    {
+      "id": "C2",
+      "candidate": "DICOM / NIfTI header metadata (PatientID, StudyInstanceUID, SeriesInstanceUID)",
+      "would_group_by": "standard DICOM identifiers",
+      "evidence": "Files with medical-imaging extensions: none. Files carrying the DICOM 'DICM' preamble at byte 128: 0. Every image is a re-encoded consumer-format file.",
+      "verdict": "REJECTED",
+      "reason": "No DICOM or NIfTI file exists in this repository. The dataset is distributed as JPEG, which does not carry DICOM headers. Absence was established by magic-byte inspection of every file, not assumed from the file extension."
+    },
+    {
+      "id": "C3",
+      "candidate": "EXIF / embedded image metadata",
+      "would_group_by": "acquisition timestamp, device, or a custom identifier tag",
+      "evidence": "Images carrying any EXIF tag: 0. Embedded info keys present across the corpus: ['comment', 'jfif', 'jfif_density', 'jfif_unit', 'jfif_version'].",
+      "verdict": "REJECTED",
+      "reason": "No image carries EXIF. The only embedded keys are JFIF density markers, which encode pixel aspect ratio and contain no subject, device or timing information."
+    },
+    {
+      "id": "C4",
+      "candidate": "Sidecar manifest or label file shipped with the dataset",
+      "would_group_by": "a mapping column from filename to patient",
+      "evidence": "Non-image files inside the dataset directories: 2 (dataset_clean/split_manifest.json, dataset_clean/split_report.json). Of these, 2 were generated by this project's own deduplication step and contain no patient field.",
+      "verdict": "REJECTED",
+      "reason": "The dataset ships no sidecar metadata. The only non-image files are artifacts this project created, whose schema is class and split membership, not subject identity."
+    },
+    {
+      "id": "C5",
+      "candidate": "Numeric suffix of internal filenames, e.g. glioma_00243.jpg",
+      "would_group_by": "shared or adjacent numeric index",
+      "evidence": "Filename construction is f\"{args.out_dir}/{split}/{cls}/{cls}_{i:05d}.jpg\", quality=95, iterating df.iterrows() -> i is the pandas row index of the source parquet. The number is therefore the row position in the source parquet.",
+      "verdict": "REJECTED",
+      "reason": "The index is an export counter assigned by this repository's own conversion script. It encodes position in a dataframe, not a subject. Treating adjacent indices as one patient would fabricate groupings."
+    },
+    {
+      "id": "C6",
+      "candidate": "External-set filename prefix, e.g. Tr-gl_0138_jpg.rf.<hash>.jpg",
+      "would_group_by": "the 'Tr-xx' prefix or the trailing Roboflow hash",
+      "evidence": "Distinct filename shapes in the external set: ['Tr-gl_<N>_jpg.rf.<HEX>', 'Tr-pi_<N>_jpg.rf.<HEX>', 'Tr-no_<N>_jpg.rf.<HEX>', 'm<N>-<N>-_jpg.rf.<HEX>']. The '.rf.<hex>' component is a Roboflow export content hash; the 'Tr-' prefix denotes the upstream archive's own train folder.",
+      "verdict": "REJECTED",
+      "reason": "No dataset documentation available here defines either component as a patient or study identifier. The Roboflow hash is a per-image content digest, so it is unique per image and groups nothing. Promoting an undocumented prefix to a patient key is explicitly out of bounds."
+    },
+    {
+      "id": "C7",
+      "candidate": "Perceptual-hash / near-duplicate clusters",
+      "would_group_by": "images within a dHash Hamming radius",
+      "evidence": "Not evaluated. Excluded before inspection by the Phase 2 rules.",
+      "verdict": "REJECTED BY RULE",
+      "reason": "Visual similarity is not identity. Two slices from one study may be near-duplicates, and so may scans of two unrelated subjects with similar anatomy at a similar slice level. Using similarity clusters as a patient key would assume the conclusion the audit exists to test."
+    },
+    {
+      "id": "C8",
+      "candidate": "Sequential / contiguous numbering blocks",
+      "would_group_by": "runs of consecutive indices",
+      "evidence": "Not evaluated. Excluded before inspection by the Phase 2 rules.",
+      "verdict": "REJECTED BY RULE",
+      "reason": "Contiguity reflects export ordering. See C5: the ordering here is parquet row order, which has no documented relationship to acquisition or subject."
+    },
+    {
+      "id": "C9",
+      "candidate": "Directory structure",
+      "would_group_by": "the folder an image sits in",
+      "evidence": "Directory levels observed are split (Training/Testing) and diagnostic class (glioma, meningioma, notumor, pituitary). No subject-level directory exists.",
+      "verdict": "REJECTED",
+      "reason": "The hierarchy encodes split and class only. It carries no subject level."
+    },
+    {
+      "id": "C10",
+      "candidate": "A documented naming convention from the dataset source",
+      "would_group_by": "whatever the documentation defines",
+      "evidence": "46 repository files inspected for identifier definitions; 19 lines mention identifier-like terms, none of which defines a patient, study or series key for these filenames.",
+      "verdict": "REJECTED",
+      "reason": "No documentation in this repository, and none shipped with the data, defines a patient/study identifier or a filename convention that encodes one."
+    }
+  ],
+  "n_candidates_evaluated": 10,
+  "n_accepted": 0,
+  "n_requires_review": 0,
+  "patient_grouping_feasible": false,
+  "conclusion": "Patient-level independence cannot be verified from the available dataset metadata.",
+  "grouped_cross_validation_performed": false,
+  "grouped_cross_validation_note": "No GroupKFold, grouped split or patient-level result was computed or fabricated. With no defensible key, any such number would be fiction.",
+  "acceptance_checks": {
+    "C1_no_identity_asserted_without_evidence": true,
+    "C2_every_rejection_has_a_reason": true,
+    "C3_dicom_determined_by_inspection": true,
+    "C4_forbidden_rules_recorded_as_such": true,
+    "C5_single_explicit_conclusion": true,
+    "C6_hashes_recorded_for_metadata_files": true
+  },
+  "acceptance_status": "PASS"
+}

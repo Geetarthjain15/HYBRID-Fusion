@@ -1,0 +1,382 @@
+{
+  "phase": "X0 verification addendum",
+  "generated_utc": "2026-09-26T10:56:12.462840+00:00",
+  "phase_x1_started": false,
+  "existing_x0_outputs_modified": false,
+  "protected_artifacts_modified": false,
+  "phase_x0_start_reference_utc": "2026-09-26T10:31:46+00:00",
+  "phase_x0_start_basis": "earliest modification time among the X0 deliverables; an approximation, since no start timestamp was recorded by Phase X0 itself",
+  "x0_deliverable_verification": {
+    "x0_dir": "publication_results/explainability/audit",
+    "manifest_present": true,
+    "x0_manifest_generated_utc": "2026-09-26T10:37:36.804862+00:00",
+    "x0_manifest_mtime": "2026-09-26T10:37:40+00:00",
+    "files_checked": 7,
+    "files": [
+      {
+        "file": "EXPLAINABILITY_ARCHITECTURE_AUDIT.md",
+        "recomputed_sha256": "8c7f72a741ac94d096314d180f7ca025cc1352582343210a929bde42be49044b",
+        "recorded_sha256": "8c7f72a741ac94d096314d180f7ca025cc1352582343210a929bde42be49044b",
+        "bytes": 16955,
+        "mtime_utc": "2026-09-26T10:36:16+00:00",
+        "listed_in_x0_manifest": true,
+        "match": true
+      },
+      {
+        "file": "PHASE_X1_IMPLEMENTATION_SPEC.md",
+        "recomputed_sha256": "4feef757b5f03f64e95267e08b2e22bd3e21cc670339d114362afd5dd3aa3b98",
+        "recorded_sha256": "4feef757b5f03f64e95267e08b2e22bd3e21cc670339d114362afd5dd3aa3b98",
+        "bytes": 12971,
+        "mtime_utc": "2026-09-26T10:37:20+00:00",
+        "listed_in_x0_manifest": true,
+        "match": true
+      },
+      {
+        "file": "_probe_attention.json",
+        "recomputed_sha256": "045e8745883fc870675e559736cf98465481da7cdc10d81a6ec1db0e55945834",
+        "recorded_sha256": "045e8745883fc870675e559736cf98465481da7cdc10d81a6ec1db0e55945834",
+        "bytes": 1270,
+        "mtime_utc": "2026-09-26T10:32:48+00:00",
+        "listed_in_x0_manifest": true,
+        "match": true
+      },
+      {
+        "file": "_probe_raw.json",
+        "recomputed_sha256": "7b7e06cfdcb2e93afdd8683ca969876c87d67ae330f4d66111348e5ca6617ad8",
+        "recorded_sha256": "7b7e06cfdcb2e93afdd8683ca969876c87d67ae330f4d66111348e5ca6617ad8",
+        "bytes": 17632,
+        "mtime_utc": "2026-09-26T10:31:46+00:00",
+        "listed_in_x0_manifest": true,
+        "match": true
+      },
+      {
+        "file": "explainability_architecture_audit.json",
+        "recomputed_sha256": "8c72d7cfe0d7d25d73da2d016703b89a8af95f0e74edbc70219ae72310469d44",
+        "recorded_sha256": "6ccb79a7c7218b7e772917e55c5ba2bb4e275efb8feacae72b8d61c3f2c86272",
+        "bytes": 26705,
+        "mtime_utc": "2026-09-26T10:37:50+00:00",
+        "listed_in_x0_manifest": true,
+        "match": false
+      },
+      {
+        "file": "input_manifest.json",
+        "recomputed_sha256": "f0d6ff330ad3e57c1e0d813b3330654dde0105f5bbc811c299710f6f73b99ae4",
+        "recorded_sha256": "f0d6ff330ad3e57c1e0d813b3330654dde0105f5bbc811c299710f6f73b99ae4",
+        "bytes": 8094,
+        "mtime_utc": "2026-09-26T10:35:00+00:00",
+        "listed_in_x0_manifest": true,
+        "match": true
+      },
+      {
+        "file": "sha256_manifest.json",
+        "recomputed_sha256": "052a6e764e4153b312163b26702870ba8b331f5d1a1884c844882dd0d08a0d11",
+        "recorded_sha256": null,
+        "bytes": 4161,
+        "mtime_utc": "2026-09-26T10:37:40+00:00",
+        "listed_in_x0_manifest": false,
+        "match": null
+      }
+    ],
+    "mismatched_files": [
+      "explainability_architecture_audit.json"
+    ],
+    "files_not_listed_in_x0_manifest": [
+      "sha256_manifest.json"
+    ],
+    "all_match": false,
+    "audit_json_modified_after_manifest": {
+      "audit_json_mtime_utc": "2026-09-26T10:37:50+00:00",
+      "manifest_mtime_utc": "2026-09-26T10:37:40+00:00",
+      "audit_mtime_later_than_manifest": true,
+      "digest_mismatch_observed": true,
+      "conclusion": "YES - the audit JSON was edited after sha256_manifest.json was generated, so the manifest carries a stale digest for it.",
+      "cause": "Phase X0 wrote sha256_manifest.json, then patched the acceptance_checks block of explainability_architecture_audit.json (filling two null fields and adding acceptance_status). The manifest was not regenerated afterwards.",
+      "remedy_applied_here": "The stale digest is REPORTED, not corrected in place. The X0 manifest is left exactly as issued; the current digest is recorded in this addendum and in final_manifest.json."
+    }
+  },
+  "preservation_audit": {
+    "comprehensive_baseline_available": true,
+    "version_control": {
+      "dot_git_present": true,
+      "is_git_work_tree": true,
+      "ownership_guard_encountered": false,
+      "head_commit": "e507c65|2026-09-14 18:25:23 +0530|Initial project setup",
+      "n_tracked_files_total": 11,
+      "tracked_files_under_protected_roots": {},
+      "n_protected_roots_tracked": 0,
+      "key_source_tracking": {
+        "src/fusion_v2.py": "untracked",
+        "src/train_ablation.py": "untracked",
+        "src/streamlit_app.py": "tracked"
+      },
+      "porcelain_lines": [
+        "M src/streamlit_app.py",
+        "?? dataset_clean/",
+        "?? publication_runs/",
+        "?? results/",
+        "?? results_clean/",
+        "?? results_original/",
+        "?? results_v2_clean/",
+        "?? results_v2_original/",
+        "?? runs/",
+        "?? runs_clean/",
+        "?? runs_original/",
+        "?? runs_v2_clean/",
+        "?? runs_v2_original/",
+        "?? src/fusion_v2.py",
+        "?? src/train_ablation.py"
+      ],
+      "modified_tracked_paths": [
+        "src/streamlit_app.py"
+      ],
+      "untracked_paths": [
+        "dataset_clean/",
+        "publication_runs/",
+        "results/",
+        "results_clean/",
+        "results_original/",
+        "results_v2_clean/",
+        "results_v2_original/",
+        "runs/",
+        "runs_clean/",
+        "runs_original/",
+        "runs_v2_clean/",
+        "runs_v2_original/",
+        "src/fusion_v2.py",
+        "src/train_ablation.py"
+      ],
+      "corroboration_value": "NONE for the protected artifacts. Only 11 files are tracked in total and no protected root contains a tracked file, so git cannot confirm or refute any change under runs*, results*, dataset* or publication_runs.",
+      "modified_tracked_note": "src/streamlit_app.py shows as modified relative to the single commit e507c65. This predates the explainability work: its digest has been constant across every phase in this session and its modification time precedes Phase X0. It is recorded as an observation, not attributed to any phase audited here."
+    },
+    "scope_verified": [
+      "150 prediction CSV and metric files hashed against the Phase 0 baseline"
+    ],
+    "scope_not_verified": [
+      "source code files - the Phase 0 baseline does not hash them",
+      "model checkpoints - not covered by the Phase 0 baseline",
+      "dataset image files - not covered by the Phase 0 baseline"
+    ],
+    "baseline_manifest_path": "publication_results/audit/baseline_manifest.json",
+    "baseline_manifest_present": true,
+    "baseline_generated_utc": "2026-09-23T20:11:24.451849+00:00",
+    "baseline_phase": "0 - immutable baseline audit",
+    "baseline_mtime_utc": "2026-09-23T20:11:26+00:00",
+    "baseline_covers_groups": [
+      "prediction_csvs",
+      "metric_files"
+    ],
+    "n_files_covered_by_baseline": 150,
+    "n_missing_since_baseline": 0,
+    "missing_since_baseline": [],
+    "n_changed_since_baseline": 0,
+    "changed_since_baseline": [],
+    "unreadable": [],
+    "mtime_audit": {
+      "phase_x0_start_reference_utc": "2026-09-26T10:31:46+00:00",
+      "groups": {
+        "runs": {
+          "n_files": 5,
+          "newest_mtime_utc": "2026-09-21T19:11:50+00:00",
+          "newer_than_x0_start": false
+        },
+        "runs_original": {
+          "n_files": 60,
+          "newest_mtime_utc": "2026-09-22T05:17:54+00:00",
+          "newer_than_x0_start": false
+        },
+        "runs_clean": {
+          "n_files": 60,
+          "newest_mtime_utc": "2026-09-22T07:41:38+00:00",
+          "newer_than_x0_start": false
+        },
+        "runs_v2_original": {
+          "n_files": 21,
+          "newest_mtime_utc": "2026-09-22T16:04:34+00:00",
+          "newer_than_x0_start": false
+        },
+        "runs_v2_clean": {
+          "n_files": 21,
+          "newest_mtime_utc": "2026-09-22T18:05:10+00:00",
+          "newer_than_x0_start": false
+        },
+        "results": {
+          "n_files": 15,
+          "newest_mtime_utc": "2026-09-23T15:05:32+00:00",
+          "newer_than_x0_start": false
+        },
+        "results_original": {
+          "n_files": 2,
+          "newest_mtime_utc": "2026-09-22T07:41:38+00:00",
+          "newer_than_x0_start": false
+        },
+        "results_clean": {
+          "n_files": 2,
+          "newest_mtime_utc": "2026-09-22T07:41:40+00:00",
+          "newer_than_x0_start": false
+        },
+        "results_v2_original": {
+          "n_files": 2,
+          "newest_mtime_utc": "2026-09-22T18:05:10+00:00",
+          "newer_than_x0_start": false
+        },
+        "results_v2_clean": {
+          "n_files": 2,
+          "newest_mtime_utc": "2026-09-22T18:05:10+00:00",
+          "newer_than_x0_start": false
+        },
+        "dataset": {
+          "n_files": 7023,
+          "newest_mtime_utc": "2026-09-11T09:57:54+00:00",
+          "newer_than_x0_start": false
+        },
+        "dataset_clean": {
+          "n_files": 2,
+          "newest_mtime_utc": "2026-09-22T13:33:44+00:00",
+          "newer_than_x0_start": false
+        },
+        "publication_runs": {
+          "n_files": 192,
+          "newest_mtime_utc": "2026-09-24T14:19:06+00:00",
+          "newer_than_x0_start": false
+        }
+      }
+    },
+    "version_control_corroboration": "NONE for the protected artifacts. Only 11 files are tracked in total and no protected root contains a tracked file, so git cannot confirm or refute any change under runs*, results*, dataset* or publication_runs.",
+    "mtime_reliability_caveat": "Modification time is weaker evidence than a digest. It can be preserved across a copy or set arbitrarily, so a clean mtime is consistent with, but does not prove, an unchanged file.",
+    "verdict": "no changes detected within the verifiable scope",
+    "verdict_wording_note": "This is deliberately not phrased as 'all protected artifacts unchanged'. The Phase 0 baseline covers predictions and metric files only; source code, checkpoints and dataset images are outside its scope and were checked by modification time alone."
+  },
+  "dataset_availability_summary": {
+    "clean_test_images_present_locally": false,
+    "n_clean_test_images_found": 0,
+    "exact_848_available": true,
+    "detail_file": "dataset_availability_audit.json"
+  },
+  "scientific_recheck": {
+    "note": "recomputed independently; not read from the X0 outputs",
+    "scope": "synthetic probe batch only - NOT extended to the 848 clean-test images",
+    "gradcam_plus_plus": {
+      "resolved_class": "pytorch_grad_cam.grad_cam_plusplus.GradCAMPlusPlus",
+      "distinct_from_GradCAM": true,
+      "has_grads_power_2": true,
+      "has_grads_power_3": true,
+      "cites_equation_19": true,
+      "verdict": "genuine Grad-CAM++"
+    },
+    "checkpoint_seed42_sha256": "9b328ba83df5d44b542e19faae68fd1493fee61e0c5b80e493c2f8a387ed592e",
+    "hooked_cnn_layer": {
+      "module": "model.cnn_stages[-1]",
+      "type": "Conv2dNormActivation",
+      "activation_shape": [
+        2,
+        1280,
+        7,
+        7
+      ],
+      "hook_max_abs_prob_delta": 0.0
+    },
+    "gate": {
+      "input_shape": [
+        2,
+        1024
+      ],
+      "output_shape": [
+        2,
+        2
+      ],
+      "normalisation_dim": -1,
+      "row_sums": [
+        0.9999999403953552,
+        0.9999999403953552
+      ],
+      "rows_sum_to_one": true,
+      "kind": "two scalar per-branch weights per image"
+    },
+    "auxiliary_heads": {
+      "keys_in_checkpoint": [
+        "aux_cnn.weight",
+        "aux_cnn.bias",
+        "aux_vit.weight",
+        "aux_vit.bias"
+      ],
+      "shapes": {
+        "aux_cnn.weight": [
+          4,
+          512
+        ],
+        "aux_cnn.bias": [
+          4
+        ],
+        "aux_vit.weight": [
+          4,
+          512
+        ],
+        "aux_vit.bias": [
+          4
+        ]
+      },
+      "aux_logits_returned_at_inference": [
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          4
+        ]
+      ],
+      "available": true
+    },
+    "vit_attention": {
+      "attn_implementation_as_loaded": "sdpa",
+      "sdpa_returns_none": true,
+      "eager_n_layers": 12,
+      "eager_shape_layer0": [
+        2,
+        12,
+        197,
+        197
+      ],
+      "eager_rows_sum_to_one": true,
+      "eager_max_abs_prob_delta": 8.940696716308594e-08,
+      "eager_changes_predictions_at_1e-6": false,
+      "argmax_unchanged": true,
+      "restore_exact": true
+    },
+    "prediction_neutrality_scope": "measured on a 2-image synthetic probe batch. This result is NOT evidence about the 848 clean-test images and is not extended to them."
+  },
+  "implementation_plan_status": {
+    "path": "D:/Research Model/CLAUDE_CODE_FINAL_IMPLEMENTATION_PLAN.md",
+    "present": true,
+    "sha256": "521b0e0f30444d4559a1f68d497aa283dda2d926b3d97c837348b3ab0f1db7bc",
+    "explainability_phases_found": [],
+    "x0_to_x7_present": false,
+    "conclusion": "Phases X0-X7 are ABSENT from the approved implementation plan.",
+    "action": "An amendment proposal is written to the addendum directory. The implementation-plan file itself is NOT modified; adding these phases requires explicit user approval."
+  },
+  "self_corrections_this_pass": [
+    {
+      "item": "version-control status",
+      "earlier_claim": "no .git directory found; version-control corroboration is unavailable",
+      "finding": "INCORRECT. A git work tree exists (HEAD e507c65, 2026-09-14). The earlier shell check failed with 'detected dubious ownership' - git refusing to operate on a filesystem that does not record ownership - and that refusal was misread as an absence.",
+      "corrected_conclusion": "Same practical outcome, sounder basis: only 11 files are tracked repository-wide and no protected root contains a tracked file, so git provides NO corroboration for the protected artifacts.",
+      "incidental_observation": "src/streamlit_app.py is tracked and shows as modified relative to the single commit; digest constant across this session and mtime 2026-09-22 predates Phase X0, so it is not attributed to any audited phase."
+    }
+  ],
+  "acceptance_conditions": {
+    "existing_x0_outputs_unchanged": true,
+    "no_protected_artifact_modified_within_verifiable_scope": true,
+    "stale_hashes_identified_not_replaced": true,
+    "preservation_claims_match_evidence": true,
+    "dataset_checked_recursively_and_by_signature": true,
+    "implementation_plan_status_explicit": true,
+    "no_phase_x1_code_implemented": true,
+    "no_full_dataset_inference_claimed": true,
+    "no_anatomical_localisation_claim": true,
+    "version_control_inspected_correctly": true
+  },
+  "acceptance_status": "PASS",
+  "blocking_statement_applies": false,
+  "preservation_wording": "no changes detected within the verifiable scope",
+  "next_phase": "not started"
+}

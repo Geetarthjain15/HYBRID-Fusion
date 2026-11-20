@@ -1,0 +1,130 @@
+{
+  "n_train": 5971,
+  "n_test": 1052,
+  "exact_file_duplicate_groups": 300,
+  "exact_file_redundant_images": 426,
+  "pixel_duplicate_groups": 300,
+  "pixel_redundant_images": 426,
+  "test_images_with_train_match": 856,
+  "test_contamination_pct": 81.37,
+  "by_kind": {
+    "exact_file": 216,
+    "pixel_identical": 0,
+    "near_duplicate": 640
+  },
+  "by_class": {
+    "glioma": 167,
+    "meningioma": 202,
+    "notumor": 297,
+    "pituitary": 190
+  },
+  "examples": [
+    {
+      "test_file": "glioma_00000.jpg",
+      "test_class": "glioma",
+      "kind": "near_duplicate",
+      "train_match": "glioma_01791.jpg",
+      "hamming": 4
+    },
+    {
+      "test_file": "glioma_00001.jpg",
+      "test_class": "glioma",
+      "kind": "near_duplicate",
+      "train_match": "glioma_00299.jpg",
+      "hamming": 2
+    },
+    {
+      "test_file": "glioma_00002.jpg",
+      "test_class": "glioma",
+      "kind": "near_duplicate",
+      "train_match": "glioma_01498.jpg",
+      "hamming": 3
+    },
+    {
+      "test_file": "glioma_00003.jpg",
+      "test_class": "glioma",
+      "kind": "near_duplicate",
+      "train_match": "glioma_00299.jpg",
+      "hamming": 4
+    },
+    {
+      "test_file": "glioma_00004.jpg",
+      "test_class": "glioma",
+      "kind": "near_duplicate",
+      "train_match": "glioma_01379.jpg",
+      "hamming": 3
+    },
+    {
+      "test_file": "glioma_00005.jpg",
+      "test_class": "glioma",
+      "kind": "near_duplicate",
+      "train_match": "glioma_01490.jpg",
+      "hamming": 4
+    },
+    {
+      "test_file": "glioma_00006.jpg",
+      "test_class": "glioma",
+      "kind": "near_duplicate",
+      "train_match": "glioma_01385.jpg",
+      "hamming": 4
+    },
+    {
+      "test_file": "glioma_00007.jpg",
+      "test_class": "glioma",
+      "kind": "near_duplicate",
+      "train_match": "glioma_01373.jpg",
+      "hamming": 4
+    },
+    {
+      "test_file": "glioma_00008.jpg",
+      "test_class": "glioma",
+      "kind": "near_duplicate",
+      "train_match": "glioma_01320.jpg",
+      "hamming": 4
+    },
+    {
+      "test_file": "glioma_00009.jpg",
+      "test_class": "glioma",
+      "kind": "near_duplicate",
+      "train_match": "glioma_00287.jpg",
+      "hamming": 4
+    },
+    {
+      "test_file": "glioma_00010.jpg",
+      "test_class": "glioma",
+      "kind": "near_duplicate",
+      "train_match": "glioma_01379.jpg",
+      "hamming": 4
+    },
+    {
+      "test_file": "glioma_00011.jpg",
+      "test_class": "glioma",
+      "kind": "near_duplicate",
+      "train_match": "meningioma_00594.jpg",
+      "hamming": 3
+    },
+    {
+      "test_file": "glioma_00012.jpg",
+      "test_class": "glioma",
+      "kind": "near_duplicate",
+      "train_match": "glioma_01371.jpg",
+      "hamming": 4
+    },
+    {
+      "test_file": "glioma_00013.jpg",
+      "test_class": "glioma",
+      "kind": "near_duplicate",
+      "train_match": "glioma_00288.jpg",
+      "hamming": 4
+    },
+    {
+      "test_file": "glioma_00014.jpg",
+      "test_class": "glioma",
+      "kind": "near_duplicate",
+      "train_match": "glioma_00288.jpg",
+      "hamming": 4
+    }
+  ],
+  "hamming_threshold": 4,
+  "n_clean_test": 196
+}

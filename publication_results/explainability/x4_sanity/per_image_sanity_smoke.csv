@@ -1,0 +1,5 @@
+filename,true_label,pred_class,alt_class,cnn_shape,vit_shape,cnn_finite,vit_finite,cnn_nonconstant,vit_nonconstant,cnn_target_sensitivity_maxabs,vit_target_sensitivity_maxabs,gradcam_equivalence_max_abs_diff
+glioma_02123.jpg,glioma,glioma,pituitary,7x7,14x14,True,True,True,True,0.0037408932112157345,0.1196848526597023,0.0
+meningioma_00594.jpg,meningioma,meningioma,notumor,7x7,14x14,True,True,True,True,0.006578834727406502,0.11177940666675568,0.0
+notumor_00921.jpg,notumor,notumor,meningioma,7x7,14x14,True,True,True,True,0.001398730673827231,0.06362102180719376,0.0
+pituitary_06160.jpg,pituitary,pituitary,notumor,7x7,14x14,True,True,True,True,0.023679640144109726,0.12529635429382324,0.0

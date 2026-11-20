@@ -1,0 +1,5 @@
+split          arch    variant   seeds  trainable              acc         macro-F1             recall (gl/me/no/pi)
+--------------------------------------------------------------------------------------------------------------------
+dataset_clean  fusion_v2 unfrozen      3 91,211,918   98.27 +- 0.07    98.28 +- 0.04               98.2/97.4/98.0/99.2
+
+Paired McNemar vs fusion (same split, same seed):

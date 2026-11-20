@@ -1,0 +1,54 @@
+{
+  "phase": "3D",
+  "acceptance_status": "PASS",
+  "training_performed": false,
+  "model_modified": false,
+  "base_paper": {
+    "path": "E:\\Users\\aasth\\Downloads\\1-s2.0-S2215016125006132-main (1).pdf",
+    "sha256": "ea8fac3fa57c03419f1ad3a160ddab86ad181b1d2440b2af5f185c80249b4aee",
+    "doi": "10.1016/j.mex.2025.103769",
+    "verified_pages": [
+      1,
+      5,
+      8
+    ]
+  },
+  "inputs": {
+    "publication_results/metrics/fusion_v2_metrics.json": "4ead5f6fd61d7a5563e0475b02a39764c0a128a346967a927391e5cdf3d4041e",
+    "publication_results/ablations/final_analysis/final_ablation_analysis.json": "7e16ad3d62fc9d1605a3b8ec72a4bdd8a93649e997222efd1e7b76652ea4e368",
+    "publication_results/patient_audit/patient_group_audit.json": "1bdfc3e840f34602c4b969336ee5d1a57eddac26e204aa5e4842c55f327749d6",
+    "publication_results/ablations/publication_artifacts/artifact_manifest.json": "e256d845a1b933afadfec7b12c93832b6f197fd743b6d789dbc009d13194ed5c"
+  },
+  "outputs": [
+    {
+      "file": "assumptions.csv",
+      "sha256": "8233772ddbd0f99ae1d6fa1c6a079672af3537031e4f2edb6e492d52c5c9f50a",
+      "bytes": 1155
+    },
+    {
+      "file": "base_paper_comparison.csv",
+      "sha256": "b060f3e92681fb87c87f1ec87d24315b5fe3e46e4356e7dd818ec3fa14e910e3",
+      "bytes": 1098
+    },
+    {
+      "file": "claims_matrix.csv",
+      "sha256": "63f27a831cc9557313a890689b81426e3ab3976da40532a74461000663e84102",
+      "bytes": 1350
+    },
+    {
+      "file": "contribution_matrix.csv",
+      "sha256": "33a43bfa794cc12ef20c3cfb57b25b44c6958e0e0015e9d54e70f21236da7934",
+      "bytes": 1177
+    },
+    {
+      "file": "limitations.csv",
+      "sha256": "67647191f38a374fac37a769a21c3ec7d51927c5bf23e35ecb2b1b2ca2d3a143",
+      "bytes": 1313
+    },
+    {
+      "file": "MANUSCRIPT_EVIDENCE.md",
+      "sha256": "1e0c47ab6a7215a6736a2ad7916518a2a8238fd97ddcadfeccedcbfce24ac075",
+      "bytes": 2658
+    }
+  ]
+}

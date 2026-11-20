@@ -1,0 +1,232 @@
+{
+  "phase": "X0",
+  "generated_utc": "2026-09-26T10:34:58.694441+00:00",
+  "project_root": "D:/Research Model/Brain_Tumor_Detection_ViT2",
+  "n_inputs": 28,
+  "inputs": [
+    {
+      "path": "../AGENTS.md",
+      "role": "repository contract (authoritative)",
+      "present": true,
+      "sha256": "98ae8e3cb96cba27774d6484eab1ead26a987c33b2a81d777a9da688e65d4f9e",
+      "bytes": 6995,
+      "note": "byte-identical to CLAUDE.md apart from the title line"
+    },
+    {
+      "path": "../CLAUDE_CODE_FINAL_IMPLEMENTATION_PLAN.md",
+      "role": "mandated reading",
+      "present": true,
+      "sha256": "521b0e0f30444d4559a1f68d497aa283dda2d926b3d97c837348b3ab0f1db7bc",
+      "bytes": 26415,
+      "note": ""
+    },
+    {
+      "path": "results/paper/SUMMARY.md",
+      "role": "mandated reading",
+      "present": true,
+      "sha256": "5140be697c6aef29bc6c420111f2cc563d638ab0a50bd18ea4728b640d684002",
+      "bytes": 2494,
+      "note": ""
+    },
+    {
+      "path": "results/paper/tables.md",
+      "role": "mandated reading",
+      "present": true,
+      "sha256": "c366aa86af48a2b89e625e653b763e97061fa366e05605d80db7650b85084b0a",
+      "bytes": 5521,
+      "note": ""
+    },
+    {
+      "path": "src/fusion_v2.py",
+      "role": "model definition (read-only, unmodified)",
+      "present": true,
+      "sha256": "dd1a1180459b9eb1a3e1a02716d0406722f97d2e0eb1b9922ac551d0cdba1292",
+      "bytes": 7056,
+      "note": ""
+    },
+    {
+      "path": "src/train_ablation.py",
+      "role": "training/eval protocol (read-only, unmodified)",
+      "present": true,
+      "sha256": "ed8bf84c4953a3c4bc4ac035784241d022316f04e4d0f6cd295c98c1126ab15c",
+      "bytes": 19571,
+      "note": ""
+    },
+    {
+      "path": "dataset_clean/split_report.json",
+      "role": "mandated reading",
+      "present": true,
+      "sha256": "8487d31c0f0b06a4afaf493f6a5597e8f8e45feafe7679b77a745b070e34abc0",
+      "bytes": 525,
+      "note": ""
+    },
+    {
+      "path": "results/cross_source.json",
+      "role": "mandated reading",
+      "present": true,
+      "sha256": "e8a27a92495e2f44c2ef7af655128a8ea83574cbb271e6b09ce7d4f99b4c3cbb",
+      "bytes": 83457,
+      "note": ""
+    },
+    {
+      "path": "src/publication/fusion_v2_gradcam.py",
+      "role": "current heatmap implementation",
+      "present": true,
+      "sha256": "595e325602d8320fe44d77f88e3cf16275745c108a8ac537cb5f2e15bcccbcea",
+      "bytes": 7832,
+      "note": ""
+    },
+    {
+      "path": "src/publication/streamlit_fusion_v2.py",
+      "role": "current FusionV2 demonstrator",
+      "present": true,
+      "sha256": "341626ee4297bee1122f7afefebdbeb8d43e0d8e5c083af145a14409fa0a9139",
+      "bytes": 11813,
+      "note": ""
+    },
+    {
+      "path": "src/publication/audit_gradcam_faithfulness.py",
+      "role": "existing faithfulness audit",
+      "present": true,
+      "sha256": "5ecb9c2ae0a4d71e426a921dee6f7d45122cfc417710a1ccbc93504339cf1b3a",
+      "bytes": 14183,
+      "note": ""
+    },
+    {
+      "path": "src/publication/test_fusion_v2_gradcam.py",
+      "role": "existing tests",
+      "present": true,
+      "sha256": "a503323fdf8ca70aef68a8267bd91b51c8599fb143df7ecc15a306a3d73a25c8",
+      "bytes": 2099,
+      "note": ""
+    },
+    {
+      "path": "src/publication/test_gradcam_faithfulness.py",
+      "role": "existing tests",
+      "present": true,
+      "sha256": "d498bfc632f771ba7ee881b19d11450f8867b5b1a77c8cfd03e77b68bbb01dde",
+      "bytes": 1434,
+      "note": ""
+    },
+    {
+      "path": "src/streamlit_app.py",
+      "role": "legacy v1 demonstrator (unrelated model)",
+      "present": true,
+      "sha256": "bfae3567ba77d62b82659d77351eed364226c496a9e6c23cbddd68a61f636e1d",
+      "bytes": 5868,
+      "note": ""
+    },
+    {
+      "path": "publication_results/ablations/checkpoint_recovery/import_manifest.json",
+      "role": "checkpoint verification manifest",
+      "present": true,
+      "sha256": "2d172681c148c126b624b14594c2ec19b816d2efa81a15e7abf674ec8a432a2e",
+      "bytes": 16281,
+      "note": ""
+    },
+    {
+      "path": "dataset_clean/split_manifest.json",
+      "role": "canonical image/label mapping",
+      "present": true,
+      "sha256": "a02bcb62847ce1b9146a3e769f41f88ec1afce5a46d03fb5aaffb0ef43a0e6d2",
+      "bytes": 990260,
+      "note": ""
+    },
+    {
+      "path": "publication_runs/recovered_checkpoints/clean/full_fusion_v2/seed_42/checkpoint.pth",
+      "role": "publication-verified checkpoint",
+      "present": true,
+      "sha256": "9b328ba83df5d44b542e19faae68fd1493fee61e0c5b80e493c2f8a387ed592e",
+      "bytes": 365236755,
+      "note": ""
+    },
+    {
+      "path": "runs_v2_clean/fusion_v2_seed42/preds_test.csv",
+      "role": "authoritative duplicate-clean predictions (n=848)",
+      "present": true,
+      "sha256": "247e6494d7315856a5fbb2a26b2eed789f77a880696c724b8a79243fd47c20b4",
+      "bytes": 63168,
+      "note": ""
+    },
+    {
+      "path": "runs_v2_clean/fusion_v2_seed42/preds_dataset_ood.csv",
+      "role": "authoritative external predictions (n=499; 373 duplicate-disjoint)",
+      "present": true,
+      "sha256": "2999ee6c9173e5a6d4d1c795f1178043001ba16b94800ac76ff3ee60dc93ad55",
+      "bytes": 54229,
+      "note": ""
+    },
+    {
+      "path": "runs_v2_clean/fusion_v2_seed42/gates_test.csv",
+      "role": "per-image gate mass on the clean test set",
+      "present": true,
+      "sha256": "a060b82a376471f711b3572827db21707bae6878900107a310ddbe0d3d1a906f",
+      "bytes": 40125,
+      "note": ""
+    },
+    {
+      "path": "publication_runs/recovered_checkpoints/clean/full_fusion_v2/seed_43/checkpoint.pth",
+      "role": "publication-verified checkpoint",
+      "present": true,
+      "sha256": "9f97b6aa0c9ec3f1124e593c8c29e11d31f4aef8bc08e20a40e7ed1f29e80f25",
+      "bytes": 365236755,
+      "note": ""
+    },
+    {
+      "path": "runs_v2_clean/fusion_v2_seed43/preds_test.csv",
+      "role": "authoritative duplicate-clean predictions (n=848)",
+      "present": true,
+      "sha256": "bb142d3d33528fdb0d5ad915af3840102f5d93411cdba1ae8540ff03a92c77b5",
+      "bytes": 63191,
+      "note": ""
+    },
+    {
+      "path": "runs_v2_clean/fusion_v2_seed43/preds_dataset_ood.csv",
+      "role": "authoritative external predictions (n=499; 373 duplicate-disjoint)",
+      "present": true,
+      "sha256": "555621abe80e49d46afa8aff640eef0eb6ea582506f8c4468c097007714dbbfe",
+      "bytes": 54175,
+      "note": ""
+    },
+    {
+      "path": "runs_v2_clean/fusion_v2_seed43/gates_test.csv",
+      "role": "per-image gate mass on the clean test set",
+      "present": true,
+      "sha256": "ed3fdd0b1b76b0e680dd4bd6681269629a621c42a4678bcf3e34fa3fe87c7a4e",
+      "bytes": 40125,
+      "note": ""
+    },
+    {
+      "path": "publication_runs/recovered_checkpoints/clean/full_fusion_v2/seed_44/checkpoint.pth",
+      "role": "publication-verified checkpoint",
+      "present": true,
+      "sha256": "4155a2b71df99a6159e1e4a5dbe635f4e9ea7852a6704d804dd1fb5d43aca434",
+      "bytes": 365236755,
+      "note": ""
+    },
+    {
+      "path": "runs_v2_clean/fusion_v2_seed44/preds_test.csv",
+      "role": "authoritative duplicate-clean predictions (n=848)",
+      "present": true,
+      "sha256": "fe00252503bf19b210540d84ba788f3cd92be048c126692869d7646e4c169a40",
+      "bytes": 63170,
+      "note": ""
+    },
+    {
+      "path": "runs_v2_clean/fusion_v2_seed44/preds_dataset_ood.csv",
+      "role": "authoritative external predictions (n=499; 373 duplicate-disjoint)",
+      "present": true,
+      "sha256": "c894dfa58ca6ec505b15f134225aee147c0271958c9422db5ccea6a3cf478597",
+      "bytes": 54200,
+      "note": ""
+    },
+    {
+      "path": "runs_v2_clean/fusion_v2_seed44/gates_test.csv",
+      "role": "per-image gate mass on the clean test set",
+      "present": true,
+      "sha256": "a2ec51f6e74bd6376f41b5e440c14589640720263af86db0f331c06f3203c725",
+      "bytes": 40125,
+      "note": ""
+    }
+  ]
+}

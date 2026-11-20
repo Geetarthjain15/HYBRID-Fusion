@@ -1,0 +1,20 @@
+{
+  "package": "final_paper_x7",
+  "qa_status": "PASS_WITH_AUTHOR_METADATA_OUTSTANDING",
+  "manuscript_pages": 20,
+  "numbered_figures_png": 17,
+  "numbered_figures_pdf": 17,
+  "files": {
+    "FUSION_NETWORK_MANUSCRIPT.md": "6cb9b3ed5a51b261a8e5769808f101759ccf3b66fb049ec1f33589a09f341b18",
+    "FUSION_NETWORK_MANUSCRIPT.docx": "f755d0a530c8319de63216b648456cb374dab04be97a3072eaa17a6e50538af9",
+    "FUSION_NETWORK_MANUSCRIPT.pdf": "8576456a79b71155806532bdcf2a255669e9a0de4fd9074d606fd6a0267bd633"
+  },
+  "evidence": [
+    "EVIDENCE_TRACEABILITY.csv",
+    "X7_EVIDENCE_TRACEABILITY.csv",
+    "CLAIMS_AND_CITATIONS_AUDIT.md",
+    "X7_REPORT.md",
+    "X7_ASSUMPTIONS_LIMITATIONS.csv",
+    "X7_SUPPLEMENT.md"
+  ]
+}

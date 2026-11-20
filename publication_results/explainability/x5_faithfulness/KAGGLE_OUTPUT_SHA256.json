@@ -1,0 +1,18 @@
+{
+  "x5_faithfulness/X5_FAITHFULNESS_REPORT.md": "c8caa669c9d2aa8bf27844571b5b5babda2ad433e0e8e5feffed3394613af2fc",
+  "x5_faithfulness/X5_FAITHFULNESS_REPORT_smoke.md": "231b73fc8c3d5ef960c62dbdde220656f7c3a8c369a9b27bfc5438b7826c4c17",
+  "x5_faithfulness/bootstrap_effects.csv": "9b12211f2a6e3a041aed99d0396ffc3087e7a324c2aafb583832ab930a76e6ce",
+  "x5_faithfulness/bootstrap_effects_smoke.csv": "c729be740812a7bf49b1870b51b46fc1ab74af970ba77e27d0dd537f410bfd42",
+  "x5_faithfulness/per_image_curves.csv": "d407fef2d99045feaefe8d59c531f43f062cc6783b016bc515f5b34cfea3aec5",
+  "x5_faithfulness/per_image_curves_smoke.csv": "0d5dc31eedcb3c0c7c8fff54720db49a5d43c7bdc50c7c3e6a664753014e3eef",
+  "x5_faithfulness/sha256_manifest.json": "ee58ac3cc0706209a21decafc3b19fc2380306d15c044bdfb75a82175e75e1cc",
+  "x5_faithfulness/sha256_manifest_smoke.json": "a5e0a85da2b1c51a564fd84377577c3ae68ba6679066a216828084d5ea507f24",
+  "x5_faithfulness/stability.csv": "73daac236df5401c7953dd5494117eedddaaf161d51bb22b687658508538c549",
+  "x5_faithfulness/stability_smoke.csv": "3d88df3f892fecb41f4d18532418737c7532fb894755c85d0623ac9cca8ddf91",
+  "x5_faithfulness/x5_faithfulness.json": "9a66acd12541f3fd066d1572cc376327507493973678cce6293eea6e23920f3d",
+  "x5_faithfulness/x5_faithfulness_smoke.json": "5049b7447503c809ea9d2b9df42bcc787aa8ff2f456068d1fd7bba2da240a76e",
+  "x5_protocol/X5_PROTOCOL_LOCK.md": "8a1dc52acabf8ba970914bbb3eb720929b0e6a897ac083a57bd583e914b314ad",
+  "x5_protocol/X5_SCALE_DECISION_AMENDMENT.md": "1d3ccbeb3df521f7ffdc6720529cda638d7da6a42dad3f965bc8fc196c1217b4",
+  "x5_protocol/x5_protocol_lock.json": "a553c93b3eeb654f7adaed319a499404d7a83efbe9dac576f482a0b10cf2a1a5",
+  "x5_protocol/x5_scale_decision.json": "10327ca50c77365e5ed6443d6889a8ce79f76aafa14c9d6d109cac3107840258"
+}

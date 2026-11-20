@@ -1,0 +1,39 @@
+{
+  "version": "v1",
+  "archive": "fusionv2_recovered_checkpoints_v1.zip",
+  "archive_sha256": "321affcdcef48f6ff257ee79e4eeb81d19f0313aaea5028bbce05b29f4e397c3",
+  "archive_bytes": 1095710773,
+  "n_checkpoints": 3,
+  "checkpoints": [
+    {
+      "relative_path": "clean/full_fusion_v2/seed_42/checkpoint.pth",
+      "seed": 42,
+      "bytes": 365236755,
+      "sha256": "9b328ba83df5d44b542e19faae68fd1493fee61e0c5b80e493c2f8a387ed592e",
+      "architecture": "FusionV2 (gated, multi-scale, proj_dim 512)",
+      "verification_status": "ACCEPTED - strict load, gate intact, predictions reproduced",
+      "expected_clean_test_accuracy": 0.9823
+    },
+    {
+      "relative_path": "clean/full_fusion_v2/seed_43/checkpoint.pth",
+      "seed": 43,
+      "bytes": 365236755,
+      "sha256": "9f97b6aa0c9ec3f1124e593c8c29e11d31f4aef8bc08e20a40e7ed1f29e80f25",
+      "architecture": "FusionV2 (gated, multi-scale, proj_dim 512)",
+      "verification_status": "ACCEPTED - strict load, gate intact, predictions reproduced",
+      "expected_clean_test_accuracy": 0.9823
+    },
+    {
+      "relative_path": "clean/full_fusion_v2/seed_44/checkpoint.pth",
+      "seed": 44,
+      "bytes": 365236755,
+      "sha256": "4155a2b71df99a6159e1e4a5dbe635f4e9ea7852a6704d804dd1fb5d43aca434",
+      "architecture": "FusionV2 (gated, multi-scale, proj_dim 512)",
+      "verification_status": "ACCEPTED - strict load, gate intact, predictions reproduced",
+      "expected_clean_test_accuracy": 0.9835
+    }
+  ],
+  "verification_source": "publication_results/ablations/checkpoint_recovery/import_manifest.json",
+  "note": "Every digest re-verified against the file at archive time. The notebook re-checks each one before no_tta runs; a mismatch stops the session.",
+  "generated_utc": "2026-09-24T00:24:32.390874+00:00"
+}

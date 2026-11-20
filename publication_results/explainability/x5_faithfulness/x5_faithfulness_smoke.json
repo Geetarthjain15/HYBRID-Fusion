@@ -1,0 +1,112 @@
+{
+  "phase": "X5",
+  "mode": "smoke",
+  "created_utc": "2026-09-27T07:39:30.668048+00:00",
+  "protocol_lock_sha256": "a553c93b3eeb654f7adaed319a499404d7a83efbe9dac576f482a0b10cf2a1a5",
+  "scale_amendment_sha256": "10327ca50c77365e5ed6443d6889a8ce79f76aafa14c9d6d109cac3107840258",
+  "seeds": [
+    42
+  ],
+  "n_images": 8,
+  "device": "cuda",
+  "runtime_seconds": 36.371297121047974,
+  "methods": [
+    "cnn_gradcampp",
+    "vit_grad_x_input",
+    "composite_equal",
+    "composite_gate_weighted",
+    "baseline_random",
+    "baseline_centre_prior"
+  ],
+  "bootstrap": {
+    "deletion_auc": {
+      "cnn_gradcampp": {
+        "mean": 0.42106902947053315,
+        "ci_low": 0.3582645133137703,
+        "ci_high": 0.4835599809885025
+      },
+      "vit_grad_x_input": {
+        "mean": 0.6112005425743758,
+        "ci_low": 0.5672535300254822,
+        "ci_high": 0.6552800089120865
+      },
+      "composite_equal": {
+        "mean": 0.44111431505270304,
+        "ci_low": 0.369591775117442,
+        "ci_high": 0.5123805291950703
+      },
+      "composite_gate_weighted": {
+        "mean": 0.5679586078554392,
+        "ci_low": 0.5120027735829353,
+        "ci_high": 0.6240570768713951
+      },
+      "baseline_random": {
+        "mean": 0.647414559224248,
+        "ci_low": 0.6036924198269844,
+        "ci_high": 0.6910078004002571
+      },
+      "baseline_centre_prior": {
+        "mean": 0.39029826006293294,
+        "ci_low": 0.35028830729424953,
+        "ci_high": 0.4301131572574377
+      }
+    },
+    "insertion_auc": {
+      "cnn_gradcampp": {
+        "mean": 0.7229995805516839,
+        "ci_low": 0.7047992013394833,
+        "ci_high": 0.7410848997533321
+      },
+      "vit_grad_x_input": {
+        "mean": 0.6876004320248962,
+        "ci_low": 0.6676485538482666,
+        "ci_high": 0.707545816898346
+      },
+      "composite_equal": {
+        "mean": 0.7233316534891725,
+        "ci_low": 0.7081314399838448,
+        "ci_high": 0.7384626567363739
+      },
+      "composite_gate_weighted": {
+        "mean": 0.6882790978379547,
+        "ci_low": 0.6706710755825043,
+        "ci_high": 0.7058873698115349
+      },
+      "baseline_random": {
+        "mean": 0.6337489323884249,
+        "ci_low": 0.5830379724502563,
+        "ci_high": 0.6844392865896225
+      },
+      "baseline_centre_prior": {
+        "mean": 0.7018233879320324,
+        "ci_low": 0.6697628945112228,
+        "ci_high": 0.7339158728718758
+      }
+    }
+  },
+  "preservation": {
+    "checked": 0,
+    "altered": 0,
+    "skipped": true
+  },
+  "environment": {
+    "python": "3.12.13",
+    "torch": "2.10.0+cu128",
+    "transformers": "5.0.0",
+    "cuda_device": "Tesla T4"
+  },
+  "source_gates": {
+    "faithfulness.py": {
+      "no_set_attn_implementation_call": true,
+      "no_output_attentions_request": true
+    },
+    "composite.py": {
+      "no_set_attn_implementation_call": true,
+      "no_output_attentions_request": true
+    }
+  },
+  "scope_exclusions": [
+    "external_or_cross_source (Phase X6)",
+    "anatomical or clinical claims"
+  ]
+}

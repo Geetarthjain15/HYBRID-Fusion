@@ -1,0 +1,76 @@
+{
+  "version": "v2",
+  "zip": "fusionv2_code_session1_v2.zip",
+  "zip_sha256": "33035574ec034f2f3fe196cb946cb4f98ac5cfeceb3dea924c61a04e33684ecc",
+  "zip_bytes": 50272,
+  "n_files": 13,
+  "files": [
+    {
+      "path": "src/fusion_v2.py",
+      "bytes": 7056,
+      "sha256": "dd1a1180459b9eb1a3e1a02716d0406722f97d2e0eb1b9922ac551d0cdba1292"
+    },
+    {
+      "path": "src/train_ablation.py",
+      "bytes": 19571,
+      "sha256": "ed8bf84c4953a3c4bc4ac035784241d022316f04e4d0f6cd295c98c1126ab15c"
+    },
+    {
+      "path": "src/make_clean_split.py",
+      "bytes": 6298,
+      "sha256": "07557298a6aa127bc246e7c665391d46b4db785d3ba318ff728a7abe3d457b62"
+    },
+    {
+      "path": "src/seeding.py",
+      "bytes": 2580,
+      "sha256": "a34679fc1070ab15a34f31cf11d232121e4218b7747c292023587c3e2ec3e11d"
+    },
+    {
+      "path": "src/hybrid_model.py",
+      "bytes": 1525,
+      "sha256": "6ae47d39bf3de1581d2cd8b06e42cb44a524e63e206439974b40c739f370f890"
+    },
+    {
+      "path": "src/publication/__init__.py",
+      "bytes": 149,
+      "sha256": "fed671cc2354b7566ac91712c8555dbfe7acad5d8706aeee721fd139db9a3322"
+    },
+    {
+      "path": "src/publication/session1_config.py",
+      "bytes": 6583,
+      "sha256": "1d3c82c64fca325f0675243941c3802d5f350865e02dd02f5b15a30d424e1737"
+    },
+    {
+      "path": "src/publication/session1_driver.py",
+      "bytes": 15154,
+      "sha256": "4f865290d63fc5939df402a69cc692e3b2d25817373217d8a59e644a89143793"
+    },
+    {
+      "path": "src/publication/train_ablation_variant.py",
+      "bytes": 19398,
+      "sha256": "062ab9be8787a0c85471367549134d58755af5e473edea9849dfc3ab316b97f7"
+    },
+    {
+      "path": "src/publication/validate_run_outputs.py",
+      "bytes": 8282,
+      "sha256": "22e148f0a5a40085c91443ba530fb97f0cf5f36875230cfe8d1a930d4b006da6"
+    },
+    {
+      "path": "src/publication/ablation_models.py",
+      "bytes": 6440,
+      "sha256": "47e277c903dc215075d110fe7c3f461a92e19008a61d3c0d7ce27c751b52730c"
+    },
+    {
+      "path": "src/publication/run_ablations.py",
+      "bytes": 33629,
+      "sha256": "7ef4ca1f13b418723c9c692e94bfdd279d486626d9286c9278007b5fadd90e89"
+    },
+    {
+      "path": "src/publication/test_ablations.py",
+      "bytes": 19707,
+      "sha256": "5c2899b5f7485820377c200e3e3061c74c914719cd1f7061d3b2c6c18b716c98"
+    }
+  ],
+  "generated_utc": "2026-09-23T23:49:42.864292+00:00",
+  "changes_from_v1": "test 4 now falls back to an embedded reference fingerprint when runs_v2_clean/ is unavailable (as on Kaggle); REFERENCE_CONFIG added to session1_config.py"
+}

@@ -1,0 +1,17 @@
+characteristic,brain_meta,agmf_net,comparability,note
+Overall design,Ten CNN-ViT base learners with logistic-regression and XGBoost meta-learners,Single feature-level CNN-transformer hybrid with a learned adaptive gate,not established,Different model classes; an accuracy difference cannot be attributed to any one design choice
+Fusion level,Softmax prediction stacking,Projected feature fusion (512+512),not established,the proposed network contains no meta-learner and must not be described as stacking
+Preprocessing,"Resize, normalise, CLAHE contrast enhancement","Resize, normalise (mean/std 0.5); no CLAHE",not established,Input pipelines differ
+Dataset source,"Public brain tumour MRI collection (7,023 images reported)","Public brain tumour MRI collection (7,023 images pooled)",partially comparable,Same reported pool size; identical file-level composition not established
+Reported split,"5,712 train / 1,311 test","4,800 train / 848 test after duplicate cleaning; 1,052 on the original split",not established,Different partition construction and different test sizes
+Test sample count,"1,311","1,052 (original); 848 (duplicate-clean); 373 (cross-source)",not established,No shared test set
+Duplicate control,Not reported in the inspected paper,"256-bit dHash audit, Hamming <= 8, 1,375 redundant images removed",not established,Absence in the inspected article is not evidence that it was not performed
+Patient-level grouping evidence,Not reported in the inspected paper,Not available; no patient/study/series key exists in the files; not claimed,not established,Neither work establishes patient independence
+External / cross-source evaluation,Not reported in the inspected paper,373 duplicate-disjoint images from a second collection,not established,One additional source only
+Multi-seed evaluation,Not reported in the inspected paper,"Seeds 42, 43, 44 with sample SD",not established,Three seeds is a small sample of run-to-run variation
+Component ablations,Base-learner comparisons reported; not component controls of a single model,"Seven protocol-matched one-component controls, 21 paired tests, Holm-corrected",not established,Different study questions
+Calibration reporting,Not a headline analysis,"NLL, Brier, ECE (15 bins), reliability curves",not established,the proposed network calibration figures are descriptive only
+Explainability method,Grad-CAM on CNN components,Grad-CAM++ on the CNN path,partially comparable,Neither establishes validated tumour localisation
+Accuracy,"97.10% (XGBoost meta-learner, as reported)","99.14 +/- 0.10% (original, n=1052); 98.27 +/- 0.07% (duplicate-clean, n=848); 69.53 +/- 1.98% (cross-source, n=373)",contextual only,Reported values under different protocols; not a controlled ranking
+Macro-F1,96.94% (as reported),99.12 +/- 0.09% (original); 98.28 +/- 0.04% (duplicate-clean); 68.69 +/- 2.21% (cross-source),contextual only,BRAIN-META reports F1 without a stated averaging scheme in the inspected text
+OVERALL COMPARABILITY STATUS,-,-,contextual only,"Datasets, partition construction, duplication control and evaluation conditions are not established as equivalent. No claim of statistical superiority is made. BRAIN-META per-image predictions were unavailable, so no paired test is possible."
